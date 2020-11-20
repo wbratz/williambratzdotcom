@@ -22,12 +22,12 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>William Bratz dot com</title>
-        <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className={styles.header}>
       <div className={styles.logo}>
-      <img src="../public/headerPhoto.jpg" alt="Handsome"/>
+      <img src="/headerPhoto.jpg" alt="Handsome"/>
       </div>
         <div className={styles.headerRight}>
           <a href="javascript:void(0)" onClick={navIsOpen ? closeNav : openNav}>Tech Stack</a>
