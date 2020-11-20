@@ -27,7 +27,7 @@ export default function Home() {
 
       <header className={styles.header}>
       <div className={styles.logo}>
-      <img src="../headerPhoto.jpg" alt="Handsome"/>
+      <img src="../public/headerPhoto.jpg" alt="Handsome"/>
       </div>
         <div className={styles.headerRight}>
           <a href="javascript:void(0)" onClick={navIsOpen ? closeNav : openNav}>Tech Stack</a>
