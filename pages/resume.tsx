@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
 
-export default function Home() {
+export default function Resume() {
   const [navIsOpen, setNavIsOpen] = useState(false);
 
   const openNav = () => {
@@ -27,10 +27,10 @@ export default function Home() {
       <div id="main" className={styles.container}>
         <header className={styles.header}>
         <div className={styles.logo}>
-          <a href=""><img src="/headerphoto.jpg" alt="Handsome"/></a>
+        <a href="/"><img src="/headerphoto.jpg" alt="Handsome"/></a>
         </div>
         <div className={styles.headerRight}>
-          <a href="resume">Resume</a>
+          <a href="#">Resume</a>
           <a href="javascript:void(0)" onClick={navIsOpen ? closeNav : openNav}>Tech Stack</a>
         </div>
       </header>
@@ -43,7 +43,7 @@ export default function Home() {
         </div>
       
         <main className={styles.main}>
-          William Bratz dot com
+          Soon
         </main>
         
         <footer className={styles.footer}>
