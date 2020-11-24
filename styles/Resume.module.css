@@ -1,0 +1,115 @@
+.resumeContainer {
+  min-height: 500px;
+  max-width: 1800px;
+  min-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  outline: 1px solid lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+.resumeBasicText {
+}
+
+.resumeHeadingText {
+}
+
+.resumeLogo {
+  width: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  background-color: whitesmoke;
+}
+
+.resumeName {
+  display: flex;
+  align-content: flex-start;
+}
+
+.resumeTitle {
+  display: flex;
+  align-content: flex-start;
+}
+
+.resumeLogo h1 {
+  font: Garamond;
+  line-height: 0pt;
+  font-size: 40pt;
+  font-weight: 325;
+  letter-spacing: 1px;
+}
+.resumeLogo h2 {
+  font: Garamond;
+  line-height: 0pt;
+  font-size: 20pt;
+  font-weight: 275;
+  letter-spacing: 1px;
+}
+
+.resumeSidebar {
+  width: 20%;
+  height: 100%;
+  min-width: 300px;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: goldenrod;
+  align-self: flex-start;
+}
+
+.resumeInfo {
+  margin-left: 10%;
+  margin-top: 2%;
+  width: 70%;
+  font: Cambria;
+  font-size: 11pt;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-bottom: 2px solid black;
+}
+
+.resumeInfoContent {
+  margin-left: 10%;
+  padding: 2%;
+  width: 70%;
+  font: Cambria;
+  font-size: 10pt;
+}
+
+.resumeMainbar {
+  width: 80%;
+  min-width: 900px;
+  height: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: flex-start;
+}
+
+.resumeMainHeading {
+  margin-left: 2%;
+  margin-top: 2%;
+  width: 95%;
+  font: Cambria;
+  font-size: 12pt;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border-bottom: 2px solid black;
+}
+
+.resumeMainContent {
+  padding: 0%;
+  margin-left: 2%;
+  margin-top: 10px;
+  width: 70%;
+  font: Cambria;
+  font-size: 10pt;
+}
