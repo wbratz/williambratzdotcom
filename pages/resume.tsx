@@ -14,20 +14,25 @@ export default function Resume() {
           </div>
         </div>
         <div className={styles.resumeSidebar}>
-          <div className={styles.resumeInfo}>INFO</div>
+          <div className={styles.resumeInfo}>CONTACT INFO</div>
+          <div className={styles.resumeSubInfo}>ADDRESS</div>
           <div className={styles.resumeInfoContent}>
             107 Connie Drive
             <br></br>
             Hendersonville TN, 37075
-            <p>(615) 210-9939</p>
-            <p>WilliamBratz615@gmail.com</p>
           </div>
-          <div className={styles.resumeInfo}>SKILLS</div>
+          <div className={styles.resumeSubInfo}>PHONE</div>
+          <div className={styles.resumeInfoContent}>(615) 210-9939</div>
+          <div className={styles.resumeSubInfo}>Email</div>
+          <div className={styles.resumeInfoContent}>
+            WilliamBratz615@gmail.com
+          </div>
+          <div className={styles.resumeInfo}>APPLICABLE SKILLS</div>
           <div className={styles.resumeInfoContent}>
             Doin Stuff
             <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
             <p>
-              Doin Other stuff
+              Payin' the bills
               <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
@@ -47,14 +52,25 @@ export default function Resume() {
         <div className={styles.resumeMainbar}>
           <div className={styles.resumeMainHeading}>ABOUT ME</div>
           <div className={styles.resumeMainContent}>
-            Did you even see all the stuff on the left I can do!? Wild right?
+            This will probably go away
           </div>
           <div className={styles.resumeMainHeading}>EMPLOYMENT HISTORY</div>
+          <div className={styles.resumeMainInfo}>STR</div>
           <div className={styles.resumeMainContent}>
-            Job Place Name
-            <br></br>2015 - Current
-            <br></br>Fancy Title
-            <p>Stuff I did at this place was this.</p>
+            Software Engineer II (Full Stack)
+            <br></br>2015 - Present
+            <p>
+              Architected and developed, web applications. Utilizing a SQL
+              Server back end, C# (.NET Core) in the middle tier. Javascript
+              (React, Typescript, JQuery), MVC, HTML, CSS for the front end.
+            </p>
+            Hosted monthly department wide SQL Server learning sessions where I
+            would tackle common questions about SQL Server development, and demo
+            sql server query practices.
+            <p>
+              Hosted multiple Lunch and learns about various topics, ranging
+              from SQL Server query tuning to GraphQL.
+            </p>
           </div>
           <div className={styles.resumeMainHeading}>EDUCATION</div>
           <div className={styles.resumeMainContent}>
