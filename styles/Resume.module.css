@@ -1,10 +1,9 @@
 .resumeContainer {
-  min-height: 500px;
-  max-width: 1800px;
   min-width: 1200px;
+  max-width: 1500px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   outline: 1px solid lightgray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-wrap: wrap;
@@ -48,14 +47,14 @@
 
 .resumeSidebar {
   width: 20%;
-  height: 100%;
   min-width: 300px;
   padding: 0 0.5rem;
+  padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: goldenrod;
-  align-self: flex-start;
+  align-self: stretch;
 }
 
 .resumeInfo {
@@ -92,13 +91,13 @@
 .resumeMainbar {
   width: 80%;
   min-width: 900px;
-  height: 100%;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  align-self: flex-start;
+  align-self: stretch;
   overflow-x: hidden;
+  padding-bottom: 50px;
 }
 
 .resumeMainHeading {
