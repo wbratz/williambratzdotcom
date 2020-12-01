@@ -14,8 +14,8 @@ export default function Header({navIsOpen, setNavIsOpen}) {
 
         <header className={styles.header}>
           <div className={styles.logo}>
-          <Link href="/"><a><img src="/headerphoto.jpg" alt="Handsome"/></a></Link>
-        </div>
+            <Link href="/"><a><img src="/headerphoto.jpg" alt="Handsome"/></a></Link>
+          </div>
         <div className={styles.headerRight}>
           <Link href="resume"><a>Resume</a></Link>
           <a href="javascript:void(0)" onClick={ () => {navIsOpen ? setNavIsOpen(false) : setNavIsOpen(true)}}>Tech Stack</a>
