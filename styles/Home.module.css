@@ -6,6 +6,7 @@
   justify-content: center;
   align-items: center;
   transition: margin-right 0.5s;
+  overflow-x: hidden;
 }
 
 .header {
@@ -42,11 +43,7 @@
 }
 
 .logo {
-  float: left;
-  position: absolute;
-  margin-left: 0%;
   margin-top: -1.5%;
-  padding: 20px 10px;
 }
 
 .logo img {
@@ -225,4 +222,91 @@
   color: #818181;
   display: block;
   transition: 0.3s;
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 26px;
+  height: 3px;
+  margin: 5px;
+  background-color: black;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 9vh;
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+.navLinks li {
+  list-style: none;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width: 1468px) {
+  .navLinks {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    overflow: hidden;
+  }
+  .navLinks {
+    position: absolute;
+    right: 0px;
+    height: 81vh;
+    top: 6vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .navLinks li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navActive {
+    position: absolute;
+    right: 0px;
+    height: 81vh;
+    top: 6vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+    display: flex;
+    justify-content: space-around;
+    letter-spacing: 1px;
+  }
+
+  .navActive li {
+    opacity: 1;
+    list-style: none;
+  }
 }
