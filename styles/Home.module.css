@@ -161,6 +161,10 @@
   height: 1em;
 }
 
+.navLinks a:hover {
+  color: goldenrod;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
@@ -255,8 +259,23 @@
   letter-spacing: 1px;
 }
 
+.navActive li {
+  list-style: none;
+}
+
+.navActive {
+  display: flex;
+  justify-content: space-around;
+  width: 15%;
+  letter-spacing: 1px;
+}
+
 @media screen and (max-width: 1468px) {
   .navLinks {
+    width: 30%;
+  }
+
+  .navActive {
     width: 30%;
   }
 }
@@ -303,6 +322,10 @@
     display: flex;
     justify-content: space-around;
     letter-spacing: 1px;
+  }
+
+  .navActive a:hover {
+    color: goldenrod;
   }
 
   .navActive li {

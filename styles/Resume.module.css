@@ -1,5 +1,4 @@
 .resumeContainer {
-  min-width: 1200px;
   max-width: 1500px;
   display: flex;
   flex-direction: row;
@@ -7,7 +6,6 @@
   outline: 1px solid lightgray;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   flex-wrap: wrap;
-  overflow: auto;
 }
 
 .resumeLogo {
@@ -47,7 +45,6 @@
 
 .resumeSidebar {
   width: 20%;
-  min-width: 300px;
   padding: 0 0.5rem;
   padding-bottom: 50px;
   display: flex;
@@ -90,7 +87,6 @@
 
 .resumeMainbar {
   width: 80%;
-  min-width: 900px;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
