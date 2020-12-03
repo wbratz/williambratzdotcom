@@ -128,3 +128,12 @@
   font: Cambria;
   font-size: 10pt;
 }
+
+.resumeMainContent a {
+  color: rgb(47, 0, 255);
+  text-decoration: underline;
+}
+
+.resumeMainContent a:hover {
+  text-decoration: none;
+}
