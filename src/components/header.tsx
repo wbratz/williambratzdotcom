@@ -27,12 +27,12 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
         </div>
         <ul className={mobileNavOpen ? styles.navActive : styles.navLinks}>
           <li>
-            <Link href="blog">
+            <Link href="../blog">
               <a>BLOG</a>
             </Link>
           </li>
           <li>
-            <Link href="resume">
+            <Link href="../resume">
               <a>RESUME</a>
             </Link>
           </li>
