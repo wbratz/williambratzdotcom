@@ -11,6 +11,14 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: goldenrod;
+}
+
+li {
+  list-style: none;
+}
+
 * {
   box-sizing: border-box;
 }
