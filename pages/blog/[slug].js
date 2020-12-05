@@ -5,13 +5,18 @@ import styles from "../../styles/blog.module.css";
 function BlogPostPage(props) {
   return (
     <Layout>
-      <div className={styles.blogContainer}>
+      <div className={styles.blogPostContainer}>
+        <div className={styles.blogPostBanner}>
+          <img src={props.blog.banner} />
+        </div>
         <div className={styles.blogPostTitle}>
           <h1>{props.blog.title}</h1>
         </div>
-        <section
-          dangerouslySetInnerHTML={{ __html: props.blog.content }}
-        ></section>
+        <div className={styles.blogPostContent}>
+          <section
+            dangerouslySetInnerHTML={{ __html: props.blog.content }}
+          ></section>
+        </div>
       </div>
     </Layout>
   );

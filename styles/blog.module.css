@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
 }
 
 .blogContainer a {
@@ -15,7 +14,7 @@
   flex-direction: row;
   margin: 2%;
   flex-wrap: nowrap;
-  align-items: stretch;
+  justify-content: center;
 }
 
 .blogSummaryPosts {
@@ -52,9 +51,26 @@
 
 .blogSummaryPhoto {
   height: 100%;
-  width: 20%;
   background-color: honeydew;
   display: flex;
   align-self: center;
   justify-content: center;
+}
+
+.blogPostBanner {
+  align-self: center;
+}
+
+.blogPostTitle {
+  align-self: center;
+}
+
+.blogPostContent {
+  justify-content: flex-start;
+}
+
+.blogPostContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
 }

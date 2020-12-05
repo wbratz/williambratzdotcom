@@ -12,7 +12,9 @@ export default function Blog(props) {
           {props.blogs.map((blog, idx) => {
             return (
               <div className={styles.blogSummaryWrapper}>
-                <div className={styles.blogSummaryPhoto}>{blog.photo}</div>
+                <div className={styles.blogSummaryPhoto}>
+                  <img src={blog.photo} />
+                </div>
                 <div className={styles.blogSummaryPosts}>
                   <li key={blog.id}>
                     <div className={styles.blogSummaryTitle}>{blog.title}</div>
@@ -54,7 +56,7 @@ export async function getStaticProps() {
       return { ...data, id: uuid() };
     });
 
-  // By returning { props: blogs }, the IndexPage component
+  // By returning { props: blogs }, the component
   // will receive `blogs` as a prop at build time
   return {
     props: { blogs },
