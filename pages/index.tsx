@@ -6,5 +6,6 @@ export default function Home() {
     ReactGA.initialize("G-405W0LWQ6E");
     ReactGA.pageview("/homepage");
   }
+  initializeReactGA();
   return <Layout>William Bratz dot com</Layout>;
 }
