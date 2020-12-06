@@ -1,14 +1,8 @@
 import Link from "next/link";
 import Layout from "../src/components/Layout";
 import styles from "../styles/Resume.module.css";
-import ReactGA from "react-ga";
 
 export default function Resume() {
-  function initializeReactGA() {
-    ReactGA.initialize("G-405W0LWQ6E");
-    ReactGA.pageview("/resume");
-  }
-  initializeReactGA();
   return (
     <Layout>
       <div className={styles.resumeContainer}>
