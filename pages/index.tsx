@@ -1,10 +1,10 @@
-import Layout from "../src/components/Layout"
+import Layout from "../src/components/Layout";
+import ReactGA from "react-ga";
 
 export default function Home() {
-
-  return (
-    <Layout>
-      William Bratz dot com
-    </Layout>
-  );
+  function initializeReactGA() {
+    ReactGA.initialize("G-405W0LWQ6E");
+    ReactGA.pageview("/homepage");
+  }
+  return <Layout>William Bratz dot com</Layout>;
 }
