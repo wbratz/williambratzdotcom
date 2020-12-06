@@ -8,6 +8,7 @@ export default function Resume() {
     ReactGA.initialize("G-405W0LWQ6E");
     ReactGA.pageview("/resume");
   }
+  initializeReactGA();
   return (
     <Layout>
       <div className={styles.resumeContainer}>

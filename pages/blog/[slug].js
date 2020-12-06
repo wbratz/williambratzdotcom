@@ -5,7 +5,7 @@ import ReactGA from "react-ga";
 
 function BlogPostPage(props) {
   function initializeReactGA() {
-    ReactGA.initialize("G-405W0LWQ6E");
+    ReactGA.initialize("UA-184834329-1");
     ReactGA.pageview("/blogpost");
   }
 
