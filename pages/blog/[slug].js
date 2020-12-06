@@ -1,14 +1,8 @@
 import React from "react";
 import Layout from "../../src/components/Layout";
 import styles from "../../styles/blog.module.css";
-import ReactGA from "react-ga";
 
 function BlogPostPage(props) {
-  function initializeReactGA() {
-    ReactGA.initialize("UA-184834329-1");
-    ReactGA.pageview("/blogpost");
-  }
-
   return (
     <Layout>
       <div className={styles.blogPostContainer}>

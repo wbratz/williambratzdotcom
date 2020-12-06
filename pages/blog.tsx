@@ -2,13 +2,8 @@ import Layout from "../src/components/Layout";
 import React from "react";
 import styles from "../styles/blog.module.css";
 import Link from "next/link";
-import ReactGA from "react-ga";
 
 export default function Blog(props) {
-  function initializeReactGA() {
-    ReactGA.initialize("UA-184834329-1");
-    ReactGA.pageview("/blog");
-  }
   return (
     <Layout>
       <div className={styles.blogContainer}>
