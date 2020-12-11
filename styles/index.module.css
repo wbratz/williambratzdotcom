@@ -1,0 +1,23 @@
+.langbox {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
+.outerContainer {
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 5px;
+}
+
+.innerContainer {
+  max-width: 1500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 10px;
+}

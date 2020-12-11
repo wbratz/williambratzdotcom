@@ -173,6 +173,7 @@
 }
 
 .sidenav {
+  font-family: Inconsolata;
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
@@ -190,7 +191,7 @@
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 25px;
   color: #818181;
   display: block;
   transition: 0.2s;
@@ -253,9 +254,11 @@
 }
 
 .navLinks {
+  font-family: Inconsolata;
+  font-size: 25px;
   display: flex;
   justify-content: space-around;
-  width: 20%;
+  width: 18%;
   letter-spacing: 1px;
 }
 
@@ -264,23 +267,31 @@
 }
 
 .navActive {
+  font-family: Inconsolata;
+  font-size: 25px;
   display: flex;
   justify-content: space-around;
   width: 20%;
   letter-spacing: 1px;
 }
 
-@media screen and (max-width: 1468px) {
+@media screen and (max-width: 1630px) {
   .navLinks {
-    width: 40%;
+    width: 30%;
   }
 
   .navActive {
-    width: 40%;
+    width: 30%;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
+  .navActive {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
   .container {
     overflow: hidden;
   }
@@ -300,18 +311,19 @@
   .navActive {
     position: absolute;
     right: 8px;
-    height: 81vh;
-    top: 6vh;
+    height: 95vh;
+    top: 3vh;
     background-color: whitesmoke;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 40%;
     transform: translateX(0%);
     transition: transform 0.5s ease-in;
     display: flex;
     justify-content: space-around;
     letter-spacing: 1px;
+    font-size: 22px;
   }
 
   .navActive a:hover {

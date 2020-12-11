@@ -36,22 +36,11 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
               <a>RESUME</a>
             </Link>
           </li>
-          <li>
-            <a
-              href="javascript:void(0)"
-              onClick={() => {
-                navIsOpen ? setNavIsOpen(false) : setNavIsOpen(true);
-              }}
-            >
-              TECH STACK
-            </a>
-          </li>
         </ul>
         <div
           className={styles.burger}
           onClick={() => {
-            setNavStyle();
-            console.log(mobileNavOpen);
+            navIsOpen ? setNavIsOpen(false) : setNavIsOpen(true);
           }}
         >
           <div className={styles.line1}></div>
