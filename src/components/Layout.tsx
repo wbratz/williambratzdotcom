@@ -29,9 +29,8 @@ export default function Layout(props) {
         >
           &times;
         </a>
-        <a href="https://nextjs.org/">Next JS</a>
-        <a href="https://reactjs.org/">React</a>
-        <a href="https://heroku.com/">Heroku</a>
+        <a href="../blog">BLOG</a>
+        <a href="../resume">RESUME</a>
       </div>
 
       <main className={styles.main}>{props.children}</main>
