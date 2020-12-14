@@ -2,52 +2,52 @@
 title: Extension methods, fluent Interfaces, and method chaining in C#
 slug: fluent-interfaces
 date: 12/14/2020
-description: Fluent interfaces, and method chaining in C# helpful ways to reduce lines of code, increase code readability, and allow the next developer to quickly look through you code and easily know what is happening. In this blog I'll walk you through building extension methods, using method chaining and fluent interfaces, Let's dive in!
+description: Fluent interfaces, and method chaining in C# are helpful ways to reduce lines of code, increase code readability, and allow the next developer to quickly look through you code and easily know what is happening. In this blog I'll walk you through building extension methods, using method chaining and fluent interfaces, Let's dive in!
 photo: "./blogContent/fluent-interfaces/extension_sm.jpg"
 banner: "../blogContent/fluent-interfaces/extension.jpg"
 ---
 
-Fluent interfaces, and method chaining in C# helpful ways to reduce lines of code, increase code readability, and allow the next developer to quickly look through you code and easily know what is happening. In this blog I'll walk you through building extension methods, using method chaining and fluent interfaces, Let's dive in!
+Fluent interfaces, and method chaining in C# are helpful ways to reduce lines of code, increase code readability, and allow the next developer to quickly look through you code and easily know what is happening. In this blog I'll walk you through building extension methods, using method chaining and fluent interfaces, Let's dive in!
 
 ## What are extension methods?
 
-> Extension methods enable you to "add" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. Extension methods are static methods, but they're called as if they were instance methods on the extended type. For client code written in C#, F# and Visual Basic, there's no apparent difference between calling an extension method and the methods defined in a type.
+> _Extension methods enable you to "add" methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. Extension methods are static methods, but they're called as if they were instance methods on the extended type. For client code written in C#, F# and Visual Basic, there's no apparent difference between calling an extension method and the methods defined in a type._
 
 > _[Microsoft](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods)_
 
-What does that mean? Simply put, extension methods allow you to modify parts of your application (types) without having to call a method. Take this example.
+What does that mean? Simply put, extension methods allow you to modify object in your application (types) without having to pass your object to the method as a parameter or wrap your expression in a method. Take this example.
 
 ![Example 1](../blogContent/fluent-interfaces/example1.JPG)
 
-Here we're calling a database, and returning an Animal object (Context.Animal) by its id. In this scenario it is best practice to not return the same object as your database context. So lets add on to our method to return an AnimalModel, which is an object defined inside of our application.
+Here we're calling a database, and returning an Animal object (Context.Animal) by its id. In this scenario it is best practice to not return the same object as your database context. So lets alter our method to return an instance of AnimalModel, which is an object defined inside of our application.
 
 ![Example 2](../blogContent/fluent-interfaces/example2.JPG)
 
-Now our method has multiple responsibilities it gets the animal context from the database, and it also holds the conversion logic. So we make a private method that converts Context.Animal to AnimalModel. Then we apply it to our first method, and alter the return type, and the name so our code ends up looking like this.
+Now our method has multiple responsibilities it gets the animal context from the database, and it also holds the conversion logic. So we make a private method that converts Context.Animal to AnimalModel. Then we apply it to our first method, and change the name to a more fitting one so our code ends up looking like this.
 
 ![Example 3](../blogContent/fluent-interfaces/example3.JPG)
 
-This is fine, we can do this and we're ticking the best practice boxes, but there are still some potential problems, and things we can make better. First our repository is now holding the logic for our conversion methods. If we use this repository to return different types from out database we could have a whole host of extension methods cluttering our class. So what do we do?
+This is the conventional way to call a method, and this is fine, we can do this and we're ticking the best practice boxes, but there are still some potential problems, and things we can make better. First our repository is now holding the logic for our conversion methods. If we use this repository to return different types from our database we could have a whole host of extension methods cluttering our repository class. So what do we do?
 
 ## Enter extension methods
 
-Lets start by creating a class AnimalExtensions.cs. Then lets define our class as static.
+Lets start by creating a static class AnimalExtensions.cs.
 
 ![Example 4](../blogContent/fluent-interfaces/example4.JPG)
 
-Then lets copy and past our code from our repository into our new AnimalExtensions class and make two changes. Let's change the input parameter from (Context.Animal animal) to (this Context.Animal animal) and make this method static, we could have also done this inside of our repository. These are the key things your need in order to make an extension method, a static class, a static method, and a parameter of (this [the object type you're extending]).
+Then lets copy and past our code from our repository into our new AnimalExtensions class and make two changes. Let's change the input parameter from (Context.Animal animal) to **(this Context.Animal animal)** and make this method static, we could have also done this inside of our repository. These are the key things your need in order to make an extension method, a static class, a static method, and a parameter of (this [the object type you're extending]).
 
 ![Example 5](../blogContent/fluent-interfaces/example5.JPG)
 
 Now we can call our extension method from our repository by using animal.ConvertToAnimalModel(), and we end up with this.
 
-![Example 6](../blogContent/fluent-interfaces/example5.JPG)
+![Example 6](../blogContent/fluent-interfaces/example6.JPG)
 
 And ta-da! We've made an extension method for Context.Animal and we've cleaned up our repository, but there are a couple more things we can do. We're using Async/Await to pull the data from our database, so lets utilize the same logic in our extension method. With a couple more changes we can reduce the lines of code even more. Let's make our extension method async by adding the async keyword, chaining the input parameter to take a Task<Context.Animal> and return a Task<AnimalModel>. Finally lets change our method name to end with async, and await our Task<Context.Animal> parameter.
 
 ![Example 7](../blogContent/fluent-interfaces/example7.JPG)
 
-Now let's change our repository to use our new async extension method, simply by removing the new var and adding .ConvertToAnimalModelAsync (let's also change the method in our repository to reflect that its async).
+Now let's change our repository to use our new async extension method, simply by removing the var and adding .ConvertToAnimalModelAsync (let's also change the method name in our repository to reflect that its async).
 
 ![Example 8](../blogContent/fluent-interfaces/example8.JPG)
 
@@ -68,13 +68,13 @@ Take our previous example
     }
 
 </div>
-This is an example of method chaining. We're taking methods and literally chaining them together. The first two methods are built into linq, we're including data from an additional table with the Include method, we're also getting the first result with the FirstOrDefaultMethod, then we're converting the Context.Animal to an AnimalModel with the extension method we've created. This is also the pattern behind fluent interfaces.
+This is an example of method chaining. We're taking methods and literally chaining them together. The first two methods are built into linq, we're including data from an additional table with Include(), we're also getting the first result with the FirstOrDefault(), then we're converting the Context.Animal to an AnimalModel with the extension method we've created. This is also the pattern behind fluent interfaces.
 
 ### The difference between method chaining and fluent interfaces
 
-Fluent interfaces utilize method chaining the difference comes where method chaining changes the object type we're working with. Like in our example our method is taking a Context.Animal and returning an AnimalModel. Fluent interfaces (I've also heard this called the fluency pattern) returns an object of the same type as the original. Lets see an example.
+Fluent interfaces utilize method chaining, the difference comes where method chaining changes the object type we're working with. Like in our example our method is taking a Context.Animal and returning an AnimalModel. Fluent interfaces (I've also heard this called the fluency pattern) returns an object of the same type as the original. Lets see an example.
 
-Let's say we want our AnimalModel to be Immutable so it cannot be changed directly, but we want to still offer ways to change certain properties. For this example I'll quickly create a new class called ImmutableAnimal and utilize the constructor to set the properties. There are better ways to do this, but for this example its fine.
+Let's say we want our AnimalModel to be Immutable so it cannot be changed directly, but we want to still offer ways to change certain properties. For this example I'll quickly create a new class called ImmutableAnimal and utilize the constructor to set the properties.
 
 ![Example 9](../blogContent/fluent-interfaces/example9.JPG)
 
@@ -104,7 +104,7 @@ Now we're just going to make a method that calls our repository to get our Immut
 
 ![Example 15](../blogContent/fluent-interfaces/example15.JPG)
 
-Let's clean this up by making async versions of our extension methods and reduce these 5 lines of code further.
+Let's clean this up by making async versions of our extension methods and reduce this code block further.
 
 ![Example 16](../blogContent/fluent-interfaces/example16.JPG)
 ![Example 17](../blogContent/fluent-interfaces/example17.JPG)
@@ -119,4 +119,6 @@ We have successfully implemented a fluent interface, our code is clean, the next
 A couple quick notes:
 <br></br>Make sure you understand Async/Await before implementing, for more information on Async/Await see: [Microsoft Async](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 
-To see a working implementation of this code visit my [Github Repo](https://github.com/wbratz/fluent-interfaces-example) (no database needed).
+To see a simplified, working implementation of this code visit my [Github Repo](https://github.com/wbratz/fluent-interfaces-example) (no database needed).
+
+See Martin Fowler's Fluent Interface post [here](https://martinfowler.com/bliki/FluentInterface.html)
