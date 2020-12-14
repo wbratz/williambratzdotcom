@@ -40,6 +40,8 @@
 .blogSummaryTitle {
   width: 100%;
   font-weight: 700;
+  font-size: larger;
+  font-family: Inconsolata;
 }
 
 .blogSummaryContent {
@@ -47,6 +49,7 @@
   width: 100%;
   flex-wrap: nowrap;
   margin-top: 10px;
+  font-family: "Open Sans";
 }
 
 .blogSummaryPhoto {
@@ -63,10 +66,29 @@
 
 .blogPostTitle {
   align-self: center;
+  font-family: Inconsolata;
 }
 
 .blogPostContent {
   justify-content: flex-start;
+  font-family: "Open Sans";
+}
+
+.blogPostContent a {
+  font-family: Inconsolata;
+  text-decoration: underline;
+}
+
+.blogPostContent h1 {
+  font-family: Inconsolata;
+}
+
+.blogPostContent h2 {
+  font-family: Inconsolata;
+}
+
+.blogPostContent h3 {
+  font-family: Inconsolata;
 }
 
 .blogPostContainer {
@@ -81,4 +103,9 @@
     max-width: 400px;
     align-self: flex-start;
   }
+}
+
+.markdown-codeBlock {
+  background-color: darkgray;
+  color: whitesmoke;
 }
