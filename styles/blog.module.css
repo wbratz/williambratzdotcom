@@ -104,8 +104,3 @@
     align-self: flex-start;
   }
 }
-
-.markdown-codeBlock {
-  background-color: darkgray;
-  color: whitesmoke;
-}
