@@ -31,22 +31,22 @@ export default function Resume() {
           <div className={styles.resumeInfo}>APPLICABLE SKILLS</div>
           <div className={styles.resumeInfoContent}>
             <br></br>
-            C#/.NET Development
+            C#/.NET
             <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
             <p>
-              Javascript Development
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              SQL Server Development
+              SQL Server
               <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
-              React JS
+              HTML
+              <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
+            </p>
+            <p>
+              Javascript
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
-              Cloud Development
+              React JS
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
@@ -54,8 +54,8 @@ export default function Resume() {
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
-              HTML
-              <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
+              Cloud Development
+              <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
               Azure
@@ -63,7 +63,7 @@ export default function Resume() {
             </p>
             <p>
               AWS
-              <br></br> &#9733; &#9733; &#9733;
+              <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
           </div>
         </div>
@@ -87,35 +87,53 @@ export default function Resume() {
           <div className={styles.resumeMainContent}>
             Software Engineer II (Full Stack)
             <br></br>2015 - Present
-            <p>
-              Architected and developed, web applications. Utilizing a SQL
-              Server back end, C# (.NET Core) in the middle tier. Javascript
-              (React, Typescript, JQuery), MVC, HTML, CSS for the front end.
-            </p>
-            Hosted monthly department wide SQL Server learning sessions where I
-            would tackle common questions about SQL Server development, and demo
-            sql server query practices.
-            <p>
-              Hosted multiple Lunch and learns about various topics, ranging
-              from SQL Server query tuning to GraphQL.
-            </p>
-            <p>Cloud development using AWS (step functions, lambdas).</p>
+            <ul>
+              <li>
+                Architected and developed, web applications. Utilizing a SQL
+                Server back end, C# (.NET Core) middle tier. Javascript (React,
+                Typescript, JQuery), MVC, HTML, CSS front end.
+              </li>
+              <li>
+                Hosted multiple Lunch and learns about various topics, ranging
+                from SQL Server query tuning to GraphQL.
+              </li>
+              <li>
+                Developed cloud applications using AWS Lambda, Step Functions,
+                and DynamoDb.
+              </li>
+              <li>
+                Obtained multiple company awards for outstanding performance.
+              </li>
+              <li>
+                Active in multiple company development groups tasked with
+                researching and improving company implementation of technology
+                area (Architecture, C#, Front end).
+              </li>
+            </ul>
           </div>
           <div className={styles.resumeMainInfo}>U-Haul</div>
           <div className={styles.resumeMainContent}>
             Software Developer
             <br></br>2014 - 2015
-            <p>
-              Developed back end solutions for custom applications utilizing SQL
-              Server.
-            </p>
-            Tuned, wrote, architected stored procs, emphsis on tuning slow
-            running or legacy code.
-            <p>
-              Cube development utilizing SSAS, tabular and multidimensional.
-            </p>
-            <p></p>
-            ETL utilizing custom inhouse applications as well as SSIS packages.
+            <ul>
+              <li>
+                Developed back end solutions for custom applications utilizing
+                SQL Server.
+              </li>
+              <li>
+                Tuned, wrote, architected stored procs, emphasis on tuning slow
+                running or legacy code.
+              </li>
+              <li>
+                Cube development utilizing SSAS, tabular and multidimensional.
+                ETL utilizing custom in house applications as well as SSIS
+                packages.
+              </li>
+              <li>
+                SQL server admin duties, such as back ups, restores, snapshots,
+                agent jobs.
+              </li>
+            </ul>
           </div>
           <div className={styles.resumeMainHeading}>EDUCATION</div>
           <div className={styles.resumeMainContent}>
