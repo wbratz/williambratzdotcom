@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useState } from "react";
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
+import ReactGA from "react-ga";
 
 export default function Header({ navIsOpen, setNavIsOpen }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -10,6 +11,18 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
     setMobileNavOpen(!mobileNavOpen);
   };
 
+  ReactGA.initialize("UA-184834329-1", {
+    gaOptions: {
+      siteSpeedSampleRate: 100,
+    },
+  });
+
+  const fireEvent = (eventName: string, eventMessage: string) => {
+    ReactGA.event({
+      category: "User",
+      action: eventMessage,
+    });
+  };
   return (
     <>
       <Head>
@@ -21,7 +34,11 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
         <div className={styles.logo}>
           <Link href="/">
             <a>
-              <img src="/headerphoto.jpg" alt="Handsome" />
+              <img
+                src="/headerphoto.jpg"
+                alt="Handsome"
+                onClick={() => fireEvent("", "Handsome man clicked")}
+              />
             </a>
           </Link>
         </div>

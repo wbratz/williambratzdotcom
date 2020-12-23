@@ -1,6 +1,7 @@
 import Header from "./header";
 import styles from "../../styles/Home.module.css";
 import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 
 export default function Layout(props) {
   const [navIsOpen, setNavIsOpen] = useState(false);
@@ -14,6 +15,19 @@ export default function Layout(props) {
       document.getElementById("main").style.marginRight = "0";
     }
   });
+
+  ReactGA.initialize("UA-184834329-1", {
+    gaOptions: {
+      siteSpeedSampleRate: 100,
+    },
+  });
+
+  const fireEvent = (eventName: string, eventMessage: string) => {
+    ReactGA.event({
+      category: "User",
+      action: eventMessage,
+    });
+  };
 
   return (
     <div id="main" className={styles.container}>
@@ -36,7 +50,10 @@ export default function Layout(props) {
       <main className={styles.main}>{props.children}</main>
 
       <footer className={styles.footer}>
-        <a href="https://github.com/wbratz/">
+        <a
+          href="https://github.com/wbratz/"
+          onClick={() => fireEvent("", "Github Link Clicked")}
+        >
           <div className={styles.footerBox}>
             <svg viewBox="0 0 140 140">
               <g fill="#181616">
@@ -55,7 +72,10 @@ export default function Layout(props) {
           </div>
         </a>
         &nbsp; &nbsp;
-        <a href="https://www.linkedin.com/in/williambratz/">
+        <a
+          href="https://www.linkedin.com/in/williambratz/"
+          onClick={() => fireEvent("", "LinkedIN Link Clicked")}
+        >
           <div className={styles.footerBox}>
             <svg viewBox="0 0 140 140">
               <path
