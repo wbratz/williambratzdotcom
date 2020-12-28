@@ -28,6 +28,10 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
       <Head>
         <title>William Bratz dot com</title>
         <link rel="icon" href="/newIcon.ico" />
+        <meta
+          name="description"
+          content="William Bratz dot com, personal website for William Bratz, Software Engineer. Currently hosting a technology blog, but is the home for whatever idea comes to my mind at any given time."
+        ></meta>
       </Head>
 
       <nav className={styles.nav}>
