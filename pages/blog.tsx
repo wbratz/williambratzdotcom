@@ -44,8 +44,8 @@ export async function getStaticProps() {
   const files = fs.readdirSync(`${process.cwd()}/contents`, "utf-8");
 
   const blogs = files
-    .filter((fn) => fn.endsWith(".md"))
-    .map((fn) => {
+    .filter((fn: string) => fn.endsWith(".md"))
+    .map((fn: any) => {
       const path = `${process.cwd()}/contents/${fn}`;
       const rawContent = fs.readFileSync(path, {
         encoding: "utf-8",
@@ -54,6 +54,15 @@ export async function getStaticProps() {
 
       return { ...data, id: uuid() };
     });
+
+  blogs.sort(function (a, b) {
+    var keyA = new Date(a.date),
+      keyB = new Date(b.date);
+
+    if (keyA > keyB) return -1;
+    if (keyA < keyB) return 1;
+    return 0;
+  });
 
   // By returning { props: blogs }, the component
   // will receive `blogs` as a prop at build time

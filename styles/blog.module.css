@@ -4,6 +4,10 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+.tbl table {
+  border: 1px;
+  border-color: black;
+}
 
 .blogContainer a {
   text-decoration: underline;
