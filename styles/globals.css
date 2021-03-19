@@ -28,3 +28,7 @@ li {
     overflow-x: hidden;
   }
 }
+
+section {
+  height: 20vh;
+}

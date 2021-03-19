@@ -4,20 +4,65 @@
   padding: 5px;
 }
 
+.langboxRight {
+  height: 50px;
+  width: 50px;
+  padding: 5px;
+}
+
 .outerContainer {
+  margin: 0;
+  padding: 0;
   max-width: 1500px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: nowrap;
-  align-items: center;
   padding: 5px;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .innerContainer {
   max-width: 1500px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: nowrap;
-  align-items: center;
   padding: 10px;
+  width: 100%;
+}
+
+.parallaxSection {
+  height: 100vh;
+  width: 100vh;
+  padding-top: 50%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.parallaxSection ul {
+  width: 100vh;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: center;
+  align-items: middle;
+  place-items: center;
+}
+
+.parallaxSection li {
+  font-size: 50px;
+}
+
+.parallaxSection span {
+  width: 110px;
+  height: 110px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: black;
+  border-radius: 50%;
 }

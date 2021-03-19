@@ -1,24 +1,77 @@
 import Layout from "../src/components/Layout";
 import styles from "../styles/index.module.css";
 import Icon from "../src/components/svgs/svgWrapper";
+import React, { useEffect } from "react";
 
 export default function Home() {
+
+  const handleScroll = () => {
+    const nameLetters = document.querySelectorAll('.nameLetters');
+    const icons = document.querySelectorAll('.icons');
+
+    var nameIndex = 0, length = nameLetters.length;
+
+    for(nameIndex; nameIndex < length; nameIndex++) {
+
+      var pos = window.pageYOffset * nameLetters[nameIndex].dataset.rate;
+
+      if(nameLetters[nameIndex].dataset.direction === 'vertical')
+      {
+        nameLetters[nameIndex].style.transform = 'translate3d(0px, '+pos+'px, 0px)'
+      } else {
+        nameLetters[nameIndex].style.transform = 'translate3d('+pos+'px, 0px, 0px)'
+      }
+    }
+
+    var iconIndex = 0, length = icons.length;
+
+    for(iconIndex; iconIndex < length; iconIndex++) {
+
+      var pos = window.pageYOffset * icons[iconIndex].dataset.rate;
+
+      icons[iconIndex].style.transform = 'translate3d('+pos+'px, 0px, 0px)'
+    }
+
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  });  
+
   return (
     <Layout>
+      <div className={styles.parallaxSection}>
+        <section>
+          <ul>
+            <li className="nameLetters" data-rate="-2" data-direction="vertical">William </li>
+            <li className="nameLetters" data-rate="-3" data-direction="horizontal">Bratz </li>
+            <li className="nameLetters" data-rate="2.5" data-direction="vertical">dot </li>
+            <li className="nameLetters" data-rate="2.5" data-direction="horizontal">com </li>
+          </ul>
+        </section>
+      </div>
       <div className={styles.outerContainer}>
-        William Bratz dot com
         <div className={styles.innerContainer}>
           <div className={styles.langbox}>
-            <Icon icon="Nextjs" />
+            <div className="icons" data-rate=".9" data-direction="horizontal">
+              <Icon icon="Nextjs" />
+            </div>
           </div>
           <div className={styles.langbox}>
-            <Icon icon="React" color="#61DAFB" />
+            <div className="icons" data-rate=".9" data-direction="horizontal">
+              <Icon icon="React" color="#61DAFB" />
+            </div>
           </div>
           <div className={styles.langbox}>
-            <Icon icon="Typescript" color="#007acc" />
+            <div className="icons" data-rate=".9" data-direction="horizontal">
+              <Icon icon="Typescript" color="#007acc" />
+            </div>
           </div>
-          <div className={styles.langbox}>
-            <svg viewBox="0 0 130 130">
+        </div>
+        <div className={styles.innerContainer}>
+          <div className={styles.langboxRight}>
+            <svg className="icons" data-rate="-.9" data-direction="horizontal" viewBox="0 0 130 130">
               <path
                 fill="#1572B6"
                 d="M18.814 114.123l-10.054-112.771h110.48l-10.064 112.754-45.243 12.543-45.119-12.526z"
@@ -45,10 +98,13 @@ export default function Home() {
               ></path>
             </svg>
           </div>
-          <div className={styles.langbox}>
-            <Icon icon="Heroku" color="#6762A6" />
+          <div className={styles.langboxRight}>
+            <div className="icons" data-rate="-.9" data-direction="horizontal">
+              <Icon icon="Heroku" color="#6762A6" />
+            </div>
           </div>
-          <div className={styles.langbox}>
+          <div className={styles.langboxRight}>
+            <div className="icons" data-rate="-.9" data-direction="horizontal">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="26 -29 256 186.355"
@@ -95,9 +151,12 @@ export default function Home() {
                 />
               </g>
             </svg>
+            </div>
           </div>
         </div>
       </div>
+      <section></section>
+      <h2 className="nameLetters" data-rate="-.6" data-direction="vertical">Built With</h2>
     </Layout>
   );
 }
