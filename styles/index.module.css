@@ -66,3 +66,7 @@
   background: black;
   border-radius: 50%;
 }
+
+.nameLetters {
+  font-size: 100pt;
+}
