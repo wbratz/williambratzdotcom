@@ -10,19 +10,31 @@ export default function Home() {
     var index = 0,
       length = scroll.length;
 
-    for (index; index < length; index++) {
-      var pos = window.pageYOffset * scroll[index].dataset.rate;
+    for (const el of scroll) {
+      var pos = window.pageYOffset * el.dataset.rate;
 
-      if (scroll[index] instanceof HTMLElement) {
-        if (scroll[index].dataset.direction === "vertical") {
-          scroll[index].style.transform =
-            "translate3d(0px, " + pos + "px, 0px)";
+      if (el instanceof HTMLElement) {
+        if (el.dataset.direction === "vertical") {
+          el.style.transform = "translate3d(0px, " + pos + "px, 0px)";
         } else {
-          scroll[index].style.transform =
-            "translate3d(" + pos + "px, 0px, 0px)";
+          el.style.transform = "translate3d(" + pos + "px, 0px, 0px)";
         }
       }
     }
+
+    // for (index; index < length; index++) {
+    //   var pos = window.pageYOffset * scroll[index].dataset.rate;
+
+    //   if (scroll[index] instanceof HTMLElement) {
+    //   if (scroll[index].dataset.direction === "vertical") {
+    //     scroll[index].style.transform =
+    //       "translate3d(0px, " + pos + "px, 0px)";
+    //   } else {
+    //     scroll[index].style.transform =
+    //       "translate3d(" + pos + "px, 0px, 0px)";
+    //   }
+    // }
+    // }
   };
 
   useEffect(() => {
