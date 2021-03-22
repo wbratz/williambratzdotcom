@@ -7,36 +7,37 @@ export default function Home() {
   const handleScroll = () => {
     const scroll = document.querySelectorAll(".scroll");
 
-    var index = 0,
-      length = scroll.length;
-
     for (const el of scroll) {
       if (el instanceof HTMLElement) {
         var rateAmount: number = (el.dataset.rate as unknown) as number;
+        var reversePoint: number = (el.dataset.reversepos as unknown) as number;
 
         var pos = window.pageYOffset * rateAmount;
 
         if (el.dataset.direction === "vertical") {
           el.style.transform = "translate3d(0px, " + pos + "px, 0px)";
         } else {
-          el.style.transform = "translate3d(" + pos + "px, 0px, 0px)";
+          if (pos >= reversePoint && reversePoint > 0){
+            var newZero = (window.pageYOffset * -(rateAmount)) + pos + reversePoint
+            var difference = pos - newZero
+            
+            var newPos = newZero - difference
+
+            el.style.transform = "translate3d(" + newPos + "px, 0px, 0px)";
+          }
+          else if(pos <= reversePoint && reversePoint < 0) {
+
+            var newZero = (window.pageYOffset * -(rateAmount)) - -(reversePoint)
+            var newPos = newZero - -(reversePoint)
+
+            el.style.transform = "translate3d(" + newPos + "px, 0px, 0px)";
+          }
+          else{
+            el.style.transform = "translate3d(" + pos + "px, 0px, 0px)";
+          }
         }
       }
     }
-
-    // for (index; index < length; index++) {
-    //   var pos = window.pageYOffset * scroll[index].dataset.rate;
-
-    //   if (scroll[index] instanceof HTMLElement) {
-    //   if (scroll[index].dataset.direction === "vertical") {
-    //     scroll[index].style.transform =
-    //       "translate3d(0px, " + pos + "px, 0px)";
-    //   } else {
-    //     scroll[index].style.transform =
-    //       "translate3d(" + pos + "px, 0px, 0px)";
-    //   }
-    // }
-    // }
   };
 
   useEffect(() => {
@@ -49,16 +50,16 @@ export default function Home() {
       <div className={styles.parallaxSection}>
         <section>
           <ul>
-            <li className="scroll" data-rate="-2" data-direction="vertical">
+            <li className="scroll" data-rate="-4" data-direction="vertical">
               William{" "}
             </li>
             <li className="scroll" data-rate="-2" data-direction="horizontal">
               Bratz{" "}
             </li>
-            <li className="scroll" data-rate="2.5" data-direction="vertical">
+            <li className="scroll" data-rate="2" data-direction="vertical">
               dot{" "}
             </li>
-            <li className="scroll" data-rate="2" data-direction="horizontal">
+            <li className="scroll" data-rate="4" data-direction="horizontal">
               com{" "}
             </li>
           </ul>
@@ -67,24 +68,24 @@ export default function Home() {
       <div className={styles.outerContainer}>
         <div className={styles.innerContainer}>
           <div className={styles.langbox}>
-            <div className="scroll" data-rate=".9" data-direction="horizontal">
+            <div className="scroll" data-rate=".9" data-direction="horizontal" data-reversepos="395">
               <Icon icon="Nextjs" />
             </div>
           </div>
           <div className={styles.langbox}>
-            <div className="scroll" data-rate=".9" data-direction="horizontal">
+            <div className="scroll" data-rate=".9" data-direction="horizontal" data-reversepos="395">
               <Icon icon="React" color="#61DAFB" />
             </div>
           </div>
           <div className={styles.langbox}>
-            <div className="scroll" data-rate=".9" data-direction="horizontal">
+            <div className="scroll" data-rate=".9" data-direction="horizontal" data-reversepos="395">
               <Icon icon="Typescript" color="#007acc" />
             </div>
           </div>
         </div>
         <div className={styles.innerContainer}>
           <div className={styles.langboxRight}>
-            <div className="scroll" data-rate="-.9" data-direction="horizontal">
+            <div className="scroll" data-rate="-.9" data-direction="horizontal" data-reversepos="-395">
               <svg viewBox="0 0 130 130">
                 <path
                   fill="#1572B6"
@@ -114,12 +115,12 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.langboxRight}>
-            <div className="scroll" data-rate="-.9" data-direction="horizontal">
+            <div className="scroll" data-rate="-.9" data-direction="horizontal" data-reversepos="-395">
               <Icon icon="Heroku" color="#6762A6" />
             </div>
           </div>
           <div className={styles.langboxRight}>
-            <div className="scroll" data-rate="-.9" data-direction="horizontal">
+            <div className="scroll" data-rate="-.9" data-direction="horizontal" data-reversepos="-395">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="26 -29 256 186.355"
