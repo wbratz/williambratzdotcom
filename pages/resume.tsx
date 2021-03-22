@@ -152,6 +152,11 @@ export default function Resume() {
             <br></br>
             2009 - 2011
           </div>
+          <div className={styles.resumeMainHeading}>
+            OPEN SOURCE CONTRIBUTIONS
+          </div>
+          <div className={styles.resumeMainContent}>RestSharp</div>
+          <div className={styles.resumeMainContent}>NUnit</div>
           <div className={styles.resumeMainHeading}>PERSONAL PROJECTS</div>
           <div className={styles.resumeMainContent}>
             <b>

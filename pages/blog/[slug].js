@@ -47,7 +47,7 @@ export async function getStaticProps(context) {
     .use(highlight) // highlight code block
     .use(html)
     .use(images)
-    .process(content); // pass content to process
+    .process(content);
 
   return {
     props: {
