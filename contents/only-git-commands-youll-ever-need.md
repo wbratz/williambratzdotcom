@@ -27,11 +27,11 @@ Every single git GUI is different, the buttons are in different places, the way 
 
 ### The command line is actually easier
 
-Now we're getting to the meat of things, the reason all these git GUIs exist is to make the git experience more visually pleasing, not really to make it easier. People shy away from learning commands and having to memorize things when there is a way to do it with just a button, and looking at the git docs I see why. I mean....
+Now we're getting to the meat of things, the reason all these git GUIs exist is to make the git experience more visually pleasing, not really to make it easier. People shy away from learning commands and having to memorize things when there is a way to do it with just a button, and looking at the git docs I see why....
 
 ![Git branch Screenshot](../blogContent/git-commands/git-branch-ss.png)
 
-All that for the branch command? in all the years of using git I've used only used branch with one option... I think. In the remainder of this post I'm going to give you the only git commands you'll need to do 99.9 % of your tasks and just a couple to be aware of. These once you know these I guarantee your interactions with git will be easier, less confusing, and more enjoyable.
+All that for the branch command? in all the years of using git I've used only used branch with one option, I think. In the remainder of this post I'm going to give you the only git commands you'll need to do 99.9 % of your tasks and just a couple to be aware of. These once you know these I guarantee your interactions with git will be easier, less confusing, and more enjoyable.
 
 ## The only 8 git commands you'll ever need
 
@@ -66,11 +66,11 @@ So let's start at the beginning, chances are you'll be working with an existing 
 
 <div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
 
-    git clone
+    git clone [address to repo]
 
 </div>
 
-that's it, the repo is now downloaded on your local machine, and you can browse to it with your preferred code editor.
+make sure you leave out the brackets, and that's it, the repo is now downloaded on your local machine, and you can browse to it with your preferred code editor.
 
 ### git checkout -b
 
