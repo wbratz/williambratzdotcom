@@ -11,9 +11,11 @@ export default function Home() {
       length = scroll.length;
 
     for (const el of scroll) {
-      var pos = window.pageYOffset * el.dataset.rate;
-
       if (el instanceof HTMLElement) {
+        var rateAmount: number = (el.dataset.rate as unknown) as number;
+
+        var pos = window.pageYOffset * rateAmount;
+
         if (el.dataset.direction === "vertical") {
           el.style.transform = "translate3d(0px, " + pos + "px, 0px)";
         } else {
