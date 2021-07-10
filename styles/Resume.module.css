@@ -1,5 +1,6 @@
 .resumeContainer {
   max-width: 1500px;
+  min-width: 1020px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -44,14 +45,15 @@
 }
 
 .resumeSidebar {
-  width: 20%;
-  padding: 0 0.5rem;
+  padding-left: 0px;
   padding-bottom: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-color: goldenrod;
   align-self: stretch;
+  flex-shrink: 0;
+  flex-grow: 1;
 }
 
 .resumeInfo {
@@ -109,7 +111,7 @@
 
 .resumeMainInfo {
   margin-left: 0%;
-  margin-top: -20px;
+  margin-top: -10px;
   padding-top: 0px;
   padding: 2%;
   padding-bottom: 0px;
@@ -131,6 +133,7 @@
 
 .resumeMainContent li {
   padding: 2px;
+  list-style: disc;
 }
 
 .resumeMainContent a {
