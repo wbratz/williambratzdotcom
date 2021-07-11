@@ -51,18 +51,6 @@ export default function Resume() {
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
-              Docker
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              TeamCity
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Octopus Deploy
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
               Azure DevOps
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
@@ -76,6 +64,18 @@ export default function Resume() {
             </p>
             <p>
               AWS
+              <br></br> &#9733; &#9733; &#9733; &#9733;
+            </p>
+            <p>
+              Docker
+              <br></br> &#9733; &#9733; &#9733; &#9733;
+            </p>
+            <p>
+              TeamCity
+              <br></br> &#9733; &#9733; &#9733; &#9733;
+            </p>
+            <p>
+              Octopus Deploy
               <br></br> &#9733; &#9733; &#9733; &#9733;
             </p>
             <p>
