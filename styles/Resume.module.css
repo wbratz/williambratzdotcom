@@ -24,6 +24,12 @@
   align-content: flex-start;
 }
 
+.resumePdf {
+  display: block;
+  text-align: right;
+  width: 100%;
+}
+
 .resumeTitle {
   display: flex;
   align-content: flex-start;

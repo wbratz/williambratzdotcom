@@ -7,6 +7,13 @@ export default function Resume() {
     <Layout>
       <div className={styles.resumeContainer}>
         <div className={styles.resumeLogo}>
+          <div className={styles.resumePdf}>
+            <Link href="/williambratzResume.pdf">
+              <a>
+                <img src="https://img.icons8.com/color/48/000000/pdf.png" />
+              </a>
+            </Link>
+          </div>
           <div className={styles.resumeName}>
             <h1>William Bratz</h1>
           </div>
