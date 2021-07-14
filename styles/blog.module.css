@@ -104,3 +104,22 @@
     align-self: flex-start;
   }
 }
+
+@media screen and (max-width: 1001px) {
+  .blogPostContainer {
+    display: none !important;
+  }
+
+  .blogPostOops {
+    max-width: 1000px;
+    align-self: center;
+    font-family: Inconsolata;
+    min-width: 0;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .blogPostOops {
+    display: none !important;
+  }
+}

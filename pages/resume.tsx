@@ -5,6 +5,26 @@ import styles from "../styles/Resume.module.css";
 export default function Resume() {
   return (
     <Layout>
+      <div className={styles.resumeOops}>
+        <div className={styles.resumeLogo}>
+          <h4>Sorry, this page is not yet mobile friendly.</h4>
+          <h5>One day it will be, just not TO-DAY.</h5>
+          <h5>
+            You can download my resume{" "}
+            <Link href="/WilliamBratz-resume.pdf">
+              <a>
+                <u>here</u>{" "}
+              </a>
+            </Link>
+            or you can visit my{" "}
+            <Link href="http://www.linkedin.com/in/williambratz">
+              <a>
+                <u>LinkedIn </u>
+              </a>
+            </Link>
+          </h5>
+        </div>
+      </div>
       <div className={styles.resumeContainer}>
         <div className={styles.resumeLogo}>
           <div className={styles.resumePdf}>
