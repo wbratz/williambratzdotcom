@@ -8,7 +8,7 @@ export default function Resume() {
       <div className={styles.resumeContainer}>
         <div className={styles.resumeLogo}>
           <div className={styles.resumePdf}>
-            <Link href="/williambratzResume.pdf">
+            <Link href="/WilliamBratz-resume.pdf">
               <a>
                 <img src="https://img.icons8.com/color/48/000000/pdf.png" />
               </a>
@@ -18,81 +18,14 @@ export default function Resume() {
             <h1>William Bratz</h1>
           </div>
           <div className={styles.resumeTitle}>
-            <h2>Full Stack Developer</h2>
-          </div>
-        </div>
-        <div className={styles.resumeSidebar}>
-          <div className={styles.resumeInfo}>CONTACT INFO</div>
-          <div className={styles.resumeSubInfo}>
-            <b>ADDRESS</b>
-          </div>
-          <div className={styles.resumeInfoContent}>
-            107 Connie Drive
-            <br></br>
-            Hendersonville TN, 37075
-          </div>
-          <div className={styles.resumeSubInfo}>
-            <b>PHONE</b>
-          </div>
-          <div className={styles.resumeInfoContent}>(615) 210-9939</div>
-          <div className={styles.resumeSubInfo}>
-            <b>EMAIL</b>
-          </div>
-          <div className={styles.resumeInfoContent}>
-            WilliamBratz615@gmail.com
-          </div>
-          <div className={styles.resumeInfo}>APPLICABLE SKILLS</div>
-          <div className={styles.resumeInfoContent}>
-            <br></br>
-            C#/.NET
-            <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
             <p>
-              React JS
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Azure DevOps
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Kubernetes
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Azure
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              AWS
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Docker
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              TeamCity
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Octopus Deploy
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              SQL Server
-              <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              Javascript
-              <br></br> &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              HTML
-              <br></br> &#9733; &#9733; &#9733; &#9733; &#9733;
-            </p>
-            <p>
-              CSS
-              <br></br> &#9733; &#9733; &#9733; &#9733;
+              <Link href="mailto:WilliamBratz615@gmail.com">
+                <a>Email</a>
+              </Link>{" "}
+              |{" "}
+              <Link href="http://www.linkedin.com/in/williambratz">
+                <a>LinkedIn</a>
+              </Link>
             </p>
           </div>
         </div>
@@ -109,60 +42,250 @@ export default function Resume() {
             passions.
             <p></p> Thank you and I look forward to working with you soon!
           </div>
-          <div className={styles.resumeMainHeading}>EMPLOYMENT HISTORY</div>
-          <div className={styles.resumeMainInfo}>Carvana</div>
+          <div className={styles.resumeMainHeading}>
+            PROFESSIONAL EXPERIENCE
+          </div>
+          <div className={styles.resumeMainInfo}>
+            <b>Carvana</b>
+          </div>
           <div className={styles.resumeMainContent}>
             Software Engineer II
             <br></br>2020 - Present
+            <br></br>
+            <i>
+              Carvana LLC., Provides customers a unique car buying experience
+              completely online and is the second largest used car retailer in
+              the US.
+            </i>
+            <p>
+              <u>UW Service</u>: Microservice that handles customer purchase
+              events. Receives more than 130,000 requests/hr.
+            </p>
             <ul>
-              <p>
-                At Carvana, I work with microservices deployed to Azure service
-                fabric and kubernetes. One of my primary responsibilities is to
-                migrate these microservices from service fabric to kubernetes.
-                Some of my other responsibilities include:
-              </p>
               <li>
-                Develop, and deploy scalable microservices that receive over
-                100,000 requests an hour.
+                Added additional endpoints and modules to extend functionality.
               </li>
-              <li>Utilize splunk to troubleshoot/monitor services.</li>
-              <li>RESTful API development using .net core.</li>
-              <li>Maintaining unit test coverage using nUnit/xUnit.</li>
-              <li>Conversion of .net framework applications to .net core.</li>
-              <li>Continuous Delivery (CD) using Azure DevOps</li>
-              <li>Review pull requests for teammates.</li>
+              <li>Wrote unit tests to maintain code coverage.</li>
+              <li>
+                Converted service from .NET Framework 4.6.2 to .NET Core 3.1.
+              </li>
+              <li>
+                Converted from Azure Service Fabric to Azure Kubernetes Service.
+              </li>
+              <li>Responsible for CICD using Azure DevOps</li>
+              <li>
+                Handled deployments, testing, troubleshooting in all
+                environments (dev, test, uat, production).
+              </li>
+              <li>Encrypting connection strings to sensitive services</li>
+              <li>
+                Technologies used: .NET Core, nUnit, Swagger, Kubernetes, Azure,
+                Serilog, Splunk, SQL Server, Git, Azure Service Bus, Docker.
+              </li>
+            </ul>
+            <p>
+              <u>VW Service</u>: Microservice responsible for handling
+              verification related tasks by listening to message queues. When a
+              message is received the service then logs information, transforms
+              data, and starts processes specific to the received message type.
+            </p>
+            <ul>
+              <li>
+                Added additional modules and functionality including message
+                queue listeners, and endpoints.
+              </li>
+              <li>
+                Converted from Azure Service Fabric to Azure Kubernetes Service.
+              </li>
+              <li>
+                Handled deployments, testing, troubleshooting in all
+                environments (dev, test, uat, production).
+              </li>
+              <li>Wrote unit tests to maintain code coverage.</li>
+              <li>Responsible for CICD using Azure DevOps</li>
+              <li>Encrypting connection strings to sensitive services</li>
+              <li>
+                Technologies used: .NET Core, xUnit, Swagger, Kubernetes, Azure,
+                CosmosDB, Serilog, Splunk, Azure SQL, Git, Azure Service Bus,
+                Docker.
+              </li>
+            </ul>
+            <p>
+              <u>Identity Verification</u>: Microservice responsible for
+              identity verification. This application works primarily with 3rd
+              party APIs to verify customer identity.
+            </p>
+            <ul>
+              <li>Added additional modules and functionality.</li>
+              <li>Wrote unit tests to maintain code coverage.</li>
+              <li>
+                Converted from Azure Service Fabric to Azure Kubernetes Service.
+              </li>
+              <li>Responsible for CICD using Azure DevOps</li>
+              <li>
+                Handled deployments, testing, troubleshooting in all
+                environments (dev, test, uat, production).
+              </li>
+              <li>
+                Added, and set up retrieval of sensitive 3rd party credentials
+                using Azure Key Vault.
+              </li>
+              <li>
+                Technologies used: .NET Core, xUnit, Swagger, Kubernetes, Azure,
+                Serilog, Splunk, Azure SQL, Git, Docker.
+              </li>
             </ul>
           </div>
-          <div className={styles.resumeMainInfo}>STR</div>
+          <div className={styles.resumeMainInfo}>
+            <b>Sunny's Light</b>
+          </div>
+          <div className={styles.resumeMainContent}>
+            Software Engineer
+            <br></br>2019 - Present
+            <br></br>
+            <i>
+              Nonprofit providing financial support to families who have lost a
+              child through stillbirth.
+            </i>
+            <p>
+              <u>SunnysLight.org</u>: Web application home page for the Sunny’s
+              Light non-profit. The web application provides information on the
+              organization, ways to donate, and information to receive support.
+            </p>
+            <ul>
+              <li>
+                Designed, developed, deployed, and maintained Web application
+                that gives information on the nonprofit and allows users to
+                donate.
+              </li>
+              <li>
+                Utilized React to build a responsive modern web app utilizing
+                components, hooks, modals, toast messages.
+              </li>
+              <li>
+                Developed custom stripe payment integration providing a seamless
+                and secure donation process.
+              </li>
+              <li>
+                Developed 3rd party API to handle stripe payment processing,
+                receipt generation, and user logging.
+              </li>
+              <li>
+                Integrated Google Analytics to monitor performance, and user
+                patterns to make informed future decisions.
+              </li>
+              <li>Containerized in Docker.</li>
+              <li>Managed Github repository, with stories and backlog.</li>
+              <li>
+                Handle 90-day certificate generation with Certbot for https.
+              </li>
+              <li>
+                Handle setup deployment and monitoring of web app through Azure
+                App Service.
+              </li>
+              <li>
+                Technologies Used: React, Azure App Services, Github, Azure
+                DevOps, C#, Docker, Azure SQL .NET Core, React-GA, React
+                Parallax, React Bootstrap, Docker.
+              </li>
+            </ul>
+          </div>
+          <div className={styles.resumeMainInfo}>
+            <b>CoStar Group</b>
+          </div>
           <div className={styles.resumeMainContent}>
             Software Engineer II (Full Stack)
             <br></br>2015 - 2020
+            <br></br>
+            <i>
+              CoStar Group is the leading provider of analytics for the
+              commercial real estate and multifamily industries, as well as
+              benchmarking data for the global hospitality industry. Their
+              leading brands include Apartments.com and Loopnet.com.
+            </i>
+            <p>
+              <u>CoStar Suite</u>: Costar’s main product, providing analytics
+              and benchmarking data in the form of maps, charts, graphs, and
+              reports to over 200,000 professionals performing over 1 million
+              searches per day.
+            </p>
             <ul>
-              <p>
-                At STR my primary role was to architect and develop web
-                applications utilizing Javascript (React, Typescript), C# (.NET
-                Core), and SQL Server or DynamoDB. Outside of my main job I also
-                took on additional responsibilities such as:
-              </p>
-              <li>Team Lead for "Instant Insights Project".</li>
               <li>
-                Developing cloud applications using AWS Lambda, Step Functions,
-                and DynamoDb.
+                Part of a 3-person team collaborating with frontend teams to
+                implement integration of STR’s global, hospitality, analytics,
+                and benchmarking data into CoStar Suite.
               </li>
               <li>
-                Hosting multiple Lunch and learns for the development
-                organization.
+                Developed report generation platform using AWS Lambda and AWS
+                Step Functions.
               </li>
               <li>
-                Taking part in multiple company development groups tasked with
-                researching and improving company implementation of technology
-                area (Architecture, C#, Front end).
+                Developed multiple modules for translation and currency
+                conversion utilizing factory, strategy, and command design
+                patterns.
               </li>
               <li>
-                I also obtained multiple company awards for outstanding
-                performance.
+                Integrated new benchmarking and analytic data into existing
+                tables then exposed data through entity-based endpoints to serve
+                front end needs.
+              </li>
+              <li>
+                Technologies used: .NET Core, SQL Server, Microsoft TFS, AWS,
+                DynamoDb
               </li>
             </ul>
+            <p>
+              <u>Instant Insights</u>: Provide hospitality analytic data to
+              hotel managers who are responsible for more than a single hotel.
+            </p>
+            <ul>
+              <li>Tech Lead for project.</li>
+              <li>
+                Designed and developed a microservice architecture using REST
+                APIs in .net core to calculate and serve data based on user
+                selections, as input by our front end React website.
+              </li>
+              <li>
+                Broke apart monolithic services and combined multiple related
+                services into a series of microservices that can be reused
+                throughout the organization.
+              </li>
+              <li>
+                Developed front end components including drop downs, modals,
+                forms, menus, graphs, charts and tables with variable columns
+                and rows.
+              </li>
+              <li>
+                Technologies used: React, Javascript, Typescript, Redux, Chart
+                JS, Swagger. Net Core, Git.
+              </li>
+            </ul>
+            <p>
+              <u>OTHER ACTIVITIES</u>
+            </p>
+            <ul>
+              <li>
+                Developed STR central landing page populated with user specific
+                apps using React, .NET Core.
+              </li>
+              <li>
+                Developed various charts and components to be used across
+                multiple applications using Chart JS and React.
+              </li>
+              <li>Hosted .Net Core REST API development Lunch and Learn.</li>
+              <li>Hosted SQL Server Lunch and Learns on various topics.</li>
+            </ul>
+          </div>
+          <div className={styles.resumeMainHeading}>TECHNICAL SKILLS</div>
+          <div className={styles.resumeMainContent}>
+            <u>Platforms</u>: Windows, Ubuntu, Mac OS.
+            <br></br>
+            <u>Software</u>: Visual Studio, VS Code, Azure.
+            <br></br>
+            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python.
+            <br></br>
+            <u>Technologies</u>: .NET Core, .NET Framework, React, SQL Server.
+            <br></br>
           </div>
           <div className={styles.resumeMainHeading}>EDUCATION</div>
           <div className={styles.resumeMainContent}>
