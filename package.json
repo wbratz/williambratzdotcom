@@ -9,23 +9,23 @@
   },
   "dependencies": {
     "next": "10.0.2",
-    "prettier": "^2.2.0",
+    "prettier": "^2.3.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-ga": "^3.3.0",
-    "remark-grid-tables": "^2.1.1"
+    "remark-grid-tables": "^2.1.2"
   },
   "devDependencies": {
     "@types/gtag.js": "0.0.3",
-    "@types/node": "^14.14.8",
-    "@types/react": "^16.9.56",
-    "gray-matter": "^4.0.2",
+    "@types/node": "^14.17.5",
+    "@types/react": "^16.14.11",
+    "gray-matter": "^4.0.3",
     "remark-highlight.js": "^6.0.0",
     "remark-html": "^13.0.1",
     "remark-images": "^2.0.0",
     "remark-parse": "^9.0.0",
-    "typescript": "^4.0.5",
-    "unified": "^9.2.0",
-    "uuid": "^8.3.1"
+    "typescript": "^4.3.5",
+    "unified": "^9.2.1",
+    "uuid": "^8.3.2"
   }
 }

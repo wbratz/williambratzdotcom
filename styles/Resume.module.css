@@ -150,3 +150,26 @@
 .resumeMainContent a:hover {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1001px) {
+  .resumeContainer {
+    display: none !important;
+  }
+
+  .resumeOops {
+    max-width: 1002px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    outline: 1px solid lightgray;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .resumeOops {
+    display: none !important;
+  }
+}
