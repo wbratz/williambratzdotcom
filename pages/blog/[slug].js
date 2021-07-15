@@ -5,10 +5,6 @@ import styles from "../../styles/blog.module.css";
 function BlogPostPage(props) {
   return (
     <Layout>
-      <div className={styles.blogPostOops}>
-        <h3>Sorry this page is not mobile friendly yet.</h3>
-        <h4>One day it will be, just not TO-DAY.</h4>
-      </div>
       <div className={styles.blogPostContainer}>
         <div className={styles.blogPostBanner}>
           <img src={props.blog.banner} />
