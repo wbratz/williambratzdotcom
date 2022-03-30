@@ -74,7 +74,7 @@ make sure you leave out the brackets, and that's it, the repo is now downloaded 
 
 ### git checkout -b
 
-We've cloned a repo, and are ready to make some changes! Well we want to make a branch, a branch is how you make code changes, test them, and not mess up anyone elses work (or lose your own). It's a best practice to get used to branch making a branch BEFORE you make any changes, but if you forget, don't worry using git checkout -b will move any uncommitted changes to the new branch. Remember to name your branch something useful, you or someone else might have to come back to it, having a descriptive title can save you from having to look at the code.
+We've cloned a repo, and are ready to make some changes! We'll want to make a branch first, a branch is how you make code changes, test them, and not mess up anyone elses work (or lose your own). It's a best practice to make a branch BEFORE you make any changes, but if you forget, don't worry using git checkout -b will move any uncommitted changes to the new branch. Remember to name your branch something useful, you or someone else might have to come back to it, having a descriptive title can save you from having to look at the code.
 
 <div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
 
@@ -84,7 +84,7 @@ We've cloned a repo, and are ready to make some changes! Well we want to make a 
 
 ### git add .
 
-Our code is branched, we've made some changes. Now we add the changes with git add. The add command has a ton of options and there is lots you can do with it, but if you use git add . (with the period) it will add all the changes you've made.
+Our code is branched, we've made some changes. Now we add the changes with git add. The add command has a ton of options and there is lots you can do with it, but if you use git add . (with the period) it will add all the changes you've made. The downfall of using git add . is that you can add unnecessary files to your repo. Make sure you have an appropriate .gitignore file before using git add . you can find a collection of .gitignore templates _[here](https://github.com/github/gitignore)_
 
 <div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
 
