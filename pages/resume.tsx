@@ -58,81 +58,107 @@ export default function Resume() {
               the US.
             </i>
             <p>
-              <u>UW Service</u>: Microservice that handles customer purchase
-              events. Receives more than 130,000 requests/hr.
+              <b>Summary</b>:{" "}
+              <i>
+                Engineer within the Verifications platform, responsibilities
+                include research and requirement gathering, architecting
+                solutions for projects within our domain and spanning multiple
+                teams, implementation, testing, documentation, releasing through
+                multiple environments into production, post production support
+                and monitoring. Utilizing microservice architecture with a
+                nationwide distributed system in Azure spanning three regions.
+                Our general tech stack is Azure Kubernetes, Azure SQL, CosmosDB,
+                Azure service bus, Kafka, .net core.
+              </i>
+            </p>
+            <p>
+              <u>Red to Green (R2G)</u>: Top company objective spanning multiple
+              teams with the goal of converting red customers (customer that
+              initiated the car buying process) to green (a customer who has
+              completed the process) by utilizing automation to satisfy
+              requirements. Saving 38,000 hours of customer service
+              representative time per year. Additionally increased overall sales
+              by an estimated 5% equating to $230,000,000 in additional revenue
+              per year.
             </p>
             <ul>
               <li>
-                Added additional endpoints and modules to extend functionality.
-              </li>
-              <li>Wrote unit tests to maintain code coverage.</li>
-              <li>
-                Converted service from .NET Framework 4.6.2 to .NET Core 3.1.
+                Implemented microservice responsible for handling coordination
+                of multi step operations related to the verification process.
               </li>
               <li>
-                Converted from Azure Service Fabric to Azure Kubernetes Service.
+                Collaborated across multiple teams to coordinate deployments,
+                features, and design solutions.
               </li>
-              <li>Responsible for CICD using Azure DevOps</li>
               <li>
-                Handled deployments, testing, troubleshooting in all
-                environments (dev, test, uat, production).
+                Developed fault tolerant solutions for handling multi step
+                executions.
               </li>
-              <li>Encrypting connection strings to sensitive services</li>
               <li>
-                Technologies used: .NET Core, nUnit, Swagger, Kubernetes, Azure,
-                Serilog, Splunk, SQL Server, Git, Azure Service Bus, Docker.
+                Developed solutions to maximize code reuse and enforce standards
+                in code.
               </li>
+              <li>
+                Implemented structured logging, into splunk with serilog,
+                utilizing correlation Ids to track calls across multiple systems
+                and context to enrich logs with useful information.
+              </li>
+              <li>
+                Migrated microservice to Azure Kubernetes utilizing helm to
+                control t-shirt size and min/max replicas and autoscaling, a
+                team first.
+              </li>
+              <li>Created technical documentation.</li>
             </ul>
             <p>
-              <u>VW Service</u>: Microservice responsible for handling
-              verification related tasks by listening to message queues. When a
-              message is received the service then logs information, transforms
-              data, and starts processes specific to the received message type.
+              <u>CoBuyer</u>: Top company initiative to re-architect existing
+              applications to allow customers to buy a car using a co buyer.
+              Increasing sales by 7% and $613,000,000 in additional annual
+              revenue.
             </p>
             <ul>
               <li>
-                Added additional modules and functionality including message
-                queue listeners, and endpoints.
+                Researched and documented existing workflow spanning multiple
+                services.
+              </li>
+              <li>Made design recommendations based on research.</li>
+              <li>
+                Assisted more junior developers in the ideation process and
+                implementation.
               </li>
               <li>
-                Converted from Azure Service Fabric to Azure Kubernetes Service.
+                Hosted “how we work” sessions to get unfamiliar developers more
+                familiar with the process and dependencies.
               </li>
               <li>
-                Handled deployments, testing, troubleshooting in all
-                environments (dev, test, uat, production).
+                Implemented design across multiple services within our domain.
               </li>
-              <li>Wrote unit tests to maintain code coverage.</li>
-              <li>Responsible for CICD using Azure DevOps</li>
-              <li>Encrypting connection strings to sensitive services</li>
-              <li>
-                Technologies used: .NET Core, xUnit, Swagger, Kubernetes, Azure,
-                CosmosDB, Serilog, Splunk, Azure SQL, Git, Azure Service Bus,
-                Docker.
-              </li>
+              <li>Updated technical documentation.</li>
+              <li>Wrote unit tests to provide coverage for new code.</li>
             </ul>
             <p>
-              <u>Identity Verification</u>: Microservice responsible for
-              identity verification. This application works primarily with 3rd
-              party APIs to verify customer identity.
+              <u>Deadline Approaching</u>: Automation of customer notification
+              that the deadline to supply documentation is less than 4 hours
+              away. The goal of this project was to minimize customer service
+              representative calls to customers to remind them to supply
+              documentation. Automating the process, saving the company
+              $5,000,000 in man-hours a year.
             </p>
             <ul>
-              <li>Added additional modules and functionality.</li>
-              <li>Wrote unit tests to maintain code coverage.</li>
               <li>
-                Converted from Azure Service Fabric to Azure Kubernetes Service.
-              </li>
-              <li>Responsible for CICD using Azure DevOps</li>
-              <li>
-                Handled deployments, testing, troubleshooting in all
-                environments (dev, test, uat, production).
+                Researched and documented current state and dependencies to
+                understand existing workflow.
               </li>
               <li>
-                Added, and set up retrieval of sensitive 3rd party credentials
-                using Azure Key Vault.
+                Architected solution to be integrated into multiple
+                microservices within our domain.
               </li>
               <li>
-                Technologies used: .NET Core, xUnit, Swagger, Kubernetes, Azure,
-                Serilog, Splunk, Azure SQL, Git, Docker.
+                Collaborated with business partners and cross team engineers on
+                design decisions.
+              </li>
+              <li>
+                Tracked metrics to fine tune logic and increase cost savings.
               </li>
             </ul>
           </div>
@@ -174,15 +200,6 @@ export default function Resume() {
                 Integrated Google Analytics to monitor performance, and user
                 patterns to make informed future decisions.
               </li>
-              <li>Containerized in Docker.</li>
-              <li>Managed Github repository, with stories and backlog.</li>
-              <li>
-                Handle 90-day certificate generation with Certbot for https.
-              </li>
-              <li>
-                Handle setup deployment and monitoring of web app through Azure
-                App Service.
-              </li>
               <li>
                 Technologies Used: React, Azure App Services, Github, Azure
                 DevOps, C#, Docker, Azure SQL .NET Core, React-GA, React
@@ -194,20 +211,24 @@ export default function Resume() {
             <b>CoStar Group</b>
           </div>
           <div className={styles.resumeMainContent}>
-            Software Engineer II (Full Stack)
+            Software Engineer
             <br></br>2015 - 2020
             <br></br>
             <i>
               CoStar Group is the leading provider of analytics for the
               commercial real estate and multifamily industries, as well as
-              benchmarking data for the global hospitality industry. Their
-              leading brands include Apartments.com and Loopnet.com.
+              benchmarking data for the global hospitality industry. Originally
+              employed by STR (Smith Travel Research) , STR was acquired by
+              CoStar in October of 2019. Our tech stack utilized an onprem data
+              center, with SQL Server, .net core, Javascript (Ember, JQuery,
+              React), and RabbitMQ.
             </i>
             <p>
-              <u>CoStar Suite</u>: Costar’s main product, providing analytics
-              and benchmarking data in the form of maps, charts, graphs, and
-              reports to over 200,000 professionals performing over 1 million
-              searches per day.
+              <u>STR Data integration</u>: With the CoStar acquisition of Smith
+              Travel Research (STR) as an STR employee I was brought onto a
+              CoStar team to assist in integrating STR data with CoStar Suite.
+              CoStar’s primary subscription product that received over 1 million
+              searches a day.
             </p>
             <ul>
               <li>
@@ -260,21 +281,6 @@ export default function Resume() {
                 JS, Swagger. Net Core, Git.
               </li>
             </ul>
-            <p>
-              <u>OTHER ACTIVITIES</u>
-            </p>
-            <ul>
-              <li>
-                Developed STR central landing page populated with user specific
-                apps using React, .NET Core.
-              </li>
-              <li>
-                Developed various charts and components to be used across
-                multiple applications using Chart JS and React.
-              </li>
-              <li>Hosted .Net Core REST API development Lunch and Learn.</li>
-              <li>Hosted SQL Server Lunch and Learns on various topics.</li>
-            </ul>
           </div>
           <div className={styles.resumeMainHeading}>TECHNICAL SKILLS</div>
           <div className={styles.resumeMainContent}>
@@ -282,33 +288,47 @@ export default function Resume() {
             <br></br>
             <u>Software</u>: Visual Studio, VS Code, Azure.
             <br></br>
-            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python.
+            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python, Java
             <br></br>
             <u>Technologies</u>: .NET Core, .NET Framework, React, SQL Server.
             <br></br>
           </div>
           <div className={styles.resumeMainHeading}>EDUCATION</div>
           <div className={styles.resumeMainContent}>
-            <b>
-              Associates Degree in Applied Science, Computer Programming,
-              Volunteer State
-            </b>
+            <b>B.S. Software Engineering, Arizona State University</b>
+            <br></br>
+            2022 - Present
+          </div>
+          <div className={styles.resumeMainContent}>
+            <b>A.A.S, Computer Programming, Volunteer State</b>
             <br></br>
             2021 - 2022
             <br></br>
-            <b>
-              <Link href="https://www.volstate.edu/news/spring-2021-deans-list-and-honor-roll">
-                2021 Dean's List
-              </Link>
-            </b>
-          </div>
-          <div className={styles.resumeMainContent}>
-            <b>
-              University transfer program Bachelors Degree in computer science,
-              AB Tech Community College
-            </b>
-            <br></br>
-            2009 - 2011
+            <ul>
+              <li>Phi Theta Kappa</li>
+              <li>
+                <b>
+                  <Link href="https://www.volstate.edu/news/spring-2021-deans-list-and-honor-roll">
+                    Spring 2021 Dean's List
+                  </Link>
+                </b>
+              </li>
+              <li>
+                <b>
+                  <Link href="https://www.volstate.edu/news/summer-2021-deans-list-and-honor-roll">
+                    Summer 2021 Dean's List and Honor Roll
+                  </Link>
+                </b>
+              </li>
+              <li>
+                <b>
+                  <Link href="https://www.volstate.edu/news/fall-2021-deans-list-and-honor-roll">
+                    Fall 2021 Dean's List and Honor Roll
+                  </Link>
+                </b>
+              </li>
+              <li>Sprint 2022 Merit List</li>
+            </ul>
           </div>
           <div className={styles.resumeMainHeading}>
             OPEN SOURCE CONTRIBUTIONS
