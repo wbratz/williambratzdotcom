@@ -338,6 +338,18 @@ export default function Resume() {
           <div className={styles.resumeMainHeading}>PERSONAL PROJECTS</div>
           <div className={styles.resumeMainContent}>
             <b>
+              Neverending Story pointer,{" "}
+              <Link href="neverendingstorypointer.com">
+                Neverending Story Pointer
+              </Link>
+            </b>
+            <br></br>
+            Pointing Poker application to be used in agile grooming sessions.
+            <br></br>
+            Blazor app, utilizing GRPC streaming and HTTP2
+          </div>
+          <div className={styles.resumeMainContent}>
+            <b>
               William Bratz dot com,{" "}
               <Link href="https://github.com/wbratz/williambratzdotcom">
                 Github repo
