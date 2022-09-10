@@ -339,7 +339,7 @@ export default function Resume() {
           <div className={styles.resumeMainContent}>
             <b>
               Neverending Story pointer,{" "}
-              <Link href="neverendingstorypointer.com">
+              <Link href="https://neverendingstorypointer.com">
                 Neverending Story Pointer
               </Link>
             </b>
