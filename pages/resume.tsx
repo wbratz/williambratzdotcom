@@ -30,18 +30,6 @@ export default function Resume() {
           </div>
         </div>
         <div className={styles.resumeMainbar}>
-          <div className={styles.resumeMainHeading}>PROFILE</div>
-          <div className={styles.resumeMainContent}>
-            Hello! I am William Bratz, but everyone calls me Billy. I am a full
-            stack developer with extensive experience in developing enterprise
-            full stack web applications, microservice architecture, and cloud
-            development using Azure, and AWS.
-            <p></p>I am comfortable in any environment, but thrive in fast paced
-            surroundings with projects that require me to learn and grow my
-            skills. Learning and improving are more than goals of mine, they are
-            passions.
-            <p></p> Thank you and I look forward to working with you soon!
-          </div>
           <div className={styles.resumeMainHeading}>
             PROFESSIONAL EXPERIENCE
           </div>
@@ -55,7 +43,7 @@ export default function Resume() {
             <i>
               Carvana LLC., Provides customers a unique car buying experience
               completely online and is the second largest used car retailer in
-              the US.
+              the United States.
             </i>
             <p>
               <b>Summary</b>:{" "}
@@ -71,6 +59,55 @@ export default function Resume() {
                 Azure service bus, Kafka, .net core.
               </i>
             </p>
+            <p>
+              <u>Insurance Survey</u>: Project spanning multiple Verifications engineering teams inside of 
+              Carvana to decrease the amount of customer service advocate time spent on insurance related items. 
+              Upon completion of this project time spent decreased from over 20 minutes per instance to less than 4.
+            </p>
+            <ul>
+              <li>
+                Designed greenfield microservice to handle generating advocate delivered work items asynchronously based on events, then track those work items to completion.
+              </li>
+              <li>
+                Communicated design and concept to team members through team meetings, and documentation.              
+              </li>
+              <li>
+                Implemented design, adjusted based on evolving requirements.              
+              </li>
+              <li>
+                Implemented features in existing applications to support design.              
+              </li>
+              <li>
+                End to end testing for new functionality.           
+              </li>
+              <li>
+                Floated to other teams to help push the project over the line by the delivery date.           
+              </li>
+              <li>
+                UI work as needed using React/Typescript.           
+              </li>
+            </ul>
+            <p>
+              <u>Insurance Survey</u>: Initiative to evaluate current application resource utilization, 
+              and find ways to improve. An example of the result of the effort is memory usage in one 
+              application went from over 1GB constant 1.5GB max to never going above 243MB which 
+              translates to going from 60% - 80% total memory usage to less than 10%. 
+              Ultimately I was able to decrease the TShirt size of most of our applications, 
+              lowering our monthly running costs significantly.
+            </p>
+            <ul>
+              <li>
+                Investigated application usage over time using Grafana and Prometheus to identify normal usage, and adjust kubernetes pod resources to appropriate memory and CPU resources.              </li>
+              <li>
+                Provided recommendation and evidence to the team.              
+              </li>
+              <li>
+                Implemented change.             
+              </li>
+              <li>
+                Tracked and communicated results weekly for 60 days after release.             
+              </li>
+            </ul>
             <p>
               <u>Red to Green (R2G)</u>: Top company objective spanning multiple
               teams with the goal of converting red customers (customer that
@@ -288,7 +325,7 @@ export default function Resume() {
             <br></br>
             <u>Software</u>: Visual Studio, VS Code, Azure.
             <br></br>
-            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python, Java
+            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python, Java, Go.
             <br></br>
             <u>Technologies</u>: .NET Core, .NET Framework, React, SQL Server.
             <br></br>
