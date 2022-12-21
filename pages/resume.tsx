@@ -88,7 +88,7 @@ export default function Resume() {
               </li>
             </ul>
             <p>
-              <u>Insurance Survey</u>: Initiative to evaluate current application resource utilization, 
+              <u>Application Right Sizing</u>: Initiative to evaluate current application resource utilization, 
               and find ways to improve. An example of the result of the effort is memory usage in one 
               application went from over 1GB constant 1.5GB max to never going above 243MB which 
               translates to going from 60% - 80% total memory usage to less than 10%. 
