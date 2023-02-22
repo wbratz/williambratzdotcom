@@ -1,17 +1,17 @@
 ---
-title: My favorite factory pattern implementation
+title: Simplifying Object Creation and Reducing Code Duplication with A Unique Factory Pattern Implementation
 slug: favorite-factory
 date: 10/25/2022
-description: Design patterns!! There are a few design patterns I use often, one of which the the factory pattern. There are however some implementation aspects that I find a little yucky. A few years ago I stumbled across a page that I cannot find anymore with this implementation of the factory pattern and I absolutely love it, let's see how it works!
+description: Simplify object creation and reduce code duplication with a unique factory pattern implementation. Learn how to create concrete types for each interface and an abstract factory class to serve as a base for the concrete factories. Plus, see how to modify your interface and factory methods to accept additional parameters.
 photo: "./blogContent/favorite-factory/favorite-factory-sm.png"
 banner: "../blogContent/favorite-factory/favorite-factory.png"
 ---
 
-Design patterns!! There are a few design patterns I use often, one of which the the factory pattern. There are however some implementation aspects that I find a little yucky. A few years ago I stumbled across a page that I cannot find anymore with this implementation of the factory pattern and I absolutely love it, let's see how it works!
+Design patterns, including the factory pattern, are useful in software development. This post will show my favorite implementation of the factory pattern in C#.
 
 ## When should you use this pattern?
 
-A creational pattern, the factory pattern is used to create objects without having to specify the class explicitly. Let's say you have a coffee ordering application. It takes in a user input 1, 2, 3, and for 1, you want to return a cappuccino, 2 espresso, 3 regular coffee. Each selection (1, 2, 3) maps to a specific coffee. This is a great use case for the factory pattern!
+The factory pattern is a creational pattern used to create objects without having to specify the class explicitly. An example use case would be a coffee ordering application that maps user inputs (1, 2, or 3) to specific types of coffee (cappuccino, espresso, or regular coffee).
 
 ## The class diagram
 
@@ -19,324 +19,226 @@ A creational pattern, the factory pattern is used to create objects without havi
 
 ## Implementing the pattern
 
-First we create two interfaces, one for the types coming in, and one for the types going out. To continue with our example lets create an ICoffee interface for the types of coffee we're going to make, and ISelection for the users selection
+The first step is to create two interfaces, one for input types and one for output types. In this example, we will create an ICoffee interface for types of coffee and an ISelection interface for the user's selection.
 
-_Note: since the input in this example is simple we could use an int without an interface._
+```csharp
+public interface ICoffee
+{
+    public List<string> Ingredients { get; }
+}
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+public interface ISelection
+{
+    public int Value { get; }
+}
+```
 
-    public interface ICoffee
-    {
-        public List<string> Ingredients { get; }
-    }
+Next, we create concrete types for each interface.
 
-    public interface ISelection
-    {
-        public int Value { get; }
-    }
+```csharp
+public class SelectionOne : ISelection
+{
+    public SelectionOne(int value) => Value = value;
 
-</div>
+    public int Value { get; }
+}
 
-Next, let's create the concrete types for each interface. Starting with the user selection types.
+public class SelectionTwo : ISelection
+{
+    public SelectionTwo(int value) => Value = value;
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+    public int Value { get; }
+}
 
-    public class SelectionOne : ISelection
-    {
-        public SelectionOne(int value)
-        {
-            Value = value;
-        }
+public class SelectionThree : ISelection
+{
+    public SelectionThree(int value) => Value = value;
 
-        public int Value { get; }
-    }
-
-    public class SelectionTwo : ISelection
-    {
-        public SelectionTwo(int value)
-        {
-            Value = value;
-        }
-
-        public int Value { get; }
-    }
-
-    public class SelectionThree : ISelection
-    {
-        public SelectionThree(int value)
-        {
-            Value = value;
-        }
-
-        public int Value { get; }
-    }
-
-
-</div>
+    public int Value { get; }
+}
+```
 
 Now the coffee types.
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+```csharp
+public class Cappuccino : ICoffee
+{
+    public List<string> Ingredients { get; }
 
-    public class Cappuccino : ICoffee
+    public Cappuccino(List<string> ingredients) => Ingredients = ingredients;
+}
+
+public class Espresso : ICoffee
+{
+    public List<string> Ingredients { get; }
+
+    public Espresso(List<string> ingredients) => Ingredients = ingredients;
+}
+
+public class RegularCoffee : ICoffee
+{
+    public List<string> Ingredients { get; }
+
+    public RegularCoffee(List<string> ingredients) => Ingredients = ingredients;
+}
+```
+
+After creating the concrete types, we can create an abstract factory class that will serve as a base class for the concrete factories. With the abstract factory class, we can create a concrete factory for each type of coffee. The factory is responsible for instantiating the concrete type and returning it to the calling code. The calling code doesn't need to know the details of how the object is created, it simply asks the factory to create it.
+
+Let's create a `CoffeeFactoryBase` class that defines the `MakeCoffee()` method, which will be overridden by the concrete factories to create their respective types of coffee.
+
+```csharp
+public abstract class CoffeeFactoryBase
+{
+    public abstract ICoffee MakeCoffee();
+}
+```
+Now we can create a concrete factory for each implementation of `ICoffee`.
+
+```csharp
+public class CappuccinoFactory : CoffeeFactoryBase
+{
+    private static List<string> _ingredients = new List<string> 
     {
-        public List<string> Ingredients { get; }
-
-        public Cappuccino(List<string> ingredients)
-        {
-            Ingredients = ingredients;
-        }
+        "Espresso",
+        "Foamed Milk"
     }
-
-    public class Espresso : ICoffee
+    public override ICoffee MakeCoffee()
     {
-        public List<string> Ingredients { get; }
-
-        public Espresso(List<string> ingredients)
-        {
-            Ingredients = ingredients;
-        }
+        return new Cappuccino(_ingredients);
     }
+}
 
-    public class RegularCoffee : ICoffee
+public class EspressoFactory : CoffeeFactoryBase
+{
+    private static List<string> _ingredients = new List<string> 
     {
-        public List<string> Ingredients { get; }
-
-        public RegularCoffee(List<string> ingredients)
-        {
-            Ingredients = ingredients;
-        }
+        "Fine Ground Coffee",
+        "Water"
     }
-
-</div>
-
-Now we create the abstract factory that will serve as the base class for our concrete factories.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    public abstract class CoffeeFactoryBase
+    public override ICoffee MakeCoffee()
     {
-        public abstract ICoffee MakeCoffee();
+        return new Espresso(_ingredients);
     }
+}
 
-</div>
-
-Once we have our abstract factory, we create a concrete factory for each implementation of ICoffee.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    public class CappuccinoFactory : CoffeeFactoryBase
+public class RegularCoffeeFactory : CoffeeFactoryBase
+{
+    private static List<string> _ingredients = new List<string> 
     {
-        private static List<string> _ingredients = new List<string> 
-        {
-            "Espresso",
-            "Foamed Milk"
-        }
-
-        public override ICoffee MakeCoffee()
-        {
-            return new Cappuccino(_ingredients);
-        }
+        "Coffee Grounds",
+        "Water"
     }
+    public override ICoffee MakeCoffee()
+    { 
+        return new RegularCoffee(_ingredients);
+    }
+}
+```
 
-    public class EspressoFactory : CoffeeFactoryBase
+Notice how each factory has the information necessary to create the type it's responsible for. If, for example, we wanted to change the ingredients for our cappuccino, the only class we would have to change is the `CappuccinoFactory`.
+
+To create our classes, we need an initializer that holds the mapping from our input types to our factories. We can create a dictionary object to achieve this.
+
+```csharp
+private static readonly Dictionary<int, CoffeeFactoryBase> _factories = new Dictionary<int, CoffeeFactoryBase>
     {
-        private static List<string> _ingredients = new List<string> 
-        {
-            "Fine Ground Coffee",
-            "Water"
-        }
+        { 1, new CappuccinoFactory() },
+        { 2, new EspressoFactory() },
+        { 3, new RegularCoffeeFactory() },
+    };
 
-        public override ICoffee MakeCoffee()
-        {
-            return new Espresso(_ingredients);
-        }
-    }
-
-    public class RegularCoffeeFactory : CoffeeFactoryBase
-    {
-        private static List<string> _ingredients = new List<string> 
-        {
-            "Coffee Grounds",
-            "Water"
-        }
-
-        public override ICoffee MakeCoffee()
-        { 
-            return new RegularCoffee(_ingredients);
-        }
-    }
-
-</div>
-
-Notice how each factory has the information necessary to create the type its responsible for. If for example we wanted to change the ingredients for our cappuccino the only class we would have to change is the CappuccinoFactory.
-
-Now that we have our factories, we create our initializer that will hold the mapping from our input types to our factories and actually create our classes!
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    private readonly Dictionary<int, CoffeeFactoryBase> _factories;
-
-    public Initializer()
-    {
-        _factories = new Dictionary<int, CoffeeFactoryBase>
-        {
-            { 1, new CappuccinoFactory() },
-            { 2, new EspressoFactory() },
-            { 3, new RegularCoffeeFactory() },
-        };
-    }
-
-    public static Initializer Init() => new();
-
-    public ICoffee Create(ISelection selection)
-        => _factories[selection.Value].Create();
-
-</div>
+public static ICoffee Brew(ISelection selection)
+    => _factories[selection.Value].MakeCoffee();
+```
 
 We're ready for the final step and to use our new factory implementation. The best part of this implementation is it's single line execution keeping the calling code clean.
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+```csharp
+var customerCoffee = Initializer.Brew(userSelection);
+```
 
-    var customerCoffee = Initializer.Init().Create(userSelection);
+With this implementation, we can pass additional parameters to our factories. For instance, we can pass a boolean value to add pumpkin spice to the coffee.
 
-</div>
+We can modify our interface and factory methods to include the new parameter.
 
-That's all it takes, but can we improve? Let's look at the initializer 
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    private readonly Dictionary<int, CoffeeFactoryBase> _factories;
-
-    public Initializer()
+```csharp
+private static readonly Dictionary<int, CoffeeFactoryBase> _factories = 
+new Dictionary<int, CoffeeFactoryBase>
     {
-        _factories = new Dictionary<int, CoffeeFactoryBase>
-        {
-            { 1, new CappuccinoFactory() },
-            { 2, new EspressoFactory() },
-            { 3, new RegularCoffeeFactory() },
-        };
-    }
+        { 1, new CappuccinoFactory() },
+        { 2, new EspressoFactory() },
+        { 3, new RegularCoffeeFactory() },
+    };
 
-    public static Initializer Init() => new();
-
-    public ICoffee Brew(ISelection selection)
-        => _factories[selection.Value].MakeCoffee();
-
-</div>
-
-We don't really need the Init function, we could instead mark the Dictionary static, remove the constructor and make the create function static. So our initializer becomes:
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    private static readonly Dictionary<int, CoffeeFactoryBase> _factories = new Dictionary<int, CoffeeFactoryBase>
-        {
-            { 1, new CappuccinoFactory() },
-            { 2, new EspressoFactory() },
-            { 3, new RegularCoffeeFactory() },
-        };
-
-    public static ICoffee Brew(ISelection selection)
-        => _factories[selection.Value].MakeCoffee();
-
-</div>
-
-Which makes our implementation look like this:
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    var customerCoffee = Initializer.Brew(userSelection);
-
-</div>
-
-Now what about if we wanted to give the user the ability to add special requests. Since its October when I'm writing this, let's give the users the ability to add pumpkin spice to their coffees.
-We can pass this as a parameter to our factories through the Brew method in our initializer, and pass it to our make coffee method.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    private static readonly Dictionary<int, CoffeeFactoryBase> _factories = 
-    new Dictionary<int, CoffeeFactoryBase>
-        {
-            { 1, new CappuccinoFactory() },
-            { 2, new EspressoFactory() },
-            { 3, new RegularCoffeeFactory() },
-        };
-
-    public static ICoffee Brew(ISelection selection, bool addPumpkinSpice)
-        => _factories[selection.Value].MakeCoffee(addPumpkinSpice);
-
-</div>
+public static ICoffee Brew(ISelection selection, bool addPumpkinSpice)
+    => _factories[selection.Value].MakeCoffee(addPumpkinSpice);
+```
 
 Now all thats left to do is update our interface and factory methods to accept this new parameter.
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+```csharp
+public abstract class CoffeeFactoryBase
+{
+    public abstract ICoffee MakeCoffee(bool addPumpkinSpice);
+}
 
-    public abstract class CoffeeFactoryBase
+public class CappuccinoFactory : CoffeeFactoryBase
+{
+    private static readonly List<string> _ingredients = new List<string>
     {
-        public abstract ICoffee MakeCoffee(bool addPumpkinSpice);
-    }
-
-    public class CappuccinoFactory : CoffeeFactoryBase
+        "Espresso",
+        "Foamed Milk"
+    };
+    public override ICoffee MakeCoffee(bool addPumpkinSpice)
     {
-        private static readonly List<string> _ingredients = new List<string>
+        if (addPumpkinSpice)
         {
-            "Espresso",
-            "Foamed Milk"
-        };
-
-        public override ICoffee MakeCoffee(bool addPumpkinSpice)
-        {
-            if (addPumpkinSpice)
-            {
-                _ingredients.Add("Pumpkin Spice");
-            }
-
-            return new Cappuccino(_ingredients);
+            _ingredients.Add("Pumpkin Spice");
         }
+        return new Cappuccino(_ingredients);
     }
+}
 
-    public class EspressoFactory : CoffeeFactoryBase
+public class EspressoFactory : CoffeeFactoryBase
+{
+    private static List<string> _ingredients = new List<string>
     {
-        private static List<string> _ingredients = new List<string>
-        {
-            "Fine Ground Coffee",
-            "Water"
-        };
-
-        public override ICoffee MakeCoffee(bool addPumpkinSpice)
-        {
-            if (addPumpkinSpice)
-            {
-                _ingredients.Add("Pumpkin Spice");
-            }
-
-            return new Espresso(_ingredients);
-        }
-    }
-
-    public class RegularCoffeeFactory : CoffeeFactoryBase
+        "Fine Ground Coffee",
+        "Water"
+    };
+    public override ICoffee MakeCoffee(bool addPumpkinSpice)
     {
-        private static List<string> _ingredients = new List<string>
+        if (addPumpkinSpice)
         {
-            "Coffee Grounds",
-            "Water"
-        };
-
-        public override ICoffee MakeCoffee(bool addPumpkinSpice)
-        {
-            if (addPumpkinSpice)
-            {
-                _ingredients.Add("Pumpkin Spice")
-            };
-
-            return new RegularCoffee(_ingredients);
+            _ingredients.Add("Pumpkin Spice");
         }
+        return new Espresso(_ingredients);
     }
+}
 
-</div>
+public class RegularCoffeeFactory : CoffeeFactoryBase
+{
+    private static List<string> _ingredients = new List<string>
+    {
+        "Coffee Grounds",
+        "Water"
+    };
+    public override ICoffee MakeCoffee(bool addPumpkinSpice)
+    {
+        if (addPumpkinSpice)
+        {
+            _ingredients.Add("Pumpkin Spice")
+        };
+        return new RegularCoffee(_ingredients);
+    }
+}
+```
 
 Let's see how this looks in a console application.
 
 ![Coffee Factory](../blogContent/favorite-factory/screenshot_coffeefactory1.jpg)
 
-I hope you find this implementation useful. You the working code by going to my _[github](https://github.com/wbratz/coffee-factory)_
+In this blog post, we saw a great implementation of the factory pattern in C# that simplifies object creation and reduces code duplication. We created two interfaces, one for input types and one for output types. Then, we created concrete types for each interface and an abstract factory class that served as a base class for the concrete factories. We created a concrete factory for each implementation of ICoffee and an initializer that held the mapping from our input types to our factories. Finally, we modified our interface and factory methods to accept additional parameters, such as adding pumpkin spice to the coffee.
+
+Check out the full code on my _[github](https://github.com/wbratz/coffee-factory)_

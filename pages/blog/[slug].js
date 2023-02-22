@@ -1,6 +1,13 @@
 import React from "react";
 import Layout from "../../src/components/Layout";
 import styles from "../../styles/blog.module.css";
+import fs from "fs";
+import html from "remark-html";
+import highlight from "remark-highlight.js";
+import unified from "unified";
+import markdown from "remark-parse";
+import matter from "gray-matter";
+import images from "remark-images";
 
 function BlogPostPage(props) {
   return (
@@ -24,36 +31,17 @@ function BlogPostPage(props) {
 
 // pass props to BlogPostPage component
 export async function getStaticProps(context) {
-  const fs = require("fs");
-  const html = require("remark-html");
-  const highlight = require("remark-highlight.js");
-  const unified = require("unified");
-  const markdown = require("remark-parse");
-  const matter = require("gray-matter");
-  const images = require("remark-images");
-
-  const slug = context.params.slug; // get slug from params
-  const path = `${process.cwd()}/contents/${slug}.md`;
-
-  // read file content and store into rawContent variable
-  const rawContent = fs.readFileSync(path, {
-    encoding: "utf-8",
-  });
-
-  const { data, content } = matter(rawContent); // pass rawContent to gray-matter to get data and content
-
-  const result = await unified()
-    .use(markdown)
-    .use(highlight) // highlight code block
-    .use(html)
-    .use(images)
-    .process(content);
+  const { readFileSync } = fs;
+  const { stringify } = JSON;
+  const { process } = unified().use(markdown).use(highlight).use(images).use(html);
+  const { data, content } = matter(readFileSync(`contents/${context.params.slug}.md`, "utf8"));
+  const result = await process(content);
 
   return {
     props: {
       blog: {
         ...data,
-        content: result.toString(),
+        content: result.contents,
       },
     },
   };
@@ -61,23 +49,13 @@ export async function getStaticProps(context) {
 
 // generate HTML paths at build time
 export async function getStaticPaths(context) {
-  const fs = require("fs");
-
-  const path = `${process.cwd()}/contents`;
-  const files = fs.readdirSync(path, "utf-8");
-
-  const markdownFileNames = files
-    .filter((fn) => fn.endsWith(".md"))
-    .map((fn) => fn.replace(".md", ""));
-
+  const { readdirSync } = fs;
+  const files = readdirSync("contents", "utf8");
+  const paths = files
+    .filter((file) => file.endsWith(".md"))
+    .map((file) => file.replace(".md", ""));
   return {
-    paths: markdownFileNames.map((fileName) => {
-      return {
-        params: {
-          slug: fileName,
-        },
-      };
-    }),
+    paths: paths.map((slug) => ({ params: { slug } })),
     fallback: false,
   };
 }
