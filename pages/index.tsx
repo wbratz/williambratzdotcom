@@ -1,9 +1,9 @@
 import Layout from "../src/components/Layout";
-import styles from "../styles/index.module.css";
-import React, { } from "react";
+import React from "react";
+import styles from "../styles/blog.module.css";
 import Link from "next/link";
 
-export default function Home(props) {
+export default function Blog(props) {
   return (
     <Layout>
       <div className={styles.blogContainer}>
