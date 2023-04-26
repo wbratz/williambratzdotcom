@@ -22,7 +22,7 @@ export default function Blog(props) {
                     </div>
                     <p>
                       <Link href={`/blog/${blog.slug}`}>
-                        <a>Read More</a>
+                        <span>Read More</span>
                       </Link>
                     </p>
                   </li>
