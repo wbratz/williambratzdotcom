@@ -1,9 +1,8 @@
-// pages/mermaidDiagram.tsx
 import React from 'react';
-import Layout from "../../src/components/Layout";
-import Mermaid from 'react-mermaid'
+import Layout from '../../src/components/Layout';
+import Mermaid from '../../src/components/Mermaid';
 
-const MermaidDiagram: React.FC = () => {
+const Diagrams: React.FC = () => {
   const diagram = `
     graph LR
       A[Client] -- Request token --> B[Authorization Server]
@@ -17,9 +16,33 @@ const MermaidDiagram: React.FC = () => {
   return (
     <Layout>
       <h1>Mermaid Diagram</h1>
-      <Mermaid chart={diagram} />
+      <div style={{ width: '65%', height: '800px' }}>
+        <Mermaid chart={diagram} />
+      </div>
+      <style jsx>{`
+        .node rect,
+        .node circle,
+        .node polygon,
+        .node ellipse,
+        .node path {
+          fill: #f2f2f2;
+          stroke: #333;
+          stroke-width: 1.5px;
+        }
+
+        .node text {
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          fill: #333;
+        }
+
+        .link {
+          stroke: #333;
+          stroke-width: 1.5px;
+        }
+      `}</style>
     </Layout>
   );
 };
 
-export default MermaidDiagram;
+export default Diagrams;

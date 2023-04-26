@@ -9,9 +9,9 @@ export default function Resume() {
         <div className={styles.resumeLogo}>
           <div className={styles.resumePdf}>
             <Link href="/WilliamBratz-resume.pdf">
-              <a>
+              <span>
                 <img src="https://img.icons8.com/color/48/000000/pdf.png" />
-              </a>
+              </span>
             </Link>
           </div>
           <div className={styles.resumeName}>
@@ -20,11 +20,11 @@ export default function Resume() {
           <div className={styles.resumeTitle}>
             <p>
               <Link href="mailto:WilliamBratz615@gmail.com">
-                <a>Email</a>
+                <span>Email</span>
               </Link>{" "}
               |{" "}
               <Link href="http://www.linkedin.com/in/williambratz">
-                <a>LinkedIn</a>
+                <span>LinkedIn</span>
               </Link>
             </p>
           </div>

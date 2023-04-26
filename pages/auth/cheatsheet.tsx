@@ -2,9 +2,11 @@ import Layout from "../../src/components/Layout";
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 import DownloadButton from './downloadButton';
+import Mermaid from '../../src/components/Mermaid';
 
 export default function CheatSheet() {
-  const content = `## 1. What is Authorization?
+    
+const content = `## 1. What is Authorization?
 
 - The process of granting or denying access to specific resources based on a user's or service's privileges.
 
@@ -52,11 +54,24 @@ export default function CheatSheet() {
 - Consider refactoring your application if it is too large or has too many dependencies.
 - Register future gateways with only the scopes they need.`;
 
+  const diagram = `
+    graph LR
+      A[Client] -- Request token --> B[Authorization Server]
+      B -- Issue token --> A
+      A -- Access protected resource with token --> C[Resource Server]
+      C -- Validate token --> B
+      B -- Token validation result --> C
+      C -- Return protected resource if token is valid --> A
+  `;
+
   return (
     <Layout>
         <div>
-          <ReactMarkdown>{content}</ReactMarkdown>
-          <DownloadButton filename="Cheatsheet.md" content={content} />
+            <DownloadButton filename="Cheatsheet.md" content={content} />
+            <ReactMarkdown>{content}</ReactMarkdown>
+            <div style={{ width: '100%', height: '400px', marginTop: '5rem' }}>
+                <Mermaid chart={diagram} />
+            </div>
         </div>
     </Layout>
   );
