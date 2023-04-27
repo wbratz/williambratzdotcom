@@ -2,32 +2,6 @@ import Layout from "../src/components/Layout";
 import React from "react";
 import styles from "../styles/blog.module.css";
 import Link from "next/link";
-import MarkdownIt from "markdown-it";
-
-function addLineNumbers(rawCode) {
-  const lines = rawCode.split('\n');
-  const formattedLines = lines.map((line, index) => (
-    <div key={index} className="code-line">
-      <span className="line-number">{index + 1}</span>
-      <span>{line}</span>
-    </div>
-  ));
-  return formattedLines;
-}
-
-export default function Blog(props) {
-  const { blogs } = props;
-
-  blogs.forEach(blog => {
-    if (blog.content) {
-      blog.content = blog.content.replace(/<pre>([\s\S]*?)<\/pre>/g, (match, p1) => {
-        const formattedCode = addLineNumbers(p1);
-        return `<pre class="code-block">${formattedCode.join('')}</pre>`;
-      });
-    }
-  });
-
-const md = new MarkdownIt({});
 
 export default function Blog(props) {
   return (
@@ -35,17 +9,17 @@ export default function Blog(props) {
       <div className={styles.blogContainer}>
         <ul>
           {props.blogs.map((blog, idx) => {
-            // Parse the Markdown content using the Markdown parser
-            const htmlContent = md.render(blog.content);
             return (
-              <div key={idx} className={styles.blogSummaryWrapper}>
+              <div className={styles.blogSummaryWrapper}>
                 <div className={styles.blogSummaryPhoto}>
                   <img src={blog.photo} />
                 </div>
                 <div className={styles.blogSummaryPosts}>
-                  <li>
+                  <li key={blog.id}>
                     <div className={styles.blogSummaryTitle}>{blog.title}</div>
-                    <div className={styles.blogSummaryContent}>{htmlContent}</div>
+                    <div className={styles.blogSummaryContent}>
+                      {blog.description}
+                    </div>
                     <p>
                       <Link href={`/blog/${blog.slug}`}>
                         <span>Read More</span>
