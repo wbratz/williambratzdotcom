@@ -16,7 +16,7 @@ const Diagrams: React.FC = () => {
   return (
     <Layout>
       <h1>Mermaid Diagram</h1>
-      <div style={{ width: '65%', height: '800px' }}>
+      <div style={{ width: '100%', height: '800px' }}>
         <Mermaid chart={diagram} />
       </div>
       <style jsx>{`
