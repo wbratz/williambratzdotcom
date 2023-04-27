@@ -1,10 +1,10 @@
 ---
-title: Understanding Authorization: A Comprehensive Guide
-slug: authorization-intro
+title: Understanding Authorization, A Comprehensive Guide
+slug: auth-intro
 date: 4/26/2023
-description: : Authorization is an essential component of application security that ensures access control to protected resources. In this guide, we will dive into the fundamentals of authorization and provide a comprehensive understanding of how it works in the context of software development.
+description: Authorization is an essential component of application security that ensures access control to protected resources. In this guide, we will dive into the fundamentals of authorization and provide a comprehensive understanding of how it works in the context of software development.
 photo: "./blogContent/auth-intro/auth_image_sm.jpg"
-banner: "./blogContent/auth-intro/auth_image.jpg"
+banner: "../blogContent/auth-intro/auth_image.jpg"
 ---
 
 # Introduction
@@ -58,7 +58,9 @@ By understanding these different OAuth 2.0 authorization flows, you can choose t
 # The Three Players in the Authorization Process
 
 1. Client: The application or service requesting access to protected resources.
+
 2. Resource Server: The server hosting the protected resources.
+
 3. Authorization Server: The server responsible for issuing tokens with the necessary permissions to access protected resources.
 
 # JWT Bearer Tokens in Authorization
@@ -68,8 +70,11 @@ JSON Web Tokens (JWT) are commonly used in the authorization process. A JWT Bear
 Here's a high-level overview of how JWT Bearer Tokens play into authorization:
 
 1. The client reaches out to an authorization server and authenticates itself, usually by providing a clientId, clientSecret, grantType, and scope.
+
 2. The authorization server returns a JWT bearer token that is encoded and contains a set of claims or scopes, and a signature.
+
 3. The client then uses the Bearer token in an HTTP request header, typically in the format Authorization: Bearer {Token}.
+
 4. Once the resource server receives the request, it validates the bearer token by checking the token's signature, issuer, audience, and expiration. If the token is valid, it processes the request and allows the client to access the protected resource.
 
 ## Scopes
