@@ -5,6 +5,10 @@
   flex-wrap: nowrap;
 }
 
+.blogPostContainer li {
+  list-style: decimal;
+}
+
 .blogContainer a {
   text-decoration: underline;
 }
