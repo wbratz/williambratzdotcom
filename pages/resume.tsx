@@ -37,55 +37,47 @@ export default function Resume() {
             <b>Carvana</b>
           </div>
           <div className={styles.resumeMainContent}>
-            Software Engineer II
+            Senior Software Engineer
             <br></br>2020 - Present
             <br></br>
             <i>
-              Carvana LLC., Provides customers a unique car buying experience
-              completely online and is the second largest used car retailer in
-              the United States.
+              Carvana LLC., A pioneer in the online car buying experience and the second largest used car retailer in the United States.
             </i>
             <p>
               <b>Summary</b>:{" "}
-              <i>
-                Engineer within the Verifications platform, responsibilities
-                include research and requirement gathering, architecting
-                solutions for projects within our domain and spanning multiple
-                teams, implementation, testing, documentation, releasing through
-                multiple environments into production, post production support
-                and monitoring. Utilizing microservice architecture with a
-                nationwide distributed system in Azure spanning three regions.
-                Our general tech stack is Azure Kubernetes, Azure SQL, CosmosDB,
-                Azure service bus, Kafka, .net core.
-              </i>
+              <ul>
+                <li>Played a pivotal role on the Verifications platform team, comprising seven engineers, focusing on a core domain vital for Carvana's competitive advantage.</li>
+                <li>Led end-to-end project cycles from requirement gathering and solution architecture to production release and post-launch support.</li>
+                <li>Specialized in designing and implementing microservices in a distributed environment, utilizing Kubernetes with three regions hosting approximately three auto-scaling pods each.</li>
+                <li>Managed multiple microservices tailored to generate and verify requirements crucial for the business.</li>
+                <li>Ensured smooth inter-service communication through REST API calls, Azure service bus messages/topics, and asynchronous commands in queues.</li>
+                <li>Engaged with external systems via Kafka for efficient cross-domain interactions.</li>
+                <li>Our primary tech stack includes Azure Kubernetes, Azure SQL, CosmosDB, Azure Service Bus, Kafka, and .NET Core.</li>
+              </ul>
             </p>
             <p>
-              <u>Insurance Survey</u>: Project spanning multiple Verifications engineering teams inside of 
-              Carvana to decrease the amount of customer service advocate time spent on insurance related items. 
-              Upon completion of this project time spent decreased from over 20 minutes per instance to less than 4.
+              <u>Insurance OCR</u>: Spearheaded a visionary project that stemmed from my innovative hackathon idea: using Optical Character Recognition (OCR) to process insurance documents. As the Technical Lead, I bridged the gap between business needs and technical solutions, translating high-level objectives into actionable technical tasks
             </p>
             <ul>
-              <li>
-                Designed greenfield microservice to handle generating advocate delivered work items asynchronously based on events, then track those work items to completion.
-              </li>
-              <li>
-                Communicated design and concept to team members through team meetings, and documentation.              
-              </li>
-              <li>
-                Implemented design, adjusted based on evolving requirements.              
-              </li>
-              <li>
-                Implemented features in existing applications to support design.              
-              </li>
-              <li>
-                End to end testing for new functionality.           
-              </li>
-              <li>
-                Floated to other teams to help push the project over the line by the delivery date.           
-              </li>
-              <li>
-                UI work as needed using React/Typescript.           
-              </li>
+              <li>Conceptualized and architected a solution aligning with business objectives, thereby ensuring goal congruence.</li>
+              <li>Effectively communicated the design rationale, underlying concept, and associated technical details to team members via comprehensive documentation and team meetings.</li>
+              <li>Dynamically adjusted and implemented the design to accommodate evolving requirements, showcasing agility and responsiveness.</li>
+              <li>Enhanced existing applications with features to support the new design, demonstrating adaptability.</li>
+              <li>Performed thorough end-to-end testing to ensure robust functionality and reliability.</li>
+              <li>Swiftly delivered a Proof of Concept within a tight 3-day timeframe, highlighting efficiency and rapid prototyping skills.</li>
+              <li>Realized a significant decrease in verification time and achieved a remarkable less than 2% error rate, outperforming previous survey-based methods and streamlining the verification process.</li>
+            </ul>
+            <p>
+              <u>Insurance Survey</u>: Collaborated across several Verifications engineering teams within Carvana to significantly reduce the time customer service advocates spend on insurance-related tasks. We achieved a monumental reduction, bringing the time down from over 20 minutes to under 4 minutes per instance.
+            </p>
+            <ul>
+                <li>Conceptualized and designed a greenfield microservice, facilitating asynchronous work item generation for advocates based on events and ensuring efficient tracking to completion.</li>
+                <li>Conveyed design principles and technical underpinnings to team members through meticulous documentation and team discussions.</li>
+                <li>Responsive to changes, iterating on the initial design to meet evolving requirements.</li>
+                <li>Augmented existing applications with necessary features, ensuring seamless integration with the new service.</li>
+                <li>Conducted rigorous end-to-end testing, ensuring reliable functionality and user experience.</li>
+                <li>Proactively supported other teams to meet project deadlines, exemplifying teamwork and dedication.</li>
+                <li>Engaged in UI development as required, employing React and Typescript to deliver intuitive interfaces.</li>
             </ul>
             <p>
               <u>Application Right Sizing</u>: Initiative to evaluate current application resource utilization, 
@@ -107,45 +99,6 @@ export default function Resume() {
               <li>
                 Tracked and communicated results weekly for 60 days after release.             
               </li>
-            </ul>
-            <p>
-              <u>Red to Green (R2G)</u>: Top company objective spanning multiple
-              teams with the goal of converting red customers (customer that
-              initiated the car buying process) to green (a customer who has
-              completed the process) by utilizing automation to satisfy
-              requirements. Saving 38,000 hours of customer service
-              representative time per year. Additionally increased overall sales
-              by an estimated 5% equating to $230,000,000 in additional revenue
-              per year.
-            </p>
-            <ul>
-              <li>
-                Implemented microservice responsible for handling coordination
-                of multi step operations related to the verification process.
-              </li>
-              <li>
-                Collaborated across multiple teams to coordinate deployments,
-                features, and design solutions.
-              </li>
-              <li>
-                Developed fault tolerant solutions for handling multi step
-                executions.
-              </li>
-              <li>
-                Developed solutions to maximize code reuse and enforce standards
-                in code.
-              </li>
-              <li>
-                Implemented structured logging, into splunk with serilog,
-                utilizing correlation Ids to track calls across multiple systems
-                and context to enrich logs with useful information.
-              </li>
-              <li>
-                Migrated microservice to Azure Kubernetes utilizing helm to
-                control t-shirt size and min/max replicas and autoscaling, a
-                team first.
-              </li>
-              <li>Created technical documentation.</li>
             </ul>
             <p>
               <u>CoBuyer</u>: Top company initiative to re-architect existing
@@ -172,31 +125,6 @@ export default function Resume() {
               </li>
               <li>Updated technical documentation.</li>
               <li>Wrote unit tests to provide coverage for new code.</li>
-            </ul>
-            <p>
-              <u>Deadline Approaching</u>: Automation of customer notification
-              that the deadline to supply documentation is less than 4 hours
-              away. The goal of this project was to minimize customer service
-              representative calls to customers to remind them to supply
-              documentation. Automating the process, saving the company
-              $5,000,000 in man-hours a year.
-            </p>
-            <ul>
-              <li>
-                Researched and documented current state and dependencies to
-                understand existing workflow.
-              </li>
-              <li>
-                Architected solution to be integrated into multiple
-                microservices within our domain.
-              </li>
-              <li>
-                Collaborated with business partners and cross team engineers on
-                design decisions.
-              </li>
-              <li>
-                Tracked metrics to fine tune logic and increase cost savings.
-              </li>
             </ul>
           </div>
           <div className={styles.resumeMainInfo}>
@@ -248,18 +176,19 @@ export default function Resume() {
             <b>CoStar Group</b>
           </div>
           <div className={styles.resumeMainContent}>
+          <b>CoStar Group</b>
+          <br></br>
             Software Engineer
-            <br></br>2015 - 2020
-            <br></br>
-            <i>
+          <br></br>2015 - 2020
+          <br></br>
+          <i>
               CoStar Group is the leading provider of analytics for the
               commercial real estate and multifamily industries, as well as
               benchmarking data for the global hospitality industry. Originally
-              employed by STR (Smith Travel Research) , STR was acquired by
-              CoStar in October of 2019. Our tech stack utilized an onprem data
-              center, with SQL Server, .net core, Javascript (Ember, JQuery,
-              React), and RabbitMQ.
-            </i>
+              employed by STR (Smith Travel Research), STR was acquired by
+              CoStar in October of 2019. Our tech stack utilized an on-prem data
+              center, with SQL Server, .NET Core, and JavaScript libraries such as React, jQuery.
+          </i>
             <p>
               <u>STR Data integration</u>: With the CoStar acquisition of Smith
               Travel Research (STR) as an STR employee I was brought onto a
@@ -337,35 +266,35 @@ export default function Resume() {
             2022 - Present
           </div>
           <div className={styles.resumeMainContent}>
-            <b>A.A.S, Computer Programming, Volunteer State</b>
-            <br></br>
-            2021 - 2022
-            <br></br>
-            <ul>
-              <li>Phi Theta Kappa</li>
-              <li>
-                <b>
-                  <Link href="https://www.volstate.edu/news/spring-2021-deans-list-and-honor-roll">
-                    Spring 2021 Dean's List
-                  </Link>
-                </b>
-              </li>
-              <li>
-                <b>
-                  <Link href="https://www.volstate.edu/news/summer-2021-deans-list-and-honor-roll">
-                    Summer 2021 Dean's List and Honor Roll
-                  </Link>
-                </b>
-              </li>
-              <li>
-                <b>
-                  <Link href="https://www.volstate.edu/news/fall-2021-deans-list-and-honor-roll">
-                    Fall 2021 Dean's List and Honor Roll
-                  </Link>
-                </b>
-              </li>
-              <li>Sprint 2022 Merit List</li>
-            </ul>
+              <b>A.A.S, Computer Programming, Volunteer State</b>
+              <br></br>
+              2021 - 2022
+              <br></br>
+              <ul>
+                  <li>Phi Theta Kappa</li>
+                  <li>
+                      <b>
+                          <Link href="https://www.volstate.edu/news/spring-2021-deans-list-and-honor-roll">
+                              Spring 2021 Dean's List
+                          </Link>
+                      </b>
+                  </li>
+                  <li>
+                      <b>
+                          <Link href="https://www.volstate.edu/news/summer-2021-deans-list-and-honor-roll">
+                              Summer 2021 Dean's List and Honor Roll
+                          </Link>
+                      </b>
+                  </li>
+                  <li>
+                      <b>
+                          <Link href="https://www.volstate.edu/news/fall-2021-deans-list-and-honor-roll">
+                              Fall 2021 Dean's List and Honor Roll
+                          </Link>
+                      </b>
+                  </li>
+                  <li>Spring 2022 Merit List</li>
+              </ul>
           </div>
           <div className={styles.resumeMainHeading}>
             OPEN SOURCE CONTRIBUTIONS
@@ -387,30 +316,25 @@ export default function Resume() {
           </div>
           <div className={styles.resumeMainContent}>
             <b>
-              William Bratz dot com,{" "}
-              <Link href="https://github.com/wbratz/williambratzdotcom">
-                Github repo
-              </Link>
+                William Bratz dot com,{" "}
+                <Link href="https://github.com/wbratz/williambratzdotcom">Github repo</Link>
             </b>
             <br></br>
             Personal website to test out languages, coding paradigms, and
-            general technology related fun.
+            general technology-related fun.
             <br></br>
-            Uses Next JS, React, deployed to Heroku with CD.
+            Utilized Next.js and React; deployed on Heroku with Continuous Deployment.
           </div>
           <div className={styles.resumeMainContent}>
-            <b>
-              Sunny's Light,{" "}
-              <Link href="https://SunnysLight.org">SunnysLight.org</Link>
+            <b>Sunny's Light,{" "}
+                <Link href="https://SunnysLight.org">SunnysLight.org</Link>
             </b>
             <br></br>
             501(c)(3) Non-profit founded by my wife and I following the
             stillbirth of our daughter Sunny.
             <br></br>
-            Uses React, .NET Core 3.1 Api. Azure SQL Server database. Custom
-            stripe integration, Azure App Services, front end is containerized
-            using docker. CD using Azure DevOps.
-          </div>
+            Utilized React, .NET Core 3.1 API, Azure SQL Server database. Developed a custom stripe integration. Hosted on Azure App Services. The front end is containerized using Docker, with Continuous Deployment through Azure DevOps.
+        </div>
         </div>
       </div>
     </Layout>
