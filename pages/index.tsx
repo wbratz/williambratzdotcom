@@ -21,8 +21,8 @@ export default function Blog(props) {
                       {blog.description}
                     </div>
                     <p>
-                      <Link href={`/blog/${blog.slug}`}>
-                        <span>Read More</span>
+                      <Link href={`/blog/${blog.slug}`} legacyBehavior>
+                        <a>Read More</a>
                       </Link>
                     </p>
                   </li>

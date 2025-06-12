@@ -8,10 +8,10 @@ export default function Resume() {
       <div className={styles.resumeContainer}>
         <div className={styles.resumeLogo}>
           <div className={styles.resumePdf}>
-            <Link href="/WilliamBratz-resume.pdf">
-              <span>
+            <Link href="/WilliamBratz-resume.pdf" legacyBehavior>
+              <a>
                 <img src="https://img.icons8.com/color/48/000000/pdf.png" />
-              </span>
+              </a>
             </Link>
           </div>
           <div className={styles.resumeName}>
@@ -19,12 +19,12 @@ export default function Resume() {
           </div>
           <div className={styles.resumeTitle}>
             <p>
-              <Link href="mailto:WilliamBratz615@gmail.com">
-                <span>Email</span>
+              <Link href="mailto:WilliamBratz615@gmail.com" legacyBehavior>
+                <a>Email</a>
               </Link>{" "}
               |{" "}
-              <Link href="http://www.linkedin.com/in/williambratz">
-                <span>LinkedIn</span>
+              <Link href="http://www.linkedin.com/in/williambratz" legacyBehavior>
+                <a>LinkedIn</a>
               </Link>
             </p>
           </div>
