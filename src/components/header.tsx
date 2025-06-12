@@ -36,25 +36,25 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
 
       <nav className={styles.nav}>
         <div className={styles.logo}>
-          <Link href="/">
-            <span>
+          <Link href="/" legacyBehavior>
+            <a>
               <img
                 src="/headerphoto.jpg"
                 alt="Handsome"
                 onClick={() => fireEvent("", "Handsome man clicked")}
               />
-            </span>
+            </a>
           </Link>
         </div>
         <ul className={mobileNavOpen ? styles.navActive : styles.navLinks}>
           <li>
-            <Link href="../blog">
-              <span>BLOG</span>
+            <Link href="/blog" legacyBehavior>
+              <a>BLOG</a>
             </Link>
           </li>
           <li>
-            <Link href="../resume">
-              <span>RESUME</span>
+            <Link href="/resume" legacyBehavior>
+              <a>RESUME</a>
             </Link>
           </li>
         </ul>
