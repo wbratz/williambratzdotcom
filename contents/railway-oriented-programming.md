@@ -4,7 +4,7 @@ slug: railway-oriented-programming
 date: 6/12/2025
 description: "A no-BS guide to Railway Oriented Programming in C# with real-world examples and why you should stop writing spaghetti error-handling logic."
 photo: "./blogContent/railway-oriented-programming/railway_thumbnail.png"
-banner: "../blogContent/railway-oriented-programming/railway-banner.png"
+banner: "../blogContent/railway-oriented-programming/railway_banner.png"
 ---
 
 ## Let’s be real for a second.
@@ -23,11 +23,11 @@ Railway Oriented Programming (ROP) is basically this:
 
 So your code ends up looking like a train ride:
 
-* Step 1: Validate the input
-* Step 2: Transform something
-* Step 3: Call a service
-* Step 4: Save the result
-* Step 5: Celebrate 🎉
+- Step 1: Validate the input
+- Step 2: Transform something
+- Step 3: Call a service
+- Step 4: Save the result
+- Step 5: Celebrate 🎉
 
 And if any of those fail? The train stops. You don't manually track it. You just stop chaining.
 
@@ -96,10 +96,10 @@ public async Task<Result<Order>> PlaceOrder(OrderRequest request)
 
 See the difference?
 
-* There’s no null-checking.
-* There’s no `if`.
-* There's no `try/catch`.
-* Every step either continues the happy path or exits gracefully.
+- There’s no null-checking.
+- There’s no `if`.
+- There's no `try/catch`.
+- Every step either continues the happy path or exits gracefully.
 
 ---
 
@@ -119,7 +119,7 @@ public async Task<Result<Verification>> RunVerification(Document doc)
 }
 ```
 
-I don’t need a logger that says “I’m starting step 2!” because this reads *exactly like a script*. It's readable, testable, and debuggable—**without instrumentation gymnastics**.
+I don’t need a logger that says “I’m starting step 2!” because this reads _exactly like a script_. It's readable, testable, and debuggable—**without instrumentation gymnastics**.
 
 ---
 
@@ -164,12 +164,12 @@ That works—and it's idiomatic. `OnFailureCompensate` lets you jump rails and t
 
 Railway Oriented Programming is one of the **cleanest ways** to write service logic that’s:
 
-* Easy to follow
-* Safe to test
-* Self-documenting
-* And honestly, more fun to work in
+- Easy to follow
+- Safe to test
+- Self-documenting
+- And honestly, more fun to work in
 
-It’s not *magical*. It’s not *functional elitism*. It’s just a better default when working with workflows where things can go wrong.
+It’s not _magical_. It’s not _functional elitism_. It’s just a better default when working with workflows where things can go wrong.
 
 So yeah, if you’re not using ROP (and you're writing business logic in C#), you’re kind of being an idiot. But good news: now you don’t have to be.
 
