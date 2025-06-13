@@ -1,11 +1,15 @@
 import Head from "next/head";
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { useTheme } from "next-themes";
 import styles from "../../styles/Home.module.css";
 import Link from "next/link";
 import ReactGA from "react-ga";
 
 export default function Header({ navIsOpen, setNavIsOpen }) {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const setNavStyle = () => {
     setMobileNavOpen(!mobileNavOpen);
@@ -58,6 +62,16 @@ export default function Header({ navIsOpen, setNavIsOpen }) {
             </Link>
           </li>
         </ul>
+        <button
+          className={styles.themeToggle}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+        >
+          {theme === "dark" ? (
+            <FontAwesomeIcon icon={faSun} />
+          ) : (
+            <FontAwesomeIcon icon={faMoon} />
+          )}
+        </button>
         <div
           className={styles.burger}
           onClick={() => {
