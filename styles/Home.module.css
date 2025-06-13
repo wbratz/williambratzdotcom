@@ -353,12 +353,19 @@
     display: flex;
     width: 300px;
     height: 100%;
-    color: blue;
+    color: var(--text-color);
   }
 
-.footerBox {
+  .footerBox {
     height: 100px;
     width: 100px;
+    color: var(--text-color);
+  }
+
+  .footerIcon {
+    fill: currentColor;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -368,4 +375,17 @@
   color: var(--nav-text);
   cursor: pointer;
   font-size: 1.5rem;
+  margin-left: auto;
+}
+
+.footerBox {
+  height: 100px;
+  width: 100px;
+  color: var(--text-color);
+}
+
+.footerIcon {
+  fill: currentColor;
+  height: 100%;
+  width: 100%;
 }
