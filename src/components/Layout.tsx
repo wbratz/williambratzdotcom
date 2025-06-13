@@ -71,6 +71,20 @@ export default function Layout(props) {
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           </div>
         </a>
+        <a
+          href="https://twitter.com/tennessee_thor"
+          onClick={() => fireEvent("", "X Link Clicked")}
+        >
+          <div className={styles.footerBox}>
+            <svg viewBox="0 0 24 24" className={styles.footerIcon}>
+              <path
+                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          </div>
+        </a>
         &nbsp; &nbsp;
           <a
             href="https://www.linkedin.com/in/williambratz/"
