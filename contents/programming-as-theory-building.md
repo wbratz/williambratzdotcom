@@ -3,11 +3,11 @@ title: Programming as Theory Building—Why "Just Read the Docs" Never Works
 slug: programming-as-theory-building
 date: 8/2/2025
 description: Why understanding code requires more than documentation alone.
-photo: "./blogContent/programming-as-theory-building/programming-as-theory-building-sm.png"
-banner: "../blogContent/programming-as-theory-building/programming-as-theory-building.png"
+photo: "./blogContent/as-theory-building/thumbnail.png"
+banner: "../blogContent/as-theory-building/banner.png"
 ---
 
-# Programming as Theory Building—Why "Just Read the Docs" Never Works
+# Programming as Theory Building—Why "Just Read the Docs" (RTFM) Never Works
 
 ## Introduction
 
