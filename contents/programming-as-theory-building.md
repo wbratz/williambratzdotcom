@@ -15,7 +15,7 @@ Let’s be real for a second: how many times have you started on a new codebase,
 
 You’re staring at diagrams, you’re tracing through code, but the real understanding—the “why” behind how things fit together—just isn’t there yet. Why is that? Why do smart engineers still hit these walls even in supposedly “well-documented” systems?
 
-Today, I want to break down why this happens, using Peter Naur’s classic paper, Programming as Theory Building, and connect it directly to struggles we all run into in real projects. This is the first in a short series where I’ll dig into how our understanding of code, docs, and team knowledge actually works—and how we can do better.
+ Today, I want to break down why this happens, using Peter Naur’s classic paper, [Programming as Theory Building](https://dreamsongs.com/Files/Naur.pdf), and connect it directly to struggles we all run into in real projects. This is the first in a short series where I’ll dig into how our understanding of code, docs, and team knowledge actually works—and how we can do better.
 
 ---
 
@@ -39,9 +39,9 @@ Back in 1985, Peter Naur dropped a truth bomb on the programming world: programm
 
 If you’ve worked in software longer than a month, you’ve hit at least one of these:
 
-- **Onboarding a new engineer:** You send them the onboarding guide, the architecture doc, even a shiny C4 diagram. They still get lost. (How many times have we both said “follow the flow in the debugger, then ask questions”?)
+ - **Onboarding a new engineer:** You send them the onboarding guide, the architecture doc, even a shiny [C4 diagram](https://c4model.com). They still get lost. (How many times have we both said “follow the flow in the debugger, then ask questions”?)
 
-- **Decision context disappears:** You’re looking at some gnarly business rule and think, “Who made this decision, and why?” The ADR says one thing, but the code doesn’t line up, and nobody remembers the real story.
+ - **Decision context disappears:** You’re looking at some gnarly business rule and think, “Who made this decision, and why?” The [ADR](https://adr.github.io/) says one thing, but the code doesn’t line up, and nobody remembers the real story.
 
 - **Docs vs. Reality:** I’ve seen (and written) diagrams that look clean, but when you trace a request through the actual system, it turns out half the modules aren’t even in the doc, or the process zig-zags in a way no one anticipated.
 
@@ -55,7 +55,7 @@ Sound familiar? That’s theory building (or the lack of it) in action.
 
 ## What This Means for Teams
 
-Docs and diagrams are helpful—I write them, I read them, and I advocate for them! But they’re always incomplete. They’re just a map, and as I’ll get into in the next post, the map is not the territory.
+ Docs and diagrams are helpful—I write them, I read them, and I advocate for them! But they’re always incomplete. They’re just a map, and as I’ll get into in the next post, [the map is not the territory](https://en.wikipedia.org/wiki/Map%E2%80%93territory_relation).
 
 What matters most is the living, breathing theory—what the team understands together. That’s why onboarding by osmosis (pairing, actual code changes, talking through history) works better than any checklist. It’s why “shadowing” senior devs or jumping into real tickets is where the learning actually happens.
 
@@ -79,7 +79,7 @@ This post is the start of a three-part series on how teams actually build and sh
 
 2. **The Map Is Not the Territory**: How written artifacts (docs, diagrams) can only ever be an approximation of the real system, and why relying solely on them is a trap.
 
-3. **Bridging the Gap—Practical Steps**: Concrete ways teams can close the gap between docs and real knowledge, including how to use things like C4 diagrams effectively for onboarding and living knowledge.
+ 3. **Bridging the Gap—Practical Steps**: Concrete ways teams can close the gap between docs and real knowledge, including how to use things like [C4 diagrams](https://c4model.com) effectively for onboarding and living knowledge.
 
 If you’ve felt that “just read the docs” is never quite enough, or you want to make onboarding and cross-team understanding better, this series is for you.
 
