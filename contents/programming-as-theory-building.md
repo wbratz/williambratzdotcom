@@ -28,7 +28,9 @@ Back in 1985, Peter Naur dropped a truth bomb on the programming world: programm
 ### Let’s Translate That
 
 - **The code is not the program.** The files are just a partial record. The real program lives in the team’s shared mental model—the theory.
+
 - **This theory is alive.** It spreads through conversations, pairing, whiteboard sessions, design docs, Slack threads, and sometimes, yes, those infamous code walkthroughs.
+
 - **Theory can’t be transferred just by dropping someone a link to the docs.** No matter how good your wiki, no doc or diagram can fully replace what the team actually knows.
 
 ---
@@ -38,9 +40,13 @@ Back in 1985, Peter Naur dropped a truth bomb on the programming world: programm
 If you’ve worked in software longer than a month, you’ve hit at least one of these:
 
 - **Onboarding a new engineer:** You send them the onboarding guide, the architecture doc, even a shiny C4 diagram. They still get lost. (How many times have we both said “follow the flow in the debugger, then ask questions”?)
+
 - **Decision context disappears:** You’re looking at some gnarly business rule and think, “Who made this decision, and why?” The ADR says one thing, but the code doesn’t line up, and nobody remembers the real story.
+
 - **Docs vs. Reality:** I’ve seen (and written) diagrams that look clean, but when you trace a request through the actual system, it turns out half the modules aren’t even in the doc, or the process zig-zags in a way no one anticipated.
+
 - **Code review confusion:** Someone new to the area asks “why don’t we just refactor it this way?” and the only answer is, “It’s complicated—trust me.” The knowledge isn’t written down, it’s in the team’s collective head.
+
 - **Accidental knowledge silos:** One person always gets tapped for questions on a certain module. When they go on PTO, the rest of the team flounders. No doc can fill that gap overnight.
 
 Sound familiar? That’s theory building (or the lack of it) in action.
@@ -58,7 +64,9 @@ What matters most is the living, breathing theory—what the team understands to
 ## How Do We Build and Transfer Theory?
 
 - **Make real knowledge sharing a team habit.** Don’t just rely on written docs. Encourage questions, pair often, do code walkthroughs, and keep the history alive.
+
 - **Value “living knowledge.”** Treat the team’s understanding as an asset. When you see a gap, fill it—with a conversation, not just a doc update.
+
 - **Onboard by experience.** Give new teammates real tasks, and encourage them to ask “why”—not just “what.”
 
 ---
@@ -68,7 +76,9 @@ What matters most is the living, breathing theory—what the team understands to
 This post is the start of a three-part series on how teams actually build and share understanding:
 
 1. **Programming as Theory Building (you’re reading it!)**: Why docs are never enough and the real system lives in the team’s head.
+
 2. **The Map Is Not the Territory**: How written artifacts (docs, diagrams) can only ever be an approximation of the real system, and why relying solely on them is a trap.
+
 3. **Bridging the Gap—Practical Steps**: Concrete ways teams can close the gap between docs and real knowledge, including how to use things like C4 diagrams effectively for onboarding and living knowledge.
 
 If you’ve felt that “just read the docs” is never quite enough, or you want to make onboarding and cross-team understanding better, this series is for you.
