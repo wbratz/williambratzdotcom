@@ -15,7 +15,7 @@ Let’s be real for a second: how many times have you started on a new codebase,
 
 You’re staring at diagrams, you’re tracing through code, but the real understanding—the “why” behind how things fit together—just isn’t there yet. Why is that? Why do smart engineers still hit these walls even in supposedly “well-documented” systems?
 
- Today, I want to break down why this happens, using Peter Naur’s classic paper, [Programming as Theory Building](https://dreamsongs.com/Files/Naur.pdf), and connect it directly to struggles we all run into in real projects. This is the first in a short series where I’ll dig into how our understanding of code, docs, and team knowledge actually works—and how we can do better.
+ Today, I want to break down why this happens, using Peter Naur’s classic paper, [Programming as Theory Building](https://gwern.net/doc/cs/algorithm/1985-naur.pdf), and connect it directly to struggles we all run into in real projects. This is the first in a short series where I’ll dig into how our understanding of code, docs, and team knowledge actually works—and how we can do better.
 
 ---
 
