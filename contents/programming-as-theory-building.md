@@ -1,5 +1,5 @@
 ---
-title: Programming as Theory Building—Why "Just Read the Docs" Never Works
+title: Programming as Theory Building—Why "Just Read the Docs" (RTFM) Never Works
 slug: programming-as-theory-building
 date: 8/2/2025
 description: Why understanding code requires more than documentation alone.
@@ -7,9 +7,7 @@ photo: "./blogContent/as-theory-building/resized_thumbnail.png"
 banner: "../blogContent/as-theory-building/resized_banner.png"
 ---
 
-# Programming as Theory Building—Why "Just Read the Docs" (RTFM) Never Works
-
-## Introduction
+# Introduction
 
 Let’s be real for a second: how many times have you started on a new codebase, maybe at a new company or on a new team, and been told, “Just read the docs—you’ll figure it out”? If you’re like me (and just about everyone I’ve worked with), that advice falls flat. No matter how much you read, things just don’t click the way you want them to.
 
@@ -19,13 +17,13 @@ You’re staring at diagrams, you’re tracing through code, but the real unders
 
 ---
 
-## The “Theory” Behind the Code
+# The “Theory” Behind the Code
 
 Back in 1985, Peter Naur dropped a truth bomb on the programming world: programming isn’t just about writing code or documentation, it’s about building a working theory in your head. That theory covers not just what the code does, but how and why it does it. This isn’t just academic philosophy—this is the root cause of a ton of the headaches we see in onboarding, code reviews, and design discussions.
 
 > “The crucial thing is not the program text itself, but the knowledge, or theory, the programmers develop about what the program is intended to do, how it does it, and why it’s built that way.” — Peter Naur
 
-### Let’s Translate That
+## Let’s Translate That
 
 - **The code is not the program.** The files are just a partial record. The real program lives in the team’s shared mental model—the theory.
 
@@ -35,7 +33,7 @@ Back in 1985, Peter Naur dropped a truth bomb on the programming world: programm
 
 ---
 
-## Scenarios Where Theory Building Explains Everything
+# Scenarios Where Theory Building Explains Everything
 
 If you’ve worked in software longer than a month, you’ve hit at least one of these:
 
@@ -53,7 +51,7 @@ Sound familiar? That’s theory building (or the lack of it) in action.
 
 ---
 
-## What This Means for Teams
+# What This Means for Teams
 
  Docs and diagrams are helpful—I write them, I read them, and I advocate for them! But they’re always incomplete. They’re just a map, and as I’ll get into in the next post, [the map is not the territory](https://en.wikipedia.org/wiki/Map%E2%80%93territory_relation).
 
@@ -61,7 +59,7 @@ What matters most is the living, breathing theory—what the team understands to
 
 ---
 
-## How Do We Build and Transfer Theory?
+# How Do We Build and Transfer Theory?
 
 - **Make real knowledge sharing a team habit.** Don’t just rely on written docs. Encourage questions, pair often, do code walkthroughs, and keep the history alive.
 
@@ -71,7 +69,7 @@ What matters most is the living, breathing theory—what the team understands to
 
 ---
 
-## What to Expect in This Series
+# What to Expect in This Series
 
 This post is the start of a three-part series on how teams actually build and share understanding:
 
@@ -85,7 +83,7 @@ If you’ve felt that “just read the docs” is never quite enough, or you wan
 
 ---
 
-## Final Thoughts
+# Final Thoughts
 
 Programming is theory building.
 The real value isn’t just in the code—it’s in the team’s shared, living understanding.
