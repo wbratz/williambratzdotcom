@@ -3,8 +3,8 @@ title: The Map Is Not the Theory—Why Docs and Diagrams Will Mislead You
 slug: the-map-is-not-the-theory
 date: 8/9/2025
 description: Written artifacts are just approximations; the real system lives in the team's head.
-photo: "./blogContent/map-not-the-theory/resized_thumbnail.png"
-banner: "../blogContent/map-not-the-theory/resized_banner.png"
+photo: "./blogContent/map-not-the-theory/resized_thumbnail.svg"
+banner: "../blogContent/map-not-the-theory/resized_banner.svg"
 ---
 
 # Introduction
