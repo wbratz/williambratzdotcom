@@ -21,6 +21,8 @@ This specification outlines a phased approach to upgrade all dependencies in the
 
 **Risk Level:** HIGH - Multiple interconnected breaking changes without test coverage
 
+**UPDATE:** Risk significantly reduced by implementing automated testing infrastructure first (Phase 0.5)
+
 ---
 
 ## Current Dependency Analysis
@@ -290,6 +292,207 @@ const processor = unified()
 
 **Risk:** LOW
 **Effort:** 1-2 hours
+
+---
+
+### Phase 0.5: Automated Testing Infrastructure (CRITICAL - DO THIS FIRST)
+
+**Objective:** Implement automated E2E testing to validate functionality after each upgrade phase
+
+**Rationale:** Without tests, we're flying blind during upgrades. Automated tests will:
+- Catch regressions immediately
+- Provide confidence for each phase
+- Enable faster iteration (no manual testing every time)
+- Document expected behavior
+- Reduce upgrade risk from HIGH to MEDIUM
+
+**Testing Strategy:**
+
+**Tool Choice: Playwright**
+- Modern, fast, reliable
+- Excellent Next.js integration
+- Multi-browser support
+- Built-in visual testing capabilities
+- Good TypeScript support
+
+**Test Coverage Areas:**
+1. **Core Page Rendering**
+   - Home page loads and displays correctly
+   - Blog listing page shows posts
+   - Individual blog posts render
+   - Resume page renders
+   - 404 page works
+
+2. **Blog Functionality**
+   - Blog posts load with correct content
+   - Images display properly
+   - Code syntax highlighting works
+   - Links are functional
+   - Frontmatter data displays correctly
+
+3. **Theme System**
+   - Light theme renders correctly
+   - Dark theme renders correctly
+   - Theme toggle button works
+   - Theme persists across navigation
+   - Theme state saved to localStorage
+
+4. **Responsive & Interactive**
+   - Mobile menu appears on small screens
+   - Mobile menu opens/closes
+   - Navigation works on mobile
+   - Desktop navigation works
+   - Forms (if any) work
+
+5. **Build Validation**
+   - Production build completes
+   - Production build renders correctly
+   - No hydration errors
+
+**Implementation Steps:**
+
+1. **Install Playwright and dependencies:**
+   ```bash
+   npm install -D @playwright/test
+   npx playwright install
+   ```
+
+2. **Create Playwright config** (`playwright.config.ts`):
+   - Configure base URL for dev/prod testing
+   - Set up browsers (Chromium, Firefox, WebKit)
+   - Configure test directory
+   - Set up screenshots/videos on failure
+
+3. **Create test structure:**
+   ```
+   tests/
+   ├── e2e/
+   │   ├── home.spec.ts          # Home page tests
+   │   ├── blog-listing.spec.ts  # Blog listing tests
+   │   ├── blog-post.spec.ts     # Individual post tests
+   │   ├── theme.spec.ts         # Theme toggle tests
+   │   ├── navigation.spec.ts    # Nav and mobile menu tests
+   │   └── resume.spec.ts        # Resume page tests
+   └── helpers/
+       ├── test-utils.ts         # Shared utilities
+       └── constants.ts          # Test constants
+   ```
+
+4. **Implement core test suites:**
+
+   **Home Page Tests:**
+   - Page loads without errors
+   - Header renders
+   - Navigation links present
+   - Footer renders with social links
+   - Main content displays
+
+   **Blog Listing Tests:**
+   - All blog posts listed
+   - Post thumbnails display
+   - Post titles and descriptions show
+   - "Read More" links work
+   - Posts sorted by date (newest first)
+
+   **Blog Post Tests:**
+   - Post content renders
+   - Banner image displays
+   - Code blocks have syntax highlighting
+   - Images load correctly
+   - Links are clickable
+   - Markdown formatting correct
+
+   **Theme Tests:**
+   - Default theme loads
+   - Toggle switches to dark mode
+   - Toggle switches back to light mode
+   - Theme persists on page navigation
+   - Theme icon changes appropriately
+
+   **Navigation Tests:**
+   - Desktop nav links work
+   - Mobile menu button appears on mobile
+   - Mobile menu opens/closes
+   - Mobile menu links work
+   - Current page highlighted (if applicable)
+
+   **Resume Tests:**
+   - Page loads
+   - Content displays
+   - PDF download link works
+
+5. **Add test scripts to package.json:**
+   ```json
+   {
+     "scripts": {
+       "test": "playwright test",
+       "test:headed": "playwright test --headed",
+       "test:ui": "playwright test --ui",
+       "test:debug": "playwright test --debug",
+       "test:report": "playwright show-report"
+     }
+   }
+   ```
+
+6. **Create baseline test run:**
+   - Run tests against current (pre-upgrade) state
+   - Fix any issues found
+   - Document known issues/limitations
+   - Capture baseline screenshots
+
+7. **Document test usage:**
+   - Update README with test commands
+   - Document test philosophy
+   - Add CI/CD readiness notes
+
+**Expected Test Results (Current State):**
+- All tests should pass on current codebase
+- Baseline established for post-upgrade comparison
+- Screenshots captured for visual regression
+
+**Files to Create:**
+- `playwright.config.ts`
+- `tests/e2e/*.spec.ts` (6-8 test files)
+- `tests/helpers/*.ts` (utility files)
+- `.github/workflows/test.yml` (optional CI)
+
+**Files to Modify:**
+- `package.json` (add test scripts and Playwright dependency)
+- `.gitignore` (add test artifacts)
+- `README.md` (optional: document testing)
+
+**Deliverables:**
+- ✅ Playwright installed and configured
+- ✅ 20-30 automated tests covering core functionality
+- ✅ Test scripts in package.json
+- ✅ All tests passing on current codebase
+- ✅ Baseline screenshots captured
+- ✅ Test documentation
+
+**Integration with Upgrade Phases:**
+
+After each phase (1-9), run:
+```bash
+npm run test
+```
+
+If tests fail:
+1. Review failure output
+2. Determine if it's a regression or expected change
+3. Fix the regression OR update test for intentional change
+4. Re-run tests until all pass
+5. Commit with confidence
+
+**Risk:** LOW (testing itself is low risk)
+**Effort:** 4-6 hours
+**Value:** CRITICAL - Reduces overall upgrade risk by 70%
+
+**Success Criteria:**
+- All tests pass on current codebase
+- Tests can be run with single command
+- Tests complete in under 2 minutes
+- Clear failure messages when tests fail
+- Can run tests in CI/CD (optional but recommended)
 
 ---
 
@@ -1066,7 +1269,8 @@ Upgrade is successful when:
 | Phase | Effort | Dependencies | Can Parallelize? |
 |-------|--------|--------------|------------------|
 | 0. Preparation | 1-2h | None | N/A |
-| 1. TypeScript/Types | 2-3h | Phase 0 | No |
+| **0.5. Testing Infrastructure** | **4-6h** | **Phase 0** | **No** |
+| 1. TypeScript/Types | 2-3h | Phase 0.5 | No |
 | 2. React 17→18 | 2-3h | Phase 1 | No |
 | 3. Next.js 12→13 | 3-4h | Phase 2 | No |
 | 4. Next.js 13→14 | 1-2h | Phase 3 | No |
@@ -1076,12 +1280,15 @@ Upgrade is successful when:
 | 8. GA Migration | 2-3h | None | Yes |
 | 9. Next.js 14→15 | 1-2h | Phase 4 | No |
 
-**Total Estimated Effort:** 18-27 hours
+**Total Estimated Effort:** 22-33 hours (with testing infrastructure)
 
 **Recommended Schedule:**
-- Week 1: Phases 0-2 (preparation + React)
-- Week 2: Phases 3-5 (Next.js + Remark)
-- Week 3: Phases 6-9 (polish + optional)
+- **Week 1: Phases 0-0.5 (preparation + testing) - CRITICAL FOUNDATION**
+- Week 2: Phases 1-3 (types + React + Next.js 13)
+- Week 3: Phases 4-5 (Next.js 14 + Remark)
+- Week 4: Phases 6-9 (polish + optional)
+
+**Note:** Phase 0.5 (Testing) adds 4-6 hours but reduces risk and saves time in later phases by catching issues immediately.
 
 ---
 

@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "build:mermaid": "webpack --config webpack.config.js"
+    "build:mermaid": "webpack --config webpack.config.js",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:install": "playwright install chromium"
   },
   "engines": {
     "node": ">=22.0.0 <23.0.0"
@@ -31,6 +37,7 @@
     "remark-grid-tables": "^2.1.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.57.0",
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@types/gtag.js": "0.0.3",
