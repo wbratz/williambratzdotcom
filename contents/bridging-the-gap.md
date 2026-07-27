@@ -106,6 +106,10 @@ Today it tracks more than a thousand raw source artifacts and compiles them into
 
 The files matter. The system around them matters more.
 
+![The Vault turns immutable raw evidence into a linked, source-grounded wiki used by product, engineering, AI agents, and automation.](../blogContent/bridging-the-gap/vault-mental-model.svg)
+
+*The Vault is a knowledge compiler: evidence enters, linked context emerges, and every important claim retains a path back to its source.*
+
 ## Evidence First
 
 The Vault has two primary knowledge layers.
@@ -145,6 +149,10 @@ A weekly compile turns pending evidence into useful knowledge. It updates story 
 
 A monthly lint looks for decay: broken references, stale claims, contradictions, orphaned pages, and gaps between Raw evidence and the Wiki’s current story.
 
+![The Vault continuously ingests new evidence, compiles linked knowledge, serves shared context, produces better work, and checks itself for decay.](../blogContent/bridging-the-gap/vault-maintenance-loop.svg)
+
+*This is the part a folder of documents does not provide. Use creates new evidence; maintenance turns that evidence into a better starting point for the next decision.*
+
 Every operation leaves an audit trail. Riskier kinds of knowledge require human promotion. Lower-risk reference material can update automatically. Untrusted source text is first reduced to typed, validated data; the model does not get an unrestricted pen over the trusted knowledge layer.
 
 In other words, the system treats knowledge maintenance like software engineering: sources, types, tests, permissions, logs, review boundaries, and recovery paths.
@@ -169,6 +177,10 @@ By the time implementation begins, those decisions have often been flattened int
 Then engineering creates another trail: design notes, code, PR discussion, tests, rollout decisions, and operational lessons.
 
 Traditional documentation treats these as separate worlds. The Vault treats them as one chain of evidence.
+
+![A customer problem flows through product decisions, architecture, implementation, and production evidence, with Vault links preserving rationale and constraints in both directions.](../blogContent/bridging-the-gap/product-engineering-chain.svg)
+
+*Product can follow a decision forward into what shipped and how it behaved. Engineering can follow an implementation backward into the intent and constraints that shaped it.*
 
 The product requirement can link to the decision that shaped it. The decision can link to the Jira story. The story can link to the relevant system context, implementation conversation, pull request, and resulting architectural decision. Later, a customer question or incident can travel that chain in either direction.
 
@@ -247,6 +259,10 @@ Instead of asking the agent to rediscover the system from a repository-wide sear
 - These similar changes succeeded.
 - These sharp edges have hurt us before.
 - These source files can verify the map.
+
+![Without focused context, an AI implementation repeatedly cycles through prompting, wrong assumptions, and context repair. With The Vault, the agent begins with a focused starting theory, explores the code, implements, and verifies.](../blogContent/bridging-the-gap/context-engineering-loop.svg)
+
+*The Vault does not remove iteration or verification. It reduces the avoidable cycles spent reconstructing context the organization already learned.*
 
 The agent still explores the code. It still runs tests. It still has to prove its work. But it begins from the accumulated experience of the team rather than from generic model priors and whatever happened to fit in the user’s opening prompt.
 

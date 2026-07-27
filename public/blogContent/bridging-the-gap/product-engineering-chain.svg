@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="730" viewBox="0 0 1200 730" role="img" aria-labelledby="title desc">
+  <title id="title">Product-to-engineering knowledge chain</title>
+  <desc id="desc">A customer problem becomes product intent, a decision, requirements, architecture, implementation, a pull request, and observed production behavior, with Vault links preserving rationale and evidence across the chain.</desc>
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .label{font:700 18px Inter,Arial,sans-serif;fill:#eab65c;letter-spacing:.08em}
+      .head{font:700 23px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 17px Inter,Arial,sans-serif;fill:#d6dbe3}
+      .small{font:500 15px Inter,Arial,sans-serif;fill:#9ba6b4}
+      .box{fill:#1b222c;stroke:#354151;stroke-width:2}
+      .flow{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow2)}
+      .link{fill:none;stroke:#71839a;stroke-width:2;stroke-dasharray:7 7}
+    </style>
+  </defs>
+  <rect width="1200" height="730" rx="28" fill="#11151b"/>
+  <text x="60" y="64" class="label">ONE CHAIN OF EVIDENCE, NOT TWO WORLDS</text>
+
+  <text x="80" y="122" class="head">Product intent</text>
+  <text x="875" y="122" class="head">Engineering reality</text>
+
+  <g>
+    <rect x="60" y="160" width="220" height="92" rx="16" class="box"/>
+    <text x="170" y="198" text-anchor="middle" class="head">Customer problem</text>
+    <text x="170" y="225" text-anchor="middle" class="small">pressure · need · outcome</text>
+
+    <rect x="350" y="160" width="220" height="92" rx="16" class="box"/>
+    <text x="460" y="198" text-anchor="middle" class="head">Product decision</text>
+    <text x="460" y="225" text-anchor="middle" class="small">rationale · alternatives</text>
+
+    <rect x="640" y="160" width="220" height="92" rx="16" class="box"/>
+    <text x="750" y="198" text-anchor="middle" class="head">Architecture</text>
+    <text x="750" y="225" text-anchor="middle" class="small">constraints · trade-offs</text>
+
+    <rect x="930" y="160" width="220" height="92" rx="16" class="box"/>
+    <text x="1040" y="198" text-anchor="middle" class="head">Implementation</text>
+    <text x="1040" y="225" text-anchor="middle" class="small">code · tests · pull request</text>
+
+    <path d="M280 206H334" class="flow"/>
+    <path d="M570 206H624" class="flow"/>
+    <path d="M860 206H914" class="flow"/>
+  </g>
+
+  <path d="M1040 252V320C1040 352 1014 378 982 378H218C186 378 160 404 160 436V461" class="flow"/>
+
+  <rect x="60" y="478" width="220" height="92" rx="16" class="box"/>
+  <text x="170" y="516" text-anchor="middle" class="head">Production evidence</text>
+  <text x="170" y="543" text-anchor="middle" class="small">behavior · feedback · incident</text>
+
+  <rect x="350" y="478" width="220" height="92" rx="16" class="box"/>
+  <text x="460" y="516" text-anchor="middle" class="head">What changed?</text>
+  <text x="460" y="543" text-anchor="middle" class="small">intent versus outcome</text>
+
+  <rect x="640" y="478" width="220" height="92" rx="16" class="box"/>
+  <text x="750" y="516" text-anchor="middle" class="head">What did we learn?</text>
+  <text x="750" y="543" text-anchor="middle" class="small">new constraint or pattern</text>
+
+  <rect x="930" y="478" width="220" height="92" rx="16" class="box"/>
+  <text x="1040" y="516" text-anchor="middle" class="head">What comes next?</text>
+  <text x="1040" y="543" text-anchor="middle" class="small">decision · story · correction</text>
+
+  <path d="M280 524H334" class="flow"/>
+  <path d="M570 524H624" class="flow"/>
+  <path d="M860 524H914" class="flow"/>
+
+  <path d="M460 252V462M750 252V462M1040 252V462" class="link"/>
+  <text x="477" y="354" class="small">Vault links preserve</text>
+  <text x="477" y="376" class="small">why it changed</text>
+  <text x="767" y="354" class="small">Vault links preserve</text>
+  <text x="767" y="376" class="small">what constrained it</text>
+
+  <rect x="215" y="632" width="770" height="54" rx="12" fill="#171c24" stroke="#eab65c" stroke-width="1.5"/>
+  <text x="600" y="666" text-anchor="middle" class="body">Product can trace forward to behavior. Engineering can trace backward to intent.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="title desc">
+  <title id="title">The Vault maintenance loop</title>
+  <desc id="desc">New evidence is ingested daily, compiled weekly into linked knowledge, checked monthly for decay, and used by humans and agents, producing decisions and implementations that become new evidence.</desc>
+  <defs>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .label{font:700 18px Inter,Arial,sans-serif;fill:#eab65c;letter-spacing:.08em}
+      .head{font:700 22px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 16px Inter,Arial,sans-serif;fill:#9ba6b4}
+      .box{fill:#1b222c;stroke:#354151;stroke-width:2}
+      .flow{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow3)}
+    </style>
+  </defs>
+  <rect width="1200" height="650" rx="28" fill="#11151b"/>
+  <text x="60" y="64" class="label">THE VAULT IS A MAINTENANCE LOOP</text>
+
+  <rect x="70" y="245" width="205" height="120" rx="18" class="box"/>
+  <text x="172" y="288" text-anchor="middle" class="head">New evidence</text>
+  <text x="172" y="320" text-anchor="middle" class="body">PRs · decisions · incidents</text>
+  <text x="172" y="344" text-anchor="middle" class="body">conversations · documents</text>
+
+  <rect x="355" y="100" width="205" height="120" rx="18" class="box"/>
+  <text x="457" y="143" text-anchor="middle" class="head">Daily ingest</text>
+  <text x="457" y="175" text-anchor="middle" class="body">capture and normalize</text>
+  <text x="457" y="199" text-anchor="middle" class="body">refresh the current map</text>
+
+  <rect x="640" y="100" width="205" height="120" rx="18" class="box"/>
+  <text x="742" y="143" text-anchor="middle" class="head">Weekly compile</text>
+  <text x="742" y="175" text-anchor="middle" class="body">connect and synthesize</text>
+  <text x="742" y="199" text-anchor="middle" class="body">route durable knowledge</text>
+
+  <rect x="925" y="245" width="205" height="120" rx="18" class="box"/>
+  <text x="1027" y="288" text-anchor="middle" class="head">Shared context</text>
+  <text x="1027" y="320" text-anchor="middle" class="body">product · engineering</text>
+  <text x="1027" y="344" text-anchor="middle" class="body">agents · automation</text>
+
+  <rect x="640" y="430" width="205" height="120" rx="18" class="box"/>
+  <text x="742" y="473" text-anchor="middle" class="head">Better work</text>
+  <text x="742" y="505" text-anchor="middle" class="body">decisions · implementation</text>
+  <text x="742" y="529" text-anchor="middle" class="body">investigation · correction</text>
+
+  <rect x="355" y="430" width="205" height="120" rx="18" class="box"/>
+  <text x="457" y="473" text-anchor="middle" class="head">Monthly lint</text>
+  <text x="457" y="505" text-anchor="middle" class="body">stale claims · broken links</text>
+  <text x="457" y="529" text-anchor="middle" class="body">contradictions · gaps</text>
+
+  <path d="M270 255C297 212 320 188 341 177" class="flow"/>
+  <path d="M560 160H624" class="flow"/>
+  <path d="M845 176C881 191 910 216 936 250" class="flow"/>
+  <path d="M1027 365C1004 421 937 473 861 486" class="flow"/>
+  <path d="M640 490H576" class="flow"/>
+  <path d="M355 483C274 466 211 424 184 381" class="flow"/>
+
+  <circle cx="600" cy="324" r="68" fill="#171c24" stroke="#eab65c" stroke-width="2"/>
+  <text x="600" y="312" text-anchor="middle" class="head">Knowledge</text>
+  <text x="600" y="340" text-anchor="middle" class="body">compounds</text>
+</svg>

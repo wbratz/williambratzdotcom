@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Prompting compared with context engineering</title>
+  <desc id="desc">Without a Vault, implementation repeatedly stops for missing architecture, product constraints, and prior lessons. With a focused Vault, the agent begins with intent, decisions, patterns, and evidence before implementing and verifying.</desc>
+  <defs>
+    <marker id="arrow4" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .label{font:700 18px Inter,Arial,sans-serif;fill:#eab65c;letter-spacing:.08em}
+      .head{font:700 22px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 16px Inter,Arial,sans-serif;fill:#d6dbe3}
+      .small{font:500 14px Inter,Arial,sans-serif;fill:#9ba6b4}
+      .box{fill:#1b222c;stroke:#354151;stroke-width:2}
+      .flow{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow4)}
+      .weak{fill:none;stroke:#65758a;stroke-width:2;marker-end:url(#arrow4)}
+    </style>
+  </defs>
+  <rect width="1200" height="560" rx="28" fill="#11151b"/>
+  <text x="60" y="62" class="label">FROM PROMPT REPAIR TO CONTEXT ENGINEERING</text>
+
+  <text x="60" y="118" class="head">Without focused context</text>
+  <g>
+    <rect x="60" y="145" width="185" height="78" rx="14" class="box"/>
+    <text x="152" y="191" text-anchor="middle" class="body">Prompt ticket</text>
+    <rect x="315" y="145" width="185" height="78" rx="14" class="box"/>
+    <text x="407" y="181" text-anchor="middle" class="body">Implement</text>
+    <text x="407" y="204" text-anchor="middle" class="small">wrong assumption</text>
+    <rect x="570" y="145" width="185" height="78" rx="14" class="box"/>
+    <text x="662" y="181" text-anchor="middle" class="body">Add context</text>
+    <text x="662" y="204" text-anchor="middle" class="small">README · PRD · history</text>
+    <rect x="825" y="145" width="185" height="78" rx="14" class="box"/>
+    <text x="917" y="181" text-anchor="middle" class="body">Retry</text>
+    <text x="917" y="204" text-anchor="middle" class="small">find next gap</text>
+    <path d="M245 184H299M500 184H554M755 184H809" class="weak"/>
+    <path d="M917 223V259H407V239" fill="none" stroke="#65758a" stroke-width="2" stroke-dasharray="7 7" marker-end="url(#arrow4)"/>
+    <text x="662" y="282" text-anchor="middle" class="small">prompt → implement → correct → refine</text>
+  </g>
+
+  <line x1="60" y1="315" x2="1140" y2="315" stroke="#2b3440" stroke-width="2"/>
+
+  <text x="60" y="365" class="head">With a focused Vault</text>
+  <g>
+    <rect x="60" y="392" width="230" height="92" rx="14" class="box" stroke="#eab65c"/>
+    <text x="175" y="426" text-anchor="middle" class="body">Task + starting theory</text>
+    <text x="175" y="451" text-anchor="middle" class="small">intent · decisions · patterns</text>
+    <text x="175" y="472" text-anchor="middle" class="small">sharp edges · source links</text>
+    <rect x="385" y="392" width="190" height="92" rx="14" class="box"/>
+    <text x="480" y="432" text-anchor="middle" class="body">Explore code</text>
+    <text x="480" y="458" text-anchor="middle" class="small">verify the map</text>
+    <rect x="670" y="392" width="190" height="92" rx="14" class="box"/>
+    <text x="765" y="432" text-anchor="middle" class="body">Implement</text>
+    <text x="765" y="458" text-anchor="middle" class="small">in-system decision</text>
+    <rect x="955" y="392" width="185" height="92" rx="14" class="box"/>
+    <text x="1047" y="432" text-anchor="middle" class="body">Verify</text>
+    <text x="1047" y="458" text-anchor="middle" class="small">tests + evidence</text>
+    <path d="M290 438H369M575 438H654M860 438H939" class="flow"/>
+  </g>
+</svg>

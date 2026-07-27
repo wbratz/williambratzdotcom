@@ -194,3 +194,8 @@ Acceptance:
   reading time, sitemap, robots, and RSS.
 - 2026-07-27: Phase 1C implemented — semantic navigation, focus/reduced-motion
   support, dead Universal Analytics removal, and legacy route `noindex` controls.
+- 2026-07-27: Render static-export compatibility restored by generating RSS and
+  sitemap files before the Next.js build.
+- 2026-07-27: Added four accessible architecture diagrams to The Vault essay to
+  clarify its mental model, maintenance loop, product-to-engineering evidence
+  chain, and effect on the AI implementation loop.

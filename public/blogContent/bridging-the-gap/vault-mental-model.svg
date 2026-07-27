@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">The Vault mental model</title>
+  <desc id="desc">Raw evidence is ingested into a source-grounded, linked wiki that is maintained over time and queried by product, engineering, AI agents, and automation.</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1d2530"/>
+      <stop offset="1" stop-color="#151b23"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .label{font:700 18px Inter,Arial,sans-serif;fill:#f1f4f8;letter-spacing:.08em}
+      .title{font:700 30px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 19px Inter,Arial,sans-serif;fill:#d6dbe3}
+      .small{font:500 16px Inter,Arial,sans-serif;fill:#9ba6b4}
+      .amber{fill:#eab65c}
+      .line{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#11151b"/>
+  <text x="64" y="68" class="label" fill="#eab65c">THE VAULT: EVIDENCE BECOMES SHARED CONTEXT</text>
+
+  <rect x="62" y="115" width="260" height="420" rx="20" fill="url(#panel)" stroke="#2b3440" stroke-width="2"/>
+  <text x="92" y="160" class="title">Raw evidence</text>
+  <text x="92" y="190" class="small">Immutable source material</text>
+  <g class="body">
+    <text x="92" y="250">Product specs</text>
+    <text x="92" y="298">Slack decisions</text>
+    <text x="92" y="346">Tickets and ADRs</text>
+    <text x="92" y="394">Pull requests</text>
+    <text x="92" y="442">Incidents</text>
+    <text x="92" y="490">Agent sessions</text>
+  </g>
+
+  <rect x="414" y="105" width="372" height="440" rx="24" fill="url(#panel)" stroke="#eab65c" stroke-width="2"/>
+  <text x="449" y="154" class="title">Living wiki</text>
+  <text x="449" y="185" class="small">Derived, linked, inspectable</text>
+  <g>
+    <rect x="454" y="225" width="130" height="58" rx="10" fill="#242e3b" stroke="#3a4656"/>
+    <text x="519" y="261" text-anchor="middle" class="body">Decisions</text>
+    <rect x="616" y="225" width="130" height="58" rx="10" fill="#242e3b" stroke="#3a4656"/>
+    <text x="681" y="261" text-anchor="middle" class="body">Systems</text>
+    <rect x="454" y="330" width="130" height="58" rx="10" fill="#242e3b" stroke="#3a4656"/>
+    <text x="519" y="366" text-anchor="middle" class="body">Concepts</text>
+    <rect x="616" y="330" width="130" height="58" rx="10" fill="#242e3b" stroke="#3a4656"/>
+    <text x="681" y="366" text-anchor="middle" class="body">Changes</text>
+    <path d="M584 254H616M519 283V330M681 283V330M584 359H616" stroke="#eab65c" stroke-width="2.5" stroke-dasharray="7 7"/>
+  </g>
+  <rect x="454" y="435" width="292" height="68" rx="12" fill="#171c24" stroke="#3a4656"/>
+  <text x="600" y="463" text-anchor="middle" class="small">Every important claim links to</text>
+  <text x="600" y="487" text-anchor="middle" class="body">sources and provenance</text>
+
+  <rect x="878" y="115" width="260" height="420" rx="20" fill="url(#panel)" stroke="#2b3440" stroke-width="2"/>
+  <text x="908" y="160" class="title">Consumers</text>
+  <text x="908" y="190" class="small">One memory, many clients</text>
+  <g class="body">
+    <text x="908" y="260">Product</text>
+    <text x="908" y="320">Engineering</text>
+    <text x="908" y="380">AI agents</text>
+    <text x="908" y="440">Automation</text>
+  </g>
+
+  <path d="M322 325H398" class="line"/>
+  <text x="360" y="304" text-anchor="middle" class="small">ingest</text>
+  <path d="M786 325H862" class="line"/>
+  <text x="824" y="304" text-anchor="middle" class="small">query</text>
+
+  <path d="M445 592C490 650 710 650 755 592" fill="none" stroke="#5f7188" stroke-width="2.5" stroke-dasharray="8 8"/>
+  <circle cx="445" cy="592" r="6" class="amber"/>
+  <circle cx="755" cy="592" r="6" class="amber"/>
+  <text x="600" y="610" text-anchor="middle" class="body">maintain · reconcile · synthesize · lint</text>
+</svg>
