@@ -1,8 +1,0 @@
-{
-  "name": "next",
-  "version": "0.0.0-astro-compat",
-  "private": true,
-  "bin": {
-    "next": "next.mjs"
-  }
-}

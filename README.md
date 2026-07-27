@@ -48,8 +48,5 @@ use root-relative Markdown paths such as `/blogContent/example/image.svg`.
 
 Render serves `out/` as a static site. The desired service configuration,
 including security and immutable-asset cache headers, lives in `render.yaml`.
-
-The temporary `next export` compatibility package exists only because the
-current Render dashboard build command still invokes that retired command after
-the Astro build. It performs no build work. Once the service is synchronized
-with `render.yaml`, remove the `next` file dependency and `scripts/next-compat/`.
+The existing Render service uses `npm ci && npm run build`, matching the
+versioned Blueprint configuration.
