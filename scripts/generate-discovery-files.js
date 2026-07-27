@@ -27,6 +27,8 @@ const posts = fs
 const sitemapPages = [
   { url: "", date: posts[0].date },
   { url: "/blog", date: posts[0].date },
+  { url: "/projects", date: "2026-07-27" },
+  { url: "/projects/vault", date: "2026-07-27" },
   { url: "/resume", date: "2026-07-27" },
   ...posts.map((post) => ({ url: `/blog/${post.slug}`, date: post.date })),
 ];

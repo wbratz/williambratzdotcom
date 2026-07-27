@@ -96,6 +96,9 @@ export default function Home({ featuredPosts }: HomeProps) {
                 </p>
               </div>
               <div className={styles.projectLinks}>
+                <Link href="/projects/vault" legacyBehavior>
+                  <a>Explore the system</a>
+                </Link>
                 <Link href="/blog/bridging-the-gap" legacyBehavior>
                   <a>Read the field guide</a>
                 </Link>

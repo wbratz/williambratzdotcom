@@ -199,3 +199,6 @@ Acceptance:
 - 2026-07-27: Added four accessible architecture diagrams to The Vault essay to
   clarify its mental model, maintenance loop, product-to-engineering evidence
   chain, and effect on the AI implementation loop.
+- 2026-07-27: Phase 2B started with `/projects` and a dedicated `/projects/vault`
+  case study covering the generic architecture, operating model, trust boundaries,
+  worked example, limitations, and adoption path.
