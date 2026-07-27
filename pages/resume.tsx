@@ -22,7 +22,7 @@ export default function Resume() {
       <article className={styles.resume}>
         <header className={styles.hero}>
           <div>
-            <p className={styles.eyebrow}>Senior Software Engineer · Phoenix, Arizona</p>
+            <p className={styles.eyebrow}>Senior Software Engineer · Tri-Cities, Tennessee</p>
             <h1>William “Billy” Bratz</h1>
             <p className={styles.intro}>
               Senior software engineer with 11 years building distributed systems and,
