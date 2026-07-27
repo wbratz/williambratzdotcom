@@ -1,0 +1,239 @@
+.about {
+  width: min(calc(100% - 2rem), 76rem);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: min(43rem, calc(100vh - 4.5rem));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 10rem;
+  align-items: center;
+  gap: clamp(2rem, 8vw, 7rem);
+  padding: clamp(5rem, 12vw, 9rem) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.heroCopy {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.eyebrow,
+.sectionHeading > p,
+.cardType {
+  margin: 0 0 1rem;
+  color: var(--link-color);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 16ch;
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(2.9rem, 7vw, 6rem);
+  font-weight: 750;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.lede {
+  max-width: 63ch;
+  margin: 2rem 0 0;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  line-height: 1.72;
+  overflow-wrap: anywhere;
+}
+
+.portrait {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 24%);
+}
+
+.section {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sectionHeading {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.35fr) minmax(0, 1fr);
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.sectionHeading h2 {
+  max-width: 21ch;
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(2rem, 4.5vw, 3.7rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.prose {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 5rem);
+  margin-left: calc(35% + 0.65rem);
+}
+
+.prose p,
+.community p,
+.feature > p:not(.cardType),
+.principles p {
+  color: var(--text-muted);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+.prose p {
+  margin: 0;
+}
+
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.principles article,
+.feature {
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.principles span {
+  color: var(--link-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.principles h3,
+.feature h3,
+.community h3 {
+  margin: 2rem 0 0;
+  color: var(--heading-color);
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.03em;
+}
+
+.principles p {
+  margin: 0.9rem 0 0;
+}
+
+.publicGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.feature {
+  min-height: 22rem;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.feature h3 {
+  margin-top: 0;
+}
+
+.feature > p:not(.cardType) {
+  margin: 1rem 0;
+}
+
+.cardLinks {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: auto;
+}
+
+.cardLinks a,
+.community a {
+  color: var(--link-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 0.22em;
+}
+
+.community {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(2rem, 8vw, 7rem);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.community h3 {
+  margin: 0;
+}
+
+.community p:not(.cardType) {
+  max-width: 58ch;
+  margin: 0 0 1.25rem;
+}
+
+.contact {
+  padding: clamp(4rem, 9vw, 7rem) 0;
+}
+
+@media (max-width: 720px) {
+  .about {
+    width: min(calc(100% - 1.5rem), 76rem);
+  }
+
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    overflow: hidden;
+  }
+
+  .portrait {
+    grid-row: 1;
+    width: 96px;
+    height: 96px;
+  }
+
+  .sectionHeading,
+  .prose,
+  .principles,
+  .publicGrid,
+  .community {
+    grid-template-columns: 1fr;
+  }
+
+  .eyebrow {
+    max-width: 28ch;
+    line-height: 1.6;
+  }
+
+  .prose {
+    margin-left: 0;
+  }
+
+  .feature {
+    min-height: 18rem;
+  }
+}

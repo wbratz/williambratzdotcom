@@ -1,8 +1,8 @@
 ---
-title: The leap of faith
+title: The Leap of Faith
 slug: the-leap-of-faith
 date: 2020-12-05
-description: This first blog post is not necessarily related to programming, it’s more my perspective on life, and opportunity in general. My first job was a paper route when I was 8 years old, I didn't want a paper route, my older brother did, but his route was huge and took him hours. Luckily I was there to pick up half, don't misunderstand, this was not two brothers going out together, he took one side of the street I took the other...
+description: A personal reflection on opportunity, calculated risk, and what can happen when you choose to take the leap.
 photo: "./leap_sm.jpg"
 banner: "../leap.jpg"
 imageAlt: A person leaping from a cliff into open water.

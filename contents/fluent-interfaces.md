@@ -1,8 +1,8 @@
 ---
-title: Extension methods, fluent Interfaces, and method chaining in C#
+title: Extension Methods, Fluent Interfaces, and Method Chaining in C#
 slug: fluent-interfaces
 date: 2020-12-14
-description: Fluent interfaces, and method chaining in C# are helpful ways to reduce lines of code, increase code readability, and allow the next developer to quickly look through you code and easily know what is happening. In this blog I'll walk you through building extension methods, using method chaining and fluent interfaces, Let's dive in!
+description: How extension methods, method chaining, and fluent interfaces can make C# code more expressive without hiding what it does.
 photo: "./blogContent/fluent-interfaces/extension_sm.jpg"
 banner: "../blogContent/fluent-interfaces/extension.jpg"
 imageAlt: A C# code sample illustrating extension methods and fluent method chaining.

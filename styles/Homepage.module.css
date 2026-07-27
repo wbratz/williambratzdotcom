@@ -14,8 +14,7 @@
 
 .eyebrow,
 .sectionHeading > p,
-.projectType,
-.contact > p {
+.projectType {
   margin: 0 0 1rem;
   color: var(--link-color);
   font-size: 0.76rem;
@@ -153,7 +152,7 @@
 
 .project a,
 .allWriting,
-.contact a {
+.aboutLink {
   color: var(--link-color);
   font-size: 0.88rem;
   font-weight: 700;
@@ -225,17 +224,14 @@
   line-height: 1.75;
 }
 
-.contact {
-  padding: clamp(4.5rem, 11vw, 9rem) 0;
+.aboutLink {
+  display: inline-block;
+  margin-top: 2rem;
+  margin-left: calc(35% + 0.65rem);
 }
 
-.contact h2 {
-  max-width: 21ch;
-  margin: 0 0 2rem;
-  color: var(--heading-color);
-  font-size: clamp(2.1rem, 5vw, 4.5rem);
-  letter-spacing: -0.05em;
-  line-height: 1.03;
+.contact {
+  padding: clamp(4rem, 9vw, 7rem) 0;
 }
 
 @media (max-width: 720px) {
@@ -268,6 +264,10 @@
 
   .aboutCopy {
     grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .aboutLink {
     margin-left: 0;
   }
 }

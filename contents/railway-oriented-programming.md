@@ -1,8 +1,8 @@
 ---
-title: "You're Not Using Railway Oriented Programming and You're an Idiot"
+title: "Railway-Oriented Programming in C#: Errors Without the Spaghetti"
 slug: railway-oriented-programming
 date: 2025-06-12
-description: "A no-BS guide to Railway Oriented Programming in C# with real-world examples and why you should stop writing spaghetti error-handling logic."
+description: "A practical guide to Railway-Oriented Programming in C#, with real examples for keeping error-handling logic explicit and composable."
 photo: "./blogContent/railway-oriented-programming/railway_thumbnail.png"
 banner: "../blogContent/railway-oriented-programming/railway_banner.png"
 imageAlt: Parallel railway tracks illustrating success and failure paths in Railway Oriented Programming.

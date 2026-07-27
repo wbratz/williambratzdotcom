@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import ContactCallout from "../src/components/ContactCallout";
 import Layout from "../src/components/Layout";
 import { getAllPostSummaries, PostSummary } from "../src/lib/content";
 import styles from "../styles/Homepage.module.css";
@@ -180,17 +181,16 @@ export default function Home({ featuredPosts }: HomeProps) {
               about here.
             </p>
           </div>
+          <Link href="/about" legacyBehavior>
+            <a className={styles.aboutLink}>
+              More about me <span aria-hidden="true">→</span>
+            </a>
+          </Link>
         </section>
 
-        <section className={styles.contact} aria-labelledby="contact-title">
-          <p>Let&apos;s compare notes.</p>
-          <h2 id="contact-title">
-            Interested in production AI, MCP, or engineering knowledge systems?
-          </h2>
-          <a href="mailto:WilliamBratz615@gmail.com">
-            WilliamBratz615@gmail.com <span aria-hidden="true">→</span>
-          </a>
-        </section>
+        <div className={styles.contact}>
+          <ContactCallout />
+        </div>
       </div>
     </Layout>
   );

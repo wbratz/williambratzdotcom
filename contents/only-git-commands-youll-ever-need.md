@@ -1,8 +1,8 @@
 ---
-title: The only 8 git commands you'll ever need (and why git command line is superior).
+title: The Only 8 Git Commands You'll Ever Need
 slug: only-git-commands-youll-ever-need
 date: 2020-12-30
-description: I've been a git advocate for 10 years, and like it or not its the standard for any sort of version control. Over the years I've used many different GUI applications to interact with my git repositories, but I keep coming back to the command line. As a bonus I'll go over a couple tools and setup tips to make your command line experience more palatable.
+description: Eight Git commands that cover most daily work, plus a few tools and setup choices that make the command line easier to live in.
 photo: "./blogContent/git-commands/git-commands_sm.jpg"
 banner: "../blogContent/git-commands/git-commands.jpg"
 imageAlt: A terminal window representing practical Git commands for everyday development.

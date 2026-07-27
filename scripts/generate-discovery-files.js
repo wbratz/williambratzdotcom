@@ -18,6 +18,7 @@ const posts = getAllPostSummaries();
 
 const sitemapPages = [
   { url: "", date: posts[0].date },
+  { url: "/about", date: "2026-07-27" },
   { url: "/blog", date: posts[0].date },
   { url: "/projects", date: "2026-07-27" },
   { url: "/projects/vault", date: "2026-07-27" },

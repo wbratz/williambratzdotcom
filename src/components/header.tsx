@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Home.module.css";
 
 const navigation = [
-  { href: "/#about", label: "About", match: "/" },
+  { href: "/about", label: "About", match: "/about" },
   { href: "/blog", label: "Writing", match: "/blog" },
   { href: "/projects", label: "Projects", match: "/projects" },
   { href: "/resume", label: "Résumé", match: "/resume" },

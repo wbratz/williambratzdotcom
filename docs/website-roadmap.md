@@ -205,3 +205,7 @@ Acceptance:
 - 2026-07-27: Phase 2A implemented with validated, typed post metadata; a shared
   content loader; topic filters; explicit series order; related essays; and
   previous/next navigation.
+- 2026-07-27: Phase 2C implemented with a dedicated About page connecting
+  production engineering, public work, working principles, and Sunny's Light;
+  plus a reusable contact callout, updated site navigation, and consistent
+  catalog metadata for older essays.

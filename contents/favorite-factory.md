@@ -1,8 +1,8 @@
 ---
-title: Simplifying Object Creation and Reducing Code Duplication with A Unique Factory Pattern Implementation
+title: A Factory Pattern for Simpler Object Creation
 slug: favorite-factory
 date: 2022-10-25
-description: Simplify object creation and reduce code duplication with a unique factory pattern implementation. Learn how to create concrete types for each interface and an abstract factory class to serve as a base for the concrete factories. Plus, see how to modify your interface and factory methods to accept additional parameters.
+description: A C# factory pattern that reduces repeated object-creation logic while keeping concrete types and parameters easy to extend.
 photo: "./blogContent/favorite-factory/favorite-factory-sm.png"
 banner: "../blogContent/favorite-factory/favorite-factory.png"
 imageAlt: A code-themed illustration for a C# factory pattern implementation.
