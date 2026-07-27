@@ -17,6 +17,7 @@
   "dependencies": {
     "@astrojs/react": "^6.0.1",
     "astro": "^7.1.4",
+    "next": "file:scripts/next-compat",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
