@@ -17,6 +17,15 @@ export default function Resume() {
           name="description"
           content="William Bratz is a senior software engineer building production LLM agent platforms and distributed systems."
         />
+        <link rel="canonical" href="https://www.williambratz.com/resume" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://www.williambratz.com/resume" />
+        <meta property="og:title" content="William “Billy” Bratz — Senior Software Engineer" />
+        <meta
+          property="og:description"
+          content="Senior software engineer building production LLM agent platforms and distributed systems."
+        />
+        <meta name="twitter:card" content="summary" />
       </Head>
 
       <article className={styles.resume}>

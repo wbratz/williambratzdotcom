@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import styles from "../../styles/downloadbutton.module.css";
 
 interface DownloadButtonProps {
@@ -20,9 +21,14 @@ const DownloadButton: React.FC<DownloadButtonProps> = ({ filename, content }) =>
   };
 
   return (
-    <button onClick={handleClick} className={styles.downloadButton}>
-      Download {filename}
-    </button>
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
+      <button onClick={handleClick} className={styles.downloadButton}>
+        Download {filename}
+      </button>
+    </>
   );
 };
 

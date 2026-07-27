@@ -50,6 +50,25 @@ a:hover {
   box-sizing: border-box;
 }
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+  outline: 3px solid var(--link-color);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--heading-color);
+  background: color-mix(in srgb, var(--link-color) 35%, transparent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
@@ -59,4 +78,19 @@ a:hover {
 .mermaid {
   font-family: 'Arial', sans-serif;
   font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

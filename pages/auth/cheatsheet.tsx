@@ -1,4 +1,5 @@
 import Layout from "../../src/components/Layout";
+import Head from "next/head";
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 import DownloadButton from './downloadButton';
@@ -66,6 +67,10 @@ const content = `## 1. What is Authorization?
 
   return (
     <Layout>
+        <Head>
+            <title>Authorization reference — William Bratz</title>
+            <meta name="robots" content="noindex, nofollow" />
+        </Head>
         <div>
             <DownloadButton filename="Cheatsheet.md" content={content} />
             <ReactMarkdown>{content}</ReactMarkdown>

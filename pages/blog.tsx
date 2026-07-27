@@ -1,35 +1,73 @@
-import Layout from "../src/components/Layout";
-import React from "react";
-import styles from "../styles/blog.module.css";
+import fs from "fs";
+import matter from "gray-matter";
+import Head from "next/head";
 import Link from "next/link";
+import path from "path";
+import React from "react";
+import Layout from "../src/components/Layout";
+import styles from "../styles/blog.module.css";
 
-export default function Blog(props) {
+const SITE_URL = "https://www.williambratz.com";
+
+export default function Blog({ blogs }) {
   return (
     <Layout>
+      <Head>
+        <title>Writing — William Bratz</title>
+        <meta
+          name="description"
+          content="Essays by William Bratz on production AI systems, software design, distributed systems, and engineering knowledge."
+        />
+        <link rel="canonical" href={`${SITE_URL}/blog`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`${SITE_URL}/blog`} />
+        <meta property="og:title" content="Writing — William Bratz" />
+        <meta
+          property="og:description"
+          content="Essays on production AI systems, software design, distributed systems, and engineering knowledge."
+        />
+        <meta name="twitter:card" content="summary" />
+      </Head>
+
       <div className={styles.blogContainer}>
-        <ul>
-          {props.blogs.map((blog, idx) => {
-            return (
-              <div className={styles.blogSummaryWrapper}>
-                <div className={styles.blogSummaryPhoto}>
-                  <img src={blog.photo} />
-                </div>
+        <header className={styles.blogIndexHeader}>
+          <p>Writing</p>
+          <h1>Notes from building, operating, and thinking.</h1>
+          <div>
+            Essays about production AI systems, distributed software, engineering
+            judgment, and the knowledge teams build together.
+          </div>
+        </header>
+        <ul className={styles.blogList}>
+          {blogs.map((blog) => (
+            <li key={blog.slug}>
+              <article className={styles.blogSummaryWrapper}>
+                <Link href={`/blog/${blog.slug}`} legacyBehavior>
+                  <a className={styles.blogSummaryPhoto} aria-label={`Read ${blog.title}`}>
+                    <img src={blog.photo} alt="" />
+                  </a>
+                </Link>
                 <div className={styles.blogSummaryPosts}>
-                  <li key={blog.id}>
-                    <div className={styles.blogSummaryTitle}>{blog.title}</div>
-                    <div className={styles.blogSummaryContent}>
-                      {blog.description}
-                    </div>
-                    <p>
-                      <Link href={`/blog/${blog.slug}`} legacyBehavior>
-                        <a>Read More</a>
-                      </Link>
-                    </p>
-                  </li>
+                  <time dateTime={new Date(blog.date).toISOString()}>
+                    {new Intl.DateTimeFormat("en-US", {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                    }).format(new Date(blog.date))}
+                  </time>
+                  <h2 className={styles.blogSummaryTitle}>
+                    <Link href={`/blog/${blog.slug}`} legacyBehavior>
+                      <a>{blog.title}</a>
+                    </Link>
+                  </h2>
+                  <p className={styles.blogSummaryContent}>{blog.description}</p>
+                  <Link href={`/blog/${blog.slug}`} legacyBehavior>
+                    <a className={styles.readMore}>Read essay <span aria-hidden="true">→</span></a>
+                  </Link>
                 </div>
-              </div>
-            );
-          })}
+              </article>
+            </li>
+          ))}
         </ul>
       </div>
     </Layout>
@@ -37,36 +75,15 @@ export default function Blog(props) {
 }
 
 export async function getStaticProps() {
-  const fs = require("fs");
-  const matter = require("gray-matter");
-  const { v4: uuid } = require("uuid");
+  const contentDirectory = path.join(process.cwd(), "contents");
+  const blogs = fs
+    .readdirSync(contentDirectory)
+    .filter((filename) => filename.endsWith(".md"))
+    .map((filename) => {
+      const raw = fs.readFileSync(path.join(contentDirectory, filename), "utf8");
+      return matter(raw).data;
+    })
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const files = fs.readdirSync(`${process.cwd()}/contents`, "utf-8");
-
-  const blogs = files
-    .filter((fn: string) => fn.endsWith(".md"))
-    .map((fn: any) => {
-      const path = `${process.cwd()}/contents/${fn}`;
-      const rawContent = fs.readFileSync(path, {
-        encoding: "utf-8",
-      });
-      const { data } = matter(rawContent);
-
-      return { ...data, id: uuid() };
-    });
-
-  blogs.sort(function (a, b) {
-    var keyA = new Date(a.date),
-      keyB = new Date(b.date);
-
-    if (keyA > keyB) return -1;
-    if (keyA < keyB) return 1;
-    return 0;
-  });
-
-  // By returning { props: blogs }, the component
-  // will receive `blogs` as a prop at build time
-  return {
-    props: { blogs },
-  };
+  return { props: { blogs } };
 }

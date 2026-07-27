@@ -1,67 +1,89 @@
 .blogContainer {
-  max-width: 1500px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  width: min(calc(100% - 2rem), 72rem);
+  margin: 0 auto;
+  padding: clamp(4rem, 9vw, 7rem) 0;
 }
 
-.blogContainer li {
-  list-style: none;
+.blogIndexHeader {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.3fr) minmax(0, 1fr);
+  gap: 1rem 2rem;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
 }
 
-.blogContainer a {
+.blogIndexHeader > p {
+  margin: 0;
   color: var(--link-color);
-  text-decoration: underline;
-  text-underline-offset: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.blogIndexHeader h1 {
+  max-width: 16ch;
+  margin: 0;
+  color: var(--heading-color);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  letter-spacing: -0.06em;
+  line-height: 0.98;
+}
+
+.blogIndexHeader > div {
+  grid-column: 2;
+  max-width: 60ch;
+  color: var(--text-muted);
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.65;
+}
+
+.blogList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-color);
 }
 
 .blogSummaryWrapper {
-  display: flex;
-  flex-direction: row;
-  margin: 2%;
-  flex-wrap: nowrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.42fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 5vw, 4rem);
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .blogSummaryPosts {
-  display: flex;
-  width: 50%;
-  height: 100%;
-  flex-wrap: nowrap;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  min-width: 0;
 }
 
-.highlightjs-black-bg {
-  background-color: #000;
-  color: #fff;
-  padding: 1em;
-  border-radius: 0.5em;
-}
-
-.blogSummaryPosts {
-  display: flex;
-  width: 50%;
-  height: 100%;
-  flex-wrap: nowrap;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 10px;
+.blogSummaryPosts time {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .blogSummaryTitle {
-  width: 100%;
-  font-weight: 700;
-  font-size: larger;
+  margin: 0.5rem 0 0;
+  color: var(--heading-color);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.blogSummaryTitle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blogSummaryTitle a:hover {
+  color: var(--link-color);
 }
 
 .blogSummaryContent {
-  display: flex;
-  width: 100%;
-  flex-wrap: nowrap;
-  margin-top: 10px;
+  margin: 0.8rem 0 1.1rem;
   color: var(--text-muted);
   font-family: "Source Serif 4", Georgia, serif;
   font-size: 1.0625rem;
@@ -69,11 +91,34 @@
 }
 
 .blogSummaryPhoto {
+  min-height: 10rem;
+  display: block;
+  align-self: stretch;
+  overflow: hidden;
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+}
+
+.blogSummaryPhoto img {
+  width: 100%;
   height: 100%;
-  background-color: honeydew;
-  display: flex;
-  align-self: center;
-  justify-content: center;
+  display: block;
+  object-fit: cover;
+  transition: transform 200ms ease;
+}
+
+.blogSummaryPhoto:hover img {
+  transform: scale(1.025);
+}
+
+.readMore {
+  color: var(--link-color);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 0.2em;
 }
 
 .blogPostBanner {
@@ -97,6 +142,17 @@
   color: var(--heading-color);
   font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-align: center;
+}
+
+.blogPostMeta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
 }
 
 .blogPostTitle h1 {
@@ -287,12 +343,33 @@
 }
 
 @media screen and (max-width: 600px) {
+  .blogContainer {
+    width: min(calc(100% - 1.5rem), 72rem);
+  }
+
+  .blogIndexHeader,
+  .blogSummaryWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .blogIndexHeader > div {
+    grid-column: 1;
+  }
+
+  .blogSummaryPhoto {
+    min-height: 12rem;
+  }
+
   .blogPostContainer {
     width: min(100% - 1.5rem, 76rem);
   }
 
   .blogPostTitle {
     text-align: left;
+  }
+
+  .blogPostMeta {
+    justify-content: flex-start;
   }
 
   .blogPostTitle h1 {

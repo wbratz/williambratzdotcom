@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Layout from '../../src/components/Layout';
 import Mermaid from '../../src/components/Mermaid';
 
@@ -15,6 +16,10 @@ const Diagrams: React.FC = () => {
 
   return (
     <Layout>
+      <Head>
+        <title>Authorization diagram — William Bratz</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
       <h1>Mermaid Diagram</h1>
       <div style={{ width: '100%', height: '800px' }}>
         <Mermaid chart={diagram} />
