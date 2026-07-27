@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="333" viewBox="0 0 500 333">
+  <defs>
+    <linearGradient id="bg-banner" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1f2d" />
+      <stop offset="100%" stop-color="#1f3a4a" />
+    </linearGradient>
+    <linearGradient id="bridge-banner" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e7a34b" />
+      <stop offset="100%" stop-color="#f2d07c" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="333" fill="url(#bg-banner)" />
+  <path d="M0 250 C90 205 145 215 205 250 L205 333 L0 333 Z" fill="#172a35" />
+  <path d="M500 250 C410 205 355 215 295 250 L295 333 L500 333 Z" fill="#172a35" />
+  <path d="M95 230 Q250 70 405 230" fill="none" stroke="url(#bridge-banner)" stroke-width="10" />
+  <path d="M105 230 L395 230" fill="none" stroke="#f2d07c" stroke-width="7" />
+  <path d="M135 190 L135 230 M180 145 L180 230 M225 120 L225 230 M275 120 L275 230 M320 145 L320 230 M365 190 L365 230" stroke="#7fb6c6" stroke-width="3" opacity="0.9" />
+  <circle cx="130" cy="216" r="8" fill="#e7a34b" />
+  <circle cx="250" cy="216" r="8" fill="#f2d07c" />
+  <circle cx="370" cy="216" r="8" fill="#e7a34b" />
+  <path d="M30 285 C120 260 165 300 225 280 S365 255 470 288" fill="none" stroke="#7fb6c6" stroke-width="3" opacity="0.55" />
+</svg>
