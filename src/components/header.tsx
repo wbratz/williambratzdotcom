@@ -51,7 +51,13 @@ export default function Header() {
         <nav className={styles.nav} aria-label="Primary navigation">
           <Link href="/" legacyBehavior>
             <a className={styles.wordmark} aria-label="William Bratz, home">
-              <span aria-hidden="true">WB</span>
+              <img
+                className={styles.wordmarkPortrait}
+                src="/headerphoto.jpg"
+                alt=""
+                width="36"
+                height="36"
+              />
               <span>William Bratz</span>
             </a>
           </Link>

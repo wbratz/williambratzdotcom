@@ -50,17 +50,13 @@
   text-decoration: none;
 }
 
-.wordmark > span:first-child {
-  display: grid;
-  width: 2rem;
-  height: 2rem;
-  place-items: center;
-  color: #17120a;
-  background: var(--link-color);
-  border-radius: 0.45rem;
-  font-family: Inconsolata, monospace;
-  font-size: 0.78rem;
-  letter-spacing: -0.05em;
+.wordmarkPortrait {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: cover;
+  border: 1px solid color-mix(in srgb, var(--link-color) 55%, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--bg-color) 70%, transparent);
 }
 
 .navPanel {
