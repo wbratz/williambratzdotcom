@@ -1,342 +1,285 @@
-import Link from "next/link";
+import Head from "next/head";
 import Layout from "../src/components/Layout";
 import styles from "../styles/Resume.module.css";
+
+const ExternalLink = ({ href, children }) => (
+  <a href={href} target="_blank" rel="noreferrer">
+    {children}
+  </a>
+);
 
 export default function Resume() {
   return (
     <Layout>
-      <div className={styles.resumeContainer}>
-        <div className={styles.resumeLogo}>
-          <div className={styles.resumePdf}>
-            <Link href="/WilliamBratz-resume.pdf" legacyBehavior>
-              <a>
-                <img src="https://img.icons8.com/color/48/000000/pdf.png" />
-              </a>
-            </Link>
-          </div>
-          <div className={styles.resumeName}>
-            <h1>William Bratz</h1>
-          </div>
-          <div className={styles.resumeTitle}>
-            <p>
-              <Link href="mailto:WilliamBratz615@gmail.com" legacyBehavior>
-                <a>Email</a>
-              </Link>{" "}
-              |{" "}
-              <Link href="http://www.linkedin.com/in/williambratz" legacyBehavior>
-                <a>LinkedIn</a>
-              </Link>
+      <Head>
+        <title>William “Billy” Bratz — Senior Software Engineer</title>
+        <meta
+          name="description"
+          content="William Bratz is a senior software engineer building production LLM agent platforms and distributed systems."
+        />
+      </Head>
+
+      <article className={styles.resume}>
+        <header className={styles.hero}>
+          <div>
+            <p className={styles.eyebrow}>Senior Software Engineer · Phoenix, Arizona</p>
+            <h1>William “Billy” Bratz</h1>
+            <p className={styles.intro}>
+              Senior software engineer with 11 years building distributed systems and,
+              since late 2025, production LLM agent systems. I founded the MCP server
+              and orchestrator that became my organization&apos;s LLM platform, and I
+              turn difficult operational lessons into durable systems, standards, and
+              writing.
             </p>
           </div>
-        </div>
-        <div className={styles.resumeMainbar}>
-          <div className={styles.resumeMainHeading}>
-            PROFESSIONAL EXPERIENCE
-          </div>
-          <div className={styles.resumeMainInfo}>
-            <b>Carvana</b>
-          </div>
-          <div className={styles.resumeMainContent}>
-            Senior Software Engineer
-            <br></br>2020 - Present
-            <br></br>
-            <i>
-              Carvana LLC., A pioneer in the online car buying experience and the second largest used car retailer in the United States.
-            </i>
-            <p>
-              <b>Summary</b>:{" "}
+
+          <a
+            className={styles.download}
+            href="/WilliamBratz-resume.pdf"
+            download
+            aria-label="Download William Bratz's resume as a PDF"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" />
+            </svg>
+            Download PDF
+          </a>
+
+          <nav className={styles.contact} aria-label="Resume contact links">
+            <a href="mailto:WilliamBratz615@gmail.com">Email</a>
+            <ExternalLink href="https://www.linkedin.com/in/williambratz">
+              LinkedIn
+            </ExternalLink>
+            <ExternalLink href="https://github.com/wbratz">GitHub</ExternalLink>
+            <ExternalLink href="https://williambratz.com">williambratz.com</ExternalLink>
+          </nav>
+        </header>
+
+        <section className={styles.section}>
+          <h2>Experience</h2>
+
+          <div className={styles.role}>
+            <div className={styles.roleHeading}>
+              <div>
+                <h3>Carvana</h3>
+                <p>Senior Software Engineer II</p>
+              </div>
+              <p className={styles.meta}>2020–Present · Remote</p>
+            </div>
+
+            <div className={styles.assignment}>
+              <h4>LLM Platform — Conversational AI</h4>
+              <p className={styles.assignmentMeta}>
+                Jun 2026–Present · Python, FastAPI, FastMCP, Kubernetes, Datadog
+              </p>
               <ul>
-                <li>Played a pivotal role on the Verifications platform team, comprising seven engineers, focusing on a core domain vital for Carvana's competitive advantage.</li>
-                <li>Led end-to-end project cycles from requirement gathering and solution architecture to production release and post-launch support.</li>
-                <li>Specialized in designing and implementing microservices in a distributed environment, utilizing Kubernetes with three regions hosting approximately three auto-scaling pods each.</li>
-                <li>Managed multiple microservices tailored to generate and verify requirements crucial for the business.</li>
-                <li>Ensured smooth inter-service communication through REST API calls, Azure service bus messages/topics, and asynchronous commands in queues.</li>
-                <li>Engaged with external systems via Kafka for efficient cross-domain interactions.</li>
-                <li>Our primary tech stack includes Azure Kubernetes, Azure SQL, CosmosDB, Azure Service Bus, Kafka, and .NET Core.</li>
+                <li>
+                  Operate an MCP platform serving more than 10 million weekly tool
+                  calls, connecting conversational AI to production systems.
+                </li>
+                <li>
+                  Root-caused a multi-service outage in minutes across a five-hop
+                  request chain, halting a harmful redeploy and directing the recovery.
+                </li>
+                <li>
+                  Demonstrated that an incident remained active after apparent
+                  recovery because of timeout asymmetry, changing how the team
+                  validates service health.
+                </li>
+                <li>
+                  Designed and shipped a same-day in-cluster route that delivered a
+                  double-digit p95 latency reduction while preserving the public path
+                  as a safe fallback.
+                </li>
+                <li>
+                  Found and corrected a CI isolation defect across 383 tests,
+                  restoring zero-network unit-test guarantees.
+                </li>
+                <li>
+                  Resolved an MCP HTTP 421 outage using APM evidence, then added a
+                  dependency-host guard, pinned lockfile, monitors, and an audit of
+                  sibling services.
+                </li>
+                <li>
+                  Eliminated order-of-magnitude retry amplification and validated the
+                  change under live production traffic.
+                </li>
+                <li>
+                  Shipped three customer-context MCP tools, including the platform&apos;s
+                  first MCP-to-MCP workflow, within service-level objectives.
+                </li>
+                <li>
+                  Used production log analysis to isolate and correct a timestamp race,
+                  then verified the fix under load.
+                </li>
+                <li>
+                  Designed a split test for a model migration covering a significant
+                  share of assistant traffic.
+                </li>
               </ul>
-            </p>
-            <p>
-              <u>Insurance OCR</u>: Spearheaded a visionary project that stemmed from my innovative hackathon idea: using Optical Character Recognition (OCR) to process insurance documents. As the Technical Lead, I bridged the gap between business needs and technical solutions, translating high-level objectives into actionable technical tasks
-            </p>
-            <ul>
-              <li>Conceptualized and architected a solution aligning with business objectives, thereby ensuring goal congruence.</li>
-              <li>Effectively communicated the design rationale, underlying concept, and associated technical details to team members via comprehensive documentation and team meetings.</li>
-              <li>Dynamically adjusted and implemented the design to accommodate evolving requirements, showcasing agility and responsiveness.</li>
-              <li>Enhanced existing applications with features to support the new design, demonstrating adaptability.</li>
-              <li>Performed thorough end-to-end testing to ensure robust functionality and reliability.</li>
-              <li>Swiftly delivered a Proof of Concept within a tight 3-day timeframe, highlighting efficiency and rapid prototyping skills.</li>
-              <li>Realized a significant decrease in verification time and achieved a remarkable less than 2% error rate, outperforming previous survey-based methods and streamlining the verification process.</li>
-            </ul>
-            <p>
-              <u>Insurance Survey</u>: Collaborated across several Verifications engineering teams within Carvana to significantly reduce the time customer service advocates spend on insurance-related tasks. We achieved a monumental reduction, bringing the time down from over 20 minutes to under 4 minutes per instance.
-            </p>
-            <ul>
-                <li>Conceptualized and designed a greenfield microservice, facilitating asynchronous work item generation for advocates based on events and ensuring efficient tracking to completion.</li>
-                <li>Conveyed design principles and technical underpinnings to team members through meticulous documentation and team discussions.</li>
-                <li>Responsive to changes, iterating on the initial design to meet evolving requirements.</li>
-                <li>Augmented existing applications with necessary features, ensuring seamless integration with the new service.</li>
-                <li>Conducted rigorous end-to-end testing, ensuring reliable functionality and user experience.</li>
-                <li>Proactively supported other teams to meet project deadlines, exemplifying teamwork and dedication.</li>
-                <li>Engaged in UI development as required, employing React and Typescript to deliver intuitive interfaces.</li>
-            </ul>
-            <p>
-              <u>Application Right Sizing</u>: Initiative to evaluate current application resource utilization, 
-              and find ways to improve. An example of the result of the effort is memory usage in one 
-              application went from over 1GB constant 1.5GB max to never going above 243MB which 
-              translates to going from 60% - 80% total memory usage to less than 10%. 
-              Ultimately I was able to decrease the TShirt size of most of our applications, 
-              lowering our monthly running costs significantly.
-            </p>
-            <ul>
-              <li>
-                Investigated application usage over time using Grafana and Prometheus to identify normal usage, and adjust kubernetes pod resources to appropriate memory and CPU resources.              </li>
-              <li>
-                Provided recommendation and evidence to the team.              
-              </li>
-              <li>
-                Implemented change.             
-              </li>
-              <li>
-                Tracked and communicated results weekly for 60 days after release.             
-              </li>
-            </ul>
-            <p>
-              <u>CoBuyer</u>: Top company initiative to re-architect existing
-              applications to allow customers to buy a car using a co buyer.
-              Increasing sales by 7% and $613,000,000 in additional annual
-              revenue.
-            </p>
-            <ul>
-              <li>
-                Researched and documented existing workflow spanning multiple
-                services.
-              </li>
-              <li>Made design recommendations based on research.</li>
-              <li>
-                Assisted more junior developers in the ideation process and
-                implementation.
-              </li>
-              <li>
-                Hosted “how we work” sessions to get unfamiliar developers more
-                familiar with the process and dependencies.
-              </li>
-              <li>
-                Implemented design across multiple services within our domain.
-              </li>
-              <li>Updated technical documentation.</li>
-              <li>Wrote unit tests to provide coverage for new code.</li>
-            </ul>
-          </div>
-          <div className={styles.resumeMainInfo}>
-            <b>Sunny's Light</b>
-          </div>
-          <div className={styles.resumeMainContent}>
-            Software Engineer
-            <br></br>2019 - Present
-            <br></br>
-            <i>
-              Nonprofit providing financial support to families who have lost a
-              child through stillbirth.
-            </i>
-            <p>
-              <u>SunnysLight.org</u>: Web application home page for the Sunny’s
-              Light non-profit. The web application provides information on the
-              organization, ways to donate, and information to receive support.
-            </p>
-            <ul>
-              <li>
-                Designed, developed, deployed, and maintained Web application
-                that gives information on the nonprofit and allows users to
-                donate.
-              </li>
-              <li>
-                Utilized React to build a responsive modern web app utilizing
-                components, hooks, modals, toast messages.
-              </li>
-              <li>
-                Developed custom stripe payment integration providing a seamless
-                and secure donation process.
-              </li>
-              <li>
-                Developed 3rd party API to handle stripe payment processing,
-                receipt generation, and user logging.
-              </li>
-              <li>
-                Integrated Google Analytics to monitor performance, and user
-                patterns to make informed future decisions.
-              </li>
-              <li>
-                Technologies Used: React, Azure App Services, Github, Azure
-                DevOps, C#, Docker, Azure SQL .NET Core, React-GA, React
-                Parallax, React Bootstrap, Docker.
-              </li>
-            </ul>
-          </div>
-          <div className={styles.resumeMainInfo}>
-            <b>CoStar Group</b>
-          </div>
-          <div className={styles.resumeMainContent}>
-          <b>CoStar Group</b>
-          <br></br>
-            Software Engineer
-          <br></br>2015 - 2020
-          <br></br>
-          <i>
-              CoStar Group is the leading provider of analytics for the
-              commercial real estate and multifamily industries, as well as
-              benchmarking data for the global hospitality industry. Originally
-              employed by STR (Smith Travel Research), STR was acquired by
-              CoStar in October of 2019. Our tech stack utilized an on-prem data
-              center, with SQL Server, .NET Core, and JavaScript libraries such as React, jQuery.
-          </i>
-            <p>
-              <u>STR Data integration</u>: With the CoStar acquisition of Smith
-              Travel Research (STR) as an STR employee I was brought onto a
-              CoStar team to assist in integrating STR data with CoStar Suite.
-              CoStar’s primary subscription product that received over 1 million
-              searches a day.
-            </p>
-            <ul>
-              <li>
-                Part of a 3-person team collaborating with frontend teams to
-                implement integration of STR’s global, hospitality, analytics,
-                and benchmarking data into CoStar Suite.
-              </li>
-              <li>
-                Developed report generation platform using AWS Lambda and AWS
-                Step Functions.
-              </li>
-              <li>
-                Developed multiple modules for translation and currency
-                conversion utilizing factory, strategy, and command design
-                patterns.
-              </li>
-              <li>
-                Integrated new benchmarking and analytic data into existing
-                tables then exposed data through entity-based endpoints to serve
-                front end needs.
-              </li>
-              <li>
-                Technologies used: .NET Core, SQL Server, Microsoft TFS, AWS,
-                DynamoDb
-              </li>
-            </ul>
-            <p>
-              <u>Instant Insights</u>: Provide hospitality analytic data to
-              hotel managers who are responsible for more than a single hotel.
-            </p>
-            <ul>
-              <li>Tech Lead for project.</li>
-              <li>
-                Designed and developed a microservice architecture using REST
-                APIs in .net core to calculate and serve data based on user
-                selections, as input by our front end React website.
-              </li>
-              <li>
-                Broke apart monolithic services and combined multiple related
-                services into a series of microservices that can be reused
-                throughout the organization.
-              </li>
-              <li>
-                Developed front end components including drop downs, modals,
-                forms, menus, graphs, charts and tables with variable columns
-                and rows.
-              </li>
-              <li>
-                Technologies used: React, Javascript, Typescript, Redux, Chart
-                JS, Swagger. Net Core, Git.
-              </li>
-            </ul>
-          </div>
-          <div className={styles.resumeMainHeading}>TECHNICAL SKILLS</div>
-          <div className={styles.resumeMainContent}>
-            <u>Platforms</u>: Windows, Ubuntu, Mac OS.
-            <br></br>
-            <u>Software</u>: Visual Studio, VS Code, Azure.
-            <br></br>
-            <u>Languages</u>: C#, T-SQL, Javascript, Typescript, Python, Java, Go.
-            <br></br>
-            <u>Technologies</u>: .NET Core, .NET Framework, React, SQL Server.
-            <br></br>
-          </div>
-          <div className={styles.resumeMainHeading}>EDUCATION</div>
-          <div className={styles.resumeMainContent}>
-            <b>B.S. Software Engineering, Arizona State University</b>
-            <br></br>
-            2022 - Present
-          </div>
-          <div className={styles.resumeMainContent}>
-              <b>A.A.S, Computer Programming, Volunteer State</b>
-              <br></br>
-              2021 - 2022
-              <br></br>
+            </div>
+
+            <div className={styles.assignment}>
+              <h4>Verifications &amp; Underwriting</h4>
+              <p className={styles.assignmentMeta}>
+                2020–Jun 2026 · .NET, Azure, Kafka, Kubernetes
+              </p>
               <ul>
-                  <li>Phi Theta Kappa</li>
-                  <li>
-                      <b>
-                          <Link href="https://www.volstate.edu/news/spring-2021-deans-list-and-honor-roll">
-                              Spring 2021 Dean's List
-                          </Link>
-                      </b>
-                  </li>
-                  <li>
-                      <b>
-                          <Link href="https://www.volstate.edu/news/summer-2021-deans-list-and-honor-roll">
-                              Summer 2021 Dean's List and Honor Roll
-                          </Link>
-                      </b>
-                  </li>
-                  <li>
-                      <b>
-                          <Link href="https://www.volstate.edu/news/fall-2021-deans-list-and-honor-roll">
-                              Fall 2021 Dean's List and Honor Roll
-                          </Link>
-                      </b>
-                  </li>
-                  <li>Spring 2022 Merit List</li>
+                <li>
+                  Founded an MCP server and orchestrator in December 2025—roughly 6,650
+                  lines in six days, supported by a 445-line operator guide—which
+                  became the foundation of the organization&apos;s LLM platform.
+                </li>
+                <li>
+                  Built an autonomous delivery pipeline that completed 17 runs over
+                  10.6 hours and produced 20 reviewable commits.
+                </li>
+                <li>
+                  Created an internal marketplace of nine agent plugins and introduced
+                  recursive language-model techniques for work beyond a model&apos;s
+                  normal context window.
+                </li>
+                <li>
+                  Designed the operating contract for a custom Claude Slack
+                  integration used in production investigation and engineering
+                  workflows.
+                </li>
+                <li>
+                  Architected a fraud-analysis service with 13 ADRs, C4 diagrams, and
+                  five runbooks to support a sixfold growth target.
+                </li>
+                <li>
+                  Led a workload-identity migration spanning five shared packages and
+                  more than five services; wrote the 1,000-line implementation
+                  playbook used by other teams.
+                </li>
+                <li>
+                  Reduced advocate insurance work from more than 20 minutes to under
+                  four, and delivered an OCR proof of concept in three days with an
+                  error rate below 2%.
+                </li>
+                <li>
+                  Cut one service&apos;s memory ceiling from over 1.5 GB to under 243 MB,
+                  reducing total memory utilization from 60–80% to below 10%.
+                </li>
+                <li>
+                  Contributed across services to a top company rearchitecture
+                  supporting co-buyers, while mentoring engineers on domain workflows
+                  and dependencies.
+                </li>
+                <li>
+                  Authored 15 architecture decisions and multiple engineering
+                  standards and root-cause analyses. Opened 143 pull requests and
+                  reviewed 177 across 20 repositories in 28 weeks; 58% of the work was
+                  self-scoped.
+                </li>
               </ul>
+            </div>
           </div>
-          <div className={styles.resumeMainHeading}>
-            OPEN SOURCE CONTRIBUTIONS
+
+          <div className={styles.role}>
+            <div className={styles.roleHeading}>
+              <div>
+                <h3>CoStar Group <span>(formerly STR)</span></h3>
+                <p>Software Engineer</p>
+              </div>
+              <p className={styles.meta}>2015–2020</p>
+            </div>
+            <ul>
+              <li>
+                Served as technical lead for Instant Insights, decomposing monolithic
+                services into reusable .NET microservices and building a React and
+                Redux analytics experience.
+              </li>
+              <li>
+                Joined a three-person team integrating STR&apos;s global hospitality
+                data into CoStar Suite, a product serving more than one million daily
+                searches.
+              </li>
+              <li>
+                Built a report-generation platform with AWS Lambda and Step Functions,
+                plus reusable translation and currency-conversion modules.
+              </li>
+            </ul>
           </div>
-          <div className={styles.resumeMainContent}>RestSharp</div>
-          <div className={styles.resumeMainContent}>NUnit</div>
-          <div className={styles.resumeMainHeading}>PERSONAL PROJECTS</div>
-          <div className={styles.resumeMainContent}>
-            <b>
-              Neverending Story pointer,{" "}
-              <Link href="https://neverendingstorypointer.com">
-                Neverending Story Pointer
-              </Link>
-            </b>
-            <br></br>
-            Pointing Poker application to be used in agile grooming sessions.
-            <br></br>
-            Blazor app, utilizing GRPC streaming and HTTP2
+        </section>
+
+        <section className={styles.section}>
+          <h2>Writing &amp; Open Source</h2>
+          <div className={styles.features}>
+            <div>
+              <h3><ExternalLink href="https://williambratz.com/blog">WilliamBratz.com</ExternalLink></h3>
+              <p>
+                Eight essays on production engineering and AI systems, including
+                “Production Reveals the System,” “From Chatbots to Persistent
+                Organizational Memory,” and “Engineering in the Age of Agents.”
+              </p>
+            </div>
+            <div>
+              <h3>vaultkit</h3>
+              <p>
+                A personal, LLM-maintained knowledge engine: roughly 6,400 lines of
+                Python, more than 320 tests, three scheduled maintenance cadences, and
+                a scaffold adopted by four teams. The reusable{" "}
+                <ExternalLink href="https://github.com/wbratz/vault-scaffold">
+                  vault-scaffold workflow
+                </ExternalLink>{" "}
+                is available on GitHub.
+              </p>
+            </div>
+            <div>
+              <h3>Open-source contributor</h3>
+              <p>
+                Contributions to RestSharp and NUnit, plus Neverending Story Pointer,
+                a real-time estimation app built with Blazor and gRPC streaming.
+              </p>
+            </div>
           </div>
-          <div className={styles.resumeMainContent}>
-            <b>
-                William Bratz dot com,{" "}
-                <Link href="https://github.com/wbratz/williambratzdotcom">Github repo</Link>
-            </b>
-            <br></br>
-            Personal website to test out languages, coding paradigms, and
-            general technology-related fun.
-            <br></br>
-            Utilized Next.js and React; deployed on Heroku with Continuous Deployment.
+        </section>
+
+        <section className={styles.section}>
+          <h2>Community</h2>
+          <div className={styles.roleHeading}>
+            <div>
+              <h3><ExternalLink href="https://sunnyslight.org">Sunny&apos;s Light Foundation</ExternalLink></h3>
+              <p>Founder</p>
+            </div>
+            <p className={styles.meta}>2019–Present</p>
           </div>
-          <div className={styles.resumeMainContent}>
-            <b>Sunny's Light,{" "}
-                <Link href="https://SunnysLight.org">SunnysLight.org</Link>
-            </b>
-            <br></br>
-            501(c)(3) Non-profit founded by my wife and I following the
-            stillbirth of our daughter Sunny.
-            <br></br>
-            Utilized React, .NET Core 3.1 API, Azure SQL Server database. Developed a custom stripe integration. Hosted on Azure App Services. The front end is containerized using Docker, with Continuous Deployment through Azure DevOps.
-        </div>
-        </div>
-      </div>
+          <p>
+            Co-founded a 501(c)(3) supporting families after stillbirth. Designed,
+            built, deployed, and continue to maintain its web and donation platform,
+            including a custom Stripe integration and supporting .NET services.
+          </p>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Technical Skills</h2>
+          <dl className={styles.skills}>
+            <div><dt>Languages</dt><dd>Python, C#, TypeScript, JavaScript, SQL, GraphQL</dd></div>
+            <div><dt>AI &amp; agents</dt><dd>Agent orchestration, MCP server/client/gateway federation, FastMCP, OpenAI and Anthropic APIs, PydanticAI, tool calling, structured output, RAG with Pinecone, prompt experiments, evaluations, observability, Claude plugins and skills</dd></div>
+            <div><dt>Backend</dt><dd>FastAPI, asyncio, Pydantic v2, .NET Core, REST, JSON-RPC, gRPC, Kafka, Azure Service Bus, event-driven systems</dd></div>
+            <div><dt>Data</dt><dd>Cosmos DB, Redis, PostgreSQL, Azure SQL, SQL Server, DynamoDB</dd></div>
+            <div><dt>Platform</dt><dd>Kubernetes (AKS/GKE), Docker, Helm, Tekton, Flux, GitHub Actions, Azure DevOps, Lambda, Step Functions, Workload Identity, OIDC</dd></div>
+            <div><dt>Observability</dt><dd>Datadog, Splunk, Prometheus, Grafana, OpenTelemetry, SLOs, Locust</dd></div>
+          </dl>
+        </section>
+
+        <section className={styles.section}>
+          <h2>Education</h2>
+          <div className={styles.education}>
+            <div>
+              <h3>Arizona State University</h3>
+              <p>B.S. Software Engineering · In progress</p>
+            </div>
+            <div>
+              <h3>Volunteer State Community College</h3>
+              <p>A.A.S. Computer Programming · 2022</p>
+              <p className={styles.subtle}>Phi Theta Kappa · Dean&apos;s List</p>
+            </div>
+          </div>
+        </section>
+      </article>
     </Layout>
   );
 }
