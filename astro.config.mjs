@@ -10,8 +10,12 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        "next/head": fileURLToPath(new URL("./src/compat/Head.tsx", import.meta.url)),
-        "next/link": fileURLToPath(new URL("./src/compat/Link.tsx", import.meta.url)),
+        "next/head": fileURLToPath(
+          new URL("./src/compat/Head.tsx", import.meta.url),
+        ),
+        "next/link": fileURLToPath(
+          new URL("./src/compat/Link.tsx", import.meta.url),
+        ),
       },
     },
   },

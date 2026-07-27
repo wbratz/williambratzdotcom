@@ -99,7 +99,12 @@
 .blogSummaryTitle {
   margin: 0.5rem 0 0;
   color: var(--heading-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: clamp(1.35rem, 2.5vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.035em;
@@ -195,7 +200,12 @@
 .blogPostTitle {
   width: min(100%, 70rem);
   color: var(--heading-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   text-align: center;
 }
 
@@ -430,7 +440,12 @@
 .blogPostContent h1 {
   margin: 3.5rem 0 1rem;
   color: var(--heading-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -441,7 +456,12 @@
 .blogPostContent h2 {
   margin: 2.75rem 0 0.75rem;
   color: var(--heading-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: clamp(1.4rem, 2vw, 1.7rem);
   font-weight: 600;
   line-height: 1.3;
@@ -452,7 +472,12 @@
 .blogPostContent h3 {
   margin: 2rem 0 0.5rem;
   color: var(--heading-color);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.4;

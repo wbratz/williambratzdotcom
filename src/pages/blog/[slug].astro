@@ -56,14 +56,28 @@ const structuredData = {
   imageAlt={post.data.imageAlt}
 >
   <Fragment slot="head">
-    <meta property="article:published_time" content={post.data.date.toISOString()} />
+    <meta
+      property="article:published_time"
+      content={post.data.date.toISOString()}
+    />
     {
       post.data.updated && (
-        <meta property="article:modified_time" content={post.data.updated.toISOString()} />
+        <meta
+          property="article:modified_time"
+          content={post.data.updated.toISOString()}
+        />
       )
     }
-    {post.data.topics.map((topic) => <meta property="article:tag" content={topic} />)}
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {
+      post.data.topics.map((topic) => (
+        <meta property="article:tag" content={topic} />
+      ))
+    }
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
   </Fragment>
 
   <article class={styles.blogPostContainer}>
@@ -78,12 +92,15 @@ const structuredData = {
     </div>
     <header class={styles.blogPostTitle}>
       <p class={styles.blogPostMeta}>
-        <time datetime={toDateString(post.data.date)}>{formatDate(post.data.date, true)}</time>
+        <time datetime={toDateString(post.data.date)}
+          >{formatDate(post.data.date, true)}</time
+        >
         <span aria-hidden="true">·</span>
         <span>{post.readingTime} min read</span>
         {
           post.data.updated &&
-            toDateString(post.data.updated) !== toDateString(post.data.date) && (
+            toDateString(post.data.updated) !==
+              toDateString(post.data.date) && (
               <>
                 <span aria-hidden="true">·</span>
                 <span>Updated {formatDate(post.data.updated, true)}</span>
@@ -110,7 +127,9 @@ const structuredData = {
                 {seriesPost.data.slug === post.data.slug ? (
                   <span aria-current="page">{seriesPost.data.title}</span>
                 ) : (
-                  <a href={`/blog/${seriesPost.data.slug}`}>{seriesPost.data.title}</a>
+                  <a href={`/blog/${seriesPost.data.slug}`}>
+                    {seriesPost.data.title}
+                  </a>
                 )}
               </li>
             ))}
@@ -136,7 +155,10 @@ const structuredData = {
       }
       {
         adjacent.newer && (
-          <a class={styles.newerPost} href={`/blog/${adjacent.newer.data.slug}`}>
+          <a
+            class={styles.newerPost}
+            href={`/blog/${adjacent.newer.data.slug}`}
+          >
             <span>Newer essay</span>
             <strong>{adjacent.newer.data.title}</strong>
           </a>
@@ -154,7 +176,9 @@ const structuredData = {
               <article>
                 <p>{related.data.topics.slice(0, 2).join(" · ")}</p>
                 <h3>
-                  <a href={`/blog/${related.data.slug}`}>{related.data.title}</a>
+                  <a href={`/blog/${related.data.slug}`}>
+                    {related.data.title}
+                  </a>
                 </h3>
                 <p>{related.data.description}</p>
               </article>

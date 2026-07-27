@@ -27,6 +27,11 @@ const projectSchema = {
   image="/blogContent/bridging-the-gap/vault-mental-model.svg"
   imageAlt="The Vault turns source evidence into a linked wiki for people and AI agents."
 >
-  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(projectSchema)}
+  />
   <VaultProject />
 </BaseLayout>

@@ -31,8 +31,8 @@ export default function Projects() {
           <h1>Systems that make AI more useful in the real world.</h1>
           <p>
             My projects focus on the infrastructure around intelligent systems:
-            context, evidence, tools, operating boundaries, and the workflows that
-            connect an idea to production.
+            context, evidence, tools, operating boundaries, and the workflows
+            that connect an idea to production.
           </p>
         </header>
 
@@ -42,8 +42,9 @@ export default function Projects() {
               <p className={styles.projectType}>Knowledge infrastructure</p>
               <h2>The Vault</h2>
               <p>
-                A persistent, source-grounded wiki that turns product and engineering
-                evidence into focused context for people and AI agents.
+                A persistent, source-grounded wiki that turns product and
+                engineering evidence into focused context for people and AI
+                agents.
               </p>
               <ul>
                 <li>Immutable evidence and regenerable synthesis</li>
@@ -74,8 +75,9 @@ export default function Projects() {
               <p className={styles.projectType}>Collaborative tool</p>
               <h2>Neverending Story Pointer</h2>
               <p>
-                A free planning-poker app that gives distributed teams a lightweight
-                room for revealing estimates and building shared understanding.
+                A free planning-poker app that gives distributed teams a
+                lightweight room for revealing estimates and building shared
+                understanding.
               </p>
               <a
                 href="https://neverendingstorypointer.com"
@@ -93,10 +95,18 @@ export default function Projects() {
                 calculators, human-scale comparisons, and a secure v4 generator.
               </p>
               <div className={styles.actions}>
-                <a href="https://howuniqueisaguid.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://howuniqueisaguid.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   GUID edition <span aria-hidden="true">↗</span>
                 </a>
-                <a href="https://howuniqueisauuid.com" target="_blank" rel="noreferrer">
+                <a
+                  href="https://howuniqueisauuid.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   UUID edition <span aria-hidden="true">↗</span>
                 </a>
               </div>

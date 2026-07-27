@@ -34,13 +34,20 @@ const isActive = (href: string) =>
       </ul>
     </div>
     <div class="nav-actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Switch to light theme"
+      >
         <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+          <path
+            d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"
+          ></path>
         </svg>
         <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+          <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"
+          ></path>
         </svg>
       </button>
       <button
@@ -57,14 +64,21 @@ const isActive = (href: string) =>
 </header>
 
 <script>
-  const themeButton = document.querySelector<HTMLButtonElement>(".theme-toggle");
+  const themeButton =
+    document.querySelector<HTMLButtonElement>(".theme-toggle");
   const menuButton = document.querySelector<HTMLButtonElement>(".menu-button");
   const panel = document.querySelector<HTMLElement>(".nav-panel");
 
   const syncThemeLabel = () => {
     const dark = document.documentElement.classList.contains("dark");
-    themeButton?.setAttribute("aria-label", `Switch to ${dark ? "light" : "dark"} theme`);
-    themeButton?.setAttribute("title", `Switch to ${dark ? "light" : "dark"} theme`);
+    themeButton?.setAttribute(
+      "aria-label",
+      `Switch to ${dark ? "light" : "dark"} theme`,
+    );
+    themeButton?.setAttribute(
+      "title",
+      `Switch to ${dark ? "light" : "dark"} theme`,
+    );
   };
   syncThemeLabel();
 
@@ -79,7 +93,10 @@ const isActive = (href: string) =>
   menuButton?.addEventListener("click", () => {
     const open = menuButton.getAttribute("aria-expanded") !== "true";
     menuButton.setAttribute("aria-expanded", String(open));
-    menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    menuButton.setAttribute(
+      "aria-label",
+      open ? "Close navigation menu" : "Open navigation menu",
+    );
     panel?.classList.toggle("open", open);
   });
 </script>

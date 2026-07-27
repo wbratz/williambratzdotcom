@@ -10,11 +10,15 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   <article class="archive">
     <p>Archived reference</p>
     <h1>Authorization diagram</h1>
-    <svg viewBox="0 0 1000 360" role="img" aria-labelledby="diagram-title diagram-desc">
+    <svg
+      viewBox="0 0 1000 360"
+      role="img"
+      aria-labelledby="diagram-title diagram-desc"
+    >
       <title id="diagram-title">Authorization request flow</title>
       <desc id="diagram-desc">
-        A client requests a token from an authorization server and uses it to access
-        a protected resource.
+        A client requests a token from an authorization server and uses it to
+        access a protected resource.
       </desc>
       <g class="node">
         <rect x="40" y="120" width="220" height="100" rx="12"></rect>
@@ -67,7 +71,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
   }
   text {
     fill: var(--heading-color);
-    font: 600 22px Inter, sans-serif;
+    font:
+      600 22px Inter,
+      sans-serif;
     text-anchor: middle;
   }
   path {

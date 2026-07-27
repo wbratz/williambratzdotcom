@@ -54,9 +54,9 @@ export default function Home({ featuredPosts }: HomeProps) {
           </h1>
           <p className={styles.lede}>
             I&apos;m William “Billy” Bratz. My work sits where LLM agents, MCP
-            infrastructure, distributed systems, and engineering judgment meet. I
-            build systems that survive production, then turn what they teach us into
-            context that compounds.
+            infrastructure, distributed systems, and engineering judgment meet.
+            I build systems that survive production, then turn what they teach
+            us into context that compounds.
           </p>
           <div className={styles.actions}>
             <Link href="/blog" legacyBehavior>
@@ -76,7 +76,11 @@ export default function Home({ featuredPosts }: HomeProps) {
           </div>
         </section>
 
-        <section id="projects" className={styles.section} aria-labelledby="work-title">
+        <section
+          id="projects"
+          className={styles.section}
+          aria-labelledby="work-title"
+        >
           <div className={styles.sectionHeading}>
             <p>Selected work</p>
             <h2 id="work-title">Systems, tools, and ideas made concrete.</h2>
@@ -88,9 +92,9 @@ export default function Home({ featuredPosts }: HomeProps) {
                 <p className={styles.projectType}>Open-source workflow</p>
                 <h3>The Vault</h3>
                 <p>
-                  A persistent, LLM-maintained wiki that connects product decisions,
-                  engineering implementations, raw evidence, and the context agents
-                  need to make better decisions.
+                  A persistent, LLM-maintained wiki that connects product
+                  decisions, engineering implementations, raw evidence, and the
+                  context agents need to make better decisions.
                 </p>
               </div>
               <div className={styles.projectLinks}>
@@ -114,8 +118,8 @@ export default function Home({ featuredPosts }: HomeProps) {
               <p className={styles.projectType}>Production systems</p>
               <h3>AI agents and MCP</h3>
               <p>
-                Building and operating the tool, context, evaluation, and reliability
-                layers behind customer-facing conversational AI.
+                Building and operating the tool, context, evaluation, and
+                reliability layers behind customer-facing conversational AI.
               </p>
               <Link href="/resume" legacyBehavior>
                 <a>See the engineering record</a>
@@ -126,8 +130,9 @@ export default function Home({ featuredPosts }: HomeProps) {
               <p className={styles.projectType}>Engineering practice</p>
               <h3>Theory-building series</h3>
               <p>
-                Three essays about why software understanding lives beyond code and
-                documents. I also write about what changes when the map can learn.
+                Three essays about why software understanding lives beyond code
+                and documents. I also write about what changes when the map can
+                learn.
               </p>
               <Link href="/blog/programming-as-theory-building" legacyBehavior>
                 <a>Start with part one</a>
@@ -139,7 +144,9 @@ export default function Home({ featuredPosts }: HomeProps) {
         <section className={styles.section} aria-labelledby="writing-title">
           <div className={styles.sectionHeading}>
             <p>Selected writing</p>
-            <h2 id="writing-title">Notes from building, operating, and thinking.</h2>
+            <h2 id="writing-title">
+              Notes from building, operating, and thinking.
+            </h2>
           </div>
           <div className={styles.writingList}>
             {featuredPosts.map((post) => (
@@ -164,27 +171,36 @@ export default function Home({ featuredPosts }: HomeProps) {
             ))}
           </div>
           <Link href="/blog" legacyBehavior>
-            <a className={styles.allWriting}>Browse all writing <span aria-hidden="true">→</span></a>
+            <a className={styles.allWriting}>
+              Browse all writing <span aria-hidden="true">→</span>
+            </a>
           </Link>
         </section>
 
-        <section id="about" className={`${styles.section} ${styles.about}`} aria-labelledby="about-title">
+        <section
+          id="about"
+          className={`${styles.section} ${styles.about}`}
+          aria-labelledby="about-title"
+        >
           <div className={styles.sectionHeading}>
             <p>About</p>
-            <h2 id="about-title">Production is where the real system introduces itself.</h2>
+            <h2 id="about-title">
+              Production is where the real system introduces itself.
+            </h2>
           </div>
           <div className={styles.aboutCopy}>
             <p>
-              I&apos;ve spent 11 years building distributed systems across identity,
-              underwriting, analytics, and conversational AI. I care about evidence,
-              explicit decisions, operable systems, and the hard-won theory teams
-              develop while making software work in the world.
+              I&apos;ve spent 11 years building distributed systems across
+              identity, underwriting, analytics, and conversational AI. I care
+              about evidence, explicit decisions, operable systems, and the
+              hard-won theory teams develop while making software work in the
+              world.
             </p>
             <p>
-              Today I&apos;m focused on production agent systems and on preserving the
-              connection between why a product decision was made and how it was
-              implemented. That is the idea behind The Vault and much of what I write
-              about here.
+              Today I&apos;m focused on production agent systems and on
+              preserving the connection between why a product decision was made
+              and how it was implemented. That is the idea behind The Vault and
+              much of what I write about here.
             </p>
           </div>
           <Link href="/about" legacyBehavior>

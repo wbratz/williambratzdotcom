@@ -215,3 +215,8 @@ Acceptance:
   navigation, and topic filtering. Removed the Next.js runtime, legacy API route,
   and generated Mermaid runtime bundles. Static output remains `out/` so the
   existing Render publish directory does not change.
+- 2026-07-27: Production quality gates implemented with Prettier, strict builds,
+  generated-site link validation, and Playwright plus axe accessibility scans at
+  desktop and mobile sizes. Added GitHub Actions enforcement, weekly Dependabot
+  updates, and versioned Render security and cache-header configuration. The new
+  accessibility baseline also corrected résumé links that relied on color alone.

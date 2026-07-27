@@ -192,7 +192,10 @@
 
 .sectionHeading {
   display: grid;
-  grid-template-columns: minmax(8rem, 0.32fr) minmax(0, 0.9fr) minmax(16rem, 0.7fr);
+  grid-template-columns: minmax(8rem, 0.32fr) minmax(0, 0.9fr) minmax(
+      16rem,
+      0.7fr
+    );
   gap: clamp(1.5rem, 5vw, 4rem);
   align-items: start;
   margin-bottom: clamp(3rem, 7vw, 5rem);

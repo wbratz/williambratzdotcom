@@ -65,7 +65,9 @@ const assetPath = (value: string) => `/${value.replace(/^(\.\.\/|\.\/)/, "")}`;
                 </h2>
                 <p class={styles.blogSummaryContent}>{post.data.description}</p>
                 <ul class={styles.topicList} aria-label="Topics">
-                  {post.data.topics.map((topic) => <li>{topic}</li>)}
+                  {post.data.topics.map((topic) => (
+                    <li>{topic}</li>
+                  ))}
                 </ul>
                 <a class={styles.readMore} href={`/blog/${post.data.slug}`}>
                   Read essay <span aria-hidden="true">→</span>

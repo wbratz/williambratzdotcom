@@ -20,7 +20,10 @@ export default function Resume() {
         <link rel="canonical" href="https://www.williambratz.com/resume" />
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://www.williambratz.com/resume" />
-        <meta property="og:title" content="William “Billy” Bratz | Senior Software Engineer" />
+        <meta
+          property="og:title"
+          content="William “Billy” Bratz | Senior Software Engineer"
+        />
         <meta
           property="og:description"
           content="Senior software engineer building production LLM agent platforms and distributed systems."
@@ -31,14 +34,16 @@ export default function Resume() {
       <article className={styles.resume}>
         <header className={styles.hero}>
           <div>
-            <p className={styles.eyebrow}>Senior Software Engineer · Tri-Cities, Tennessee</p>
+            <p className={styles.eyebrow}>
+              Senior Software Engineer · Tri-Cities, Tennessee
+            </p>
             <h1>William “Billy” Bratz</h1>
             <p className={styles.intro}>
-              Senior software engineer with 11 years building distributed systems and,
-              since late 2025, production LLM agent systems. I founded the MCP server
-              and orchestrator that became my organization&apos;s LLM platform, and I
-              turn difficult operational lessons into durable systems, standards, and
-              writing.
+              Senior software engineer with 11 years building distributed
+              systems and, since late 2025, production LLM agent systems. I
+              founded the MCP server and orchestrator that became my
+              organization&apos;s LLM platform, and I turn difficult operational
+              lessons into durable systems, standards, and writing.
             </p>
           </div>
 
@@ -60,7 +65,9 @@ export default function Resume() {
               LinkedIn
             </ExternalLink>
             <ExternalLink href="https://github.com/wbratz">GitHub</ExternalLink>
-            <ExternalLink href="https://williambratz.com">williambratz.com</ExternalLink>
+            <ExternalLink href="https://williambratz.com">
+              williambratz.com
+            </ExternalLink>
           </nav>
         </header>
 
@@ -83,12 +90,14 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Operate an MCP platform serving more than 10 million weekly tool
-                  calls, connecting conversational AI to production systems.
+                  Operate an MCP platform serving more than 10 million weekly
+                  tool calls, connecting conversational AI to production
+                  systems.
                 </li>
                 <li>
-                  Root-caused a multi-service outage in minutes across a five-hop
-                  request chain, halting a harmful redeploy and directing the recovery.
+                  Root-caused a multi-service outage in minutes across a
+                  five-hop request chain, halting a harmful redeploy and
+                  directing the recovery.
                 </li>
                 <li>
                   Demonstrated that an incident remained active after apparent
@@ -96,34 +105,35 @@ export default function Resume() {
                   validates service health.
                 </li>
                 <li>
-                  Designed and shipped a same-day in-cluster route that delivered a
-                  double-digit p95 latency reduction while preserving the public path
-                  as a safe fallback.
+                  Designed and shipped a same-day in-cluster route that
+                  delivered a double-digit p95 latency reduction while
+                  preserving the public path as a safe fallback.
                 </li>
                 <li>
                   Found and corrected a CI isolation defect across 383 tests,
                   restoring zero-network unit-test guarantees.
                 </li>
                 <li>
-                  Resolved an MCP HTTP 421 outage using APM evidence, then added a
-                  dependency-host guard, pinned lockfile, monitors, and an audit of
-                  sibling services.
+                  Resolved an MCP HTTP 421 outage using APM evidence, then added
+                  a dependency-host guard, pinned lockfile, monitors, and an
+                  audit of sibling services.
                 </li>
                 <li>
-                  Eliminated order-of-magnitude retry amplification and validated the
-                  change under live production traffic.
+                  Eliminated order-of-magnitude retry amplification and
+                  validated the change under live production traffic.
                 </li>
                 <li>
-                  Shipped three customer-context MCP tools, including the platform&apos;s
-                  first MCP-to-MCP workflow, within service-level objectives.
+                  Shipped three customer-context MCP tools, including the
+                  platform&apos;s first MCP-to-MCP workflow, within
+                  service-level objectives.
                 </li>
                 <li>
-                  Used production log analysis to isolate and correct a timestamp race,
-                  then verified the fix under load.
+                  Used production log analysis to isolate and correct a
+                  timestamp race, then verified the fix under load.
                 </li>
                 <li>
-                  Designed a split test for a model migration covering a significant
-                  share of assistant traffic.
+                  Designed a split test for a model migration covering a
+                  significant share of assistant traffic.
                 </li>
               </ul>
             </div>
@@ -135,18 +145,19 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Founded an MCP server and orchestrator in December 2025. I wrote roughly
-                  6,650 lines in six days and supported it with a 445-line operator guide. It
-                  became the foundation of the organization&apos;s LLM platform.
+                  Founded an MCP server and orchestrator in December 2025. I
+                  wrote roughly 6,650 lines in six days and supported it with a
+                  445-line operator guide. It became the foundation of the
+                  organization&apos;s LLM platform.
                 </li>
                 <li>
-                  Built an autonomous delivery pipeline that completed 17 runs over
-                  10.6 hours and produced 20 reviewable commits.
+                  Built an autonomous delivery pipeline that completed 17 runs
+                  over 10.6 hours and produced 20 reviewable commits.
                 </li>
                 <li>
-                  Created an internal marketplace of nine agent plugins and introduced
-                  recursive language-model techniques for work beyond a model&apos;s
-                  normal context window.
+                  Created an internal marketplace of nine agent plugins and
+                  introduced recursive language-model techniques for work beyond
+                  a model&apos;s normal context window.
                 </li>
                 <li>
                   Designed the operating contract for a custom Claude Slack
@@ -154,33 +165,35 @@ export default function Resume() {
                   workflows.
                 </li>
                 <li>
-                  Architected a fraud-analysis service with 13 ADRs, C4 diagrams, and
-                  five runbooks to support a sixfold growth target.
+                  Architected a fraud-analysis service with 13 ADRs, C4
+                  diagrams, and five runbooks to support a sixfold growth
+                  target.
                 </li>
                 <li>
-                  Led a workload-identity migration spanning five shared packages and
-                  more than five services; wrote the 1,000-line implementation
-                  playbook used by other teams.
+                  Led a workload-identity migration spanning five shared
+                  packages and more than five services; wrote the 1,000-line
+                  implementation playbook used by other teams.
                 </li>
                 <li>
-                  Reduced advocate insurance work from more than 20 minutes to under
-                  four, and delivered an OCR proof of concept in three days with an
-                  error rate below 2%.
+                  Reduced advocate insurance work from more than 20 minutes to
+                  under four, and delivered an OCR proof of concept in three
+                  days with an error rate below 2%.
                 </li>
                 <li>
-                  Cut one service&apos;s memory ceiling from over 1.5 GB to under 243 MB,
-                  reducing total memory utilization from 60–80% to below 10%.
+                  Cut one service&apos;s memory ceiling from over 1.5 GB to
+                  under 243 MB, reducing total memory utilization from 60–80% to
+                  below 10%.
                 </li>
                 <li>
                   Contributed across services to a top company rearchitecture
-                  supporting co-buyers, while mentoring engineers on domain workflows
-                  and dependencies.
+                  supporting co-buyers, while mentoring engineers on domain
+                  workflows and dependencies.
                 </li>
                 <li>
                   Authored 15 architecture decisions and multiple engineering
-                  standards and root-cause analyses. Opened 143 pull requests and
-                  reviewed 177 across 20 repositories in 28 weeks; 58% of the work was
-                  self-scoped.
+                  standards and root-cause analyses. Opened 143 pull requests
+                  and reviewed 177 across 20 repositories in 28 weeks; 58% of
+                  the work was self-scoped.
                 </li>
               </ul>
             </div>
@@ -189,25 +202,28 @@ export default function Resume() {
           <div className={styles.role}>
             <div className={styles.roleHeading}>
               <div>
-                <h3>CoStar Group <span>(formerly STR)</span></h3>
+                <h3>
+                  CoStar Group <span>(formerly STR)</span>
+                </h3>
                 <p>Software Engineer</p>
               </div>
               <p className={styles.meta}>2015–2020</p>
             </div>
             <ul>
               <li>
-                Served as technical lead for Instant Insights, decomposing monolithic
-                services into reusable .NET microservices and building a React and
-                Redux analytics experience.
+                Served as technical lead for Instant Insights, decomposing
+                monolithic services into reusable .NET microservices and
+                building a React and Redux analytics experience.
               </li>
               <li>
-                Joined a three-person team integrating STR&apos;s global hospitality
-                data into CoStar Suite, a product serving more than one million daily
-                searches.
+                Joined a three-person team integrating STR&apos;s global
+                hospitality data into CoStar Suite, a product serving more than
+                one million daily searches.
               </li>
               <li>
-                Built a report-generation platform with AWS Lambda and Step Functions,
-                plus reusable translation and currency-conversion modules.
+                Built a report-generation platform with AWS Lambda and Step
+                Functions, plus reusable translation and currency-conversion
+                modules.
               </li>
             </ul>
           </div>
@@ -217,7 +233,11 @@ export default function Resume() {
           <h2>Writing &amp; Open Source</h2>
           <div className={styles.features}>
             <div>
-              <h3><ExternalLink href="https://williambratz.com/blog">WilliamBratz.com</ExternalLink></h3>
+              <h3>
+                <ExternalLink href="https://williambratz.com/blog">
+                  WilliamBratz.com
+                </ExternalLink>
+              </h3>
               <p>
                 Nine essays on production engineering and AI systems, including
                 “Production Reveals the System,” “From Chatbots to Persistent
@@ -227,9 +247,9 @@ export default function Resume() {
             <div>
               <h3>vaultkit</h3>
               <p>
-                A personal, LLM-maintained knowledge engine: roughly 6,400 lines of
-                Python, more than 320 tests, three scheduled maintenance cadences, and
-                a scaffold adopted by four teams. The reusable{" "}
+                A personal, LLM-maintained knowledge engine: roughly 6,400 lines
+                of Python, more than 320 tests, three scheduled maintenance
+                cadences, and a scaffold adopted by four teams. The reusable{" "}
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   vault-scaffold workflow
                 </ExternalLink>{" "}
@@ -247,8 +267,8 @@ export default function Resume() {
                 <ExternalLink href="https://howuniqueisaguid.com">
                   How Unique Is a GUID?
                 </ExternalLink>
-                , an interactive probability experience also available for UUIDs.
-                Contributions to RestSharp and NUnit.
+                , an interactive probability experience also available for
+                UUIDs. Contributions to RestSharp and NUnit.
               </p>
             </div>
           </div>
@@ -257,12 +277,47 @@ export default function Resume() {
         <section className={styles.section}>
           <h2>Technical Skills</h2>
           <dl className={styles.skills}>
-            <div><dt>Languages</dt><dd>Python, C#, TypeScript, JavaScript, SQL, GraphQL</dd></div>
-            <div><dt>AI &amp; agents</dt><dd>Agent orchestration, MCP server/client/gateway federation, FastMCP, OpenAI and Anthropic APIs, PydanticAI, tool calling, structured output, RAG with Pinecone, prompt experiments, evaluations, observability, Claude plugins and skills</dd></div>
-            <div><dt>Backend</dt><dd>FastAPI, asyncio, Pydantic v2, .NET Core, REST, JSON-RPC, gRPC, Kafka, Azure Service Bus, event-driven systems</dd></div>
-            <div><dt>Data</dt><dd>Cosmos DB, Redis, PostgreSQL, Azure SQL, SQL Server, DynamoDB</dd></div>
-            <div><dt>Platform</dt><dd>Kubernetes (AKS/GKE), Docker, Helm, Tekton, Flux, GitHub Actions, Azure DevOps, Lambda, Step Functions, Workload Identity, OIDC</dd></div>
-            <div><dt>Observability</dt><dd>Datadog, Splunk, Prometheus, Grafana, OpenTelemetry, SLOs, Locust</dd></div>
+            <div>
+              <dt>Languages</dt>
+              <dd>Python, C#, TypeScript, JavaScript, SQL, GraphQL</dd>
+            </div>
+            <div>
+              <dt>AI &amp; agents</dt>
+              <dd>
+                Agent orchestration, MCP server/client/gateway federation,
+                FastMCP, OpenAI and Anthropic APIs, PydanticAI, tool calling,
+                structured output, RAG with Pinecone, prompt experiments,
+                evaluations, observability, Claude plugins and skills
+              </dd>
+            </div>
+            <div>
+              <dt>Backend</dt>
+              <dd>
+                FastAPI, asyncio, Pydantic v2, .NET Core, REST, JSON-RPC, gRPC,
+                Kafka, Azure Service Bus, event-driven systems
+              </dd>
+            </div>
+            <div>
+              <dt>Data</dt>
+              <dd>
+                Cosmos DB, Redis, PostgreSQL, Azure SQL, SQL Server, DynamoDB
+              </dd>
+            </div>
+            <div>
+              <dt>Platform</dt>
+              <dd>
+                Kubernetes (AKS/GKE), Docker, Helm, Tekton, Flux, GitHub
+                Actions, Azure DevOps, Lambda, Step Functions, Workload
+                Identity, OIDC
+              </dd>
+            </div>
+            <div>
+              <dt>Observability</dt>
+              <dd>
+                Datadog, Splunk, Prometheus, Grafana, OpenTelemetry, SLOs,
+                Locust
+              </dd>
+            </div>
           </dl>
         </section>
 
@@ -276,7 +331,9 @@ export default function Resume() {
             <div>
               <h3>Volunteer State Community College</h3>
               <p>A.A.S. Computer Programming · 2022</p>
-              <p className={styles.subtle}>Phi Theta Kappa · Dean&apos;s List</p>
+              <p className={styles.subtle}>
+                Phi Theta Kappa · Dean&apos;s List
+              </p>
             </div>
           </div>
         </section>

@@ -25,12 +25,18 @@ npm run dev
 ## Validation and build
 
 ```bash
-npm run check
-npm run build
+npm run quality
+npm run test:a11y
 ```
 
+`npm run quality` enforces formatting, strict Astro and TypeScript diagnostics,
+the production build, and internal-link integrity across every generated HTML
+page. The Playwright accessibility suite scans representative pages at desktop
+and mobile sizes against WCAG A and AA rules.
+
 The production site is emitted to `out/`. RSS and sitemap XML are generated as
-native Astro routes during the same build.
+native Astro routes during the same build. GitHub Actions runs the complete
+quality pipeline for pull requests and every push to `master`.
 
 ## Content
 
@@ -40,6 +46,10 @@ use root-relative Markdown paths such as `/blogContent/example/image.svg`.
 
 ## Deployment
 
-Render serves `out/` as a static site. The temporary `next export`
-compatibility script exists only because the current Render build command still
-invokes that retired command after `npm run build`; it performs no build work.
+Render serves `out/` as a static site. The desired service configuration,
+including security and immutable-asset cache headers, lives in `render.yaml`.
+
+The temporary `next export` compatibility package exists only because the
+current Render dashboard build command still invokes that retired command after
+the Astro build. It performs no build work. Once the service is synchronized
+with `render.yaml`, remove the `next` file dependency and `scripts/next-compat/`.

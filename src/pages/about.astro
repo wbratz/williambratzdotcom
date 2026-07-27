@@ -26,6 +26,11 @@ const personSchema = {
   image="/headerphoto.jpg"
   imageAlt="William Bratz"
 >
-  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
   <About />
 </BaseLayout>

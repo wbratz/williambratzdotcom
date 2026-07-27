@@ -2,7 +2,14 @@ import type { APIRoute } from "astro";
 import { getPosts, toDateString } from "../lib/posts";
 
 const SITE_URL = "https://www.williambratz.com";
-const staticPages = ["", "/about", "/blog", "/projects", "/projects/vault", "/resume"];
+const staticPages = [
+  "",
+  "/about",
+  "/blog",
+  "/projects",
+  "/projects/vault",
+  "/resume",
+];
 
 export const GET: APIRoute = async () => {
   const posts = await getPosts();

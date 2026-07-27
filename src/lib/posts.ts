@@ -61,13 +61,17 @@ export const getRelatedPosts = (posts: Post[], current: Post, limit = 3) =>
     .map((post) => ({
       post,
       score:
-        (current.data.series && post.data.series === current.data.series ? 10 : 0) +
-        post.data.topics.filter((topic) => current.data.topics.includes(topic)).length,
+        (current.data.series && post.data.series === current.data.series
+          ? 10
+          : 0) +
+        post.data.topics.filter((topic) => current.data.topics.includes(topic))
+          .length,
     }))
     .filter(({ score }) => score > 0)
     .sort(
       (a, b) =>
-        b.score - a.score || b.post.data.date.getTime() - a.post.data.date.getTime(),
+        b.score - a.score ||
+        b.post.data.date.getTime() - a.post.data.date.getTime(),
     )
     .slice(0, limit)
     .map(({ post }) => post);

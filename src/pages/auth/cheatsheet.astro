@@ -44,8 +44,14 @@ const content = `# Authorization Reference
     </ul>
     <h2>Three participants</h2>
     <ul>
-      <li><strong>Client:</strong> requests a token and uses it to access a protected resource.</li>
-      <li><strong>Resource server:</strong> hosts the resource and validates the client token.</li>
+      <li>
+        <strong>Client:</strong> requests a token and uses it to access a protected
+        resource.
+      </li>
+      <li>
+        <strong>Resource server:</strong> hosts the resource and validates the client
+        token.
+      </li>
       <li><strong>Authorization server:</strong> issues tokens to clients.</li>
     </ul>
     <h2>Practical rules</h2>
@@ -53,7 +59,10 @@ const content = `# Authorization Reference
       <li>Keep tokens lifetime-limited.</li>
       <li>Grant clients only the scopes they require.</li>
       <li>Treat write access as distinct from read access.</li>
-      <li>Revisit service boundaries when one client accumulates too many dependencies.</li>
+      <li>
+        Revisit service boundaries when one client accumulates too many
+        dependencies.
+      </li>
     </ul>
   </article>
 </BaseLayout>
@@ -69,7 +78,9 @@ const content = `# Authorization Reference
   }
   .eyebrow {
     color: var(--link-color);
-    font: 700 0.75rem Inter, sans-serif;
+    font:
+      700 0.75rem Inter,
+      sans-serif;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
@@ -90,6 +101,8 @@ const content = `# Authorization Reference
     color: #17120a;
     background: var(--link-color);
     border-radius: 0.55rem;
-    font: 700 0.9rem Inter, sans-serif;
+    font:
+      700 0.9rem Inter,
+      sans-serif;
   }
 </style>

@@ -30,7 +30,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   text-rendering: optimizeLegibility;
@@ -76,7 +81,7 @@ html {
 }
 
 .mermaid {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 12px;
 }
 

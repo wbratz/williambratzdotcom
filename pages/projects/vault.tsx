@@ -105,9 +105,9 @@ export default function VaultProject() {
           <p className={styles.eyebrow}>Persistent context for humans and AI</p>
           <h1>The Vault</h1>
           <p className={styles.lede}>
-            The Vault is a source-grounded knowledge system that connects product
-            intent, engineering decisions, implementation evidence, and the AI
-            sessions used to do the work.
+            The Vault is a source-grounded knowledge system that connects
+            product intent, engineering decisions, implementation evidence, and
+            the AI sessions used to do the work.
           </p>
           <div className={styles.actions}>
             <a
@@ -143,15 +143,15 @@ export default function VaultProject() {
           <div>
             <h2 id="problem-title">Organizations remember in fragments.</h2>
             <p>
-              Product intent lives in documents and conversations. Engineering intent
-              lives in code, pull requests, architecture decisions, and the memories
-              of the people who made them. AI agents usually see only the task and the
-              repository in front of them.
+              Product intent lives in documents and conversations. Engineering
+              intent lives in code, pull requests, architecture decisions, and
+              the memories of the people who made them. AI agents usually see
+              only the task and the repository in front of them.
             </p>
             <p>
-              The Vault preserves the links between those fragments. It gives people
-              a way to follow a decision into what shipped, and gives an AI agent a
-              focused starting theory before it changes code.
+              The Vault preserves the links between those fragments. It gives
+              people a way to follow a decision into what shipped, and gives an
+              AI agent a focused starting theory before it changes code.
             </p>
           </div>
         </section>
@@ -164,18 +164,21 @@ export default function VaultProject() {
             height="760"
           />
           <figcaption>
-            Evidence remains authoritative. The wiki is a useful, regenerable model
-            of that evidence.
+            Evidence remains authoritative. The wiki is a useful, regenerable
+            model of that evidence.
           </figcaption>
         </figure>
 
         <section className={styles.workflow} aria-labelledby="workflow-title">
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Operating model</p>
-            <h2 id="workflow-title">A compiler for organizational knowledge.</h2>
+            <h2 id="workflow-title">
+              A compiler for organizational knowledge.
+            </h2>
             <p>
-              The system separates mechanical collection, model-assisted synthesis,
-              everyday use, and health checks. Each stage has a different risk profile.
+              The system separates mechanical collection, model-assisted
+              synthesis, everyday use, and health checks. Each stage has a
+              different risk profile.
             </p>
           </div>
           <ol>
@@ -191,13 +194,19 @@ export default function VaultProject() {
           </ol>
         </section>
 
-        <section className={styles.implementation} aria-labelledby="implementation-title">
+        <section
+          className={styles.implementation}
+          aria-labelledby="implementation-title"
+        >
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Implementation</p>
-            <h2 id="implementation-title">Plain files, deliberate machinery.</h2>
+            <h2 id="implementation-title">
+              Plain files, deliberate machinery.
+            </h2>
             <p>
-              The implementation is intentionally inspectable. The knowledge remains
-              useful without a proprietary database or a running application.
+              The implementation is intentionally inspectable. The knowledge
+              remains useful without a proprietary database or a running
+              application.
             </p>
           </div>
           <div className={styles.implementationGrid}>
@@ -223,29 +232,30 @@ export default function VaultProject() {
               <div>
                 <h3>Scoped context</h3>
                 <p>
-                  Small hot files and indexes load first. Deeper pages and raw sources
-                  are followed only when the task needs them.
+                  Small hot files and indexes load first. Deeper pages and raw
+                  sources are followed only when the task needs them.
                 </p>
               </div>
               <div>
                 <h3>Portable configuration</h3>
                 <p>
-                  Repositories, topics, source paths, and exclusions are configuration.
-                  Machine-specific paths stay outside the shared knowledge.
+                  Repositories, topics, source paths, and exclusions are
+                  configuration. Machine-specific paths stay outside the shared
+                  knowledge.
                 </p>
               </div>
               <div>
                 <h3>Operational CLI</h3>
                 <p>
-                  Ingest, compile, lint, search, doctor, and scheduling commands make
-                  the memory loop testable and repeatable.
+                  Ingest, compile, lint, search, doctor, and scheduling commands
+                  make the memory loop testable and repeatable.
                 </p>
               </div>
               <div>
                 <h3>Self-healing cadence</h3>
                 <p>
-                  Scheduled work can catch up after missed runs. A diagnostic command
-                  verifies credentials, hooks, paths, and schedules.
+                  Scheduled work can catch up after missed runs. A diagnostic
+                  command verifies credentials, hooks, paths, and schedules.
                 </p>
               </div>
             </div>
@@ -255,11 +265,13 @@ export default function VaultProject() {
         <section className={styles.example} aria-labelledby="example-title">
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>In practice</p>
-            <h2 id="example-title">Ask about intent. Verify the implementation.</h2>
+            <h2 id="example-title">
+              Ask about intent. Verify the implementation.
+            </h2>
             <p>
-              This fictional example shows the shape of a useful answer. The agent
-              follows product intent through the decision that changed it, then checks
-              the current code and tests.
+              This fictional example shows the shape of a useful answer. The
+              agent follows product intent through the decision that changed it,
+              then checks the current code and tests.
             </p>
           </div>
           <figure className={styles.wideFigure}>
@@ -270,19 +282,24 @@ export default function VaultProject() {
               height="900"
             />
             <figcaption>
-              The goal is not a confident answer. It is a verifiable answer with a
-              path back to intent and evidence.
+              The goal is not a confident answer. It is a verifiable answer with
+              a path back to intent and evidence.
             </figcaption>
           </figure>
         </section>
 
-        <section className={styles.safeguards} aria-labelledby="safeguards-title">
+        <section
+          className={styles.safeguards}
+          aria-labelledby="safeguards-title"
+        >
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Trust boundaries</p>
-            <h2 id="safeguards-title">AI-assisted does not mean AI-authoritative.</h2>
+            <h2 id="safeguards-title">
+              AI-assisted does not mean AI-authoritative.
+            </h2>
             <p>
-              A useful knowledge system needs stronger guarantees than “the model
-              usually gets it right.”
+              A useful knowledge system needs stronger guarantees than “the
+              model usually gets it right.”
             </p>
           </div>
           <div className={styles.safeguardGrid}>
@@ -295,19 +312,29 @@ export default function VaultProject() {
           </div>
         </section>
 
-        <section className={styles.boundaries} aria-labelledby="boundaries-title">
+        <section
+          className={styles.boundaries}
+          aria-labelledby="boundaries-title"
+        >
           <div className={styles.sectionLabel}>What it is not</div>
           <div>
             <h2 id="boundaries-title">The Vault does not replace judgment.</h2>
             <ul>
               <li>It is not a claim that documentation becomes truth.</li>
-              <li>It is not a reason to feed every document into every prompt.</li>
-              <li>It is not a black box that hides where an answer came from.</li>
-              <li>It is not permission for a model to rewrite organizational policy.</li>
+              <li>
+                It is not a reason to feed every document into every prompt.
+              </li>
+              <li>
+                It is not a black box that hides where an answer came from.
+              </li>
+              <li>
+                It is not permission for a model to rewrite organizational
+                policy.
+              </li>
             </ul>
             <p>
-              It is a maintained map with receipts. People still own decisions, and
-              the running system still gets the final vote.
+              It is a maintained map with receipts. People still own decisions,
+              and the running system still gets the final vote.
             </p>
           </div>
         </section>
@@ -316,9 +343,10 @@ export default function VaultProject() {
           <p className={styles.sectionLabel}>Try the pattern</p>
           <h2 id="start-title">Start with one domain and one real workflow.</h2>
           <p>
-            The public scaffold interviews you about your domain, creates a generic
-            Raw and Wiki structure, writes the operating contract, seeds the first
-            pages, and installs ingest, query, and lint instructions for your agent.
+            The public scaffold interviews you about your domain, creates a
+            generic Raw and Wiki structure, writes the operating contract, seeds
+            the first pages, and installs ingest, query, and lint instructions
+            for your agent.
           </p>
           <div className={styles.actions}>
             <a

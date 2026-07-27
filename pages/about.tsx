@@ -64,10 +64,11 @@ export default function About() {
             </p>
             <h1>I build systems, then preserve what they teach us.</h1>
             <p className={styles.lede}>
-              I&apos;m William “Billy” Bratz. For 11 years, I&apos;ve built distributed
-              systems across identity, underwriting, analytics, and conversational
-              AI. Today my focus is production LLM agents, MCP infrastructure, and
-              the context those systems need to make sound decisions.
+              I&apos;m William “Billy” Bratz. For 11 years, I&apos;ve built
+              distributed systems across identity, underwriting, analytics, and
+              conversational AI. Today my focus is production LLM agents, MCP
+              infrastructure, and the context those systems need to make sound
+              decisions.
             </p>
           </div>
           <img
@@ -82,22 +83,24 @@ export default function About() {
         <section className={styles.section} aria-labelledby="work-now">
           <div className={styles.sectionHeading}>
             <p>What I work on now</p>
-            <h2 id="work-now">Making capable AI systems dependable in production.</h2>
+            <h2 id="work-now">
+              Making capable AI systems dependable in production.
+            </h2>
           </div>
           <div className={styles.prose}>
             <p>
-              The interesting part of AI engineering begins after the demo works.
-              Production introduces real users, imperfect data, latency budgets,
-              failure modes, shifting models, and consequences. I work on the tool,
-              context, evaluation, observability, and reliability layers that help
-              agent systems operate inside those constraints.
+              The interesting part of AI engineering begins after the demo
+              works. Production introduces real users, imperfect data, latency
+              budgets, failure modes, shifting models, and consequences. I work
+              on the tool, context, evaluation, observability, and reliability
+              layers that help agent systems operate inside those constraints.
             </p>
             <p>
-              I&apos;m especially interested in the boundary between product intent and
-              engineering implementation. When the reason behind a decision disappears,
-              both people and agents are forced to reconstruct it. Better context makes
-              that reasoning durable, reviewable, and useful the next time a decision
-              reaches code.
+              I&apos;m especially interested in the boundary between product
+              intent and engineering implementation. When the reason behind a
+              decision disappears, both people and agents are forced to
+              reconstruct it. Better context makes that reasoning durable,
+              reviewable, and useful the next time a decision reaches code.
             </p>
           </div>
         </section>
@@ -128,8 +131,8 @@ export default function About() {
               <span>03</span>
               <h3>Context should compound</h3>
               <p>
-                Decisions, incidents, and implementations should make the next piece
-                of work easier, not disappear into another chat or ticket.
+                Decisions, incidents, and implementations should make the next
+                piece of work easier, not disappear into another chat or ticket.
               </p>
             </article>
           </div>
@@ -138,7 +141,9 @@ export default function About() {
         <section className={styles.section} aria-labelledby="public-work">
           <div className={styles.sectionHeading}>
             <p>Work made public</p>
-            <h2 id="public-work">Ideas become more useful when other people can test them.</h2>
+            <h2 id="public-work">
+              Ideas become more useful when other people can test them.
+            </h2>
           </div>
           <div className={styles.publicGrid}>
             <article className={styles.feature}>
@@ -146,7 +151,8 @@ export default function About() {
               <h3>The Vault</h3>
               <p>
                 A persistent LLM-maintained wiki that connects source evidence,
-                product decisions, engineering implementations, and agent context.
+                product decisions, engineering implementations, and agent
+                context.
               </p>
               <div className={styles.cardLinks}>
                 <Link href="/projects/vault" legacyBehavior>
@@ -162,8 +168,8 @@ export default function About() {
               <h3>Notes from the work</h3>
               <p>
                 I write about production AI, distributed systems, engineering
-                judgment, and the organizational knowledge that source code alone
-                cannot preserve.
+                judgment, and the organizational knowledge that source code
+                alone cannot preserve.
               </p>
               <div className={styles.cardLinks}>
                 <Link href="/blog" legacyBehavior>
@@ -177,10 +183,15 @@ export default function About() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="independent-products">
+        <section
+          className={styles.section}
+          aria-labelledby="independent-products"
+        >
           <div className={styles.sectionHeading}>
             <p>Independent products</p>
-            <h2 id="independent-products">Small tools can still make an idea tangible.</h2>
+            <h2 id="independent-products">
+              Small tools can still make an idea tangible.
+            </h2>
           </div>
           <div className={styles.community}>
             <div>
@@ -191,8 +202,9 @@ export default function About() {
               <article>
                 <h4>Neverending Story Pointer</h4>
                 <p>
-                  A free planning-poker app for teams that want a quick, shared way
-                  to estimate work without turning the ceremony into the work.
+                  A free planning-poker app for teams that want a quick, shared
+                  way to estimate work without turning the ceremony into the
+                  work.
                 </p>
                 <ExternalLink href="https://neverendingstorypointer.com">
                   Open the pointing app
@@ -201,10 +213,10 @@ export default function About() {
               <article>
                 <h4>How Unique Is a GUID?</h4>
                 <p>
-                  An interactive explanation of an enormous probability space, with
-                  collision calculators, relatable comparisons, and a secure v4
-                  generator. The same experience is available in GUID and UUID
-                  vocabulary.
+                  An interactive explanation of an enormous probability space,
+                  with collision calculators, relatable comparisons, and a
+                  secure v4 generator. The same experience is available in GUID
+                  and UUID vocabulary.
                 </p>
                 <div className={styles.productLinks}>
                   <ExternalLink href="https://howuniqueisaguid.com">
