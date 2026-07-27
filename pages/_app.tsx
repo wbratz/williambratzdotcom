@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     // @ts-ignore - mismatched react versions in types
-    <ThemeProvider attribute="class">
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <Component {...pageProps} />
     </ThemeProvider>
   );

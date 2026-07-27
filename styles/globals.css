@@ -1,27 +1,40 @@
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
+  --bg-color: #f7f5f0;
+  --surface-bg: #ffffff;
+  --text-color: #25282d;
+  --text-muted: #626972;
+  --heading-color: #17191d;
+  --link-color: #98620b;
+  --border-color: #dedad2;
   --nav-bg: #b22234;
   --nav-text: #fafafa;
   --sidenav-bg: #242f40;
+  color-scheme: light;
 }
 
 .dark {
-  --bg-color: #121212;
-  --text-color: #fafafa;
-  --nav-bg: #1f2937;
-  --nav-text: #fafafa;
-  --sidenav-bg: #111827;
+  --bg-color: #11151b;
+  --surface-bg: #171c24;
+  --text-color: #d6dbe3;
+  --text-muted: #9ba6b4;
+  --heading-color: #f1f4f8;
+  --link-color: #eab65c;
+  --border-color: #2b3440;
+  --nav-bg: #18212d;
+  --nav-text: #f1f4f8;
+  --sidenav-bg: #151c26;
+  color-scheme: dark;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -30,11 +43,7 @@ a {
 }
 
 a:hover {
-  color: goldenrod;
-}
-
-li {
-  list-style: none;
+  color: var(--link-color);
 }
 
 * {
@@ -51,4 +60,3 @@ li {
   font-family: 'Arial', sans-serif;
   font-size: 12px;
 }
-
