@@ -1,15 +1,28 @@
-import fs from "fs";
-import matter from "gray-matter";
 import Head from "next/head";
 import Link from "next/link";
-import path from "path";
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../src/components/Layout";
+import {
+  getAllPostSummaries,
+  getAllTopics,
+  PostSummary,
+} from "../src/lib/content";
 import styles from "../styles/blog.module.css";
 
 const SITE_URL = "https://www.williambratz.com";
 
-export default function Blog({ blogs }) {
+type BlogProps = {
+  blogs: PostSummary[];
+  topics: string[];
+};
+
+export default function Blog({ blogs, topics }: BlogProps) {
+  const [activeTopic, setActiveTopic] = useState("All");
+  const visibleBlogs =
+    activeTopic === "All"
+      ? blogs
+      : blogs.filter((blog) => blog.topics.includes(activeTopic));
+
   return (
     <Layout>
       <Head>
@@ -38,22 +51,40 @@ export default function Blog({ blogs }) {
             judgment, and the knowledge teams build together.
           </div>
         </header>
+        <div className={styles.topicFilters} aria-label="Filter writing by topic">
+          {["All", ...topics].map((topic) => (
+            <button
+              key={topic}
+              type="button"
+              className={activeTopic === topic ? styles.activeTopic : undefined}
+              aria-pressed={activeTopic === topic}
+              onClick={() => setActiveTopic(topic)}
+            >
+              {topic}
+            </button>
+          ))}
+        </div>
+        <p className={styles.resultCount} aria-live="polite">
+          {visibleBlogs.length} {visibleBlogs.length === 1 ? "essay" : "essays"}
+          {activeTopic === "All" ? "" : ` about ${activeTopic}`}
+        </p>
         <ul className={styles.blogList}>
-          {blogs.map((blog) => (
+          {visibleBlogs.map((blog) => (
             <li key={blog.slug}>
               <article className={styles.blogSummaryWrapper}>
                 <Link href={`/blog/${blog.slug}`} legacyBehavior>
                   <a className={styles.blogSummaryPhoto} aria-label={`Read ${blog.title}`}>
-                    <img src={blog.photo} alt="" />
+                    <img src={blog.photo} alt={blog.imageAlt} />
                   </a>
                 </Link>
                 <div className={styles.blogSummaryPosts}>
-                  <time dateTime={new Date(blog.date).toISOString()}>
+                  <time dateTime={blog.date}>
                     {new Intl.DateTimeFormat("en-US", {
                       month: "short",
                       day: "numeric",
                       year: "numeric",
-                    }).format(new Date(blog.date))}
+                      timeZone: "UTC",
+                    }).format(new Date(`${blog.date}T00:00:00Z`))}
                   </time>
                   <h2 className={styles.blogSummaryTitle}>
                     <Link href={`/blog/${blog.slug}`} legacyBehavior>
@@ -61,6 +92,11 @@ export default function Blog({ blogs }) {
                     </Link>
                   </h2>
                   <p className={styles.blogSummaryContent}>{blog.description}</p>
+                  <ul className={styles.topicList} aria-label="Topics">
+                    {blog.topics.map((topic) => (
+                      <li key={topic}>{topic}</li>
+                    ))}
+                  </ul>
                   <Link href={`/blog/${blog.slug}`} legacyBehavior>
                     <a className={styles.readMore}>Read essay <span aria-hidden="true">→</span></a>
                   </Link>
@@ -75,15 +111,10 @@ export default function Blog({ blogs }) {
 }
 
 export async function getStaticProps() {
-  const contentDirectory = path.join(process.cwd(), "contents");
-  const blogs = fs
-    .readdirSync(contentDirectory)
-    .filter((filename) => filename.endsWith(".md"))
-    .map((filename) => {
-      const raw = fs.readFileSync(path.join(contentDirectory, filename), "utf8");
-      return matter(raw).data;
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
-  return { props: { blogs } };
+  return {
+    props: {
+      blogs: getAllPostSummaries(),
+      topics: getAllTopics(),
+    },
+  };
 }

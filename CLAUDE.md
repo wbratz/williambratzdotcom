@@ -131,10 +131,17 @@ Blog posts are stored in `/contents/*.md` with the following frontmatter format:
 ---
 title: Post Title
 slug: url-slug
-date: MM/DD/YYYY
+date: YYYY-MM-DD
+updated: YYYY-MM-DD # optional
 description: Brief description for listing page
 photo: "./blogContent/slug/thumbnail.jpg"
 banner: "../blogContent/slug/banner.jpg"
+imageAlt: Descriptive text for the thumbnail and banner
+topics:
+  - Topic Name
+series: Optional Series Name
+seriesOrder: 1 # required when series is set
+featured: false
 ---
 
 # Post content here...
@@ -143,17 +150,22 @@ banner: "../blogContent/slug/banner.jpg"
 ### Static Site Generation
 
 **Blog Listing** (`pages/blog.tsx`):
-- Uses `getStaticProps()` to read all `.md` files from `/contents`
-- Parses frontmatter with gray-matter
+- Uses the shared `src/lib/content` loader
 - Sorts by date (newest first)
-- Generates UUID for each post
-- Passes frontmatter data as props
+- Filters posts by topic in the browser
+- Uses stable post slugs as React keys
 
-**Individual Posts** (`pages/blog/[slug].js`):
+**Individual Posts** (`pages/blog/[slug].tsx`):
 - Uses `getStaticPaths()` to generate routes from filenames
-- Uses `getStaticProps(context)` to read specific markdown file
+- Uses the shared loader for validated metadata, series, related, and adjacent posts
 - Processes markdown with unified/remark pipeline
 - Renders HTML with `dangerouslySetInnerHTML`
+
+**Shared content loader** (`src/lib/content.js` + `content.d.ts`):
+- Reads and validates every post's frontmatter
+- Enforces ISO dates, filename/slug agreement, topics, image alt text, and series order
+- Supplies the homepage, blog listing, article routes, sitemap, and RSS
+- Calculates reading time in one place
 
 ### Asset Organization
 
@@ -234,7 +246,7 @@ npm start            # Start production server (uses $PORT env var)
 ### Adding a New Blog Post
 
 1. Create a new `.md` file in `/contents/`
-2. Add frontmatter with title, slug, date, description, photo, banner
+2. Add all required frontmatter fields shown above
 3. Create asset directory in `/public/blogContent/{slug}/`
 4. Add images to the asset directory
 5. Write content in markdown

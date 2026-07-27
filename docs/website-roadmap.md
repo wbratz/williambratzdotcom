@@ -202,3 +202,6 @@ Acceptance:
 - 2026-07-27: Phase 2B started with `/projects` and a dedicated `/projects/vault`
   case study covering the generic architecture, operating model, trust boundaries,
   worked example, limitations, and adoption path.
+- 2026-07-27: Phase 2A implemented with validated, typed post metadata; a shared
+  content loader; topic filters; explicit series order; related essays; and
+  previous/next navigation.

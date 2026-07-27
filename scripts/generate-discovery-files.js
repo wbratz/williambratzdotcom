@@ -1,10 +1,9 @@
 const fs = require("fs");
-const matter = require("gray-matter");
 const path = require("path");
+const { getAllPostSummaries } = require("../src/lib/content");
 
 const SITE_URL = "https://www.williambratz.com";
 const root = path.join(__dirname, "..");
-const contentDirectory = path.join(root, "contents");
 const publicDirectory = path.join(root, "public");
 
 const escapeXml = (value) =>
@@ -15,14 +14,7 @@ const escapeXml = (value) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&apos;");
 
-const posts = fs
-  .readdirSync(contentDirectory)
-  .filter((filename) => filename.endsWith(".md"))
-  .map((filename) => {
-    const raw = fs.readFileSync(path.join(contentDirectory, filename), "utf8");
-    return matter(raw).data;
-  })
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const posts = getAllPostSummaries();
 
 const sitemapPages = [
   { url: "", date: posts[0].date },

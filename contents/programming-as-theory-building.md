@@ -1,10 +1,17 @@
 ---
 title: "Programming as Theory Building: Why \"Just Read the Docs\" (RTFM) Never Works"
 slug: programming-as-theory-building
-date: 8/2/2025
+date: 2025-08-02
 description: Why understanding code requires more than documentation alone.
 photo: "./blogContent/as-theory-building/resized_thumbnail.png"
 banner: "../blogContent/as-theory-building/resized_banner.png"
+imageAlt: An abstract network representing the shared understanding a team builds around software.
+topics:
+  - Engineering Practice
+  - Knowledge Systems
+series: Theory Building
+seriesOrder: 1
+featured: true
 ---
 
 # Introduction

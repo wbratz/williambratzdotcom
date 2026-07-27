@@ -1,10 +1,17 @@
 ---
 title: "The Map Is Not the Theory: Why Docs and Diagrams Will Mislead You"
 slug: the-map-is-not-the-theory
-date: 8/9/2025
+date: 2025-08-09
 description: Written artifacts are just approximations; the real system lives in the team's head.
 photo: "./blogContent/map-not-the-theory/resized_thumbnail.svg"
 banner: "../blogContent/map-not-the-theory/resized_banner.svg"
+imageAlt: A technical map showing the gap between documentation and a team’s living understanding.
+topics:
+  - Engineering Practice
+  - Knowledge Systems
+series: Theory Building
+seriesOrder: 2
+featured: true
 ---
 
 # Introduction

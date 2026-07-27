@@ -1,10 +1,15 @@
 ---
 title: Understanding Authorization, A Comprehensive Guide
 slug: auth-intro
-date: 4/26/2023
+date: 2023-04-26
 description: Authorization is an essential component of application security that ensures access control to protected resources. In this guide, we will dive into the fundamentals of authorization and provide a comprehensive understanding of how it works in the context of software development.
 photo: "./blogContent/auth-intro/auth_image_sm.jpg"
 banner: "../blogContent/auth-intro/auth_image.jpg"
+imageAlt: A diagram introducing the client, authorization server, and protected resource in an authorization system.
+topics:
+  - Security
+  - Architecture
+featured: false
 ---
 
 # Introduction

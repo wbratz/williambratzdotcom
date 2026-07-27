@@ -1,10 +1,19 @@
 ---
 title: "When the Map Starts Learning: Building a Shared Memory for Humans and AI"
 slug: bridging-the-gap
-date: 7/27/2026
+date: 2026-07-27
+updated: 2026-07-27
 description: What happens when documentation stops being a destination and becomes living context for product, engineering, and AI.
 photo: "./blogContent/bridging-the-gap/resized_thumbnail.svg"
 banner: "../blogContent/bridging-the-gap/resized_banner.svg"
+imageAlt: A glowing network of connected knowledge nodes representing a living map shared by people and AI.
+topics:
+  - AI Systems
+  - Knowledge Systems
+  - Engineering Practice
+series: Theory Building
+seriesOrder: 3
+featured: true
 ---
 
 # The Post That Would Not Sit Still

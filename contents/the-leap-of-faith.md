@@ -1,10 +1,14 @@
 ---
 title: The leap of faith
 slug: the-leap-of-faith
-date: 12/5/2020
+date: 2020-12-05
 description: This first blog post is not necessarily related to programming, it’s more my perspective on life, and opportunity in general. My first job was a paper route when I was 8 years old, I didn't want a paper route, my older brother did, but his route was huge and took him hours. Luckily I was there to pick up half, don't misunderstand, this was not two brothers going out together, he took one side of the street I took the other...
 photo: "./leap_sm.jpg"
 banner: "../leap.jpg"
+imageAlt: A person leaping from a cliff into open water.
+topics:
+  - Personal
+featured: false
 ---
 
 This first blog post is not necessarily related to programming, it’s more my perspective on life, and opportunity in general. My first job was a paper route when I was 8 years old, I didn't _want_ a paper route, my older brother did, but his route was huge and took him hours. Luckily I was there to pick up half, don't misunderstand, this was not two brothers going out together, he took one side of the street I took the other, or even what you see in movies where a kid is on his bike throwing papers at houses. This was 8 year old me, no parents, alone, waking up with the sun, to deliver newspapers in upstate New York by myself. Rain, shine, or snow and there was **a LOT of snow**, as for the bike I was so small and there were so many papers to deliver that I had to carry two news paper sacks and couldn't balance on my bike. Since then, there hasn't been much time when I didn't have a job, and over the years I've had many, some good, many bad. Most of the bad ones I didn't realize were bad until years later.

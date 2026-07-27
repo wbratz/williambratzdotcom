@@ -1,20 +1,11 @@
-import fs from "fs";
-import matter from "gray-matter";
 import Head from "next/head";
 import Link from "next/link";
-import path from "path";
 import React from "react";
 import Layout from "../src/components/Layout";
+import { getAllPostSummaries, PostSummary } from "../src/lib/content";
 import styles from "../styles/Homepage.module.css";
 
 const SITE_URL = "https://www.williambratz.com";
-
-type PostSummary = {
-  title: string;
-  slug: string;
-  date: string;
-  description: string;
-};
 
 type HomeProps = {
   featuredPosts: PostSummary[];
@@ -146,12 +137,13 @@ export default function Home({ featuredPosts }: HomeProps) {
           <div className={styles.writingList}>
             {featuredPosts.map((post) => (
               <article key={post.slug}>
-                <time dateTime={new Date(post.date).toISOString()}>
+                <time dateTime={post.date}>
                   {new Intl.DateTimeFormat("en-US", {
                     month: "short",
                     day: "numeric",
                     year: "numeric",
-                  }).format(new Date(post.date))}
+                    timeZone: "UTC",
+                  }).format(new Date(`${post.date}T00:00:00Z`))}
                 </time>
                 <div>
                   <h3>
@@ -205,15 +197,8 @@ export default function Home({ featuredPosts }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const contentDirectory = path.join(process.cwd(), "contents");
-  const featuredPosts = fs
-    .readdirSync(contentDirectory)
-    .filter((filename) => filename.endsWith(".md"))
-    .map((filename) => {
-      const raw = fs.readFileSync(path.join(contentDirectory, filename), "utf8");
-      return matter(raw).data as PostSummary;
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  const featuredPosts = getAllPostSummaries()
+    .filter((post) => post.featured)
     .slice(0, 3);
 
   return { props: { featuredPosts } };
