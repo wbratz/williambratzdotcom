@@ -200,6 +200,14 @@ For engineering, those same links restore the “why” at the moment it matters
 
 The handoff becomes a feedback loop.
 
+## What This Looks Like in Practice
+
+Architecture diagrams explain the system, but the experience is much simpler. Ask a question in the environment where you already work. The agent starts with focused Vault context, follows the evidence chain, verifies the current code, and answers with sources.
+
+![An illustrative Claude Code terminal conversation. A user asks whether the retry behavior from a payment recovery PRD shipped. The agent traces the PRD through a decision, story, pull request, code, and tests, then reports that it shipped with an intentional scope change and cites each source.](../blogContent/bridging-the-gap/vault-claude-code-example.svg)
+
+*An illustrative exchange, using fictional names and identifiers. The important part is the shape of the answer: product intent, the decision that changed it, the implementation that followed, verification in the current code, and a confidence level backed by sources.*
+
 ---
 
 # Bringing the Vault to Where Work Happens

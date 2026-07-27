@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative Claude Code conversation querying The Vault</title>
+  <desc id="desc">A terminal conversation where a user asks whether a PRD requirement shipped. Claude Code searches focused Vault pages, follows citations from the PRD to a decision, story, pull request, and test, then answers that the requirement shipped with a documented scope change.</desc>
+  <defs>
+    <linearGradient id="terminal-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#161a22"/>
+      <stop offset="1" stop-color="#10131a"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#000" flood-opacity=".35"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" rx="32" fill="#0b0e13"/>
+  <rect x="44" y="44" width="1112" height="812" rx="18" fill="url(#terminal-bg)" stroke="#343b49" filter="url(#shadow)"/>
+
+  <path d="M44 104h1112" stroke="#343b49"/>
+  <circle cx="78" cy="74" r="7" fill="#ef6a62"/>
+  <circle cx="102" cy="74" r="7" fill="#e9bd55"/>
+  <circle cx="126" cy="74" r="7" fill="#61c36f"/>
+  <text x="600" y="81" text-anchor="middle" fill="#929bad" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18">claude  ·  payments-api</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="19">
+    <text x="78" y="148" fill="#d7a56d">❯</text>
+    <text x="110" y="148" fill="#f1f3f7">Did the retry behavior from the Payment Recovery PRD ship?</text>
+    <text x="110" y="178" fill="#f1f3f7">The PRD said three attempts, but production looks different.</text>
+
+    <text x="78" y="230" fill="#b9a3e3">●</text>
+    <text x="110" y="230" fill="#d8dde8">I’ll trace the requirement through The Vault and verify it in code.</text>
+
+    <rect x="78" y="260" width="1044" height="181" rx="10" fill="#0d1118" stroke="#2b3340"/>
+    <text x="102" y="298" fill="#8f9aab">Read</text>
+    <text x="174" y="298" fill="#b8c0cf">wiki/products/payment-recovery.md</text>
+    <text x="102" y="334" fill="#8f9aab">Follow</text>
+    <text x="186" y="334" fill="#b8c0cf">[[decision-retry-budget]]  →  [[story-PAY-418]]</text>
+    <text x="102" y="370" fill="#8f9aab">Follow</text>
+    <text x="186" y="370" fill="#b8c0cf">[[pr-2841-adaptive-retries]]</text>
+    <text x="102" y="406" fill="#8f9aab">Verify</text>
+    <text x="186" y="406" fill="#b8c0cf">src/recovery/retry-policy.ts  ·  retry-policy.test.ts</text>
+
+    <text x="78" y="493" fill="#b9a3e3">●</text>
+    <text x="110" y="493" fill="#f1f3f7" font-weight="700">It shipped, with one intentional change.</text>
+
+    <text x="110" y="538" fill="#d8dde8">The PRD proposed three fixed attempts. During implementation, the team</text>
+    <text x="110" y="570" fill="#d8dde8">changed that to an adaptive budget: two attempts for synchronous checkout</text>
+    <text x="110" y="602" fill="#d8dde8">and up to three for background recovery. The decision was made to keep the</text>
+    <text x="110" y="634" fill="#d8dde8">checkout latency budget under 800 ms. The current code and tests match it.</text>
+
+    <text x="110" y="686" fill="#d7a56d" font-weight="700">Confidence: Confirmed</text>
+    <text x="110" y="728" fill="#8f9aab">Sources</text>
+    <text x="206" y="728" fill="#b8c0cf">PRD §4.2  ·  DEC-019  ·  PAY-418  ·  PR #2841</text>
+    <text x="206" y="762" fill="#b8c0cf">retry-policy.ts:44  ·  retry-policy.test.ts:87</text>
+
+    <text x="78" y="820" fill="#d7a56d">❯</text>
+    <rect x="110" y="800" width="10" height="25" rx="2" fill="#d8dde8" opacity=".85"/>
+  </g>
+</svg>
