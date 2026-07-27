@@ -28,7 +28,10 @@ const relatedPosts = getRelatedPosts(posts, post);
 const adjacent = getAdjacentPosts(posts, post);
 const canonical = `https://www.williambratz.com/blog/${post.data.slug}`;
 const assetPath = (value: string) => `/${value.replace(/^(\.\.\/|\.\/)/, "")}`;
-const socialImage = assetPath(post.data.banner);
+const bannerImage = assetPath(post.data.banner);
+const socialImage = post.data.socialImage
+  ? assetPath(post.data.socialImage)
+  : bannerImage;
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -83,7 +86,7 @@ const structuredData = {
   <article class={styles.blogPostContainer}>
     <div class={styles.blogPostBanner}>
       <img
-        src={socialImage}
+        src={bannerImage}
         alt={post.data.imageAlt}
         width="1200"
         height="630"

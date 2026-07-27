@@ -13,6 +13,7 @@ const blog = defineCollection({
       description: z.string().min(1),
       photo: z.string().min(1),
       banner: z.string().min(1),
+      socialImage: z.string().min(1).optional(),
       imageAlt: z.string().min(1),
       topics: z.array(z.string().min(1)).min(1),
       series: z.string().min(1).optional(),

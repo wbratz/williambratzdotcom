@@ -6,6 +6,7 @@ updated: 2026-07-27
 description: What happens when documentation stops being a destination and becomes living context for product, engineering, and AI.
 photo: "./blogContent/bridging-the-gap/resized_thumbnail.svg"
 banner: "../blogContent/bridging-the-gap/resized_banner.svg"
+socialImage: "../social/vault-social.png"
 imageAlt: A glowing network of connected knowledge nodes representing a living map shared by people and AI.
 topics:
   - AI Systems

@@ -18,11 +18,11 @@ const {
   description,
   canonical = new URL(Astro.url.pathname, Astro.site).toString(),
   type = "website",
-  image,
-  imageAlt,
+  image = "/social/william-bratz-social.png",
+  imageAlt = "William Bratz, production AI and distributed systems engineer.",
   noindex = false,
 } = Astro.props;
-const socialImage = image ? new URL(image, Astro.site).toString() : undefined;
+const socialImage = new URL(image, Astro.site).toString();
 ---
 
 <!doctype html>
@@ -38,24 +38,16 @@ const socialImage = image ? new URL(image, Astro.site).toString() : undefined;
     <meta property="og:url" content={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    {socialImage && <meta property="og:image" content={socialImage} />}
-    {
-      socialImage && imageAlt && (
-        <meta property="og:image:alt" content={imageAlt} />
-      )
-    }
-    <meta
-      name="twitter:card"
-      content={socialImage ? "summary_large_image" : "summary"}
-    />
+    <meta property="og:image" content={socialImage} />
+    <meta property="og:image:secure_url" content={socialImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    {socialImage && <meta name="twitter:image" content={socialImage} />}
-    {
-      socialImage && imageAlt && (
-        <meta name="twitter:image:alt" content={imageAlt} />
-      )
-    }
+    <meta name="twitter:image" content={socialImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <slot name="head" />
     <script is:inline>

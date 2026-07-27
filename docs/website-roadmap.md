@@ -220,3 +220,8 @@ Acceptance:
   desktop and mobile sizes. Added GitHub Actions enforcement, weekly Dependabot
   updates, and versioned Render security and cache-header configuration. The new
   accessibility baseline also corrected résumé links that relied on color alone.
+- 2026-07-27: Visual discovery phase started with dedicated 1200-by-630 social
+  cards for the site and The Vault. Added a site-wide large-card fallback,
+  explicit Open Graph dimensions and alt text, and a separate social-image field
+  so articles can preserve their visible banners while using preview-optimized
+  artwork when shared.
