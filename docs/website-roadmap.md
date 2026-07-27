@@ -119,7 +119,7 @@ Acceptance:
 ### 2C. About and credibility
 
 - Add a concise About page connecting experience, writing, open source, and
-  Sunny's Light.
+  independent products.
 - Add a reusable contact callout.
 - Review older titles/descriptions for consistency with the current senior
   engineering voice without erasing personality.
@@ -206,6 +206,12 @@ Acceptance:
   content loader; topic filters; explicit series order; related essays; and
   previous/next navigation.
 - 2026-07-27: Phase 2C implemented with a dedicated About page connecting
-  production engineering, public work, working principles, and Sunny's Light;
+  production engineering, public work, working principles, and independent products;
   plus a reusable contact callout, updated site navigation, and consistent
   catalog metadata for older essays.
+- 2026-07-27: Phase 3 migration implemented on Astro with strict content
+  collections, native static RSS and sitemap routes, locally hosted Inter,
+  framework-independent Markdown assets, and small vanilla scripts for theme,
+  navigation, and topic filtering. Removed the Next.js runtime, legacy API route,
+  and generated Mermaid runtime bundles. Static output remains `out/` so the
+  existing Render publish directory does not change.

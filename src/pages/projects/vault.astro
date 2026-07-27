@@ -1,0 +1,32 @@
+---
+import VaultProject from "../../../pages/projects/vault";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projectSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: "The Vault",
+  description:
+    "A persistent, source-grounded knowledge system for product teams, engineers, and AI agents.",
+  author: {
+    "@type": "Person",
+    name: "William Bratz",
+    url: "https://www.williambratz.com",
+  },
+  codeRepository: "https://github.com/wbratz/vault-scaffold",
+  programmingLanguage: ["Python", "Markdown"],
+  url: "https://www.williambratz.com/projects/vault",
+};
+---
+
+<BaseLayout
+  title="The Vault | William Bratz"
+  description="The architecture, operating model, safeguards, and adoption path behind The Vault, a persistent knowledge system for people and AI agents."
+  canonical="https://www.williambratz.com/projects/vault"
+  type="article"
+  image="/blogContent/bridging-the-gap/vault-mental-model.svg"
+  imageAlt="The Vault turns source evidence into a linked wiki for people and AI agents."
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(projectSchema)} />
+  <VaultProject />
+</BaseLayout>

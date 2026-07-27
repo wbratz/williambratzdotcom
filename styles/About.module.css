@@ -194,6 +194,33 @@
   margin: 0 0 1.25rem;
 }
 
+.productList {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.productList article + article {
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.productList h4 {
+  margin: 0;
+  color: var(--heading-color);
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.productList p {
+  margin-top: 0.75rem !important;
+}
+
+.productLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.25rem;
+}
+
 .contact {
   padding: clamp(4rem, 9vw, 7rem) 0;
 }

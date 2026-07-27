@@ -3,13 +3,19 @@ import Link from "next/link";
 import React from "react";
 import ContactCallout from "../src/components/ContactCallout";
 import Layout from "../src/components/Layout";
-import { getAllPostSummaries, PostSummary } from "../src/lib/content";
 import styles from "../styles/Homepage.module.css";
 
 const SITE_URL = "https://www.williambratz.com";
 
 type HomeProps = {
   featuredPosts: PostSummary[];
+};
+
+type PostSummary = {
+  title: string;
+  slug: string;
+  date: string;
+  description: string;
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
@@ -194,12 +200,4 @@ export default function Home({ featuredPosts }: HomeProps) {
       </div>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const featuredPosts = getAllPostSummaries()
-    .filter((post) => post.featured)
-    .slice(0, 3);
-
-  return { props: { featuredPosts } };
 }

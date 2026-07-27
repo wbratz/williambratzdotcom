@@ -1,0 +1,95 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const content = `# Authorization Reference
+
+## Authentication vs. authorization
+
+- Authentication verifies the identity of a user or service.
+- Authorization determines what that identity can access.
+
+## Three participants
+
+- Client: requests a token and uses it to access a protected resource.
+- Resource server: hosts the resource and validates the client token.
+- Authorization server: issues tokens to clients.
+
+## Practical rules
+
+- Keep tokens lifetime-limited.
+- Grant clients only the scopes they require.
+- Treat write access as distinct from read access.
+- Revisit service boundaries when one client accumulates too many dependencies.
+`;
+---
+
+<BaseLayout
+  title="Authorization reference | William Bratz"
+  description="Archived authorization reference."
+  noindex
+>
+  <article>
+    <p class="eyebrow">Archived reference</p>
+    <h1>Authorization Reference</h1>
+    <a
+      class="download"
+      href={`data:text/markdown;charset=utf-8,${encodeURIComponent(content)}`}
+      download="Cheatsheet.md"
+    >
+      Download Markdown
+    </a>
+    <h2>Authentication vs. authorization</h2>
+    <ul>
+      <li>Authentication verifies the identity of a user or service.</li>
+      <li>Authorization determines what that identity can access.</li>
+    </ul>
+    <h2>Three participants</h2>
+    <ul>
+      <li><strong>Client:</strong> requests a token and uses it to access a protected resource.</li>
+      <li><strong>Resource server:</strong> hosts the resource and validates the client token.</li>
+      <li><strong>Authorization server:</strong> issues tokens to clients.</li>
+    </ul>
+    <h2>Practical rules</h2>
+    <ul>
+      <li>Keep tokens lifetime-limited.</li>
+      <li>Grant clients only the scopes they require.</li>
+      <li>Treat write access as distinct from read access.</li>
+      <li>Revisit service boundaries when one client accumulates too many dependencies.</li>
+    </ul>
+  </article>
+</BaseLayout>
+
+<style>
+  article {
+    width: min(calc(100% - 2rem), 70ch);
+    margin: 0 auto;
+    padding: 5rem 0;
+    font-family: Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  .eyebrow {
+    color: var(--link-color);
+    font: 700 0.75rem Inter, sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  h1,
+  h2 {
+    color: var(--heading-color);
+    font-family: Inter, sans-serif;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
+  h2 {
+    margin-top: 2.5rem;
+  }
+  .download {
+    display: inline-flex;
+    padding: 0.7rem 1rem;
+    color: #17120a;
+    background: var(--link-color);
+    border-radius: 0.55rem;
+    font: 700 0.9rem Inter, sans-serif;
+  }
+</style>

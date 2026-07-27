@@ -1,0 +1,23 @@
+---
+import Home from "../../pages/index";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getPosts, toDateString } from "../lib/posts";
+
+const featuredPosts = (await getPosts())
+  .filter((post) => post.data.featured)
+  .slice(0, 3)
+  .map((post) => ({
+    ...post.data,
+    date: toDateString(post.data.date),
+    updated: post.data.updated ? toDateString(post.data.updated) : undefined,
+    readingTime: post.readingTime,
+  }));
+---
+
+<BaseLayout
+  title="William Bratz | Production AI & Distributed Systems"
+  description="William Bratz builds production AI systems, MCP infrastructure, distributed systems, and durable organizational knowledge."
+  canonical="https://www.williambratz.com"
+>
+  <Home featuredPosts={featuredPosts} />
+</BaseLayout>

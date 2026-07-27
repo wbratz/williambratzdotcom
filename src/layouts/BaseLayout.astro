@@ -1,0 +1,101 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../../styles/globals.css";
+
+type Props = {
+  title: string;
+  description: string;
+  canonical?: string;
+  type?: "website" | "article" | "profile";
+  image?: string;
+  imageAlt?: string;
+  noindex?: boolean;
+};
+
+const {
+  title,
+  description,
+  canonical = new URL(Astro.url.pathname, Astro.site).toString(),
+  type = "website",
+  image,
+  imageAlt,
+  noindex = false,
+} = Astro.props;
+const socialImage = image ? new URL(image, Astro.site).toString() : undefined;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/newIcon.ico" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && imageAlt && <meta property="og:image:alt" content={imageAlt} />}
+    <meta name="twitter:card" content={socialImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    {socialImage && imageAlt && <meta name="twitter:image:alt" content={imageAlt} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <slot name="head" />
+    <script is:inline>
+      (() => {
+        try {
+          const theme = localStorage.getItem("theme") || "dark";
+          document.documentElement.classList.toggle("dark", theme === "dark");
+          document.documentElement.style.colorScheme = theme;
+        } catch {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="site">
+      <a class="skip-link" href="#main-content">Skip to content</a>
+      <Header />
+      <main id="main-content"><slot /></main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style>
+  .site {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #main-content {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    padding: 0.65rem 0.9rem;
+    color: #17120a;
+    background: var(--link-color);
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transform: translateY(-150%);
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+</style>

@@ -304,6 +304,13 @@
     border-radius: 0;
     box-shadow: none;
     font-size: 9.5pt;
+    --bg-color: #fff;
+    --surface-bg: #fff;
+    --text-color: #222;
+    --text-muted: #444;
+    --heading-color: #111;
+    --link-color: #5b3e08;
+    --border-color: #bbb;
   }
 
   .download {
@@ -324,7 +331,6 @@
     color: #5b3e08;
   }
 
-  .section,
   .assignment,
   .features > div,
   .skills > div {

@@ -219,7 +219,7 @@ export default function Resume() {
             <div>
               <h3><ExternalLink href="https://williambratz.com/blog">WilliamBratz.com</ExternalLink></h3>
               <p>
-                Eight essays on production engineering and AI systems, including
+                Nine essays on production engineering and AI systems, including
                 “Production Reveals the System,” “From Chatbots to Persistent
                 Organizational Memory,” and “Engineering in the Age of Agents.”
               </p>
@@ -237,29 +237,21 @@ export default function Resume() {
               </p>
             </div>
             <div>
-              <h3>Open-source contributor</h3>
+              <h3>Independent products and open source</h3>
               <p>
-                Contributions to RestSharp and NUnit, plus Neverending Story Pointer,
-                a real-time estimation app built with Blazor and gRPC streaming.
+                Built{" "}
+                <ExternalLink href="https://neverendingstorypointer.com">
+                  Neverending Story Pointer
+                </ExternalLink>
+                , a free real-time estimation app, and{" "}
+                <ExternalLink href="https://howuniqueisaguid.com">
+                  How Unique Is a GUID?
+                </ExternalLink>
+                , an interactive probability experience also available for UUIDs.
+                Contributions to RestSharp and NUnit.
               </p>
             </div>
           </div>
-        </section>
-
-        <section className={styles.section}>
-          <h2>Community</h2>
-          <div className={styles.roleHeading}>
-            <div>
-              <h3><ExternalLink href="https://sunnyslight.org">Sunny&apos;s Light Foundation</ExternalLink></h3>
-              <p>Founder</p>
-            </div>
-            <p className={styles.meta}>2019–Present</p>
-          </div>
-          <p>
-            Co-founded a 501(c)(3) supporting families after stillbirth. Designed,
-            built, deployed, and continue to maintain its web and donation platform,
-            including a custom Stripe integration and supporting .NET services.
-          </p>
         </section>
 
         <section className={styles.section}>

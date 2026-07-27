@@ -20,7 +20,7 @@ The factory pattern is a creational pattern used to create objects without havin
 
 ## The class diagram
 
-![Class Diagram](../blogContent/favorite-factory/class-diagram.png)
+![Class Diagram](/blogContent/favorite-factory/class-diagram.png)
 
 ## Implementing the pattern
 
@@ -242,7 +242,7 @@ public class RegularCoffeeFactory : CoffeeFactoryBase
 
 Let's see how this looks in a console application.
 
-![Coffee Factory](../blogContent/favorite-factory/screenshot_coffeefactory1.jpg)
+![Coffee Factory](/blogContent/favorite-factory/screenshot_coffeefactory1.jpg)
 
 In this blog post, we saw a great implementation of the factory pattern in C# that simplifies object creation and reduces code duplication. We created two interfaces, one for input types and one for output types. Then, we created concrete types for each interface and an abstract factory class that served as a base class for the concrete factories. We created a concrete factory for each implementation of ICoffee and an initializer that held the mapping from our input types to our factories. Finally, we modified our interface and factory methods to accept additional parameters, such as adding pumpkin spice to the coffee.
 

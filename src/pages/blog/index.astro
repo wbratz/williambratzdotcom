@@ -1,0 +1,107 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getPosts, getTopics, toDateString } from "../../lib/posts";
+import styles from "../../../styles/blog.module.css";
+
+const posts = await getPosts();
+const topics = getTopics(posts);
+const assetPath = (value: string) => `/${value.replace(/^(\.\.\/|\.\/)/, "")}`;
+---
+
+<BaseLayout
+  title="Writing | William Bratz"
+  description="Essays by William Bratz on production AI systems, software design, distributed systems, and engineering knowledge."
+  canonical="https://www.williambratz.com/blog"
+>
+  <div class={styles.blogContainer}>
+    <header class={styles.blogIndexHeader}>
+      <p>Writing</p>
+      <h1>Notes from building, operating, and thinking.</h1>
+      <div>
+        Essays about production AI systems, distributed software, engineering
+        judgment, and the knowledge teams build together.
+      </div>
+    </header>
+    <div class={styles.topicFilters} aria-label="Filter writing by topic">
+      {
+        ["All", ...topics].map((topic) => (
+          <button
+            type="button"
+            class={topic === "All" ? styles.activeTopic : undefined}
+            aria-pressed={topic === "All" ? "true" : "false"}
+            data-topic={topic}
+          >
+            {topic}
+          </button>
+        ))
+      }
+    </div>
+    <p class={styles.resultCount} aria-live="polite" data-result-count>
+      {posts.length} essays
+    </p>
+    <ul class={styles.blogList}>
+      {
+        posts.map((post) => (
+          <li data-post data-topics={post.data.topics.join("|")}>
+            <article class={styles.blogSummaryWrapper}>
+              <a
+                class={styles.blogSummaryPhoto}
+                href={`/blog/${post.data.slug}`}
+                aria-label={`Read ${post.data.title}`}
+              >
+                <img
+                  src={assetPath(post.data.photo)}
+                  alt={post.data.imageAlt}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+              <div class={styles.blogSummaryPosts}>
+                <time datetime={toDateString(post.data.date)}>
+                  {formatDate(post.data.date)}
+                </time>
+                <h2 class={styles.blogSummaryTitle}>
+                  <a href={`/blog/${post.data.slug}`}>{post.data.title}</a>
+                </h2>
+                <p class={styles.blogSummaryContent}>{post.data.description}</p>
+                <ul class={styles.topicList} aria-label="Topics">
+                  {post.data.topics.map((topic) => <li>{topic}</li>)}
+                </ul>
+                <a class={styles.readMore} href={`/blog/${post.data.slug}`}>
+                  Read essay <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>
+
+<script is:inline define:vars={{ activeTopicClass: styles.activeTopic }}>
+  const buttons = Array.from(document.querySelectorAll("[data-topic]"));
+  const posts = Array.from(document.querySelectorAll("[data-post]"));
+  const result = document.querySelector("[data-result-count]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const topic = button.dataset.topic || "All";
+      let visible = 0;
+      buttons.forEach((candidate) => {
+        const active = candidate === button;
+        candidate.classList.toggle(activeTopicClass, active);
+        candidate.setAttribute("aria-pressed", String(active));
+      });
+      posts.forEach((post) => {
+        const topics = (post.dataset.topics || "").split("|");
+        const show = topic === "All" || topics.includes(topic);
+        post.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (result) {
+        result.textContent = `${visible} ${visible === 1 ? "essay" : "essays"}${topic === "All" ? "" : ` about ${topic}`}`;
+      }
+    });
+  });
+</script>

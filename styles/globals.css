@@ -94,3 +94,23 @@ html {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media print {
+  .site-header,
+  .skip-link,
+  footer {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}

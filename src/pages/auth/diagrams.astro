@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Authorization diagram | William Bratz"
+  description="Archived authorization diagram."
+  noindex
+>
+  <article class="archive">
+    <p>Archived reference</p>
+    <h1>Authorization diagram</h1>
+    <svg viewBox="0 0 1000 360" role="img" aria-labelledby="diagram-title diagram-desc">
+      <title id="diagram-title">Authorization request flow</title>
+      <desc id="diagram-desc">
+        A client requests a token from an authorization server and uses it to access
+        a protected resource.
+      </desc>
+      <g class="node">
+        <rect x="40" y="120" width="220" height="100" rx="12"></rect>
+        <text x="150" y="175">Client</text>
+        <rect x="390" y="40" width="220" height="100" rx="12"></rect>
+        <text x="500" y="95">Authorization Server</text>
+        <rect x="740" y="120" width="220" height="100" rx="12"></rect>
+        <text x="850" y="175">Resource Server</text>
+      </g>
+      <g class="arrows">
+        <path d="M260 145 L390 105"></path>
+        <path d="M390 120 L260 175"></path>
+        <path d="M260 195 L740 195"></path>
+        <path d="M740 145 L610 105"></path>
+        <path d="M610 120 L740 175"></path>
+      </g>
+    </svg>
+  </article>
+</BaseLayout>
+
+<style>
+  .archive {
+    width: min(calc(100% - 2rem), 70rem);
+    margin: 0 auto;
+    padding: 5rem 0;
+  }
+  .archive > p {
+    color: var(--link-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  h1 {
+    color: var(--heading-color);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+  }
+  svg {
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    background: var(--surface-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+  }
+  rect {
+    fill: var(--bg-color);
+    stroke: var(--link-color);
+    stroke-width: 2;
+  }
+  text {
+    fill: var(--heading-color);
+    font: 600 22px Inter, sans-serif;
+    text-anchor: middle;
+  }
+  path {
+    fill: none;
+    stroke: var(--text-muted);
+    stroke-width: 3;
+  }
+</style>

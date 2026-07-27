@@ -177,26 +177,44 @@ export default function About() {
           </div>
         </section>
 
-        <section className={styles.section} aria-labelledby="beyond-software">
+        <section className={styles.section} aria-labelledby="independent-products">
           <div className={styles.sectionHeading}>
-            <p>Beyond software</p>
-            <h2 id="beyond-software">Technology matters most when it serves people.</h2>
+            <p>Independent products</p>
+            <h2 id="independent-products">Small tools can still make an idea tangible.</h2>
           </div>
           <div className={styles.community}>
             <div>
-              <p className={styles.cardType}>Community · 2019 to present</p>
-              <h3>Sunny&apos;s Light Foundation</h3>
+              <p className={styles.cardType}>Free to use</p>
+              <h3>Useful experiments, released into the world.</h3>
             </div>
-            <div>
-              <p>
-                I co-founded Sunny&apos;s Light, a 501(c)(3) supporting families after
-                stillbirth. I designed, built, deployed, and continue to maintain its
-                web and donation platform, including a custom Stripe integration and
-                supporting .NET services.
-              </p>
-              <ExternalLink href="https://sunnyslight.org">
-                Visit Sunny&apos;s Light
-              </ExternalLink>
+            <div className={styles.productList}>
+              <article>
+                <h4>Neverending Story Pointer</h4>
+                <p>
+                  A free planning-poker app for teams that want a quick, shared way
+                  to estimate work without turning the ceremony into the work.
+                </p>
+                <ExternalLink href="https://neverendingstorypointer.com">
+                  Open the pointing app
+                </ExternalLink>
+              </article>
+              <article>
+                <h4>How Unique Is a GUID?</h4>
+                <p>
+                  An interactive explanation of an enormous probability space, with
+                  collision calculators, relatable comparisons, and a secure v4
+                  generator. The same experience is available in GUID and UUID
+                  vocabulary.
+                </p>
+                <div className={styles.productLinks}>
+                  <ExternalLink href="https://howuniqueisaguid.com">
+                    Explore GUIDs
+                  </ExternalLink>
+                  <ExternalLink href="https://howuniqueisauuid.com">
+                    Explore UUIDs
+                  </ExternalLink>
+                </div>
+              </article>
             </div>
           </div>
         </section>

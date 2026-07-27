@@ -1,0 +1,31 @@
+---
+import About from "../../pages/about";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "William Bratz",
+  alternateName: "Billy Bratz",
+  url: "https://www.williambratz.com/about",
+  image: "https://www.williambratz.com/headerphoto.jpg",
+  jobTitle: "Senior Software Engineer",
+  homeLocation: { "@type": "Place", name: "Tri-Cities, Tennessee" },
+  sameAs: [
+    "https://github.com/wbratz",
+    "https://www.linkedin.com/in/williambratz",
+  ],
+};
+---
+
+<BaseLayout
+  title="About William Bratz | Production AI Engineer"
+  description="William Bratz is a senior software engineer in Tri-Cities, Tennessee, building production AI systems, distributed software, and durable knowledge infrastructure."
+  canonical="https://www.williambratz.com/about"
+  type="profile"
+  image="/headerphoto.jpg"
+  imageAlt="William Bratz"
+>
+  <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+  <About />
+</BaseLayout>

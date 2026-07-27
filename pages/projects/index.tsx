@@ -69,14 +69,39 @@ export default function Projects() {
             />
           </article>
 
-          <article className={styles.comingNext}>
-            <p className={styles.projectType}>More work</p>
-            <h2>Built carefully, documented when ready.</h2>
-            <p>
-              I will add projects when they can be explained with enough detail to be
-              useful, including the tradeoffs and operational lessons.
-            </p>
-          </article>
+          <div className={styles.productGrid}>
+            <article className={styles.product}>
+              <p className={styles.projectType}>Collaborative tool</p>
+              <h2>Neverending Story Pointer</h2>
+              <p>
+                A free planning-poker app that gives distributed teams a lightweight
+                room for revealing estimates and building shared understanding.
+              </p>
+              <a
+                href="https://neverendingstorypointer.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open the app <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+            <article className={styles.product}>
+              <p className={styles.projectType}>Interactive explanation</p>
+              <h2>How Unique Is a GUID?</h2>
+              <p>
+                A visual exploration of GUID and UUID collision probability with
+                calculators, human-scale comparisons, and a secure v4 generator.
+              </p>
+              <div className={styles.actions}>
+                <a href="https://howuniqueisaguid.com" target="_blank" rel="noreferrer">
+                  GUID edition <span aria-hidden="true">↗</span>
+                </a>
+                <a href="https://howuniqueisauuid.com" target="_blank" rel="noreferrer">
+                  UUID edition <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
         </section>
       </div>
     </Layout>

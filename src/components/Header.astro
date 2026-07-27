@@ -1,0 +1,229 @@
+---
+const navigation = [
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Writing" },
+  { href: "/projects", label: "Projects" },
+  { href: "/resume", label: "Résumé" },
+];
+const pathname = Astro.url.pathname;
+const isActive = (href: string) =>
+  pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+---
+
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="wordmark" href="/" aria-label="William Bratz, home">
+      <img src="/headerphoto.jpg" alt="" width="36" height="36" />
+      <span>William Bratz</span>
+    </a>
+    <div id="primary-navigation" class="nav-panel">
+      <ul>
+        {
+          navigation.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={{ active: isActive(item.href) }}
+                aria-current={isActive(item.href) ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.4 15.2A8.5 8.5 0 0 1 8.8 3.6 8.5 8.5 0 1 0 20.4 15.2Z"></path>
+        </svg>
+      </button>
+      <button
+        class="menu-button"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+        aria-label="Open navigation menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const themeButton = document.querySelector<HTMLButtonElement>(".theme-toggle");
+  const menuButton = document.querySelector<HTMLButtonElement>(".menu-button");
+  const panel = document.querySelector<HTMLElement>(".nav-panel");
+
+  const syncThemeLabel = () => {
+    const dark = document.documentElement.classList.contains("dark");
+    themeButton?.setAttribute("aria-label", `Switch to ${dark ? "light" : "dark"} theme`);
+    themeButton?.setAttribute("title", `Switch to ${dark ? "light" : "dark"} theme`);
+  };
+  syncThemeLabel();
+
+  themeButton?.addEventListener("click", () => {
+    const dark = !document.documentElement.classList.contains("dark");
+    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    localStorage.setItem("theme", dark ? "dark" : "light");
+    syncThemeLabel();
+  });
+
+  menuButton?.addEventListener("click", () => {
+    const open = menuButton.getAttribute("aria-expanded") !== "true";
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+    panel?.classList.toggle("open", open);
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    width: 100%;
+    background: color-mix(in srgb, var(--bg-color) 90%, transparent);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(16px);
+  }
+  .nav {
+    width: min(calc(100% - 2rem), 76rem);
+    min-height: 4.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--heading-color);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .wordmark img {
+    width: 2.25rem;
+    height: 2.25rem;
+    object-fit: cover;
+    border: 1px solid color-mix(in srgb, var(--link-color) 55%, transparent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--bg-color) 70%, transparent);
+  }
+  .nav-panel {
+    margin-left: auto;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li a {
+    display: block;
+    padding: 0.55rem 0.75rem;
+    color: var(--text-muted);
+    border-radius: 0.45rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  li a:hover,
+  li a.active {
+    color: var(--heading-color);
+    background: var(--surface-bg);
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  button {
+    width: 2.55rem;
+    height: 2.55rem;
+    display: grid;
+    place-items: center;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  button:hover {
+    color: var(--heading-color);
+    background: var(--surface-bg);
+    border-color: var(--border-color);
+  }
+  svg {
+    width: 1.15rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+  .moon,
+  :global(.dark) .sun {
+    display: none;
+  }
+  :global(.dark) .moon {
+    display: block;
+  }
+  .menu-button {
+    display: none;
+  }
+  .menu-button span {
+    width: 1.15rem;
+    height: 2px;
+    display: block;
+    background: currentColor;
+  }
+  @media (max-width: 700px) {
+    .nav {
+      width: min(calc(100% - 1.25rem), 76rem);
+      min-height: 4rem;
+    }
+    .wordmark > span {
+      display: none;
+    }
+    .nav-panel {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      width: 100%;
+      display: none;
+      padding: 0.6rem;
+      background: var(--bg-color);
+      border-bottom: 1px solid var(--border-color);
+    }
+    .nav-panel.open {
+      display: block;
+    }
+    ul {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    li a {
+      padding: 0.85rem 1rem;
+    }
+    .nav-actions {
+      margin-left: auto;
+    }
+    .menu-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.24rem;
+    }
+  }
+</style>
