@@ -1,5 +1,5 @@
 ---
-title: The Map Is Not the Theory—Why Docs and Diagrams Will Mislead You
+title: "The Map Is Not the Theory: Why Docs and Diagrams Will Mislead You"
 slug: the-map-is-not-the-theory
 date: 8/9/2025
 description: Written artifacts are just approximations; the real system lives in the team's head.
@@ -9,7 +9,7 @@ banner: "../blogContent/map-not-the-theory/resized_banner.svg"
 
 # Introduction
 
-In the first part of this series, I argued that programming is really about building a shared theory in our heads, not just reading the code. Now let’s zoom in on a related trap: confusing the documents and diagrams—the map—with the actual knowledge—the theory. If “just read the docs” left you wanting, this post explains why.
+In the first part of this series, I argued that programming is really about building a shared theory in our heads, not just reading the code. Now let’s zoom in on a related trap: confusing the documents and diagrams (the map) with the actual knowledge (the theory). If “just read the docs” left you wanting, this post explains why.
 
 ---
 
@@ -26,11 +26,11 @@ Theory is what lets you navigate without staring at the map every second. It tel
 Even good maps miss the messy parts:
 
 - **Outdated diagrams:** The diagram shows four services, the codebase has seven. Now you’re debugging ghosts.
-- **Simplified flows:** Sequence diagrams skip retries, timeouts, and feature flags—the stuff that bites you in prod.
+- **Simplified flows:** Sequence diagrams skip retries, timeouts, and feature flags. That is the stuff that bites you in prod.
 - **Missing intent:** A doc might say “use service X,” but not *why* we chose it or what trade-offs we made.
 - **Hidden constraints:** Security rules, compliance hacks, or business quirks rarely make it onto the page.
 
-Reading the docs is like looking at a subway map without riding the train—you get the lines, but not the noise, delays, or weird station smells.
+Reading the docs is like looking at a subway map without riding the train. You get the lines, but not the noise, delays, or weird station smells.
 
 ---
 
@@ -58,7 +58,7 @@ To keep your mental models sharp:
 
 # Final Thoughts
 
-Maps guide, but theory navigates. Use docs as starting points, then build the real understanding with your team. When the system changes—and it always does—the folks with theory adapt, while the map-readers get lost.
+Maps guide, but theory navigates. Use docs as starting points, then build the real understanding with your team. When the system changes, and it always does, the folks with theory adapt, while the map-readers get lost.
 
 Stay tuned for part three, where we talk about practical ways to bridge the gap between the docs on disk and the theory in your head.
 

@@ -26,7 +26,7 @@ export default function Home({ featuredPosts }: HomeProps) {
   return (
     <Layout>
       <Head>
-        <title>William Bratz — Production AI &amp; Distributed Systems</title>
+        <title>William Bratz | Production AI &amp; Distributed Systems</title>
         <meta
           name="description"
           content="William Bratz builds production AI systems, MCP infrastructure, distributed systems, and durable organizational knowledge."
@@ -36,7 +36,7 @@ export default function Home({ featuredPosts }: HomeProps) {
         <meta property="og:url" content={SITE_URL} />
         <meta
           property="og:title"
-          content="William Bratz — Production AI & Distributed Systems"
+          content="William Bratz | Production AI & Distributed Systems"
         />
         <meta
           property="og:description"
@@ -51,7 +51,7 @@ export default function Home({ featuredPosts }: HomeProps) {
             Senior Software Engineer · Tri-Cities, Tennessee
           </p>
           <h1 id="home-title">
-            I build production AI systems—and the knowledge infrastructure that
+            I build production AI systems and the knowledge infrastructure that
             helps humans and agents understand them.
           </h1>
           <p className={styles.lede}>
@@ -126,7 +126,7 @@ export default function Home({ featuredPosts }: HomeProps) {
               <h3>Theory-building series</h3>
               <p>
                 Three essays about why software understanding lives beyond code and
-                documents—and what changes when the map can learn.
+                documents. I also write about what changes when the map can learn.
               </p>
               <Link href="/blog/programming-as-theory-building" legacyBehavior>
                 <a>Start with part one</a>
@@ -181,7 +181,7 @@ export default function Home({ featuredPosts }: HomeProps) {
             <p>
               Today I&apos;m focused on production agent systems and on preserving the
               connection between why a product decision was made and how it was
-              implemented. That is the idea behind The Vault—and much of what I write
+              implemented. That is the idea behind The Vault and much of what I write
               about here.
             </p>
           </div>

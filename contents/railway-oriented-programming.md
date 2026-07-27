@@ -9,7 +9,7 @@ banner: "../blogContent/railway-oriented-programming/railway_banner.png"
 
 ## Let’s be real for a second.
 
-If your codebase still uses a bunch of `try/catch`, nulls, or `if (!IsValid)` chains strung together like Christmas lights, then I’m sorry—but you’re doing it wrong. Or at least, you're doing it the hard way.
+If your codebase still uses a bunch of `try/catch`, nulls, or `if (!IsValid)` chains strung together like Christmas lights, then I’m sorry, but you’re doing it wrong. Or at least, you're doing it the hard way.
 
 Let’s fix that. The concept is called **Railway Oriented Programming**, and if you’ve written more than 10 lines of backend code in your life, it’s going to click immediately. And once it does, you’ll wonder how you tolerated the old way for so long.
 
@@ -19,7 +19,7 @@ Let’s fix that. The concept is called **Railway Oriented Programming**, and if
 
 Railway Oriented Programming (ROP) is basically this:
 
-> Instead of writing "do X, then Y, then Z" while constantly checking for errors, you write a **rail**—a track where success flows naturally—and only derail if something fails.
+> Instead of writing "do X, then Y, then Z" while constantly checking for errors, you write a **rail**. Success flows naturally along the track and only derails if something fails.
 
 So your code ends up looking like a train ride:
 
@@ -37,7 +37,7 @@ And if any of those fail? The train stops. You don't manually track it. You just
 
 I use [CSharpFunctionalExtensions](https://github.com/vkhorikov/CSharpFunctionalExtensions) to write ROP-style code in C#. It gives you a `Result<T>` type and chaining methods like `Bind`, `Map`, `Tap`, `Ensure`, and `TapError`.
 
-That’s it. The library’s not the point here—it just gives you the hammer. We’re talking carpentry.
+That’s it. The library’s not the point here. It just gives you the hammer. We’re talking carpentry.
 
 ---
 
@@ -105,7 +105,7 @@ See the difference?
 
 ## Real Example: One of My Verifications
 
-This is pulled from a verification pipeline I built—simplified here.
+This is pulled from a verification pipeline I built, simplified here.
 
 ```csharp
 public async Task<Result<Verification>> RunVerification(Document doc)
@@ -119,7 +119,7 @@ public async Task<Result<Verification>> RunVerification(Document doc)
 }
 ```
 
-I don’t need a logger that says “I’m starting step 2!” because this reads _exactly like a script_. It's readable, testable, and debuggable—**without instrumentation gymnastics**.
+I don’t need a logger that says “I’m starting step 2!” because this reads _exactly like a script_. It's readable, testable, and debuggable **without instrumentation gymnastics**.
 
 ---
 
@@ -127,7 +127,7 @@ I don’t need a logger that says “I’m starting step 2!” because this read
 
 ### Example 1: Conditional branches inside chains
 
-If you’ve got a fork in the track—“if A do B, else do C”—ROP can get awkward.
+If you’ve got a fork in the track, such as “if A do B, else do C,” ROP can get awkward.
 
 ```csharp
 return await Validate()
@@ -146,7 +146,7 @@ It works, but it smells. You’re putting logic inside a `Bind`. I usually punt 
 
 ### Example 2: You Actually Want Recovery
 
-ROP assumes failure means “stop the train.” But sometimes you want to try again—fallback logic, circuit breakers, retries.
+ROP assumes failure means “stop the train.” But sometimes you want to try again through fallback logic, circuit breakers, or retries.
 
 For example, say your GPT call fails, and you want to try a fallback prompt instead:
 
@@ -156,7 +156,7 @@ return await TryPrimaryPrompt()
     .OnFailureCompensate(_ => TryFallbackPrompt());
 ```
 
-That works—and it's idiomatic. `OnFailureCompensate` lets you jump rails and try something else. But if you find yourself doing this a lot, you might not be doing ROP—you might be writing a state machine.
+That works, and it's idiomatic. `OnFailureCompensate` lets you jump rails and try something else. But if you find yourself doing this a lot, you might not be doing ROP. You might be writing a state machine.
 
 ---
 

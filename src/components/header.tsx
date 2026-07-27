@@ -39,7 +39,7 @@ export default function Header() {
   return (
     <>
       <Head>
-        <title>William Bratz — Production AI &amp; Distributed Systems</title>
+        <title>William Bratz | Production AI &amp; Distributed Systems</title>
         <link rel="icon" href="/newIcon.ico" />
         <meta
           name="description"

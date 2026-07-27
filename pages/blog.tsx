@@ -13,7 +13,7 @@ export default function Blog({ blogs }) {
   return (
     <Layout>
       <Head>
-        <title>Writing — William Bratz</title>
+        <title>Writing | William Bratz</title>
         <meta
           name="description"
           content="Essays by William Bratz on production AI systems, software design, distributed systems, and engineering knowledge."
@@ -21,7 +21,7 @@ export default function Blog({ blogs }) {
         <link rel="canonical" href={`${SITE_URL}/blog`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/blog`} />
-        <meta property="og:title" content="Writing — William Bratz" />
+        <meta property="og:title" content="Writing | William Bratz" />
         <meta
           property="og:description"
           content="Essays on production AI systems, software design, distributed systems, and engineering knowledge."

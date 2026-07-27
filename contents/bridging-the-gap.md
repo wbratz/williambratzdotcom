@@ -1,5 +1,5 @@
 ---
-title: When the Map Starts Learning—Building a Shared Memory for Humans and AI
+title: "When the Map Starts Learning: Building a Shared Memory for Humans and AI"
 slug: bridging-the-gap
 date: 7/27/2026
 description: What happens when documentation stops being a destination and becomes living context for product, engineering, and AI.
@@ -15,7 +15,7 @@ It was supposed to be the easy one.
 
 The first post, [Programming as Theory Building](/blog/programming-as-theory-building), argued that the real program is not the code or the documentation. It is the theory a team holds about what the system does, why it exists, and how its pieces fit together.
 
-The second, [The Map Is Not the Theory](/blog/the-map-is-not-the-theory), argued that our diagrams, READMEs, ADRs, tickets, and wikis are only maps of that understanding. Useful maps, absolutely—but still incomplete, already aging, and incapable of walking the territory for us.
+The second, [The Map Is Not the Theory](/blog/the-map-is-not-the-theory), argued that our diagrams, READMEs, ADRs, tickets, and wikis are only maps of that understanding. Useful maps, absolutely, but still incomplete, already aging, and incapable of walking the territory for us.
 
 Part three was going to be a practical list: pair more, write down decisions, keep diagrams small, review your docs, repeat.
 
@@ -27,7 +27,7 @@ The original advice was not wrong. It was becoming incomplete.
 
 I had been trying to explain how humans could keep a map closer to reality. The more interesting question had become:
 
-> What happens when the map can help maintain itself—and when both humans and AI can use it to build a shared theory?
+> What happens when the map can help maintain itself, and when both humans and AI can use it to build a shared theory?
 
 That question is why this post took so long. It also led me to build something I call **The Vault**.
 
@@ -35,7 +35,7 @@ That question is why this post took so long. It also led me to build something I
 
 # What Still Holds
 
-Before the rapid improvement of AI—and its equally rapid integration into how we work—this post would have looked very different. Some of the original concepts still hold.
+Before AI improved so rapidly and became part of how we work, this post would have looked very different. Some of the original concepts still hold.
 
 Teams build real understanding through experience:
 
@@ -196,7 +196,7 @@ It also gives product a way to interrogate implementation without starting from 
 - Which open stories depend on the same assumption?
 - Where does current behavior diverge from the PRD?
 
-For engineering, those same links restore the “why” at the moment it matters. The developer—or their AI agent—does not receive a ticket floating alone in space. It can begin with the product intent, relevant decisions, system boundaries, prior implementations, known pitfalls, and current repository state already connected.
+For engineering, those same links restore the “why” at the moment it matters. The developer and their AI agent do not receive a ticket floating alone in space. They can begin with the product intent, relevant decisions, system boundaries, prior implementations, known pitfalls, and current repository state already connected.
 
 The handoff becomes a feedback loop.
 
@@ -320,7 +320,7 @@ They will give their AI agents something more valuable than a larger context win
 
 And every correction, implementation, incident, and discovery will have the chance to make the next piece of work better.
 
-Karpathy’s LLM Wiki is an idea file. The Vault is my attempt to follow that idea into product and engineering—to see what happens when organizational knowledge becomes something our tools can actively help us cultivate.
+Karpathy’s LLM Wiki is an idea file. The Vault is my attempt to follow that idea into product and engineering. I want to see what happens when organizational knowledge becomes something our tools can actively help us cultivate.
 
 You do not need my full implementation to try it. I published [vault-scaffold](https://github.com/wbratz/vault-scaffold), a small, interview-driven agent workflow that will help you design and scaffold a Vault for your own domain.
 

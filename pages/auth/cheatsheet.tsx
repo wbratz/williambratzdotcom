@@ -68,7 +68,7 @@ const content = `## 1. What is Authorization?
   return (
     <Layout>
         <Head>
-            <title>Authorization reference — William Bratz</title>
+            <title>Authorization reference | William Bratz</title>
             <meta name="robots" content="noindex, nofollow" />
         </Head>
         <div>

@@ -38,7 +38,7 @@ function BlogPostPage(props) {
   return (
     <Layout>
       <Head>
-        <title>{props.blog.title} — William Bratz</title>
+        <title>{props.blog.title} | William Bratz</title>
         <meta name="description" content={props.blog.description} />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />

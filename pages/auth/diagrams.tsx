@@ -17,7 +17,7 @@ const Diagrams: React.FC = () => {
   return (
     <Layout>
       <Head>
-        <title>Authorization diagram — William Bratz</title>
+        <title>Authorization diagram | William Bratz</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
       <h1>Mermaid Diagram</h1>

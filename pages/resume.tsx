@@ -12,7 +12,7 @@ export default function Resume() {
   return (
     <Layout>
       <Head>
-        <title>William “Billy” Bratz — Senior Software Engineer</title>
+        <title>William “Billy” Bratz | Senior Software Engineer</title>
         <meta
           name="description"
           content="William Bratz is a senior software engineer building production LLM agent platforms and distributed systems."
@@ -20,7 +20,7 @@ export default function Resume() {
         <link rel="canonical" href="https://www.williambratz.com/resume" />
         <meta property="og:type" content="profile" />
         <meta property="og:url" content="https://www.williambratz.com/resume" />
-        <meta property="og:title" content="William “Billy” Bratz — Senior Software Engineer" />
+        <meta property="og:title" content="William “Billy” Bratz | Senior Software Engineer" />
         <meta
           property="og:description"
           content="Senior software engineer building production LLM agent platforms and distributed systems."
@@ -77,7 +77,7 @@ export default function Resume() {
             </div>
 
             <div className={styles.assignment}>
-              <h4>LLM Platform — Conversational AI</h4>
+              <h4>LLM Platform: Conversational AI</h4>
               <p className={styles.assignmentMeta}>
                 Jun 2026–Present · Python, FastAPI, FastMCP, Kubernetes, Datadog
               </p>
@@ -135,8 +135,8 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Founded an MCP server and orchestrator in December 2025—roughly 6,650
-                  lines in six days, supported by a 445-line operator guide—which
+                  Founded an MCP server and orchestrator in December 2025. I wrote roughly
+                  6,650 lines in six days and supported it with a 445-line operator guide. It
                   became the foundation of the organization&apos;s LLM platform.
                 </li>
                 <li>
