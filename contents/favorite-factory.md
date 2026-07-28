@@ -4,7 +4,7 @@ slug: favorite-factory
 date: 2022-10-25
 updated: 2026-07-28
 description: A C# factory pattern that reduces repeated object-creation logic while keeping concrete types and parameters easy to extend.
-photo: "./blogContent/favorite-factory/favorite-factory-sm.png"
+photo: "./blogContent/favorite-factory/favorite-factory-sm.webp"
 banner: "../blogContent/favorite-factory/favorite-factory.png"
 imageAlt: A code-themed illustration for a C# factory pattern implementation.
 topics:

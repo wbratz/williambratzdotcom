@@ -74,10 +74,12 @@ export default function Projects() {
             <article className={styles.productCaseStudy}>
               <figure className={styles.productVisual}>
                 <img
-                  src="/projects/neverending-story-pointer.png"
+                  src="/projects/neverending-story-pointer-800.webp"
+                  srcSet="/projects/neverending-story-pointer-480.webp 480w, /projects/neverending-story-pointer-800.webp 800w"
+                  sizes="(max-width: 760px) calc(100vw - 4.5rem), 560px"
                   alt="A Neverending Story Pointer room with story details, a timer, estimation choices, a participant, sharing controls, and history."
-                  width="1337"
-                  height="996"
+                  width="800"
+                  height="596"
                   loading="lazy"
                 />
                 <figcaption>
@@ -121,10 +123,12 @@ export default function Projects() {
             <article className={styles.productCaseStudy}>
               <figure className={styles.productVisual}>
                 <img
-                  src="/projects/how-unique-is-a-guid.png"
+                  src="/projects/how-unique-is-a-guid-800.webp"
+                  srcSet="/projects/how-unique-is-a-guid-480.webp 480w, /projects/how-unique-is-a-guid-800.webp 800w"
+                  sizes="(max-width: 760px) calc(100vw - 4.5rem), 560px"
                   alt="How Unique Is a GUID showing a field of identifiers, a generated GUID, and an explanation of its digital fingerprint."
-                  width="1440"
-                  height="1000"
+                  width="800"
+                  height="556"
                   loading="lazy"
                 />
                 <figcaption>

@@ -247,3 +247,6 @@ Acceptance:
   verified every external archive link, normalized article heading hierarchy,
   and expanded automated accessibility coverage to every published essay. The
   protected newest posts received formatting and metadata changes only.
+- 2026-07-28: Measured the production Lighthouse baseline and improved delivery
+  with a subset WOFF2 site font, responsive WebP project screenshots, and an
+  optimized archive thumbnail.
