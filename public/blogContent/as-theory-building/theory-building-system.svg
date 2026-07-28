@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Programming as theory building</title>
+  <desc id="description">Code, documentation, and diagrams provide evidence. Participation through tracing, pairing, review, and incidents turns that evidence into a shared theory that supports judgment.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#172832"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1080" cy="90" r="190" fill="#eab65c" opacity=".06"/>
+  <circle cx="96" cy="590" r="240" fill="#78a9c4" opacity=".05"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="64" y="78" fill="#eab65c" font-size="17" font-weight="700" letter-spacing="3">UNDERSTANDING IS BUILT</text>
+    <text x="64" y="128" fill="#f4f5f6" font-size="40" font-weight="750">The files are evidence. The theory enables judgment.</text>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Inter, Arial, sans-serif">
+    <rect x="64" y="190" width="272" height="352" rx="20" fill="#202b35" stroke="#3b4855"/>
+    <text x="96" y="232" fill="#f4f5f6" font-size="20" font-weight="700">Artifacts</text>
+    <text x="96" y="260" fill="#aeb8c2" font-size="15">Partial records of the system</text>
+
+    <rect x="96" y="298" width="208" height="52" rx="12" fill="#17212a" stroke="#455462"/>
+    <text x="120" y="330" fill="#d8dde2" font-size="16">Source code</text>
+    <rect x="96" y="366" width="208" height="52" rx="12" fill="#17212a" stroke="#455462"/>
+    <text x="120" y="398" fill="#d8dde2" font-size="16">Documentation</text>
+    <rect x="96" y="434" width="208" height="52" rx="12" fill="#17212a" stroke="#455462"/>
+    <text x="120" y="466" fill="#d8dde2" font-size="16">Diagrams and decisions</text>
+
+    <rect x="464" y="190" width="272" height="352" rx="20" fill="#202b35" stroke="#eab65c" stroke-width="2"/>
+    <text x="496" y="232" fill="#f4f5f6" font-size="20" font-weight="700">Participation</text>
+    <text x="496" y="260" fill="#aeb8c2" font-size="15">Evidence tested against reality</text>
+
+    <circle cx="520" cy="324" r="8" fill="#eab65c"/>
+    <text x="544" y="330" fill="#d8dde2" font-size="16">Trace real behavior</text>
+    <circle cx="520" cy="382" r="8" fill="#eab65c"/>
+    <text x="544" y="388" fill="#d8dde2" font-size="16">Pair and review</text>
+    <circle cx="520" cy="440" r="8" fill="#eab65c"/>
+    <text x="544" y="446" fill="#d8dde2" font-size="16">Investigate incidents</text>
+    <circle cx="520" cy="498" r="8" fill="#eab65c"/>
+    <text x="544" y="504" fill="#d8dde2" font-size="16">Explain the why</text>
+
+    <rect x="864" y="190" width="272" height="352" rx="20" fill="#202b35" stroke="#78a9c4" stroke-width="2"/>
+    <text x="896" y="232" fill="#f4f5f6" font-size="20" font-weight="700">Shared theory</text>
+    <text x="896" y="260" fill="#aeb8c2" font-size="15">A model that supports judgment</text>
+
+    <text x="896" y="326" fill="#78a9c4" font-size="15" font-weight="700">WHAT</text>
+    <text x="954" y="326" fill="#d8dde2" font-size="16">does it do?</text>
+    <text x="896" y="386" fill="#78a9c4" font-size="15" font-weight="700">HOW</text>
+    <text x="954" y="386" fill="#d8dde2" font-size="16">does it behave?</text>
+    <text x="896" y="446" fill="#78a9c4" font-size="15" font-weight="700">WHY</text>
+    <text x="954" y="446" fill="#d8dde2" font-size="16">is it this way?</text>
+    <text x="896" y="506" fill="#78a9c4" font-size="15" font-weight="700">NEXT</text>
+    <text x="954" y="506" fill="#d8dde2" font-size="16">what should change?</text>
+  </g>
+
+  <g fill="none" stroke="#eab65c" stroke-linecap="round" stroke-width="7">
+    <path d="M336 366H464"/>
+    <path d="M736 366H864"/>
+  </g>
+  <g fill="#eab65c">
+    <path d="M454 353l20 13-20 13z"/>
+    <path d="M854 353l20 13-20 13z"/>
+  </g>
+</svg>

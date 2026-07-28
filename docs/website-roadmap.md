@@ -232,3 +232,8 @@ Acceptance:
   Reworked Fluent Interfaces, Favorite Factory, and Railway-Oriented Programming
   around clearer claims, copyable examples, explicit tradeoffs, and current
   technical guidance while preserving their original topics and voice.
+- 2026-07-28: Restored the eligible engineering-practice and personal essays in
+  place. Programming as Theory Building now develops the practical consequences
+  of Naur's argument and links the complete series. The Leap of Faith preserves
+  its original story while distinguishing deliberate courage from reckless risk.
+  The two newest posts remain protected from prose edits.
