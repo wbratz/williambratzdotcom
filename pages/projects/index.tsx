@@ -96,9 +96,7 @@ export default function Projects() {
                 </p>
                 <ul>
                   <li>Bounded fanout, cost controls, and dry-run planning</li>
-                  <li>
-                    Tested Claude and Codex marketplace implementations
-                  </li>
+                  <li>Tested Claude and Codex marketplace implementations</li>
                   <li>
                     A public product-launch corpus with a reproducible terminal
                     demonstration
