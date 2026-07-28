@@ -43,7 +43,7 @@
 }
 
 .featuredProject,
-.product {
+.productCaseStudy {
   padding: clamp(1.5rem, 4vw, 3rem);
   background: var(--surface-bg);
   border: 1px solid var(--border-color);
@@ -107,35 +107,66 @@
   text-underline-offset: 0.22em;
 }
 
-.productGrid {
+.productCaseStudies {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.product {
-  min-height: 20rem;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+.productCaseStudy {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(18rem, 0.88fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  overflow: hidden;
 }
 
-.product > p:not(.projectType) {
+.productCaseStudy:nth-child(even) .productVisual {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.productCaseStudy:nth-child(even) .caseStudyCopy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.productVisual {
+  margin: 0;
+  padding: clamp(0.5rem, 1.5vw, 0.8rem);
+  background: rgb(3 13 16);
+  border: 1px solid var(--border-color);
+  border-radius: 0.85rem;
+}
+
+.productVisual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.55rem;
+  box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 28%);
+}
+
+.productVisual figcaption {
+  padding: 0.75rem 0.35rem 0.15rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.caseStudyCopy > p:not(.projectType) {
   margin: 1rem 0;
 }
 
-.product > a,
-.product .actions {
-  margin-top: auto;
+.caseStudyCopy ul {
+  margin: 0;
+  padding-left: 1.25rem;
 }
 
-.product > a {
-  color: var(--link-color);
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-color: var(--border-color);
-  text-underline-offset: 0.22em;
+.caseStudyCopy .productNote {
+  margin-top: 1.35rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--link-color);
+  font-size: 0.95rem;
 }
 
 @media (max-width: 760px) {
@@ -147,11 +178,20 @@
     grid-template-columns: 1fr;
   }
 
-  .productGrid {
+  .productCaseStudy {
     grid-template-columns: 1fr;
   }
 
-  .featuredProject img {
+  .featuredProject img,
+  .productCaseStudy .productVisual,
+  .productCaseStudy:nth-child(even) .productVisual {
+    grid-column: 1;
     grid-row: 1;
+  }
+
+  .productCaseStudy .caseStudyCopy,
+  .productCaseStudy:nth-child(even) .caseStudyCopy {
+    grid-column: 1;
+    grid-row: 2;
   }
 }

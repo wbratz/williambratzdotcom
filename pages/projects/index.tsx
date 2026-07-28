@@ -70,45 +70,113 @@ export default function Projects() {
             />
           </article>
 
-          <div className={styles.productGrid}>
-            <article className={styles.product}>
-              <p className={styles.projectType}>Collaborative tool</p>
-              <h2>Neverending Story Pointer</h2>
-              <p>
-                A free planning-poker app that gives distributed teams a
-                lightweight room for revealing estimates and building shared
-                understanding.
-              </p>
-              <a
-                href="https://neverendingstorypointer.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open the app <span aria-hidden="true">↗</span>
-              </a>
+          <div className={styles.productCaseStudies}>
+            <article className={styles.productCaseStudy}>
+              <figure className={styles.productVisual}>
+                <img
+                  src="/projects/neverending-story-pointer.png"
+                  alt="A Neverending Story Pointer room with story details, a timer, estimation choices, a participant, sharing controls, and history."
+                  width="1337"
+                  height="996"
+                  loading="lazy"
+                />
+                <figcaption>
+                  One room holds the story, estimates, participants, timer,
+                  reveal controls, and history.
+                </figcaption>
+              </figure>
+              <div className={styles.caseStudyCopy}>
+                <p className={styles.projectType}>Real-time collaboration</p>
+                <h2>Neverending Story Pointer</h2>
+                <p>
+                  A free, no-sign-up planning-poker room for teams that need to
+                  move from private estimates to a useful conversation without
+                  ceremony.
+                </p>
+                <ul>
+                  <li>Shareable rooms with no account setup</li>
+                  <li>Private voting with deliberate reveal and reset</li>
+                  <li>
+                    Story context, participant state, a timer, and history in
+                    one place
+                  </li>
+                </ul>
+                <p className={styles.productNote}>
+                  The product keeps facilitation intentionally narrow: one room,
+                  one story, one reveal. Its Blazor WebAssembly client delivers
+                  an application-like workflow from a simple link.
+                </p>
+                <div className={styles.actions}>
+                  <a
+                    href="https://neverendingstorypointer.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open the app <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
             </article>
-            <article className={styles.product}>
-              <p className={styles.projectType}>Interactive explanation</p>
-              <h2>How Unique Is a GUID?</h2>
-              <p>
-                A visual exploration of GUID and UUID collision probability with
-                calculators, human-scale comparisons, and a secure v4 generator.
-              </p>
-              <div className={styles.actions}>
-                <a
-                  href="https://howuniqueisaguid.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GUID edition <span aria-hidden="true">↗</span>
-                </a>
-                <a
-                  href="https://howuniqueisauuid.com"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  UUID edition <span aria-hidden="true">↗</span>
-                </a>
+
+            <article className={styles.productCaseStudy}>
+              <figure className={styles.productVisual}>
+                <img
+                  src="/projects/how-unique-is-a-guid.png"
+                  alt="How Unique Is a GUID showing a field of identifiers, a generated GUID, and an explanation of its digital fingerprint."
+                  width="1440"
+                  height="1000"
+                  loading="lazy"
+                />
+                <figcaption>
+                  The opening interaction makes an astronomical identifier space
+                  tangible before introducing the calculators.
+                </figcaption>
+              </figure>
+              <div className={styles.caseStudyCopy}>
+                <p className={styles.projectType}>Interactive explanation</p>
+                <h2>How Unique Is a GUID?</h2>
+                <p>
+                  An interactive explanation that turns 122 bits of randomness
+                  and abstract collision probability into something people can
+                  see, calculate, and reason about.
+                </p>
+                <ul>
+                  <li>
+                    Arbitrary-precision collision and birthday-paradox
+                    calculations
+                  </li>
+                  <li>Personal witness models and human-scale comparisons</li>
+                  <li>Cryptographically secure v4 generation in the browser</li>
+                </ul>
+                <p className={styles.productNote}>
+                  One React and TypeScript codebase ships GUID and UUID editions
+                  through a build-time vocabulary layer. The mathematics and
+                  interactions stay identical while the language matches each
+                  reader.
+                </p>
+                <div className={styles.actions}>
+                  <a
+                    href="https://howuniqueisaguid.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GUID edition <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://howuniqueisauuid.com"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    UUID edition <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/wbratz/HowUniqueIsAGuid"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View source <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
               </div>
             </article>
           </div>

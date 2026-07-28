@@ -225,3 +225,6 @@ Acceptance:
   explicit Open Graph dimensions and alt text, and a separate social-image field
   so articles can preserve their visible banners while using preview-optimized
   artwork when shared.
+- 2026-07-27: Expanded the independent projects into evidence-led case studies
+  with real product screenshots, focused capability summaries, implementation
+  details, and direct paths to the live products and source.
