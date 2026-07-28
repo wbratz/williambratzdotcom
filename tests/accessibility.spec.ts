@@ -7,7 +7,15 @@ const routes = [
   "/projects/",
   "/projects/vault/",
   "/blog/",
+  "/blog/auth-intro/",
   "/blog/bridging-the-gap/",
+  "/blog/favorite-factory/",
+  "/blog/fluent-interfaces/",
+  "/blog/only-git-commands-youll-ever-need/",
+  "/blog/programming-as-theory-building/",
+  "/blog/railway-oriented-programming/",
+  "/blog/the-leap-of-faith/",
+  "/blog/the-map-is-not-the-theory/",
   "/resume/",
 ];
 

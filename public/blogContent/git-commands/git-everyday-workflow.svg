@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">An everyday Git workflow</title>
+  <desc id="description">Changes move from the working tree through review and staging into a local commit, then synchronize safely with the remote repository.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#172832"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1080" cy="88" r="190" fill="#eab65c" opacity=".06"/>
+  <circle cx="94" cy="600" r="240" fill="#78a9c4" opacity=".05"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="64" y="78" fill="#eab65c" font-size="17" font-weight="700" letter-spacing="3">A SMALL LOOP, USED DELIBERATELY</text>
+    <text x="64" y="128" fill="#f4f5f6" font-size="40" font-weight="750">Inspect before every transition.</text>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Inter, Arial, sans-serif">
+    <rect x="64" y="218" width="238" height="260" rx="20" fill="#202b35" stroke="#3b4855"/>
+    <text x="96" y="264" fill="#f4f5f6" font-size="20" font-weight="700">Working tree</text>
+    <text x="96" y="294" fill="#aeb8c2" font-size="15">Files being changed</text>
+    <rect x="96" y="344" width="174" height="58" rx="12" fill="#17212a" stroke="#78a9c4"/>
+    <text x="183" y="370" fill="#78a9c4" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">git status</text>
+    <text x="183" y="390" fill="#d8dde2" font-size="12" text-anchor="middle">git diff</text>
+
+    <rect x="348" y="218" width="238" height="260" rx="20" fill="#202b35" stroke="#eab65c"/>
+    <text x="380" y="264" fill="#f4f5f6" font-size="20" font-weight="700">Staging area</text>
+    <text x="380" y="294" fill="#aeb8c2" font-size="15">The next snapshot</text>
+    <rect x="380" y="344" width="174" height="58" rx="12" fill="#17212a" stroke="#eab65c"/>
+    <text x="467" y="370" fill="#eab65c" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">git add -p</text>
+    <text x="467" y="390" fill="#d8dde2" font-size="12" text-anchor="middle">git diff --staged</text>
+
+    <rect x="632" y="218" width="238" height="260" rx="20" fill="#202b35" stroke="#eab65c"/>
+    <text x="664" y="264" fill="#f4f5f6" font-size="20" font-weight="700">Local history</text>
+    <text x="664" y="294" fill="#aeb8c2" font-size="15">Focused commits</text>
+    <rect x="664" y="344" width="174" height="58" rx="12" fill="#17212a" stroke="#eab65c"/>
+    <text x="751" y="370" fill="#eab65c" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">git commit</text>
+    <text x="751" y="390" fill="#d8dde2" font-size="12" text-anchor="middle">git rebase</text>
+
+    <rect x="916" y="218" width="220" height="260" rx="20" fill="#202b35" stroke="#78a9c4" stroke-width="2"/>
+    <text x="948" y="264" fill="#f4f5f6" font-size="20" font-weight="700">Remote</text>
+    <text x="948" y="294" fill="#aeb8c2" font-size="15">Shared repository</text>
+    <rect x="948" y="332" width="156" height="82" rx="12" fill="#17212a" stroke="#78a9c4"/>
+    <text x="1026" y="360" fill="#78a9c4" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">git fetch</text>
+    <text x="1026" y="382" fill="#78a9c4" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">git push</text>
+    <text x="1026" y="402" fill="#d8dde2" font-size="11" text-anchor="middle">use a lease if rewritten</text>
+  </g>
+
+  <g fill="none" stroke="#eab65c" stroke-linecap="round" stroke-width="7">
+    <path d="M302 348h46"/>
+    <path d="M586 348h46"/>
+    <path d="M870 348h46"/>
+  </g>
+  <g fill="#eab65c">
+    <path d="M338 335l20 13-20 13z"/>
+    <path d="M622 335l20 13-20 13z"/>
+    <path d="M906 335l20 13-20 13z"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">
+    <text x="64" y="540" fill="#aeb8c2">STATUS</text>
+    <text x="138" y="540" fill="#d8dde2">keeps the branch, index, and working tree visible.</text>
+    <text x="632" y="540" fill="#aeb8c2">REFLOG</text>
+    <text x="710" y="540" fill="#d8dde2">keeps many mistakes recoverable.</text>
+  </g>
+</svg>

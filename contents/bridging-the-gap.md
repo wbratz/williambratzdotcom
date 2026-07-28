@@ -17,7 +17,7 @@ seriesOrder: 3
 featured: true
 ---
 
-# The Post That Would Not Sit Still
+## The Post That Would Not Sit Still
 
 This is the final post in a three-part series I started almost a year ago.
 
@@ -43,7 +43,7 @@ That question is why this post took so long. It also led me to build something I
 
 ---
 
-# What Still Holds
+## What Still Holds
 
 Before AI improved so rapidly and became part of how we work, this post would have looked very different. Some of the original concepts still hold.
 
@@ -72,7 +72,7 @@ The landscape of today gives us a better answer.
 
 ---
 
-# The Landscape of Today
+## The Landscape of Today
 
 In April 2026, Andrej Karpathy published an idea file called [LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). It is short, deliberately open-ended, and one of the most important descriptions of AI knowledge work I have read.
 
@@ -106,7 +106,7 @@ That is the experiment behind The Vault.
 
 ---
 
-# The Vault
+## The Vault
 
 The Vault is my implementation of the LLM Wiki pattern for real engineering work. It is a persistent, git-backed knowledge system built from plain Markdown and a Python automation engine.
 
@@ -120,7 +120,7 @@ The files matter. The system around them matters more.
 
 *The Vault is a knowledge compiler: evidence enters, linked context emerges, and every important claim retains a path back to its source.*
 
-## Evidence First
+### Evidence First
 
 The Vault has two primary knowledge layers.
 
@@ -132,7 +132,7 @@ This distinction is load-bearing.
 
 An AI-maintained knowledge base should not ask us to trust the model’s memory. It should give the model a place to reason while keeping the receipts.
 
-## One Memory, Different Resolutions
+### One Memory, Different Resolutions
 
 The Vault is organized at several levels:
 
@@ -149,7 +149,7 @@ The goal is not infinite context.
 
 The goal is the **right context, at the right resolution, at the moment a decision is being made**.
 
-## A Memory Loop, Not a Document Dump
+### A Memory Loop, Not a Document Dump
 
 Three automated cadences keep the system moving.
 
@@ -169,7 +169,7 @@ In other words, the system treats knowledge maintenance like software engineerin
 
 ---
 
-# Closing the Product–Engineering Loop
+## Closing the Product–Engineering Loop
 
 The biggest opportunity is not better developer documentation. It is collapsing the distance between **why a product decision was made** and **how that decision became software**.
 
@@ -210,7 +210,7 @@ For engineering, those same links restore the “why” at the moment it matters
 
 The handoff becomes a feedback loop.
 
-## What This Looks Like in Practice
+### What This Looks Like in Practice
 
 Architecture diagrams explain the system, but the experience is much simpler. Ask a question in the environment where you already work. The agent starts with focused Vault context, follows the evidence chain, verifies the current code, and answers with sources.
 
@@ -220,7 +220,7 @@ Architecture diagrams explain the system, but the experience is much simpler. As
 
 ---
 
-# Bringing the Vault to Where Work Happens
+## Bringing the Vault to Where Work Happens
 
 A knowledge system fails if contributing to it requires everyone to adopt the same editor, remember a new ritual, or become a part-time librarian.
 
@@ -249,7 +249,7 @@ That is the bridge.
 
 ---
 
-# From Prompting to Context Engineering
+## From Prompting to Context Engineering
 
 There is a familiar loop in AI-assisted development:
 
@@ -294,7 +294,7 @@ The context teaches the agent how this team understands the work.
 
 ---
 
-# The Map Can Learn, but It Is Still a Map
+## The Map Can Learn, but It Is Still a Map
 
 There is a tempting version of this story where AI solves organizational memory. Feed it everything, let it maintain the wiki, and never lose context again.
 
@@ -316,7 +316,7 @@ The breakthrough is not that the map becomes the territory. It is that the map c
 
 ---
 
-# What I Think Comes Next
+## What I Think Comes Next
 
 We are moving toward a world where every serious team has an AI-consumable knowledge layer.
 

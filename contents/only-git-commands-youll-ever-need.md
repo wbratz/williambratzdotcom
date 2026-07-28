@@ -1,280 +1,301 @@
 ---
-title: The Only 8 Git Commands You'll Ever Need
+title: Eight Git Commands for Everyday Work
 slug: only-git-commands-youll-ever-need
 date: 2020-12-30
-description: Eight Git commands that cover most daily work, plus a few tools and setup choices that make the command line easier to live in.
-photo: "./blogContent/git-commands/git-commands_sm.jpg"
-banner: "../blogContent/git-commands/git-commands.jpg"
-imageAlt: A terminal window representing practical Git commands for everyday development.
+updated: 2026-07-28
+description: Eight Git commands that cover most daily work, plus safe ways to inspect, synchronize, rebase, and recover.
+photo: "./blogContent/git-commands/git-everyday-workflow.svg"
+banner: "../blogContent/git-commands/git-everyday-workflow.svg"
+imageAlt: A diagram showing changes moving from the working tree through staging and local commits into a shared remote repository.
 topics:
   - Developer Tools
 featured: false
 ---
 
-I've been a git advocate for 10 years, and like it or not its the standard for any sort of version control. Over the years I've used many different GUI applications to interact with my git repositories, but I keep coming back to the command line. As a bonus I'll go over a couple tools and setup tips to make your command line experience more palatable.
+I have used Git from the command line for most of my career. Graphical clients can be useful, especially when visualizing history or resolving a complicated conflict, but the command line gives every Git operation a stable name.
 
-## What is git
+You do not need to memorize Git's entire interface. Most daily work is one small loop:
 
-> _Git is a distributed version-control system for tracking changes in any set of files, originally designed for coordinating work among programmers cooperating on source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows_
+1. Inspect the repository.
+2. Create or switch to a branch.
+3. Make a focused change.
+4. Review and stage it.
+5. Commit it.
+6. Synchronize with the remote.
+7. Push it for review.
 
-> _[wikipedia](https://en.wikipedia.org/wiki/Git)_
+These eight commands cover that loop. The title is less dramatic than the original version of this article because Git always has one more command waiting for you. The useful goal is a safe foundation, not a magic list.
 
-Simply put git helps you keep track of changes to your code.
+## Before the eight: confirm Git is available
 
-## Git command line vs gui
+Open a terminal and run:
 
-There are a plethora of git graphical user interfaces (GUI), SourceTree, GitHub Desktop, TortoiseGit, GitKraken and on and on and on... Chances are everyone has a difference preference, has tried multiple, has a compelling reason why to use it over another which is rooted in it being "easier", I'll address this later. The downfall of each of these is that its unlikely that two different companies will be supporting the same one, and the one they support is unlikely to be the one you're used to which brings me to my first reason for using the command line.
+```bash
+git --version
+```
 
-### Using the command line never changes
+If Git is not installed, use the instructions at [git-scm.com/downloads](https://git-scm.com/downloads).
 
-Every single git GUI is different, the buttons are in different places, the way it represents merges, commits, pushes, branches are all represented differently, so naturally there is a learning curve to using a new one. There are also bugs, quirks, and limitations to what a git GUI can do. The command line never changes, it is constant, every single git command always works the same. Better yet access to the command line is there if there is a git GUI installed. Even better yet, you can utilize all the power of git without being restricted by the functionality of a GUI.
+## 1. `git status`
 
-### The command line is actually easier
+Run `git status` before and after any operation you do not fully understand.
 
-Now we're getting to the meat of things, the reason all these git GUIs exist is to make the git experience more visually pleasing, not really to make it easier. People shy away from learning commands and having to memorize things when there is a way to do it with just a button, and looking at the git docs I see why....
+```bash
+git status
+```
 
-![Git branch Screenshot](/blogContent/git-commands/git-branch-ss.png)
+It shows:
 
-All that for the branch command? in all the years of using git I've used only used branch with one option, I think. In the remainder of this post I'm going to give you the only git commands you'll need to do 99.9 % of your tasks and just a couple to be aware of. These once you know these I guarantee your interactions with git will be easier, less confusing, and more enjoyable.
+- Your current branch.
+- Changes staged for the next commit.
+- Changes made but not staged.
+- New files Git is not tracking.
+- Whether a merge or rebase is in progress.
 
-## The only 8 git commands you'll ever need
+Git has three relevant views of your work: the last commit, the staging area, and the working tree. `git status` tells you how they differ.
 
-If you don't want a long explanation of the commands I've put a condensed tldr; at the bottom.
+## 2. `git clone`
 
-### First Let's make sure git is installed and find the command line
+Clone creates a local repository from an existing remote:
 
-Feel free to skip this part if you already know git is installed and you can access the command line.
+```bash
+git clone git@github.com:organization/project.git
+cd project
+```
 
-First open your command prompt or terminal, and type
+The default remote is usually named `origin`. Confirm rather than assume:
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+```bash
+git remote -v
+```
 
-    git --version
+## 3. `git switch`
 
-</div>
+Create and switch to a new branch:
 
-you should see a result of something like
+```bash
+git switch -c describe-the-change
+```
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+Switch to an existing local branch:
 
-    git --version
-    git version 2.27.0.windows.1
+```bash
+git switch main
+```
 
-</div>
+Switch back to the previous branch:
 
-if you do, yay you have git installed, if you don't, don't worry we can easily install it by downloading it _[here](https://git-scm.com/downloads)_ and following the installation instructions.
+```bash
+git switch -
+```
 
-### git clone
+Older Git instructions use `git checkout` for both branch switching and file restoration. `git switch` gives branch movement its own name, which makes intent clearer. Git will normally refuse to switch when doing so would overwrite local changes.
 
-So let's start at the beginning, chances are you'll be working with an existing repository (repo), either you've just created the repo (in github for example), or you're starting work in an already established code base. So you'll need to clone (download) the repository to your local computer.
+## 4. `git add`
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+`git add` moves selected changes into the staging area for the next commit.
 
-    git clone [address to repo]
+Stage a specific file:
 
-</div>
+```bash
+git add src/orders/OrderService.cs
+```
 
-make sure you leave out the brackets, and that's it, the repo is now downloaded on your local machine, and you can browse to it with your preferred code editor.
+Interactively choose parts of files:
 
-### git checkout -b
+```bash
+git add -p
+```
 
-We've cloned a repo, and are ready to make some changes! We'll want to make a branch first, a branch is how you make code changes, test them, and not mess up anyone elses work (or lose your own). It's a best practice to make a branch BEFORE you make any changes, but if you forget, don't worry using git checkout -b will move any uncommitted changes to the new branch. Remember to name your branch something useful, you or someone else might have to come back to it, having a descriptive title can save you from having to look at the code.
+Stage all changes beneath the current directory:
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git checkout -b new-branch-name
-
-</div>
-
-### git add .
-
-Our code is branched, we've made some changes. Now we add the changes with git add. The add command has a ton of options and there is lots you can do with it, but if you use git add . (with the period) it will add all the changes you've made. The downfall of using git add . is that you can add unnecessary files to your repo. Make sure you have an appropriate .gitignore file before using git add . you can find a collection of .gitignore templates _[here](https://github.com/github/gitignore)_
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git add .
-
-</div>
-
-### git commit -m
-
-Now that we've added our changes, we need to commit them, git commit -m commits your changes and adds a commit message, its a best practice to add a commit message that describes the changes you've made.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git commit -m "Changes font color from red to blue"
-
-</div>
-
-### git push -u
-
-Changes have been made, we're ready to push it up from our local machine to our remote repo. We do this with git push -u, -u is short hand for --set-upstream. We use it like this git push -u origin branch-name. There may be cases where origin will not me the name of the remote, but I've never encountered one.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git push -u origin new-branch-name
-
-</div>
-
-### git checkout
-
-We've already covered git checkout! Well not totally, like all git commands branch behaves a little different based on the options given, or in this case lack thereof. In this case we're going to switch to another branch that **already exists**. Normally you're going to be switching between your branch and a main branch, usually called master, or main, but you can use it to switch to any branch.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git checkout main
-
-</div>
-
-### git pull
-
-Git pull satisfies two scenarios
-
-1. We need to pull someone elses branch down from the remote repo.
-2. We need to update a branch that we have, but there has been changes made to it and pushed to the remote repo.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    git pull
-
-</div>
-
-### git rebase -i
-
-Rebase is an important command. Lets say you branch off main, and make some changes. While you are making your changes another person pushes up a change to the main branch. Well now the version of main that you have is out of date. This is where rebase comes in, it allows you to **rebase** a branch off of a different branch (or an updated version of that branch). The -i option stands for interactive. The way to use rebase seems more complicated, but its just using the same commands we've already talked about, and the process is the same every single time you use it. So instead of issuing one command you just issue 3. In the snippet below I've explained how to use rebase with notes to make it as clear as possible.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-
-    // first we make a new branch
-    git checkout -b new-branch
-    // we make some changes to the code, add and commit like normal
-    git add .
-    git commit -m "changes font color from red to blue."
-    // its at this point we realize there has been a change to our main branch in order to merge this change in we're going to have to rebase
-    // so we switch back to our main branch
-    git checkout main
-    // we pull the latest version of main
-    git pull
-    // we switch back to our branch
-    git checkout new-branch
-    // we rebase on the new version of our main branch
-    git rebase -i main
-
-</div>
-
-### git push -f
-
-Another version of git push you might need to use is git push -f (git push --force) you use this when you would want to overwrite your previous push to the remote. For example, if you have already pushed a change, but you cannot merge it because there has been a change to your main branch which requires a rebase. You would follow the rebase steps above, then use git push -f to overwrite your previous change in the remote repo.
-
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
-    
-    // we're currently on our new-branch and we need to rebase but we've already used git push -u origin new-branch
-    // so we follow the normal rebase steps
-    git checkout main
-    git pull
-    git checkout new-branch
-    git rebase -i main
-    // once rebased if there are any changes you will need to git add and git commit 
-    // you can see if there are changes by using
-    git status
-    // git status will tell you if there are any changed files that need to be added or committed
-    // assuming we have some changed files
-    git add .
-    git commit -m "rebases off updated version of master"
-    git push -f
-</div>
-
-This may seem overwhelming but this step utilizes all the commands you need to know if you can remember this series, and what each step does, congratulations you can now use git in the command line and have freed yourself from the bonds of a GUI.
-
-### TLDR;
-
-<table>
-<tr style="padding: 2px;">
-<td style="padding: 5px;"><u>Command</u></td>
-<td style="padding: 5px;"><u>Description</u></td>
-</tr>
-<tr style="padding: 2px;">
-<td style="padding: 5px;">
-git clone 
-</td>
-<td style="padding: 5px;">
-downloads remote repo to your local machine
-</td>
-</tr>
-<tr style="padding: 2px;">
-<td style="padding: 5px;"> 
-git checkout {branch name}
-</td>
-<td style="padding: 5px;">
-checks out an existing branch
-</td>
-</tr>
-<tr style="padding: 2px;"> 
-<td style="padding: 5px;">
-git checkout -b {branch name}
-</td>
-<td style="padding: 5px;">
-creates a new branch and checks it out
-</td>
-</tr>
-<tr style="padding: 2px;">
-<td style="padding: 5px;">
+```bash
 git add .
-</td>
-<td style="padding: 5px;">
-adds (stages) all changed files
-</td>
-</tr>
-<tr style="padding: 2px;">
-<td style="padding: 5px;">
-git commit -m
-</td>
-<td style="padding: 5px;">
-commits staged files with a message
-</td>
-</tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git push</td>
-<td style="padding: 5px;">pushes current branch to already established remote repo/td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git push -u</td>
-<td style="padding: 5px;">pushes current branch to remote repo and sets tracking to that remote branch</td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git push -f</td>
-<td style="padding: 5px;">pushes current branch changes to remote and overwrites history</td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git pull</td>
-<td style="padding: 5px;">pulls down latest information from remote</td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git rebase {updated base branch}</td>
-<td style="padding: 5px;">rebases current branch on specified branch</td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git init</td>
-<td style="padding: 5px;">initializes a git repo locally (I don't use this)</td></tr>
-<tr style="padding: 2px;"><td style="padding: 5px;">git mergetool</td>
-<td style="padding: 5px;">used when rebasing and you have merge conflicts</td></tr>
-</table>
+```
 
-### Additional notes
+`git add .` is convenient, but inspect first. It can stage generated files, debugging output, unrelated edits, and secrets. A `.gitignore` helps with predictable generated content, but it is not a substitute for reviewing the diff.
 
-git command [docs](https://git-scm.com/docs)
+Review what is staged:
 
-My preferred windows console emulator [cmdr](https://cmder.net/)
+```bash
+git diff --staged
+```
 
-Git alias' I use
+## 5. `git commit`
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+A commit records the staged snapshot:
 
-    git config --global alias.co checkout
-    git config --global alias.br branch
-    git config --global alias.rbi 'rebase -i'
+```bash
+git commit -m "Explain authorization token boundaries"
+```
 
-</div>
+A useful commit is small enough to review and complete enough to make sense. Its message should describe the change or outcome, not the activity:
 
-I will go over merge conflicts in a later blog post, when addressing merge conflicts the default mergetool is vim which isn't difficult to learn but its not intuitive. I use [kdiff3](https://sourceforge.net/projects/kdiff3/) as my mergetool and difftool I've pasted the setup below that I've lifted from this [stackoverflow](https://stackoverflow.com/questions/33308482/git-how-configure-kdiff3-as-merge-tool-and-diff-tool) question.
+```text
+Good: Reject tokens with the wrong audience
+Weak: Make auth changes
+```
 
-<div style="background-color: #000000; color:#FFFFFF; padding: 8px;">
+If `git commit` says there is nothing to commit, check `git status`. You may have forgotten to stage the files, or there may be no changes.
 
-    git config --global merge.tool kdiff3
-    git config --global mergetool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
-    git config --global mergetool.kdiff3.trustExitCode false
+## 6. `git pull`
 
-    git config --global diff.guitool kdiff3
-    git config --global difftool.kdiff3.path "C:/Program Files/KDiff3/kdiff3.exe"
-    git config --global difftool.kdiff3.trustExitCode false
+`git pull` fetches remote changes and then integrates them into the current branch.
 
-</div>
+For a shared branch such as `main`:
+
+```bash
+git switch main
+git pull --ff-only
+```
+
+`--ff-only` updates the branch only when Git can move it forward without creating a merge commit. If the local and remote branches diverged, Git stops and asks you to make that choice explicitly.
+
+To download remote state without integrating anything:
+
+```bash
+git fetch origin
+```
+
+Fetch is worth knowing even though it is outside the eight. It lets you inspect `origin/main` before changing your branch.
+
+## 7. `git rebase`
+
+Rebase replays your branch's commits on a new base:
+
+```bash
+git fetch origin
+git switch describe-the-change
+git rebase origin/main
+```
+
+This is useful for bringing a private feature branch up to date without adding a merge commit.
+
+If Git reports a conflict:
+
+1. Open each conflicted file and choose the correct result.
+2. Stage the resolved files with `git add`.
+3. Continue:
+
+```bash
+git rebase --continue
+```
+
+If the rebase is going badly, return to the state from before it began:
+
+```bash
+git rebase --abort
+```
+
+Do not rebase a shared branch other people have based work on. Rebase rewrites commit identities.
+
+Interactive rebase is a separate history-editing tool:
+
+```bash
+git rebase -i HEAD~3
+```
+
+Use it to reorder, combine, or edit your own recent commits. It is not required merely to update a feature branch.
+
+## 8. `git push`
+
+The first push of a branch can establish its upstream:
+
+```bash
+git push -u origin describe-the-change
+```
+
+After that:
+
+```bash
+git push
+```
+
+If you rebased a branch that you previously pushed, the remote history no longer matches. Prefer:
+
+```bash
+git push --force-with-lease
+```
+
+`--force-with-lease` refuses to overwrite the remote branch when it has moved somewhere you have not seen. Plain `--force` removes that protection and can erase someone else's work.
+
+Never force-push a shared protected branch unless the team has explicitly designed a recovery procedure around it.
+
+## The everyday workflow
+
+Starting new work:
+
+```bash
+git switch main
+git pull --ff-only
+git switch -c explain-token-validation
+```
+
+Reviewing and committing:
+
+```bash
+git status
+git diff
+git add -p
+git diff --staged
+git commit -m "Explain token validation requirements"
+```
+
+Publishing:
+
+```bash
+git push -u origin explain-token-validation
+```
+
+Updating the branch before review:
+
+```bash
+git fetch origin
+git rebase origin/main
+git push --force-with-lease
+```
+
+## Recovery commands worth knowing
+
+These are not part of the eight, but they make experimentation less frightening.
+
+Discard unstaged changes to one file:
+
+```bash
+git restore path/to/file
+```
+
+Remove a file from the staging area without discarding the edit:
+
+```bash
+git restore --staged path/to/file
+```
+
+Create a new commit that reverses a published commit:
+
+```bash
+git revert <commit>
+```
+
+Find previous branch tips and other recent positions:
+
+```bash
+git reflog
+```
+
+Be cautious with `git reset --hard`, `git clean`, and plain force-pushes. They can destroy uncommitted work or rewrite reachable history. When recovery is the goal, inspect `git status` and `git reflog` before reaching for a destructive command.
+
+## Command summary
+
+| Command | Purpose |
+| --- | --- |
+| `git status` | Inspect the branch, staging area, and working tree |
+| `git clone <url>` | Create a local repository from a remote |
+| `git switch -c <branch>` | Create and switch to a branch |
+| `git add <path>` | Stage selected changes |
+| `git commit -m "<message>"` | Record the staged snapshot |
+| `git pull --ff-only` | Safely advance a shared local branch |
+| `git rebase origin/main` | Replay a private branch on the current remote base |
+| `git push -u origin <branch>` | Publish a branch and establish its upstream |
+
+The complete command reference lives in the official [Git documentation](https://git-scm.com/docs). Learn the eight-command loop first, keep `git status` close, and add specialized commands only when a real workflow requires them.

@@ -242,3 +242,8 @@ Acceptance:
   map, running-system complexity, and team judgment. When the Map Starts Learning
   now shows evidence compiled into shared context for product, engineering, and
   AI agents.
+- 2026-07-28: Completed the editorial restoration with current Authorization and
+  Git guides. Replaced generic stock banners with explanatory system diagrams,
+  verified every external archive link, normalized article heading hierarchy,
+  and expanded automated accessibility coverage to every published essay. The
+  protected newest posts received formatting and metadata changes only.

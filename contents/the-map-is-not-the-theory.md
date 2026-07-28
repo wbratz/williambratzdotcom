@@ -2,6 +2,7 @@
 title: "The Map Is Not the Theory: Why Docs and Diagrams Will Mislead You"
 slug: the-map-is-not-the-theory
 date: 2025-08-09
+updated: 2026-07-28
 description: Written artifacts are just approximations; the real system lives in the team's head.
 photo: "./blogContent/map-not-the-theory/map-vs-theory-system.svg"
 banner: "../blogContent/map-not-the-theory/map-vs-theory-system.svg"
@@ -14,13 +15,13 @@ seriesOrder: 2
 featured: true
 ---
 
-# Introduction
+## Introduction
 
 In the first part of this series, I argued that programming is really about building a shared theory in our heads, not just reading the code. Now let’s zoom in on a related trap: confusing the documents and diagrams (the map) with the actual knowledge (the theory). If “just read the docs” left you wanting, this post explains why.
 
 ---
 
-# Maps vs. Theory
+## Maps vs. Theory
 
 Alfred Korzybski said “the map is not the territory.” In software, the map is our architecture diagrams, wiki pages, and README files. The territory is the running system and all the unwritten context behind it. When you mistake one for the other, you’re flying blind.
 
@@ -28,7 +29,7 @@ Theory is what lets you navigate without staring at the map every second. It tel
 
 ---
 
-# Where Maps Fall Short
+## Where Maps Fall Short
 
 Even good maps miss the messy parts:
 
@@ -41,7 +42,7 @@ Reading the docs is like looking at a subway map without riding the train. You g
 
 ---
 
-# When Maps Help
+## When Maps Help
 
 Maps aren’t useless. They’re great for:
 
@@ -53,7 +54,7 @@ But maps only help if everyone knows they’re approximations. Treat them like c
 
 ---
 
-# Building Real Theory
+## Building Real Theory
 
 To keep your mental models sharp:
 
@@ -63,7 +64,7 @@ To keep your mental models sharp:
 
 ---
 
-# Final Thoughts
+## Final Thoughts
 
 Maps guide, but theory navigates. Use docs as starting points, then build the real understanding with your team. When the system changes, and it always does, the folks with theory adapt, while the map-readers get lost.
 

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Authentication, delegated authority, and resource policy</title>
+  <desc id="description">A client authenticates through an authorization server, receives a limited access token, and presents it to a resource server that validates the token and applies policy to the requested resource.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101820"/>
+      <stop offset="1" stop-color="#172832"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".3"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1090" cy="82" r="190" fill="#78a9c4" opacity=".07"/>
+  <circle cx="80" cy="600" r="230" fill="#eab65c" opacity=".05"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="64" y="78" fill="#eab65c" font-size="17" font-weight="700" letter-spacing="3">IDENTITY IS AN INPUT, NOT THE DECISION</text>
+    <text x="64" y="128" fill="#f4f5f6" font-size="40" font-weight="750">Authenticate. Delegate. Authorize.</text>
+  </g>
+
+  <g filter="url(#shadow)" font-family="Inter, Arial, sans-serif">
+    <rect x="64" y="210" width="250" height="292" rx="20" fill="#202b35" stroke="#3b4855"/>
+    <text x="96" y="256" fill="#f4f5f6" font-size="21" font-weight="700">Client</text>
+    <text x="96" y="286" fill="#aeb8c2" font-size="15">Requests limited access</text>
+    <circle cx="189" cy="376" r="56" fill="#17212a" stroke="#78a9c4" stroke-width="2"/>
+    <circle cx="189" cy="354" r="16" fill="#78a9c4"/>
+    <path d="M157 404c8-26 56-26 64 0" fill="#78a9c4"/>
+
+    <rect x="475" y="210" width="250" height="292" rx="20" fill="#202b35" stroke="#eab65c" stroke-width="2"/>
+    <text x="507" y="256" fill="#f4f5f6" font-size="21" font-weight="700">Authorization server</text>
+    <text x="507" y="286" fill="#aeb8c2" font-size="15">Issues bounded authority</text>
+    <rect x="514" y="338" width="172" height="82" rx="14" fill="#17212a" stroke="#eab65c"/>
+    <text x="600" y="370" fill="#f4f5f6" font-size="16" font-weight="700" text-anchor="middle">Access token</text>
+    <text x="600" y="398" fill="#eab65c" font-family="ui-monospace, monospace" font-size="14" text-anchor="middle">aud + scope + exp</text>
+
+    <rect x="886" y="210" width="250" height="292" rx="20" fill="#202b35" stroke="#78a9c4" stroke-width="2"/>
+    <text x="918" y="256" fill="#f4f5f6" font-size="21" font-weight="700">Resource server</text>
+    <text x="918" y="286" fill="#aeb8c2" font-size="15">Validates and applies policy</text>
+    <g fill="#17212a" stroke="#586776">
+      <rect x="924" y="328" width="174" height="44" rx="10"/>
+      <rect x="924" y="386" width="174" height="44" rx="10"/>
+      <rect x="924" y="444" width="174" height="44" rx="10"/>
+    </g>
+    <g font-size="14">
+      <text x="948" y="356" fill="#d8dde2">Token valid?</text>
+      <text x="948" y="414" fill="#d8dde2">Action permitted?</text>
+      <text x="948" y="472" fill="#d8dde2">Resource allowed?</text>
+    </g>
+  </g>
+
+  <g fill="none" stroke="#eab65c" stroke-linecap="round" stroke-width="7">
+    <path d="M314 356h161"/>
+    <path d="M725 356h161"/>
+  </g>
+  <g fill="#eab65c">
+    <path d="M465 343l20 13-20 13z"/>
+    <path d="M876 343l20 13-20 13z"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="13" font-weight="700">
+    <text x="350" y="338" fill="#eab65c">AUTH CODE + PKCE</text>
+    <text x="768" y="338" fill="#eab65c">BEARER TOKEN</text>
+  </g>
+</svg>
