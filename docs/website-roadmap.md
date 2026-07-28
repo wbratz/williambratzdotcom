@@ -237,3 +237,8 @@ Acceptance:
   of Naur's argument and links the complete series. The Leap of Faith preserves
   its original story while distinguishing deliberate courage from reckless risk.
   The two newest posts remain protected from prose edits.
+- 2026-07-28: Added explanatory vector banners to the two protected newest posts
+  without changing their prose. The Map Is Not the Theory now contrasts a useful
+  map, running-system complexity, and team judgment. When the Map Starts Learning
+  now shows evidence compiled into shared context for product, engineering, and
+  AI agents.
