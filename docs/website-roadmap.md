@@ -250,3 +250,10 @@ Acceptance:
 - 2026-07-28: Measured the production Lighthouse baseline and improved delivery
   with a subset WOFF2 site font, responsive WebP project screenshots, and an
   optimized archive thumbnail.
+- 2026-07-28: Started release closure by removing verified unreferenced legacy
+  assets, adding build-time social metadata validation, and scheduling external
+  link monitoring independently from deterministic pull-request checks.
+- 2026-07-28: The first external-link audit identified an unavailable UUID
+  product domain. Removed that dead destination while retaining the healthy GUID
+  edition and treated LinkedIn's automated-request response as restricted rather
+  than missing.

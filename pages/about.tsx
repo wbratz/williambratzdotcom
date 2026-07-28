@@ -215,15 +215,12 @@ export default function About() {
                 <p>
                   An interactive explanation of an enormous probability space,
                   with collision calculators, relatable comparisons, and a
-                  secure v4 generator. The same experience is available in GUID
-                  and UUID vocabulary.
+                  secure v4 generator. Its vocabulary layer supports both GUID
+                  and UUID terminology.
                 </p>
                 <div className={styles.productLinks}>
                   <ExternalLink href="https://howuniqueisaguid.com">
-                    Explore GUIDs
-                  </ExternalLink>
-                  <ExternalLink href="https://howuniqueisauuid.com">
-                    Explore UUIDs
+                    Explore the app
                   </ExternalLink>
                 </div>
               </article>

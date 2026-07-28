@@ -7,13 +7,15 @@
     "dev": "astro dev",
     "build": "astro check && astro build",
     "check:links": "node scripts/check-links.mjs",
+    "check:links:external": "node scripts/check-external-links.mjs",
+    "check:metadata": "node scripts/check-metadata.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "astro preview",
     "start": "astro preview --host 0.0.0.0 --port $PORT",
     "check": "astro check",
     "test:a11y": "playwright test",
-    "quality": "npm run format:check && npm run build && npm run check:links"
+    "quality": "npm run format:check && npm run build && npm run check:links && npm run check:metadata"
   },
   "engines": {
     "node": ">=22.0.0 <23.0.0"

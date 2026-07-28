@@ -153,10 +153,10 @@ export default function Projects() {
                   <li>Cryptographically secure v4 generation in the browser</li>
                 </ul>
                 <p className={styles.productNote}>
-                  One React and TypeScript codebase ships GUID and UUID editions
-                  through a build-time vocabulary layer. The mathematics and
-                  interactions stay identical while the language matches each
-                  reader.
+                  One React and TypeScript codebase supports GUID and UUID
+                  terminology through a build-time vocabulary layer. The
+                  mathematics and interactions stay identical while the language
+                  matches each reader.
                 </p>
                 <div className={styles.actions}>
                   <a
@@ -164,14 +164,7 @@ export default function Projects() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    GUID edition <span aria-hidden="true">↗</span>
-                  </a>
-                  <a
-                    href="https://howuniqueisauuid.com"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    UUID edition <span aria-hidden="true">↗</span>
+                    Open the app <span aria-hidden="true">↗</span>
                   </a>
                   <a
                     href="https://github.com/wbratz/HowUniqueIsAGuid"
