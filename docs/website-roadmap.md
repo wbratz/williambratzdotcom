@@ -228,3 +228,7 @@ Acceptance:
 - 2026-07-27: Expanded the independent projects into evidence-led case studies
   with real product screenshots, focused capability summaries, implementation
   details, and direct paths to the live products and source.
+- 2026-07-28: Editorial restoration started with the software-design collection.
+  Reworked Fluent Interfaces, Favorite Factory, and Railway-Oriented Programming
+  around clearer claims, copyable examples, explicit tradeoffs, and current
+  technical guidance while preserving their original topics and voice.

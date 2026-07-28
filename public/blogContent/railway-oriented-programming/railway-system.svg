@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Railway-Oriented Programming</title>
+  <desc id="description">A workflow enters a result and follows either a success track through later operations or a failure track that bypasses them while preserving the error.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111820"/>
+      <stop offset="1" stop-color="#18232c"/>
+    </linearGradient>
+    <linearGradient id="success" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eab65c"/>
+      <stop offset="1" stop-color="#f2d08f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1070" cy="92" r="180" fill="#eab65c" opacity=".06"/>
+  <circle cx="142" cy="560" r="230" fill="#78a9c4" opacity=".05"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="72" y="92" fill="#eab65c" font-size="18" font-weight="700" letter-spacing="3">EXPLICIT WORKFLOW</text>
+    <text x="72" y="148" fill="#f4f5f6" font-size="44" font-weight="750">Railway-Oriented Programming</text>
+    <text x="72" y="187" fill="#aeb8c2" font-size="21">One protocol for values that succeed and errors that do not disappear.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="72" y="252" width="180" height="112" rx="16" fill="#202b35" stroke="#3b4855"/>
+    <text x="162" y="298" fill="#f4f5f6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Operation</text>
+    <text x="162" y="331" fill="#aeb8c2" font-family="ui-monospace, monospace" font-size="16" text-anchor="middle">Result&lt;T&gt;</text>
+
+    <rect x="390" y="226" width="204" height="100" rx="16" fill="#202b35" stroke="#eab65c" stroke-width="2"/>
+    <text x="492" y="267" fill="#f4f5f6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Validate</text>
+    <text x="492" y="296" fill="#eab65c" font-family="ui-monospace, monospace" font-size="15" text-anchor="middle">Bind</text>
+
+    <rect x="704" y="226" width="204" height="100" rx="16" fill="#202b35" stroke="#eab65c" stroke-width="2"/>
+    <text x="806" y="267" fill="#f4f5f6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Transform</text>
+    <text x="806" y="296" fill="#eab65c" font-family="ui-monospace, monospace" font-size="15" text-anchor="middle">Map</text>
+
+    <rect x="1018" y="226" width="110" height="100" rx="16" fill="#202b35" stroke="#eab65c" stroke-width="2"/>
+    <text x="1073" y="267" fill="#f4f5f6" font-family="Inter, Arial, sans-serif" font-size="17" font-weight="700" text-anchor="middle">Value</text>
+    <text x="1073" y="296" fill="#eab65c" font-family="ui-monospace, monospace" font-size="15" text-anchor="middle">T</text>
+
+    <rect x="704" y="440" width="424" height="100" rx="16" fill="#202b35" stroke="#db7f7f" stroke-width="2"/>
+    <text x="916" y="481" fill="#f4f5f6" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">Failure preserved</text>
+    <text x="916" y="511" fill="#db7f7f" font-family="ui-monospace, monospace" font-size="15" text-anchor="middle">Error reaches the caller</text>
+  </g>
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M252 276H390" stroke="#eab65c" stroke-width="8"/>
+    <path d="M594 276H704" stroke="#eab65c" stroke-width="8"/>
+    <path d="M908 276H1018" stroke="#eab65c" stroke-width="8"/>
+    <path d="M252 334C320 334 332 490 430 490H704" stroke="#db7f7f" stroke-width="8"/>
+    <path d="M594 310C624 310 635 490 704 490" stroke="#db7f7f" stroke-width="8"/>
+  </g>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="700">
+    <text x="285" y="258" fill="#eab65c">SUCCESS</text>
+    <text x="305" y="407" fill="#db7f7f">FAILURE</text>
+  </g>
+</svg>
