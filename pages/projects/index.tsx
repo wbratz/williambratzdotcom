@@ -74,6 +74,62 @@ export default function Projects() {
             <article className={styles.productCaseStudy}>
               <figure className={styles.productVisual}>
                 <img
+                  src="/projects/billys-ai-skills-1280.png"
+                  sizes="(max-width: 760px) calc(100vw - 4.5rem), 560px"
+                  alt="Billy's AI Skills maps a large source field through a controller and focused agents into an evidence-backed result."
+                  width="1280"
+                  height="640"
+                  loading="lazy"
+                />
+                <figcaption>
+                  A controller inspects large context, delegates focused work,
+                  and converges the evidence into one answer.
+                </figcaption>
+              </figure>
+              <div className={styles.caseStudyCopy}>
+                <p className={styles.projectType}>Agent infrastructure</p>
+                <h2>Billy&apos;s AI Skills</h2>
+                <p>
+                  Cross-client Recursive Language Model workflows for Claude
+                  Code and OpenAI Codex, built to reason across repositories,
+                  documents, logs, transcripts, and other large source sets.
+                </p>
+                <ul>
+                  <li>Bounded fanout, cost controls, and dry-run planning</li>
+                  <li>Tested Claude and Codex marketplace implementations</li>
+                  <li>
+                    A public product-launch corpus with a reproducible terminal
+                    demonstration
+                  </li>
+                </ul>
+                <p className={styles.productNote}>
+                  The project keeps raw context outside the main conversation,
+                  delegates focused questions over chunks, and returns a
+                  source-grounded synthesis. The example requires no private
+                  data or provider credentials.
+                </p>
+                <div className={styles.actions}>
+                  <a
+                    href="https://github.com/wbratz/billys-ai-skills"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Run the demo <span aria-hidden="true">↗</span>
+                  </a>
+                  <a
+                    href="https://github.com/wbratz/billys-ai-skills/releases/tag/v0.1.0"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View v0.1.0 <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article className={styles.productCaseStudy}>
+              <figure className={styles.productVisual}>
+                <img
                   src="/projects/neverending-story-pointer-800.webp"
                   srcSet="/projects/neverending-story-pointer-480.webp 480w, /projects/neverending-story-pointer-800.webp 800w"
                   sizes="(max-width: 760px) calc(100vw - 4.5rem), 560px"
