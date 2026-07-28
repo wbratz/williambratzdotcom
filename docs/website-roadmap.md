@@ -261,3 +261,10 @@ Acceptance:
   checks, 30-page accessibility matrix, dependency audit, GitHub quality gates,
   and Render deployment all pass. The planned website upgrade is now in
   maintenance mode.
+- 2026-07-28: Recruiter discovery phase implemented with a focused
+  `/ai-engineering` capability page, expanded Person and project structured
+  data, recruiter-oriented titles and descriptions, sitemap coverage, and
+  stronger internal paths between the homepage, About, Projects, résumé, and
+  GitHub. Added Billy's AI Skills as public agent-infrastructure proof and Hugo
+  as a complete applied AI product. Accessibility coverage now includes the new
+  route at desktop and mobile sizes.

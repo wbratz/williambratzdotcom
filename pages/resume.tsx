@@ -12,10 +12,10 @@ export default function Resume() {
   return (
     <Layout>
       <Head>
-        <title>William “Billy” Bratz | Senior Software Engineer</title>
+        <title>William “Billy” Bratz | Senior AI &amp; Software Engineer</title>
         <meta
           name="description"
-          content="William Bratz is a senior software engineer building production LLM agent platforms and distributed systems."
+          content="Resume for William Bratz, a senior software engineer building production LLM agent platforms, MCP infrastructure, and distributed systems."
         />
         <link rel="canonical" href="https://www.williambratz.com/resume" />
         <meta property="og:type" content="profile" />
@@ -254,6 +254,31 @@ export default function Resume() {
                   vault-scaffold workflow
                 </ExternalLink>{" "}
                 is available on GitHub.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <ExternalLink href="https://github.com/wbratz/billys-ai-skills">
+                  Billy&apos;s AI Skills
+                </ExternalLink>
+              </h3>
+              <p>
+                Cross-client Recursive Language Model plugins for Claude Code
+                and OpenAI Codex, with bounded fanout, dry-run planning, local
+                model support, automated tests, and a credential-free public
+                demonstration.
+              </p>
+            </div>
+            <div>
+              <h3>
+                <ExternalLink href="https://github.com/wbratz/hugo-slack-bot">
+                  Hugo
+                </ExternalLink>
+              </h3>
+              <p>
+                A self-hosted Slack reading assistant that curates technical RSS
+                feeds with Claude, summarizes URLs and threads on demand, and
+                delivers a configurable daily digest.
               </p>
             </div>
             <div>

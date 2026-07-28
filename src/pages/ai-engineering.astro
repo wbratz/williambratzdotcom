@@ -1,27 +1,30 @@
 ---
-import Resume from "../../pages/resume";
+import AiEngineering from "../../pages/ai-engineering";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const resumeSchema = {
+const personSchema = {
   "@context": "https://schema.org",
   "@type": "ProfilePage",
-  name: "William Bratz Resume",
-  url: "https://www.williambratz.com/resume",
+  name: "AI Engineering and LLM Systems by William Bratz",
+  url: "https://www.williambratz.com/ai-engineering",
   mainEntity: {
     "@type": "Person",
     name: "William Bratz",
     alternateName: "Billy Bratz",
-    jobTitle: "Senior Software Engineer",
     url: "https://www.williambratz.com",
+    image: "https://www.williambratz.com/headerphoto.jpg",
+    jobTitle: "Senior Software Engineer",
     homeLocation: {
       "@type": "Place",
       name: "Tri-Cities, Tennessee",
     },
     knowsAbout: [
-      "Production artificial intelligence",
+      "Artificial intelligence engineering",
       "Large language model agents",
       "Model Context Protocol",
       "Distributed systems",
+      "AI evaluation",
+      "Knowledge management",
       "Python",
       "C#",
       "Kubernetes",
@@ -35,16 +38,16 @@ const resumeSchema = {
 ---
 
 <BaseLayout
-  title="William “Billy” Bratz | Senior AI & Software Engineer"
-  description="Resume for William Bratz, a senior software engineer building production LLM agent platforms, MCP infrastructure, and distributed systems."
-  canonical="https://www.williambratz.com/resume"
+  title="AI Engineering & LLM Systems | William Bratz"
+  description="William Bratz builds production LLM agents, MCP infrastructure, AI developer tools, durable context systems, evaluations, and reliable distributed software."
+  canonical="https://www.williambratz.com/ai-engineering"
   type="profile"
 >
   <script
     is:inline
     slot="head"
     type="application/ld+json"
-    set:html={JSON.stringify(resumeSchema)}
+    set:html={JSON.stringify(personSchema)}
   />
-  <Resume />
+  <AiEngineering />
 </BaseLayout>

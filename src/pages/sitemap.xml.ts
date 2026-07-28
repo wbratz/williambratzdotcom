@@ -5,6 +5,7 @@ const SITE_URL = "https://www.williambratz.com";
 const staticPages = [
   "",
   "/about",
+  "/ai-engineering",
   "/blog",
   "/projects",
   "/projects/vault",
