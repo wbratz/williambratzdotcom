@@ -9,18 +9,21 @@ export default function Projects() {
   return (
     <Layout>
       <Head>
-        <title>Projects | William Bratz</title>
+        <title>AI &amp; Software Engineering Projects | William Bratz</title>
         <meta
           name="description"
-          content="Selected projects by William Bratz in AI knowledge infrastructure, agent systems, and engineering practice."
+          content="Production-minded AI infrastructure, LLM agent tools, applied AI products, collaborative software, and interactive systems by William Bratz."
         />
         <link rel="canonical" href={`${SITE_URL}/projects`} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE_URL}/projects`} />
-        <meta property="og:title" content="Projects | William Bratz" />
+        <meta
+          property="og:title"
+          content="AI & Software Engineering Projects | William Bratz"
+        />
         <meta
           property="og:description"
-          content="Systems and tools for production AI, durable context, and better engineering decisions."
+          content="Production AI infrastructure, agent developer tools, applied AI products, and interactive software."
         />
         <meta name="twitter:card" content="summary" />
       </Head>
@@ -122,6 +125,59 @@ export default function Projects() {
                     rel="noreferrer"
                   >
                     View v0.1.0 <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article className={styles.productCaseStudy}>
+              <figure className={styles.productVisual}>
+                <img
+                  src="/projects/hugo-reading-assistant.svg"
+                  sizes="(max-width: 760px) calc(100vw - 4.5rem), 560px"
+                  alt="Hugo combines RSS feeds and saved links, ranks and summarizes them with Claude, and delivers a focused team digest."
+                  width="1200"
+                  height="720"
+                  loading="lazy"
+                />
+                <figcaption>
+                  Automated curation turns a noisy reading queue into a focused
+                  technical digest for the team.
+                </figcaption>
+              </figure>
+              <div className={styles.caseStudyCopy}>
+                <p className={styles.projectType}>Applied AI product</p>
+                <h2>Hugo</h2>
+                <p>
+                  A self-hosted Slack reading assistant that scans AI and
+                  technology RSS feeds, uses Claude to rank and summarize
+                  articles, and posts a focused daily digest.
+                </p>
+                <ul>
+                  <li>
+                    Configurable relevance scoring and bounded daily curation
+                  </li>
+                  <li>
+                    On-demand URL summaries, thread summaries, and saved-link
+                    queues
+                  </li>
+                  <li>
+                    Python, Slack Socket Mode, Claude, RSS, and Docker Compose
+                  </li>
+                </ul>
+                <p className={styles.productNote}>
+                  Hugo combines an always-on bot with scheduled curator and
+                  digest workers. The result is a small but complete AI product:
+                  ingestion, judgment, extraction, summarization, delivery,
+                  configuration, and operational alerts.
+                </p>
+                <div className={styles.actions}>
+                  <a
+                    href="https://github.com/wbratz/hugo-slack-bot"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View source <span aria-hidden="true">↗</span>
                   </a>
                 </div>
               </div>

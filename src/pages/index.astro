@@ -12,12 +12,44 @@ const featuredPosts = (await getPosts())
     updated: post.data.updated ? toDateString(post.data.updated) : undefined,
     readingTime: post.readingTime,
   }));
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "William Bratz",
+  alternateName: "Billy Bratz",
+  url: "https://www.williambratz.com",
+  image: "https://www.williambratz.com/headerphoto.jpg",
+  jobTitle: "Senior Software Engineer",
+  homeLocation: {
+    "@type": "Place",
+    name: "Tri-Cities, Tennessee",
+  },
+  knowsAbout: [
+    "Production artificial intelligence",
+    "Large language model agents",
+    "Model Context Protocol",
+    "Distributed systems",
+    "AI developer tools",
+    "Knowledge infrastructure",
+  ],
+  sameAs: [
+    "https://github.com/wbratz",
+    "https://www.linkedin.com/in/williambratz",
+  ],
+};
 ---
 
 <BaseLayout
-  title="William Bratz | Production AI & Distributed Systems"
-  description="William Bratz builds production AI systems, MCP infrastructure, distributed systems, and durable organizational knowledge."
+  title="William Bratz | AI Engineering & Distributed Systems"
+  description="Senior software engineer William Bratz builds production LLM agents, MCP infrastructure, AI developer tools, distributed systems, and durable organizational knowledge."
   canonical="https://www.williambratz.com"
 >
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(personSchema)}
+  />
   <Home featuredPosts={featuredPosts} />
 </BaseLayout>

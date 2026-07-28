@@ -24,17 +24,17 @@ export default function Home({ featuredPosts }: HomeProps) {
   return (
     <Layout>
       <Head>
-        <title>William Bratz | Production AI &amp; Distributed Systems</title>
+        <title>William Bratz | AI Engineering &amp; Distributed Systems</title>
         <meta
           name="description"
-          content="William Bratz builds production AI systems, MCP infrastructure, distributed systems, and durable organizational knowledge."
+          content="Senior software engineer William Bratz builds production LLM agents, MCP infrastructure, AI developer tools, distributed systems, and durable organizational knowledge."
         />
         <link rel="canonical" href={SITE_URL} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
         <meta
           property="og:title"
-          content="William Bratz | Production AI & Distributed Systems"
+          content="William Bratz | AI Engineering & Distributed Systems"
         />
         <meta
           property="og:description"
@@ -64,6 +64,9 @@ export default function Home({ featuredPosts }: HomeProps) {
             </Link>
             <Link href="/resume" legacyBehavior>
               <a className={styles.secondaryAction}>View résumé</a>
+            </Link>
+            <Link href="/ai-engineering" legacyBehavior>
+              <a className={styles.textAction}>AI engineering</a>
             </Link>
             <a
               className={styles.textAction}
@@ -115,28 +118,42 @@ export default function Home({ featuredPosts }: HomeProps) {
             </article>
 
             <article className={styles.project}>
-              <p className={styles.projectType}>Production systems</p>
-              <h3>AI agents and MCP</h3>
+              <p className={styles.projectType}>Agent developer tools</p>
+              <h3>Billy&apos;s AI Skills</h3>
               <p>
-                Building and operating the tool, context, evaluation, and
-                reliability layers behind customer-facing conversational AI.
+                Cross-client Recursive Language Model plugins for Claude Code
+                and OpenAI Codex, with bounded fanout, cost controls, and a
+                credential-free public demo.
               </p>
-              <Link href="/resume" legacyBehavior>
-                <a>See the engineering record</a>
-              </Link>
+              <div className={styles.projectLinks}>
+                <a
+                  href="https://github.com/wbratz/billys-ai-skills"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Run the demo <Arrow />
+                </a>
+                <Link href="/ai-engineering" legacyBehavior>
+                  <a>See the AI engineering work</a>
+                </Link>
+              </div>
             </article>
 
             <article className={styles.project}>
-              <p className={styles.projectType}>Engineering practice</p>
-              <h3>Theory-building series</h3>
+              <p className={styles.projectType}>Applied AI product</p>
+              <h3>Hugo</h3>
               <p>
-                Three essays about why software understanding lives beyond code
-                and documents. I also write about what changes when the map can
-                learn.
+                A self-hosted Slack reading assistant that ranks technical RSS
+                articles with Claude, summarizes links and threads, and delivers
+                a focused daily digest.
               </p>
-              <Link href="/blog/programming-as-theory-building" legacyBehavior>
-                <a>Start with part one</a>
-              </Link>
+              <a
+                href="https://github.com/wbratz/hugo-slack-bot"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View the source <Arrow />
+              </a>
             </article>
           </div>
         </section>
@@ -206,6 +223,11 @@ export default function Home({ featuredPosts }: HomeProps) {
           <Link href="/about" legacyBehavior>
             <a className={styles.aboutLink}>
               More about me <span aria-hidden="true">→</span>
+            </a>
+          </Link>
+          <Link href="/ai-engineering" legacyBehavior>
+            <a className={styles.aboutLink}>
+              Explore my AI engineering work <span aria-hidden="true">→</span>
             </a>
           </Link>
         </section>

@@ -26,6 +26,13 @@ export default function About() {
       "@type": "Place",
       name: "Tri-Cities, Tennessee",
     },
+    knowsAbout: [
+      "Production artificial intelligence",
+      "Large language model agents",
+      "Model Context Protocol",
+      "Distributed systems",
+      "Knowledge infrastructure",
+    ],
     sameAs: [
       "https://github.com/wbratz",
       "https://www.linkedin.com/in/williambratz",
@@ -160,6 +167,23 @@ export default function About() {
                 </Link>
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   Scaffold your own
+                </ExternalLink>
+              </div>
+            </article>
+            <article className={styles.feature}>
+              <p className={styles.cardType}>AI engineering</p>
+              <h3>Agents, tools, and production systems</h3>
+              <p>
+                A focused overview of my work across production LLM agents, MCP
+                infrastructure, long-context developer tools, durable context,
+                evaluation, and distributed systems.
+              </p>
+              <div className={styles.cardLinks}>
+                <Link href="/ai-engineering" legacyBehavior>
+                  <a>Explore the AI work</a>
+                </Link>
+                <ExternalLink href="https://github.com/wbratz/billys-ai-skills">
+                  Run the public demo
                 </ExternalLink>
               </div>
             </article>

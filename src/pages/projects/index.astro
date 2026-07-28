@@ -1,12 +1,65 @@
 ---
 import Projects from "../../../pages/projects/index";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Software and AI Projects by William Bratz",
+  url: "https://www.williambratz.com/projects",
+  description:
+    "Open-source AI infrastructure, agent developer tools, applied AI products, and interactive software by William Bratz.",
+  author: {
+    "@type": "Person",
+    name: "William Bratz",
+    url: "https://www.williambratz.com",
+  },
+  hasPart: [
+    {
+      "@type": "SoftwareSourceCode",
+      name: "The Vault",
+      codeRepository: "https://github.com/wbratz/vault-scaffold",
+      programmingLanguage: ["Python", "Markdown"],
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      name: "Billy's AI Skills",
+      codeRepository: "https://github.com/wbratz/billys-ai-skills",
+      programmingLanguage: ["Python", "JavaScript"],
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      name: "Hugo",
+      codeRepository: "https://github.com/wbratz/hugo-slack-bot",
+      programmingLanguage: "Python",
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      name: "Neverending Story Pointer",
+      url: "https://neverendingstorypointer.com",
+      programmingLanguage: ["C#", "Blazor"],
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      name: "How Unique Is a GUID?",
+      codeRepository: "https://github.com/wbratz/HowUniqueIsAGuid",
+      url: "https://howuniqueisaguid.com",
+      programmingLanguage: ["TypeScript", "React"],
+    },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Projects | William Bratz"
-  description="Selected projects by William Bratz in AI knowledge infrastructure, collaborative tools, and interactive software."
+  title="AI & Software Engineering Projects | William Bratz"
+  description="Production-minded AI infrastructure, LLM agent tools, applied AI products, collaborative software, and interactive systems by William Bratz."
   canonical="https://www.williambratz.com/projects"
 >
+  <script
+    is:inline
+    slot="head"
+    type="application/ld+json"
+    set:html={JSON.stringify(projectsSchema)}
+  />
   <Projects />
 </BaseLayout>

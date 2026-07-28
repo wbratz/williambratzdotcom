@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title description">
+  <title id="title">Hugo AI reading assistant workflow</title>
+  <desc id="description">RSS feeds and saved links flow through Claude ranking and summarization into a focused team digest.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08141a"/>
+      <stop offset="1" stop-color="#030a0e"/>
+    </linearGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#69e3af"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="720" rx="26" fill="url(#background)"/>
+  <g opacity=".12" stroke="#9fb2bd">
+    <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200"/>
+    <path d="M120 0V720M240 0V720M360 0V720M480 0V720M600 0V720M720 0V720M840 0V720M960 0V720M1080 0V720"/>
+  </g>
+
+  <text x="70" y="90" fill="#f2f6f8" font-family="Inter, Arial, sans-serif" font-size="38" font-weight="700">HUGO</text>
+  <text x="70" y="125" fill="#8fa3ae" font-family="Inter, Arial, sans-serif" font-size="18">AI reading assistant for focused technical teams</text>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <rect x="70" y="225" width="220" height="118" rx="18" fill="#101f27" stroke="#2f4652"/>
+    <circle cx="115" cy="268" r="18" fill="none" stroke="#22d3ee" stroke-width="4"/>
+    <path d="M115 250v36M97 268h36" stroke="#22d3ee" stroke-width="3"/>
+    <text x="150" y="265" fill="#f2f6f8" font-size="22" font-weight="700">RSS feeds</text>
+    <text x="150" y="294" fill="#8fa3ae" font-size="16">AI and technology sources</text>
+
+    <rect x="70" y="385" width="220" height="118" rx="18" fill="#101f27" stroke="#2f4652"/>
+    <path d="M104 424h34v39l-17-10-17 10Z" fill="none" stroke="#69e3af" stroke-width="4"/>
+    <text x="150" y="425" fill="#f2f6f8" font-size="22" font-weight="700">Saved links</text>
+    <text x="150" y="454" fill="#8fa3ae" font-size="16">Team-curated reading queue</text>
+
+    <path d="M290 284H430M290 444H430" stroke="url(#signal)" stroke-width="5" filter="url(#glow)"/>
+    <path d="m416 270 18 14-18 14M416 430l18 14-18 14" fill="none" stroke="#69e3af" stroke-width="4"/>
+
+    <rect x="440" y="230" width="290" height="268" rx="24" fill="#0d2429" stroke="#3c7969" stroke-width="2"/>
+    <text x="585" y="278" text-anchor="middle" fill="#69e3af" font-size="17" font-weight="700" letter-spacing="2">CLAUDE PIPELINE</text>
+    <rect x="480" y="310" width="210" height="54" rx="12" fill="#122e34" stroke="#2f5961"/>
+    <text x="585" y="344" text-anchor="middle" fill="#f2f6f8" font-size="19">Rank for relevance</text>
+    <rect x="480" y="385" width="210" height="54" rx="12" fill="#122e34" stroke="#2f5961"/>
+    <text x="585" y="419" text-anchor="middle" fill="#f2f6f8" font-size="19">Extract and summarize</text>
+    <text x="585" y="470" text-anchor="middle" fill="#8fa3ae" font-size="15">configurable taste · bounded daily cap</text>
+
+    <path d="M730 364H870" stroke="url(#signal)" stroke-width="5" filter="url(#glow)"/>
+    <path d="m856 350 18 14-18 14" fill="none" stroke="#69e3af" stroke-width="4"/>
+
+    <rect x="880" y="250" width="250" height="228" rx="24" fill="#101f27" stroke="#2f4652"/>
+    <text x="920" y="296" fill="#69e3af" font-size="17" font-weight="700" letter-spacing="2">TEAM DIGEST</text>
+    <rect x="920" y="325" width="165" height="12" rx="6" fill="#d6e0e5"/>
+    <rect x="920" y="352" width="128" height="9" rx="4" fill="#637984"/>
+    <rect x="920" y="390" width="165" height="12" rx="6" fill="#d6e0e5"/>
+    <rect x="920" y="417" width="145" height="9" rx="4" fill="#637984"/>
+    <circle cx="1090" cy="439" r="12" fill="#69e3af"/>
+    <path d="m1084 439 5 5 9-11" fill="none" stroke="#071016" stroke-width="3"/>
+
+    <text x="600" y="614" text-anchor="middle" fill="#f2f6f8" font-size="24" font-weight="700">Curate less. Read better. Keep the team informed.</text>
+    <text x="600" y="650" text-anchor="middle" fill="#8fa3ae" font-size="17">Python · Slack Bolt · RSS · Claude · Docker</text>
+  </g>
+</svg>
