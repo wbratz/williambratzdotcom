@@ -257,3 +257,7 @@ Acceptance:
   product domain. Removed that dead destination while retaining the healthy GUID
   edition and treated LinkedIn's automated-request response as restricted rather
   than missing.
+- 2026-07-28: Release closure completed. The production build, metadata and link
+  checks, 30-page accessibility matrix, dependency audit, GitHub quality gates,
+  and Render deployment all pass. The planned website upgrade is now in
+  maintenance mode.
