@@ -54,7 +54,7 @@ The main deploy helper sets `SECRET_SITE_ORIGIN=https://www.williambratz.com`. T
 
 Release verification covers public pages, RSS, sitemap, résumé, protected-page and download rejection, owner login, invitation acceptance and replay rejection, authenticated downloads, and revocation. Also check apex redirects with paths and query strings.
 
-Render remains available at https://williambratzdotcom.onrender.com as a public-site rollback target. Its static publish directory is `out/client`, so later repository merges keep the public fallback deployable. Render cannot serve the private SSR endpoints.
+Render remains available at https://williambratzdotcom.onrender.com as a public-site rollback target. Its existing static publish directory stays `out`. When Render sets `RENDER=true`, the postbuild script keeps only the public `out/client` files, moves them into `out`, and removes the private Worker bundle before publishing. Other builds retain the normal Cloudflare output layout. Render cannot serve the private SSR endpoints.
 
 For rollback, remove the two routes in Cloudflare's zone Worker Routes dashboard. Existing proxied DNS still targets Render, so public requests return there without DNS replacement or propagation. Remove the matching `routes` entries from source configuration before another deploy to keep them from being recreated. Verify public pages, retain D1 and the gateway Worker, and remember that Render cannot restore private access. Do not delete Render or change its underlying DNS target while this rollback arrangement is in use.
 

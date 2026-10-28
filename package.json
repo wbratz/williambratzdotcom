@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
+    "postbuild": "node scripts/prepare-render-fallback.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:links:external": "node scripts/check-external-links.mjs",
     "check:metadata": "node scripts/check-metadata.mjs",
