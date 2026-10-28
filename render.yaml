@@ -3,7 +3,7 @@ services:
     name: williambratzdotcom
     runtime: static
     buildCommand: npm ci && npm run build
-    staticPublishPath: ./out
+    staticPublishPath: ./out/client
     headers:
       - path: /*
         name: Content-Security-Policy

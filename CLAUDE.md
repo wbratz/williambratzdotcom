@@ -75,9 +75,11 @@ Do not manually generate RSS or sitemap files. Astro builds `/rss.xml` and
 - Node version: 22.x.
 - Build command: `npm run build`.
 - Public output: `out/client/`; Cloudflare server bundle: `out/server/`.
-- Use `npm run deploy:cloudflare` for a deliberate release. Review deployments
-  do not change the live custom-domain routing. Follow
-  `docs/cloudflare-migration.md` for the Render cutover and runtime secrets.
+- Use `npm run deploy:cloudflare` for a deliberate production release. The source
+  configuration includes live Worker routes; changing `--origin` does not isolate
+  a review deployment. The apex redirect has its own configuration under
+  `cloudflare/redirect.wrangler.jsonc`. Follow `docs/cloudflare-migration.md` for
+  runtime secrets and the Render fallback.
 
 ## Required checks
 

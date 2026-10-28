@@ -28,11 +28,7 @@ Keep the four values from `.env.example` in ignored `.env.local` for deployment,
 
 `npm run deploy:cloudflare` builds the site and uploads the four secrets together with the Worker version using an ignored temporary JSON file, then removes it. It sets the form origin to `https://www.williambratz.com` by default.
 
-For a workers.dev review deployment, use its exact origin:
-
-```sh
-npm run deploy:cloudflare -- --origin https://williambratzdotcom.williambratz00.workers.dev
-```
+The initial workers.dev review used its exact origin. Now that the source includes production routes, `--origin` alone does not create an isolated review deployment: it updates the live Worker and its allowed form origin. Keep the production origin for releases. Use a separate Worker configuration and isolated resources for future previews.
 
 For local development, copy those values into ignored `.dev.vars`, set `SECRET_SITE_ORIGIN=http://localhost:4321`, and initialize the isolated local database before running `npm run dev`:
 
@@ -45,15 +41,24 @@ The local database does not share production grants or edits. Production cookies
 
 ## Production cutover
 
-The source configuration deliberately has no custom-domain routes, so a review deployment does not replace Render. After testing the Worker and accepting the PR:
+Production uses Worker routes over the existing proxied DNS records. `www.williambratz.com/*` serves the main Worker and its bundled assets; `williambratz.com/*` serves a small redirect Worker that sends every request to HTTPS www, preserving its path and query string. Render is not fetched by either Worker. Keeping the redirect separate lets public assets use direct asset serving without bypassing the hostname redirect.
 
-1. Configure `www.williambratz.com` and `williambratz.com` as custom domains for the `williambratzdotcom` Worker in Cloudflare. Reconcile any existing Render DNS records using Cloudflare's custom-domain flow.
-2. Deploy with `SECRET_SITE_ORIGIN=https://www.williambratz.com`. The deploy script defaults to that value.
-3. Confirm the public homepage, writing, projects, About, AI engineering, RSS, sitemap, and résumé. Confirm a guessed `/secret` and direct private download return 404, then test an invitation and revocation on the real domain.
-4. Configure an apex-to-www Redirect Rule in Cloudflare for public asset requests. The runtime also redirects on-demand apex requests to www. Static assets carry the existing security headers, and private responses use `no-store`, `noindex`, and `no-referrer`.
-5. Retain Render as a rollback target until the Cloudflare deployment is verified. A PR merge alone does not move DNS or create Cloudflare custom-domain routes. Render's existing static service cannot serve the new private SSR routes.
+Deploy the site first, verify it, then deploy the redirect:
 
-The current Render source remains versioned in `render.yaml` as a record of the previous deployment. For automated Cloudflare releases, connect this repository in Workers Builds with `npm ci && npm run build` and `npx wrangler deploy`, setting the four runtime secrets in the Worker. The local deployment helper is available immediately; CI does not silently deploy production.
+```sh
+npm run deploy:cloudflare
+npx wrangler deploy --config cloudflare/redirect.wrangler.jsonc
+```
+
+The main deploy helper sets `SECRET_SITE_ORIGIN=https://www.williambratz.com`. The workers.dev address remains available for public diagnostics, but form submissions must use the production origin. The D1 database and existing grants are preserved. Browser cookies are host-specific, so access granted on workers.dev requires a new invitation on www.
+
+Release verification covers public pages, RSS, sitemap, résumé, protected-page and download rejection, owner login, invitation acceptance and replay rejection, authenticated downloads, and revocation. Also check apex redirects with paths and query strings.
+
+Render remains available at https://williambratzdotcom.onrender.com as a public-site rollback target. Its static publish directory is `out/client`, so later repository merges keep the public fallback deployable. Render cannot serve the private SSR endpoints.
+
+For rollback, remove the two routes in Cloudflare's zone Worker Routes dashboard. Existing proxied DNS still targets Render, so public requests return there without DNS replacement or propagation. Remove the matching `routes` entries from source configuration before another deploy to keep them from being recreated. Verify public pages, retain D1 and the gateway Worker, and remember that Render cannot restore private access. Do not delete Render or change its underlying DNS target while this rollback arrangement is in use.
+
+Releases currently use the local deployment commands above; merging alone does not deploy Cloudflare. For automated releases, connect this repository in Workers Builds with `npm ci && npm run build` and `npx wrangler deploy`, retaining the four runtime secrets in the Worker. Deploy the redirect configuration separately when it changes.
 
 ## Private content
 

@@ -60,7 +60,7 @@ routes. Build artifacts live under `out/client/` and `out/server/`.
 `npm run deploy:cloudflare` builds and deploys using the four server-only
 `SECRET_*` values from ignored `.env.local` or the deployment environment.
 
-Render remains the live host until the custom-domain cutover is completed.
+Cloudflare serves production through Worker routes; Render remains the public fallback.
 The canonical host is `https://www.williambratz.com`; the apex redirects there.
 See [Cloudflare migration and private-directory setup](docs/cloudflare-migration.md)
-for review deployments, secrets, access controls, and the production cutover.
+for deployments, secrets, access controls, and rollback instructions.
