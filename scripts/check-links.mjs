@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { extname, join, relative, resolve } from "node:path";
 
-const outputRoot = resolve("out");
+const outputRoot = resolve(existsSync("out/client") ? "out/client" : "out");
 
 if (!existsSync(outputRoot)) {
   console.error("out/ does not exist. Run npm run build first.");

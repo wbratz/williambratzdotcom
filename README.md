@@ -4,14 +4,15 @@ William Bratz's static portfolio and technical writing site.
 
 ## Stack
 
-- Astro 7 with static output
+- Astro 7 with prerendered public pages and Cloudflare-rendered private routes
 - TypeScript with strict checking
 - Astro content collections for Markdown essays
 - CSS Modules for the existing page design
 - Small vanilla browser scripts for theme, navigation, and topic filtering
 - React used only as a build-time migration bridge for five static page bodies
 
-No React components are hydrated in the browser.
+Public React page bodies remain static. The invite-only directory hydrates its
+private React screens for admin forms and data browsing.
 
 ## Development
 
@@ -54,10 +55,12 @@ use root-relative Markdown paths such as `/blogContent/example/image.svg`.
 
 ## Deployment
 
-Render serves `out/` as a static site. The desired service configuration,
-including security and immutable-asset cache headers, lives in `render.yaml`.
-The existing Render service uses `npm ci && npm run build`, matching the
-versioned Blueprint configuration.
+Cloudflare Workers hosts the prerendered public pages and the protected private
+routes. Build artifacts live under `out/client/` and `out/server/`.
+`npm run deploy:cloudflare` builds and deploys using the four server-only
+`SECRET_*` values from ignored `.env.local` or the deployment environment.
 
-Render automatically deploys pushes to `master`. The canonical host is
-`https://www.williambratz.com`; the apex domain redirects there.
+Cloudflare serves production through Worker routes; Render remains the public fallback.
+The canonical host is `https://www.williambratz.com`; the apex redirects there.
+See [Cloudflare migration and private-directory setup](docs/cloudflare-migration.md)
+for deployments, secrets, access controls, and rollback instructions.

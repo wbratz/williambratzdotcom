@@ -1,0 +1,25 @@
+{
+  "$schema": "../node_modules/wrangler/config-schema.json",
+  "name": "williambratz-secret-db",
+  "account_id": "31d30dfccd84717b3e3b401f5e3f5478",
+  "main": "database-worker.js",
+  "compatibility_date": "2026-10-28",
+  "workers_dev": true,
+  "preview_urls": false,
+  "secrets": { "required": ["DATABASE_KEY"] },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+    "traces": {
+      "enabled": true,
+      "head_sampling_rate": 0.1,
+    },
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "williambratz-secret",
+      "database_id": "471b0479-1904-482d-bd61-3c518d429b66",
+    },
+  ],
+}

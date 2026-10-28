@@ -1,0 +1,13 @@
+surveillance_year,estimated_birth_year,autism_per_1000,profound_autism_per_1000,adhd_ever_diagnosed_pct,current_asthma_pct,obesity_pct,obesity_survey_period,combined_condition_rate_sum_per100,combined_sum_index_2002_100,combined_equal_weight_index_2002_100,same_year_schedule_age2_doses_estimate,birth_year_schedule_age2_doses_original_estimate,modeled_early_life_plus_prenatal_doses,modeled_early_life_plus_covid2_doses,modeled_early_life_plus_covid3_doses,note
+2000,1992,6.7,2.68,6.6,,13.9,1999-2000,,,,15.5,14.5,14.5,14.5,14.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2002,1994,6.6,,7.2,8.3,15.4,2001-2002,31.56,100.0,100.0,19.5,14.5,14.5,14.5,14.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2004,1996,8.0,,7.4,8.5,17.1,2003-2004,33.8,107.09759,109.35962,19.5,15.5,15.5,15.5,15.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2006,1998,9.0,,7.4,9.3,15.4,2005-2006,33.0,104.56274,112.7974,24.0,15.5,16.5,16.5,16.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2008,2000,11.3,,8.0,9.4,16.8,2007-2008,35.33,111.9455,126.16679,24.0,19.5,20.5,20.5,20.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2010,2002,14.7,,8.4,9.4,16.9,2009-2010,36.17,114.6071,140.5968,24.0,19.5,20.5,20.5,20.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2012,2004,14.5,,9.5,9.3,16.9,2011-2012,37.15,117.71229,143.35747,24.0,19.5,23.0,23.0,23.0,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2014,2006,16.8,,8.9,8.6,17.2,2013-2014,36.38,115.2725,148.36483,24.0,24.0,28.0,28.0,28.0,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2016,2008,18.5,4.59,9.4,8.3,18.5,2015-2016,38.05,120.56401,157.74711,24.0,24.0,27.5,27.5,27.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2018,2010,23.0,,9.8,7.5,19.3,2017-2018,38.9,123.25729,175.07052,24.0,24.0,27.5,27.5,27.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2020,2012,27.6,,10.3,5.8,,,,,,24.0,24.0,27.5,27.5,27.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation
+2022,2014,32.2,7.21,10.2,6.2,21.1,2021-2023,40.72,129.02408,210.31431,24.0,24.0,28.5,30.5,31.5,Modeled vaccine doses; conditions have different survey ages; empty cells mean missing observation

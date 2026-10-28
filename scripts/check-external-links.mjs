@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { extname, join, resolve } from "node:path";
 
-const outputRoot = resolve("out");
+const outputRoot = resolve(existsSync("out/client") ? "out/client" : "out");
 const productionHost = "www.williambratz.com";
 const timeoutMs = 15_000;
 

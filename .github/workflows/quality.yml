@@ -34,11 +34,14 @@ jobs:
       - name: Run quality gates
         run: npm run quality
 
+      - name: Test private access and data calculations
+        run: npm run test:secret
+
       - name: Upload static build
         uses: actions/upload-artifact@v6
         with:
           name: static-site
-          path: out
+          path: out/client
           if-no-files-found: error
 
   accessibility:

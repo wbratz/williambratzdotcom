@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
+    "postbuild": "node scripts/prepare-render-fallback.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:links:external": "node scripts/check-external-links.mjs",
     "check:metadata": "node scripts/check-metadata.mjs",
@@ -15,14 +16,21 @@
     "start": "astro preview --host 0.0.0.0 --port $PORT",
     "check": "astro check",
     "test:a11y": "playwright test",
-    "quality": "npm run format:check && npm run build && npm run check:links && npm run check:metadata"
+    "quality": "npm run format:check && npm run build && npm run check:links && npm run check:metadata",
+    "predev": "node scripts/build-private-data.mjs && wrangler types src/generated/cloudflare-env.d.ts --env-interface WebsiteEnv",
+    "prebuild": "node scripts/build-private-data.mjs && wrangler types src/generated/cloudflare-env.d.ts --env-interface WebsiteEnv",
+    "test:secret": "node scripts/build-private-data.mjs && node --test tests/secret.test.cjs tests/database-worker.test.cjs tests/vaccination-data.test.cjs tests/private-http.test.cjs",
+    "deploy:cloudflare": "npm run build && node scripts/deploy-cloudflare.mjs",
+    "secret:check": "wrangler types cloudflare/worker-configuration.d.ts --config cloudflare/wrangler.jsonc --env-interface SecretDatabaseEnv && tsc -p cloudflare/tsconfig.json",
+    "precheck": "node scripts/build-private-data.mjs && wrangler types src/generated/cloudflare-env.d.ts --env-interface WebsiteEnv"
   },
   "engines": {
     "node": ">=22.0.0 <23.0.0"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "14.1.0",
     "@astrojs/react": "^6.0.1",
-    "astro": "^7.1.4",
+    "astro": "7.1.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -30,10 +38,13 @@
     "@astrojs/check": "^0.9.10",
     "@axe-core/playwright": "^4.12.1",
     "@playwright/test": "^1.62.0",
+    "@types/node": "^22.20.5",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "miniflare": "5.20261023.1-beta",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^0.14.1",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "wrangler": "^4.154.0"
   }
 }

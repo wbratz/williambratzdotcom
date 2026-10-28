@@ -6,3 +6,6 @@
 /package-lock.json
 /playwright-report/
 /test-results/
+/src/generated/
+/.wrangler/
+/cloudflare/worker-configuration.d.ts
