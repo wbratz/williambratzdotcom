@@ -1,0 +1,17 @@
+topic,description
+origin,All numeric source inputs are reconstructed from CSV exports created earlier in this ChatGPT conversation; original externally sourced figures were not freshly independently verified.
+purpose,Machine-readable preservation of exploratory correlations between historical recommended vaccine doses and observed childhood health prevalence.
+vac_nature,Vaccination variables are reconstructed recommendation counts and hypothetical scenarios; they do not measure administered vaccine doses or biologic exposure.
+maternal_vaccination,Prenatal vaccine counts are modeled hypothetical recommendations rather than a linked mother-infant record.
+covid_timing,"The 2022 COVID 2-dose and 3-dose scenarios are assigned to 2014-born children ages 7-8, not infancy; these occur after typical autism onset."
+outcome_nature,Autism is identified prevalence at age 8; ADHD is ever diagnosed at 3-17; asthma at 0-17; obesity at 2-19.
+obesity_period,"The obesity value of 21.1 assigned to 2022 represents the 2021-2023 NHANES period, not a survey isolated to 2022."
+composite_not_prevalence,Sum of rates is NOT the percentage of unique children affected and may double-count children with multiple conditions.
+equal_weight_composite,"Each condition separately reindexed to 2002=100 then averaged, before correlation."
+missing_data,Empty CSV cells indicate missing/not included; no missing values were interpolated.
+sparse_outcomes,"Profound autism, allergies, diabetes are supplied separately but excluded from the composite because of sparse/nonmatching observations."
+temporal_trends,High Pearson correlations between trending national series are not evidence of vaccine-related harm or causation; the year-to-year changes correlations differ.
+age_alignment,Birth-year alignment uses autism age-8 cohort; applying same modeled exposure to ADHD/asthma/obesity population-wide age groups is a rough proxy.
+formulations,"Vaccine brand/formulation text fields are descriptive categories, not numerical exposure or adverse-event measures."
+reproduction,"Coefficient calculation: Pearson correlation on complete paired observations, no imputation. Change correlations use differences of consecutive observed rows."
+source_urls,"CDC home/repository URLs are listed for provenance, not proof that each value was directly verified against the linked page during CSV generation."

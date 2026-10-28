@@ -1,0 +1,76 @@
+filename,column_name,inferred_unit,description
+01_autism_prevalence.csv,surveillance_year,year,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,estimated_birth_year,year,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,all_autism_per_1000,per_1000,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,profound_autism_per_1000,per_1000,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,profound_autism_value_status,text_or_number,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,surveillance_age_years,text_or_number,Observed autism surveillance data and sparse profound autism estimates.
+01_autism_prevalence.csv,data_status,text_or_number,Source and verification status; previous-chat figures were not freshly independently verified for this export.
+01_autism_prevalence.csv,source_url,text_or_number,Observed autism surveillance data and sparse profound autism estimates.
+02_vaccine_schedule_models.csv,surveillance_year,year,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,estimated_birth_year,year,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,same_year_schedule_age2_doses_estimate,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,birth_year_schedule_age2_doses_original_estimate,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,revised_fixed_childhood_doses_by_24mo_estimate,dose_count,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,modeled_infant_influenza_doses_by_24mo,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,modeled_maternal_influenza_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,modeled_maternal_tdap_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,modeled_early_life_plus_prenatal_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,covid_scenario_2_doses_at_age_7_8,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,modeled_early_life_plus_covid2_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,covid_scenario_3_doses_at_age_7_8,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,modeled_early_life_plus_covid3_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+02_vaccine_schedule_models.csv,pneumococcal_product,text_or_number,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,rotavirus_product,text_or_number,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,dose_data_type,text_or_number,"Reconstructed recommendation counts, not actual administered-dose data."
+02_vaccine_schedule_models.csv,source_url,text_or_number,"Reconstructed recommendation counts, not actual administered-dose data."
+03_child_health_observations_long.csv,metric,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,reporting_year,year,Plotted year; may be the midpoint/end of a multi-year survey period. Use start and end columns for original period.
+03_child_health_observations_long.csv,period_start_year,year,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,period_end_year,year,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,reported_period,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,population_age_range,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,value,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,unit,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,included_in_combined_index,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,source_group,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,source_url,text_or_number,Long-format conditions with units and original survey year ranges.
+03_child_health_observations_long.csv,data_status,text_or_number,Source and verification status; previous-chat figures were not freshly independently verified for this export.
+04_merged_annual_analysis.csv,surveillance_year,year,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,estimated_birth_year,year,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,autism_per_1000,per_1000,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,profound_autism_per_1000,per_1000,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,adhd_ever_diagnosed_pct,percent,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,current_asthma_pct,percent,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,obesity_pct,percent,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,obesity_survey_period,text_or_number,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,combined_condition_rate_sum_per100,text_or_number,Sum of four prevalence percentages; may double-count children and must not be used as prevalence of having any chronic disease.
+04_merged_annual_analysis.csv,combined_sum_index_2002_100,index_2002_100,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,combined_equal_weight_index_2002_100,index_2002_100,Wide analysis file with matched calendar years and blanks for missing values.
+04_merged_annual_analysis.csv,same_year_schedule_age2_doses_estimate,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+04_merged_annual_analysis.csv,birth_year_schedule_age2_doses_original_estimate,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+04_merged_annual_analysis.csv,modeled_early_life_plus_prenatal_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+04_merged_annual_analysis.csv,modeled_early_life_plus_covid2_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+04_merged_annual_analysis.csv,modeled_early_life_plus_covid3_doses,dose_count,"Modeled vaccine recommendations, not measured vaccinations received."
+04_merged_annual_analysis.csv,note,text_or_number,Wide analysis file with matched calendar years and blanks for missing values.
+05_childhood_afflictions_composite.csv,year,year,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,autism_per_1000,per_1000,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,autism_pct,percent,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,adhd_ever_diagnosed_pct,percent,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,current_asthma_pct,percent,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,obesity_pct,percent,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,combined_condition_rate_sum_per_100,text_or_number,Sum of four prevalence percentages; may double-count children and must not be used as prevalence of having any chronic disease.
+05_childhood_afflictions_composite.csv,equal_weight_four_condition_index_2002_100,index_2002_100,Mean of four condition-specific indices each normalized to 100 in 2002.
+05_childhood_afflictions_composite.csv,sum_of_rates_index_2002_100,index_2002_100,Previous four-condition composite; both sum and equal-weight indices.
+05_childhood_afflictions_composite.csv,birth_cohort_vaccine_dose_model,text_or_number,"Modeled vaccine recommendations, not measured vaccinations received."
+05_childhood_afflictions_composite.csv,same_year_vaccine_dose_model,text_or_number,"Modeled vaccine recommendations, not measured vaccinations received."
+05_childhood_afflictions_composite.csv,note,text_or_number,Previous four-condition composite; both sum and equal-weight indices.
+06_pearson_correlations.csv,comparison,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,x_variable,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,y_variable,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,pearson_r,pearson_r,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,n_paired_observations,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,observation_years,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,model_note,text_or_number,"Modeled vaccine recommendations, not measured vaccinations received."
+06_pearson_correlations.csv,match_note,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.
+06_pearson_correlations.csv,causal_inference,text_or_number,Recomputed Pearson r values for prior scenarios; not causal.

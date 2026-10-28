@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "target": "es2022",
+    "module": "esnext",
+    "lib": ["es2022"],
+    "types": []
+  },
+  "files": ["worker-configuration.d.ts", "database-worker.js"]
+}

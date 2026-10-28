@@ -1,10 +1,12 @@
 import react from "@astrojs/react";
+import cloudflare from "@astrojs/cloudflare";
 import { defineConfig } from "astro/config";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
   site: "https://www.williambratz.com",
   output: "static",
+  adapter: cloudflare({ imageService: "compile" }),
   outDir: "./out",
   integrations: [react()],
   vite: {

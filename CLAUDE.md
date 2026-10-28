@@ -20,7 +20,7 @@ Dark mode is the default, but both themes must remain usable.
 
 ## Architecture
 
-- Astro 7, static output only.
+- Astro 7 with prerendered public pages and on-demand private routes on Cloudflare Workers.
 - Strict TypeScript.
 - Markdown content collection configured in `src/content.config.ts`.
 - Static routes live in `src/pages/`.
@@ -31,6 +31,9 @@ Dark mode is the default, but both themes must remain usable.
   directives.
 - Browser JavaScript should remain limited to theme switching, mobile
   navigation, and writing-topic filtering.
+- The private directory is the exception: its React screens hydrate for owner
+  forms and data browsing. Do not add private routes to public navigation or the
+  sitemap. Every private page and download must enforce server authorization.
 
 ## Content rules
 
@@ -71,10 +74,10 @@ Do not manually generate RSS or sitemap files. Astro builds `/rss.xml` and
 
 - Node version: 22.x.
 - Build command: `npm run build`.
-- Static output: `out/`.
-- Render currently calls `next export` after the build. The `next` package
-  script is a temporary no-op compatibility shim and can be removed once the
-  Render command is updated.
+- Public output: `out/client/`; Cloudflare server bundle: `out/server/`.
+- Use `npm run deploy:cloudflare` for a deliberate release. Review deployments
+  do not change the live custom-domain routing. Follow
+  `docs/cloudflare-migration.md` for the Render cutover and runtime secrets.
 
 ## Required checks
 
@@ -83,7 +86,7 @@ Before pushing:
 ```bash
 npm run check
 npm run build
-xmllint --noout out/rss.xml out/sitemap.xml
+xmllint --noout out/client/rss.xml out/client/sitemap.xml
 git diff --check
 ```
 

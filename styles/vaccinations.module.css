@@ -1,0 +1,607 @@
+.article {
+  max-width: 1320px;
+}
+.hero {
+  padding: 66px 0 40px;
+}
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #c3ee80;
+  font:
+    11px ui-monospace,
+    monospace;
+  letter-spacing: 0.14em;
+}
+.kicker img {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.hero h1 {
+  font-size: clamp(46px, 7.5vw, 96px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  margin: 32px 0 22px;
+}
+.hero h1 em {
+  font: inherit;
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #c3ee80;
+}
+.subtitle {
+  color: #b8c2b1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 28px 0;
+}
+.tags span {
+  padding: 8px 10px;
+  border: 1px solid #3b4733;
+  border-radius: 5px;
+  color: #b4c1aa;
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 0.05em;
+}
+.tldr {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 24px;
+  padding: 28px 30px;
+  border-left: 3px solid #c3ee80;
+  background: #1c2519;
+  border-radius: 0 12px 12px 0;
+}
+.tldr h2 {
+  margin: 5px 0;
+  font:
+    12px ui-monospace,
+    monospace;
+  letter-spacing: 0.12em;
+  color: #c3ee80;
+}
+.tldr p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.85;
+  max-width: 950px;
+}
+.provenance {
+  color: #aeb9a9;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 18px 0 0;
+  max-width: 900px;
+}
+.provenance a,
+.sourceNotes a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.jumpNav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  border-top: 1px solid #354130;
+  border-bottom: 1px solid #354130;
+  padding: 22px 0;
+  color: #c3ee80;
+  font:
+    12px ui-monospace,
+    monospace;
+}
+.section {
+  padding-top: 72px;
+  scroll-margin-top: 24px;
+}
+.sectionHeading {
+  margin-bottom: 28px;
+  max-width: 800px;
+}
+.sectionHeading > span {
+  color: #a9ba98;
+  font:
+    10px ui-monospace,
+    monospace;
+  letter-spacing: 0.14em;
+}
+.sectionHeading h2 {
+  font-size: clamp(30px, 4vw, 45px);
+  letter-spacing: -0.05em;
+  font-weight: 500;
+  line-height: 1.12;
+  margin: 16px 0;
+}
+.sectionHeading p {
+  color: #b1bdab;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+}
+.sectionHeading p + p {
+  margin-top: 14px;
+}
+.comparisonIntro {
+  max-width: 900px;
+  margin-top: 32px;
+}
+.comparisonIntro h3 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+.comparisonIntro p {
+  color: #b8c5ae;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.variantExplanation {
+  display: block;
+  margin-top: 8px;
+  color: #b4c0ab;
+  font-size: 12px;
+  line-height: 1.75;
+}
+.modelStack {
+  display: grid;
+  gap: 24px;
+}
+.methodGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 24px 0;
+}
+.methodGrid > div {
+  border-left: 2px solid #506442;
+  padding-left: 18px;
+}
+.methodGrid h4,
+.finding h4 {
+  font-size: 15px;
+  font-weight: 500;
+  color: #dbe7d1;
+  margin: 0 0 10px;
+}
+.methodGrid p,
+.finding p {
+  font-size: 13px;
+  line-height: 1.85;
+  color: #b8c5ae;
+  margin: 0;
+}
+.finding {
+  border-left: 3px solid #c3ee80;
+  background: #1c2519;
+  padding: 20px 24px;
+  margin-top: 24px;
+}
+.finding p + p {
+  margin-top: 12px;
+}
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.figure {
+  margin: 0;
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid #36442f;
+  border-radius: 12px;
+  background: #192019;
+}
+.figure h3 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+}
+.figure figcaption p {
+  margin: 0 0 22px;
+  color: #b1bdab;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  padding: 0;
+  margin: 0 0 12px;
+}
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: #d6dfd0;
+  line-height: 1.6;
+}
+.legend li > span {
+  display: inline-block;
+  width: 14px;
+  height: 3px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.chartScroll {
+  overflow-x: auto;
+}
+.chart {
+  display: block;
+  width: 100%;
+  min-width: 480px;
+  max-height: 430px;
+  font-family: ui-monospace, monospace;
+}
+.note {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #aebba5;
+  margin: 16px 0 0;
+}
+.figure > .note:first-child {
+  margin: 0 0 16px;
+}
+.chartData {
+  border-top: 1px solid #36442f;
+  padding-top: 12px;
+  margin-top: 12px;
+}
+.chartData summary,
+.extra summary,
+.sourceNotes summary {
+  cursor: pointer;
+  color: #c3ee80;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.tableScroll {
+  overflow: auto;
+  max-width: 100%;
+}
+.tableScroll table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.tableScroll th,
+.tableScroll td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #354130;
+  vertical-align: middle;
+}
+.tableScroll thead th {
+  color: #a6b699;
+  font-size: 11px;
+  font-weight: 400;
+}
+.tableScroll tbody th {
+  font-weight: 400;
+}
+.tableScroll caption {
+  color: #adbba3;
+  font-size: 11px;
+  padding: 16px 0;
+  text-align: left;
+}
+.tableScroll td {
+  font-variant-numeric: tabular-nums;
+}
+.correlations {
+  min-width: 560px;
+}
+.correlations th:nth-child(2) {
+  width: 46%;
+  position: relative;
+}
+.axisZero {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.axisEnd {
+  float: right;
+}
+.barTrack {
+  position: relative;
+  height: 24px;
+  background: linear-gradient(
+    to right,
+    transparent calc(50% - 0.5px),
+    #6c795e calc(50% - 0.5px),
+    #6c795e calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+}
+.barTrack > span {
+  position: absolute;
+  top: 3px;
+  height: 18px;
+  border-radius: 3px;
+}
+.coefficient {
+  font:
+    17px ui-monospace,
+    monospace;
+  white-space: nowrap;
+  color: #e4eddb;
+}
+.changeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+  align-items: center;
+}
+.change {
+  border: 1px solid #36442f;
+  border-radius: 12px;
+  padding: 24px;
+}
+.change > span {
+  color: #a9ba98;
+  font:
+    9px ui-monospace,
+    monospace;
+  letter-spacing: 0.07em;
+}
+.change h3 {
+  font-size: 17px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+.change strong {
+  font:
+    40px ui-monospace,
+    monospace;
+  letter-spacing: -0.04em;
+  color: #c3ee80;
+}
+.change strong.changeVerdict {
+  display: block;
+  font:
+    500 clamp(20px, 3vw, 28px) / 1.3 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: -0.025em;
+}
+.change small {
+  display: block;
+  color: #adbaa4;
+  font-size: 12px;
+  margin-top: 12px;
+}
+.changeExplanation {
+  grid-column: 1 / -1;
+  max-width: 900px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #b8c5ae;
+  padding: 0 8px;
+}
+.timing {
+  background: #252b1c;
+  border-left: 2px solid #e0c27a;
+  padding: 14px 16px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #d0d7be;
+  margin-bottom: 0;
+}
+.extra {
+  padding: 22px 24px;
+  border: 1px solid #36442f;
+  border-radius: 10px;
+  margin-top: 24px;
+}
+.extra[open] > summary {
+  margin-bottom: 24px;
+}
+.extra > .note {
+  margin: 0 0 24px;
+}
+.original {
+  margin: 0;
+  border: 1px solid #36442f;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.original img {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: #f5f8fa;
+}
+.original figcaption {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  font-size: 12px;
+  color: #b3c0a8;
+  background: #192019;
+  line-height: 1.6;
+}
+.original figcaption a {
+  color: #c3ee80;
+}
+.fileGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+.fileGrid > a {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid #36442f;
+  border-radius: 8px;
+  background: #192019;
+}
+.fileGrid > a:hover {
+  border-color: #c3ee80;
+}
+.fileGrid span {
+  font:
+    10px ui-monospace,
+    monospace;
+  color: #a9ba98;
+}
+.fileGrid strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.fileGrid small {
+  color: #c3ee80;
+  font-size: 11px;
+}
+.tablePicker {
+  max-width: 440px;
+  margin-bottom: 18px;
+}
+.rawData {
+  max-height: 460px;
+}
+.rawData table {
+  min-width: 850px;
+}
+.rawData th {
+  min-width: 140px;
+}
+.rawData td {
+  min-width: 140px;
+  max-width: 460px;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.sourceNotes {
+  border-top: 1px solid #354130;
+  margin-top: 40px;
+  padding-top: 24px;
+  color: #b4c0ab;
+  font-size: 13px;
+  line-height: 1.9;
+}
+.sourceNotes h3 {
+  color: #e6eddf;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+.sourceNotes ul {
+  padding-left: 20px;
+  margin: 12px 0;
+}
+.sourceNotes li {
+  list-style: disc;
+  padding-left: 4px;
+  margin-bottom: 8px;
+}
+.sourceNotes details {
+  margin-top: 22px;
+}
+.endnote {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid #354130;
+  margin-top: 48px;
+  padding-top: 30px;
+  color: #c3ee80;
+  font-size: 13px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 1000px) {
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+  .changeGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .changeExplanation {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+}
+@media (max-width: 650px) {
+  .methodGrid {
+    grid-template-columns: 1fr;
+  }
+  .hero {
+    padding-top: 42px;
+  }
+  .kicker {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+  .tldr {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px;
+  }
+  .tldr p {
+    font-size: 15px;
+  }
+  .section {
+    padding-top: 52px;
+  }
+  .figure {
+    padding: 20px 16px;
+  }
+  .fileGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .changeGrid {
+    gap: 12px;
+  }
+  .change {
+    padding: 18px;
+  }
+  .change strong {
+    font-size: clamp(25px, 7vw, 32px);
+  }
+  .extra {
+    padding: 20px 16px;
+  }
+  .jumpNav {
+    gap: 18px;
+    font-size: 11px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .article {
+    scroll-behavior: auto;
+  }
+}

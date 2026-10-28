@@ -1,0 +1,13 @@
+surveillance_year,estimated_birth_year,all_autism_per_1000,profound_autism_per_1000,profound_autism_value_status,surveillance_age_years,data_status,source_url
+2000,1992,6.7,2.68,reported_from_prior_chat,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2002,1994,6.6,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2004,1996,8.0,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2006,1998,9.0,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2008,2000,11.3,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2010,2002,14.7,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2012,2004,14.5,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2014,2006,16.8,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2016,2008,18.5,4.59,reported_from_prior_chat,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2018,2010,23.0,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2020,2012,27.6,,not_available,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html
+2022,2014,32.2,7.21,approximate_derived_prior_chat,8,previous_chat_transcription_not_independently_reverified,https://www.cdc.gov/autism/data-research/index.html

@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "williambratzdotcom",
+  "account_id": "31d30dfccd84717b3e3b401f5e3f5478",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "compatibility_date": "2026-10-26",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "williambratz-secret",
+      "database_id": "471b0479-1904-482d-bd61-3c518d429b66",
+    },
+  ],
+  "kv_namespaces": [
+    { "binding": "SESSION", "id": "61cbdafdae2e48379256a0d3d9964410" },
+  ],
+  "preview_urls": false,
+  "assets": { "directory": "./out", "binding": "ASSETS" },
+  "secrets": {
+    "required": [
+      "SECRET_ADMIN_KEY",
+      "SECRET_DATABASE_KEY",
+      "SECRET_DATABASE_URL",
+      "SECRET_SITE_ORIGIN",
+    ],
+  },
+  "vars": { "NODE_ENV": "production" },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 },
+  },
+}

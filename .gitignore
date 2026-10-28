@@ -41,3 +41,10 @@ yarn-error.log*
 
 # yarn lock
 yarn.lock
+
+# Private runtime secrets and generated Worker bundles
+.dev.vars*
+**/.wrangler/
+/src/generated/
+cloudflare/worker-configuration.d.ts
+*.tsbuildinfo
