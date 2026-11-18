@@ -49,14 +49,12 @@ export default function Home({ featuredPosts }: HomeProps) {
             Senior Software Engineer · Tri-Cities, Tennessee
           </p>
           <h1 id="home-title">
-            I build production AI systems and the knowledge infrastructure that
-            helps humans and agents understand them.
+            I build AI systems that hold up in production.
           </h1>
           <p className={styles.lede}>
-            I&apos;m William “Billy” Bratz. My work sits where LLM agents, MCP
-            infrastructure, distributed systems, and engineering judgment meet.
-            I build systems that survive production, then turn what they teach
-            us into context that compounds.
+            I&apos;m William “Billy” Bratz. I build LLM agents, MCP
+            infrastructure, and source-grounded knowledge systems for teams
+            running complex software.
           </p>
           <div className={styles.actions}>
             <Link href="/blog" legacyBehavior>
