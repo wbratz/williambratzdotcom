@@ -65,17 +65,6 @@ export default function Home({ featuredPosts }: HomeProps) {
             <Link href="/resume" legacyBehavior>
               <a className={styles.secondaryAction}>View résumé</a>
             </Link>
-            <Link href="/ai-engineering" legacyBehavior>
-              <a className={styles.textAction}>AI engineering</a>
-            </Link>
-            <a
-              className={styles.textAction}
-              href="https://github.com/wbratz"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub <Arrow />
-            </a>
           </div>
         </section>
 
@@ -91,30 +80,52 @@ export default function Home({ featuredPosts }: HomeProps) {
 
           <div className={styles.projectGrid}>
             <article className={`${styles.project} ${styles.featuredProject}`}>
-              <div>
-                <p className={styles.projectType}>Open-source workflow</p>
-                <h3>The Vault</h3>
-                <p>
-                  A persistent, LLM-maintained wiki that connects product
-                  decisions, engineering implementations, raw evidence, and the
-                  context agents need to make better decisions.
-                </p>
+              <div className={styles.featuredCopy}>
+                <div>
+                  <p className={styles.projectType}>Open-source workflow</p>
+                  <h3>The Vault</h3>
+                  <p>
+                    A persistent, LLM-maintained wiki that connects product
+                    decisions, engineering implementations, raw evidence, and
+                    the context agents need to make better decisions.
+                  </p>
+                </div>
+                <div className={styles.projectLinks}>
+                  <Link href="/projects/vault" legacyBehavior>
+                    <a>Explore the system</a>
+                  </Link>
+                  <Link href="/blog/bridging-the-gap" legacyBehavior>
+                    <a>Read the field guide</a>
+                  </Link>
+                  <a
+                    href="https://github.com/wbratz/vault-scaffold"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Scaffold your own <Arrow />
+                  </a>
+                </div>
               </div>
-              <div className={styles.projectLinks}>
-                <Link href="/projects/vault" legacyBehavior>
-                  <a>Explore the system</a>
-                </Link>
-                <Link href="/blog/bridging-the-gap" legacyBehavior>
-                  <a>Read the field guide</a>
-                </Link>
-                <a
-                  href="https://github.com/wbratz/vault-scaffold"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Scaffold your own <Arrow />
+              <figure className={styles.vaultDiagram}>
+                <a href="/blogContent/bridging-the-gap/vault-mental-model.svg">
+                  <picture>
+                    <source
+                      media="(max-width: 720px)"
+                      srcSet="/blogContent/bridging-the-gap/vault-mental-model-mobile.svg"
+                      width="640"
+                      height="690"
+                    />
+                    <img
+                      src="/blogContent/bridging-the-gap/vault-mental-model.svg"
+                      width="1200"
+                      height="680"
+                      alt="Vault architecture: raw evidence feeds a linked wiki used by product, engineering, AI agents, and automation"
+                      loading="lazy"
+                    />
+                  </picture>
                 </a>
-              </div>
+                <figcaption>From source evidence to shared context</figcaption>
+              </figure>
             </article>
 
             <article className={styles.project}>
