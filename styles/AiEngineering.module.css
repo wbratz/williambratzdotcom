@@ -13,10 +13,8 @@
 .cardType {
   margin: 0 0 1rem;
   color: var(--link-color);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .hero h1 {
@@ -137,9 +135,6 @@
 
 .featuredProof {
   grid-row: span 2;
-  background:
-    radial-gradient(circle at 85% 10%, rgb(234 182 92 / 12%), transparent 38%),
-    var(--surface-bg) !important;
 }
 
 .proofGrid ul {

@@ -17,10 +17,8 @@
 .projectType {
   margin: 0 0 1rem;
   color: var(--link-color);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .hero h1 {
@@ -52,8 +50,7 @@
 }
 
 .primaryAction,
-.secondaryAction,
-.textAction {
+.secondaryAction {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -79,11 +76,6 @@
   color: var(--heading-color);
   background: var(--surface-bg);
   border: 1px solid var(--border-color);
-}
-
-.textAction {
-  gap: 0.35rem;
-  color: var(--text-muted);
 }
 
 .section {
@@ -127,11 +119,43 @@
 }
 
 .featuredProject {
-  grid-row: span 2;
-  min-height: 39rem;
-  background:
-    radial-gradient(circle at 85% 10%, rgb(234 182 92 / 12%), transparent 38%),
-    var(--surface-bg);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  min-height: 24rem;
+}
+
+.featuredCopy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.vaultDiagram {
+  width: 100%;
+  margin: 0;
+}
+
+.vaultDiagram a {
+  display: block;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.vaultDiagram img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.vaultDiagram figcaption {
+  margin-top: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
 }
 
 .project h3 {
@@ -230,6 +254,10 @@
   margin-left: calc(35% + 0.65rem);
 }
 
+.aboutLink + .aboutLink {
+  margin-left: 1.25rem;
+}
+
 .contact {
   padding: clamp(4rem, 9vw, 7rem) 0;
 }
@@ -254,8 +282,9 @@
   }
 
   .featuredProject {
-    grid-row: auto;
-    min-height: 26rem;
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    min-height: 0;
   }
 
   .project {
@@ -267,7 +296,13 @@
     margin-left: 0;
   }
 
-  .aboutLink {
+  .aboutLink,
+  .aboutLink + .aboutLink {
+    display: block;
     margin-left: 0;
+  }
+
+  .aboutLink + .aboutLink {
+    margin-top: 1rem;
   }
 }
