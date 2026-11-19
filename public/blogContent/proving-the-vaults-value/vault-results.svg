@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Proving the Vault's value</title>
+  <desc id="description">Blind tests on real tickets compare a coding agent with and without the Vault. With the Vault, accepted changes rise from 11 to 16, blocker and major bugs fall from 9 to 0, and cost per accepted change falls from $7.79 to $4.12.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111820"/>
+      <stop offset="1" stop-color="#18232c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1070" cy="92" r="180" fill="#eab65c" opacity=".06"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="72" y="92" fill="#eab65c" font-size="22" font-weight="700" letter-spacing="2">BLIND A/B TEST · REAL TICKETS</text>
+    <text x="72" y="150" fill="#f1f4f8" font-size="52" font-weight="800" letter-spacing="-1.5">Same agent. Context on and off.</text>
+
+    <g transform="translate(72 230)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Accepted changes</text>
+      <rect x="0" y="22" width="440" height="34" rx="8" fill="#2b3440"/>
+      <text x="456" y="47" fill="#9ba6b4" font-size="22" font-weight="700">11 without</text>
+      <rect x="0" y="66" width="640" height="34" rx="8" fill="#eab65c"/>
+      <text x="656" y="91" fill="#f1f4f8" font-size="22" font-weight="800">16 with the Vault</text>
+    </g>
+
+    <g transform="translate(72 372)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Blocker and major bugs</text>
+      <rect x="0" y="22" width="360" height="34" rx="8" fill="#2b3440"/>
+      <text x="376" y="47" fill="#9ba6b4" font-size="22" font-weight="700">9 without</text>
+      <rect x="0" y="66" width="8" height="34" rx="4" fill="#eab65c"/>
+      <text x="24" y="91" fill="#f1f4f8" font-size="22" font-weight="800">0 with the Vault</text>
+    </g>
+
+    <g transform="translate(72 514)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Cost per accepted change</text>
+      <rect x="0" y="22" width="623" height="34" rx="8" fill="#2b3440"/>
+      <text x="639" y="47" fill="#9ba6b4" font-size="22" font-weight="700">$7.79 without</text>
+      <rect x="0" y="66" width="330" height="34" rx="8" fill="#eab65c"/>
+      <text x="346" y="91" fill="#f1f4f8" font-size="22" font-weight="800">$4.12 with the Vault</text>
+    </g>
+  </g>
+</svg>

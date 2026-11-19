@@ -14,6 +14,7 @@ topics:
   - Engineering Practice
 series: Theory Building
 seriesOrder: 3
+sectionLinks: true
 featured: true
 ---
 

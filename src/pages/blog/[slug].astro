@@ -22,10 +22,13 @@ export async function getStaticPaths() {
 
 type Props = { post: Post; posts: Post[] };
 const { post, posts } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
 const seriesPosts = getSeriesPosts(posts, post.data.series);
 const relatedPosts = getRelatedPosts(posts, post);
 const adjacent = getAdjacentPosts(posts, post);
+const sectionHeadings = headings.filter(
+  (heading) => heading.depth === 2 || heading.depth === 3,
+);
 const canonical = `https://www.williambratz.com/blog/${post.data.slug}`;
 const assetPath = (value: string) => `/${value.replace(/^(\.\.\/|\.\/)/, "")}`;
 const bannerImage = assetPath(post.data.banner);
@@ -138,6 +141,21 @@ const structuredData = {
             ))}
           </ol>
         </aside>
+      )
+    }
+
+    {
+      post.data.sectionLinks && sectionHeadings.length > 1 && (
+        <nav class={styles.sectionLinks} aria-labelledby="section-links-title">
+          <p id="section-links-title">In this article</p>
+          <ol>
+            {sectionHeadings.map((heading) => (
+              <li class:list={[heading.depth === 3 && styles.subsectionLink]}>
+                <a href={`#${heading.slug}`}>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
       )
     }
 

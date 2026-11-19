@@ -4,6 +4,8 @@ import { getPosts, toDateString } from "../lib/posts";
 const SITE_URL = "https://www.williambratz.com";
 const staticPages = [
   "",
+  "/production-agents",
+  "/coding-agents",
   "/about",
   "/ai-engineering",
   "/blog",

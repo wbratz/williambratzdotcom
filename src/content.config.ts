@@ -18,6 +18,7 @@ const blog = defineCollection({
       topics: z.array(z.string().min(1)).min(1),
       series: z.string().min(1).optional(),
       seriesOrder: z.number().int().positive().optional(),
+      sectionLinks: z.boolean().optional().default(false),
       featured: z.boolean(),
     })
     .refine((entry) => Boolean(entry.series) === Boolean(entry.seriesOrder), {
