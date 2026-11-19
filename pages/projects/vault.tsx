@@ -141,7 +141,7 @@ export default function VaultProject() {
         <section className={styles.intro} aria-labelledby="problem-title">
           <div className={styles.sectionLabel}>The problem</div>
           <div>
-            <h2 id="problem-title">Organizations remember in fragments.</h2>
+            <h2 id="problem-title">Organizations remember in fragments</h2>
             <p>
               Product intent lives in documents and conversations. Engineering
               intent lives in code, pull requests, architecture decisions, and
@@ -172,9 +172,7 @@ export default function VaultProject() {
         <section className={styles.workflow} aria-labelledby="workflow-title">
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Operating model</p>
-            <h2 id="workflow-title">
-              A compiler for organizational knowledge.
-            </h2>
+            <h2 id="workflow-title">A compiler for organizational knowledge</h2>
             <p>
               The system separates mechanical collection, model-assisted
               synthesis, everyday use, and health checks. Each stage has a
@@ -200,9 +198,7 @@ export default function VaultProject() {
         >
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Implementation</p>
-            <h2 id="implementation-title">
-              Plain files, deliberate machinery.
-            </h2>
+            <h2 id="implementation-title">Plain files, deliberate machinery</h2>
             <p>
               The implementation is intentionally inspectable. The knowledge
               remains useful without a proprietary database or a running
@@ -266,7 +262,7 @@ export default function VaultProject() {
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>In practice</p>
             <h2 id="example-title">
-              Ask about intent. Verify the implementation.
+              Ask about intent. Verify the implementation
             </h2>
             <p>
               This fictional example shows the shape of a useful answer. The
@@ -295,7 +291,7 @@ export default function VaultProject() {
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Trust boundaries</p>
             <h2 id="safeguards-title">
-              AI-assisted does not mean AI-authoritative.
+              AI-assisted does not mean AI-authoritative
             </h2>
             <p>
               A useful knowledge system needs stronger guarantees than “the
@@ -318,7 +314,7 @@ export default function VaultProject() {
         >
           <div className={styles.sectionLabel}>What it is not</div>
           <div>
-            <h2 id="boundaries-title">The Vault does not replace judgment.</h2>
+            <h2 id="boundaries-title">The Vault does not replace judgment</h2>
             <ul>
               <li>It is not a claim that documentation becomes truth.</li>
               <li>
@@ -341,7 +337,7 @@ export default function VaultProject() {
 
         <section className={styles.start} aria-labelledby="start-title">
           <p className={styles.sectionLabel}>Try the pattern</p>
-          <h2 id="start-title">Start with one domain and one real workflow.</h2>
+          <h2 id="start-title">Start with one domain and one real workflow</h2>
           <p>
             The public scaffold interviews you about your domain, creates a
             generic Raw and Wiki structure, writes the operating contract, seeds

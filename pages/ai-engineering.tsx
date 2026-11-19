@@ -36,7 +36,7 @@ export default function AiEngineering() {
           <p className={styles.eyebrow}>
             Senior Software Engineer · Context engineering
           </p>
-          <h1>AI engineering, built around context.</h1>
+          <h1>AI engineering, built around context</h1>
           <p className={styles.lede}>
             I build the systems around capable models: the tools they call, the
             context they&apos;re handed, and the tests that prove it worked.
@@ -61,7 +61,7 @@ export default function AiEngineering() {
           <div className={styles.sectionHeading}>
             <p>Capabilities</p>
             <h2 id="capabilities">
-              The model is one component. Context decides the result.
+              The model is one component. Context decides the result
             </h2>
           </div>
           <div className={styles.capabilityGrid}>
@@ -103,7 +103,7 @@ export default function AiEngineering() {
         <section className={styles.section} aria-labelledby="proof">
           <div className={styles.sectionHeading}>
             <p>Public proof</p>
-            <h2 id="proof">Systems you can inspect, run, and challenge.</h2>
+            <h2 id="proof">Systems you can inspect, run, and challenge</h2>
           </div>
           <div className={styles.proofGrid}>
             <article className={styles.featuredProof}>
@@ -190,7 +190,7 @@ export default function AiEngineering() {
           <div className={styles.sectionHeading}>
             <p>Engineering record</p>
             <h2 id="engineering-record">
-              Eleven years of distributed systems behind the AI work.
+              Eleven years of distributed systems behind the AI work
             </h2>
           </div>
           <div className={styles.record}>

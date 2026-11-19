@@ -53,12 +53,12 @@
   padding: 0.65rem 1rem;
   border-radius: 0.55rem;
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
 
 .primaryAction {
-  color: #17120a;
+  color: var(--surface-bg);
   background: var(--link-color);
 }
 
@@ -112,7 +112,7 @@
 .capabilityGrid span {
   color: var(--link-color);
   font-size: 0.78rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .capabilityGrid h3,
@@ -152,7 +152,7 @@
 .recordLink {
   color: var(--link-color);
   font-size: 0.88rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: var(--border-color);
   text-underline-offset: 0.22em;

@@ -31,7 +31,7 @@ export default function Projects() {
       <div className={styles.projects}>
         <header className={styles.hero}>
           <p className={styles.eyebrow}>Selected projects</p>
-          <h1>Systems that make AI more useful in the real world.</h1>
+          <h1>Systems that make AI more useful in the real world</h1>
           <p>
             My projects focus on the infrastructure around intelligent systems:
             context, evidence, tools, operating boundaries, and the workflows

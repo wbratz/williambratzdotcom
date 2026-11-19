@@ -13,7 +13,7 @@ export default function ProductionAgents() {
           <p className={styles.eyebrow}>
             Context engineering · Production agents
           </p>
-          <h1>The right context, at the right moment, at the right cost.</h1>
+          <h1>The right context, at the right moment, at the right cost</h1>
           <p className={styles.lede}>
             A production agent has a few seconds and a token budget per turn.
             What it&apos;s handed, and when, decides the answer as often as the
@@ -44,7 +44,7 @@ export default function ProductionAgents() {
         >
           <div>
             <p className={styles.label}>1 · Fast</p>
-            <h2 id="fast-title">Context at the speed of conversation.</h2>
+            <h2 id="fast-title">Context at the speed of conversation</h2>
             <p className={styles.sectionLede}>
               A knowledge-search tool was too slow for a voice agent to use. I
               made it fast enough for live conversation without changing a
@@ -88,7 +88,7 @@ export default function ProductionAgents() {
           aria-labelledby="lean-title"
         >
           <p className={styles.label}>2 · Lean</p>
-          <h2 id="lean-title">Every token earns its place.</h2>
+          <h2 id="lean-title">Every token earns its place</h2>
           <p className={styles.sectionLede}>
             Context bloat costs money and accuracy. Fixing it starts with
             knowing what the model actually receives, which is often not what
@@ -126,7 +126,7 @@ export default function ProductionAgents() {
           aria-labelledby="right-title"
         >
           <p className={styles.label}>3 · Right</p>
-          <h2 id="right-title">Help the agent make the right call.</h2>
+          <h2 id="right-title">Help the agent make the right call</h2>
           <p className={styles.sectionLede}>
             An agent chooses tools from what the tools say about themselves.
             Most bad tool calls trace back to a tool that described itself
@@ -163,7 +163,7 @@ export default function ProductionAgents() {
         >
           <div>
             <p className={styles.label}>4 · Cheap</p>
-            <h2 id="cheap-title">The right context is the cheaper context.</h2>
+            <h2 id="cheap-title">The right context is the cheaper context</h2>
             <p className={styles.sectionLede}>
               Every token in context is paid for on every turn, at production
               traffic. The cheapest context is the piece the model never needed.

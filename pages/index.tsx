@@ -25,38 +25,120 @@ const formatDate = (date: string) =>
     timeZone: "UTC",
   }).format(new Date(`${date}T00:00:00Z`));
 
+const problems = [
+  {
+    name: "Too slow",
+    problem: "Context arrives after the user stopped waiting",
+    fix: "Have it ready before it’s asked for",
+    body: "I predict the context an agent will need and load it ahead of time, with priority lanes so background loading can’t crowd out a live conversation.",
+    receipt: "−65% retrieval latency · identical answers",
+  },
+  {
+    name: "Too much",
+    problem: "Bloat buries the signal and burns money",
+    fix: "Trace every token to its source",
+    body: "I find out what the model actually receives before cutting anything, so the savings come from real waste instead of guesses.",
+    receipt: "99%+ of a runaway request traced to one cause",
+  },
+  {
+    name: "Wrong",
+    problem: "The agent sends the question to the wrong tool",
+    fix: "Never send a question to the wrong tool",
+    body: "The wrong tool means a confident, wrong answer. I make routing measurable, so any change to a tool, a prompt, or the model can be scored on whether every question still lands in the right place, before a customer finds out.",
+    receipt: "routing measurable across every tool",
+  },
+  {
+    name: "Missing",
+    problem: "The one rule or past decision that would have changed the answer",
+    fix: "Deliver knowledge at the moment it applies",
+    body: "A memory layer that files every rule where it’s needed and hands it to the agent the instant it touches the code that rule covers.",
+    receipt: "right rule read first · 95% of runs",
+  },
+];
+
 export default function Home({ featuredPosts }: HomeProps) {
   return (
     <Layout>
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="home-title">
-          <p className={styles.kicker}>In the new world of AI agents,</p>
-          <h1 id="home-title">
-            <span className={styles.accent}>context</span> is everything.
-          </h1>
-          <p className={styles.promise}>
-            I make sure agents get the right context at the right time, turning
-            OK into <span className={styles.accent}>amazing</span>.
-          </p>
-          <p className={styles.intro}>
-            I&apos;m William “Billy” Bratz, a senior software engineer focused
-            on context engineering: what production agents are handed when they
-            answer, and what coding agents know when they write code.
-          </p>
-          <div className={styles.actions}>
-            <a className={styles.primaryAction} href="#proof">
-              See the proof
-            </a>
-            <a
-              className={styles.secondaryAction}
-              href="/blog/proving-the-vaults-value"
-            >
-              Proving the Vault&apos;s value
-            </a>
-            <a className={styles.secondaryAction} href="/resume">
-              View résumé
-            </a>
+          <div>
+            <p className={styles.kicker}>In the new world of AI agents,</p>
+            <h1 id="home-title">
+              <span className={styles.accent}>context</span> is everything
+            </h1>
+            <p className={styles.promise}>
+              I make sure agents get the right context at the right time,
+              turning OK into <span className={styles.accent}>amazing</span>
+            </p>
+            <p className={styles.intro}>
+              I&apos;m William “Billy” Bratz, a senior software engineer focused
+              on context engineering: what production agents are handed when
+              they answer, and what coding agents know when they write code.
+            </p>
+            <div className={styles.actions}>
+              <a className={styles.primaryAction} href="#proof">
+                See the proof
+              </a>
+              <a
+                className={styles.secondaryAction}
+                href="/blog/proving-the-vaults-value"
+              >
+                Proving the Vault&apos;s value
+              </a>
+            </div>
           </div>
+
+          <figure className={styles.trace}>
+            <div
+              className={styles.traceWindow}
+              role="img"
+              aria-label="Illustrative coding agent session. The ticket asks for an 8 second timeout in prod. The agent starts editing config/prod.json, the Vault hands it the rule that prod values live in the config service, the agent reverts that edit, reads the setting from the config service instead, and the tests pass. The change is accepted with no blocker or major bugs."
+            >
+              <div className={styles.traceBar} aria-hidden="true">
+                <span>claude code · session</span>
+                <span>illustrative</span>
+              </div>
+              <div className={styles.traceBody} aria-hidden="true">
+                <p className={styles.traceLine}>
+                  <span>ticket</span>
+                  <span>Use an 8s timeout for the payments client in prod</span>
+                </p>
+                <p className={styles.traceLine}>
+                  <span>vault</span>
+                  <span>map loaded · 2 decisions, 1 runbook</span>
+                </p>
+                <p className={styles.traceLine}>
+                  <span>edit</span>
+                  <span>config/prod.json</span>
+                </p>
+                <p className={styles.traceRule}>
+                  <span>rule · arrives at the edit</span>
+                  Prod values live in the config service. Don&apos;t hard-code
+                  them in prod.json.
+                </p>
+                <p className={styles.traceLine}>
+                  <span>edit</span>
+                  <span>reverted config/prod.json</span>
+                </p>
+                <p className={styles.traceLine}>
+                  <span>edit</span>
+                  <span>settings/payments.py → reads PAYMENTS_TIMEOUT</span>
+                </p>
+                <p className={styles.traceLine}>
+                  <span>tests</span>
+                  <span className={styles.traceDone}>48 passed</span>
+                </p>
+              </div>
+              <div className={styles.traceFoot} aria-hidden="true">
+                <span>review · accepted as is</span>
+                <span>0 blocker or major bugs</span>
+              </div>
+            </div>
+            <figcaption>
+              The rule reaches the agent the moment it opens the file it
+              governs, and it corrects course before anything ships.
+            </figcaption>
+          </figure>
         </section>
 
         <section
@@ -105,77 +187,27 @@ export default function Home({ featuredPosts }: HomeProps) {
 
         <section className={styles.section} aria-labelledby="problem-title">
           <p className={styles.label}>The problem</p>
-          <h2 id="problem-title">Most agent failures are context failures.</h2>
+          <h2 id="problem-title">Most agent failures are context failures</h2>
           <p className={styles.sectionLede}>
             The model could have done it. It got the context too late, got too
             much of it, got the wrong piece, or never got the one fact that
             mattered. Each one has a better fix than a bigger model.
           </p>
-          <div className={styles.cardGrid}>
-            <article className={styles.card}>
-              <p className={styles.cardTag}>Too slow</p>
-              <p className={styles.cardProblem}>
-                Context arrives after the user stopped waiting.
-              </p>
-              <h3>Have it ready before it&apos;s asked for.</h3>
-              <p className={styles.cardBody}>
-                I predict the context an agent will need and load it ahead of
-                time, with priority lanes so background loading can&apos;t crowd
-                out a live conversation.
-              </p>
-              <p className={styles.cardProof}>
-                → −65% retrieval latency, identical answers
-              </p>
-            </article>
-            <article className={styles.card}>
-              <p className={styles.cardTag}>Too much</p>
-              <p className={styles.cardProblem}>
-                Bloat buries the signal and burns money.
-              </p>
-              <h3>Trace every token to its source.</h3>
-              <p className={styles.cardBody}>
-                I find out what the model actually receives before cutting
-                anything, so the savings come from real waste instead of
-                guesses.
-              </p>
-              <p className={styles.cardProof}>
-                → Over 99% of a runaway request&apos;s context traced to one
-                cause
-              </p>
-            </article>
-            <article className={styles.card}>
-              <p className={styles.cardTag}>Wrong</p>
-              <p className={styles.cardProblem}>
-                The agent sends the question to the wrong tool.
-              </p>
-              <h3>Never send a question to the wrong tool.</h3>
-              <p className={styles.cardBody}>
-                The wrong tool means a confident, wrong answer. I make routing
-                measurable, so any change to a tool, a prompt, or the model can
-                be scored on whether every question still lands in the right
-                place, before a customer finds out.
-              </p>
-              <p className={styles.cardProof}>
-                → Routing made measurable across every tool
-              </p>
-            </article>
-            <article className={styles.card}>
-              <p className={styles.cardTag}>Missing</p>
-              <p className={styles.cardProblem}>
-                The one rule or past decision that would have changed the
-                answer.
-              </p>
-              <h3>Deliver knowledge at the moment it applies.</h3>
-              <p className={styles.cardBody}>
-                A memory layer that files every rule where it&apos;s needed and
-                hands it to the agent the instant it touches the code that rule
-                covers.
-              </p>
-              <p className={styles.cardProof}>
-                → Right rule read before the first edit in 95% of runs
-              </p>
-            </article>
-          </div>
+          <ul className={styles.problemList}>
+            {problems.map((item) => (
+              <li key={item.name}>
+                <div>
+                  <p className={styles.cardTag}>{item.name}</p>
+                  <p className={styles.cardProblem}>{item.problem}</p>
+                </div>
+                <div>
+                  <h3>{item.fix}</h3>
+                  <p className={styles.cardBody}>{item.body}</p>
+                </div>
+                <p className={styles.cardProof}>{item.receipt}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section
@@ -185,7 +217,7 @@ export default function Home({ featuredPosts }: HomeProps) {
           <div>
             <p className={styles.label}>Production agents</p>
             <h2 id="production-title">
-              The right context, at the right moment, at the right cost.
+              The right context, at the right moment, at the right cost
             </h2>
             <p className={styles.sectionLede}>
               A customer-facing agent has a few seconds and a token budget per
@@ -238,7 +270,7 @@ export default function Home({ featuredPosts }: HomeProps) {
             <p className={styles.label}>Coding agents</p>
             <h2 id="coding-title">
               Give a coding agent your team&apos;s context, and it writes your
-              team&apos;s code.
+              team&apos;s code
             </h2>
             <p className={styles.sectionLede}>
               Claude Code can program. It doesn&apos;t know why your system is
@@ -295,7 +327,7 @@ export default function Home({ featuredPosts }: HomeProps) {
         <section className={styles.section} aria-labelledby="dogfooding-title">
           <p className={styles.label}>Dogfooding</p>
           <h2 id="dogfooding-title">
-            I use AI to make AI better, and I check its work.
+            I use AI to make AI better, and I check its work
           </h2>
           <div className={styles.cardGrid}>
             <article className={`${styles.card} ${styles.cardPlain}`}>
@@ -334,7 +366,7 @@ export default function Home({ featuredPosts }: HomeProps) {
         <section className={styles.section} aria-labelledby="writing-title">
           <p className={styles.label}>Writing</p>
           <h2 id="writing-title">
-            Ideas about context, with the evidence behind them.
+            Ideas about context, with the evidence behind them
           </h2>
           <div className={styles.writingList}>
             {featuredPosts.map((post) => (
@@ -362,14 +394,18 @@ export default function Home({ featuredPosts }: HomeProps) {
           aria-labelledby="projects-title"
         >
           <p className={styles.label}>Open source</p>
-          <h2 id="projects-title">Context tools you can run.</h2>
+          <h2 id="projects-title">Context tools you can run</h2>
           <div className={styles.projectGrid}>
-            <article className={styles.card}>
+            <article
+              className={`${styles.card} ${styles.cardBoxed} ${styles.projectFeatured}`}
+            >
               <h3>The Vault</h3>
               <p className={styles.cardBody}>
                 Persistent context for people and coding agents. Sources stay
                 untouched, a nightly compile turns them into linked pages, and
-                each agent session loads the smallest map that fits its task.
+                each agent session loads the smallest map that fits its task. In
+                blind tests it raised accepted changes 45% and cut cost per
+                accepted change 47%.
               </p>
               <div className={styles.cardLinks}>
                 <a href="/projects/vault">

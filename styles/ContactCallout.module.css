@@ -13,9 +13,8 @@
   margin: 0 0 1rem;
   color: var(--link-color);
   font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .callout h2 {
@@ -47,7 +46,7 @@
 .links a {
   color: var(--link-color);
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: var(--border-color);
   text-underline-offset: 0.22em;
