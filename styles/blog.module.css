@@ -290,6 +290,66 @@
   font-weight: 650;
 }
 
+.sectionLinks {
+  width: min(100%, 70ch);
+  margin: 0 auto 1rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.85rem;
+}
+
+.sectionLinks > p {
+  margin: 0 0 0.75rem;
+  color: var(--link-color);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sectionLinks ol {
+  columns: 2;
+  column-gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sectionLinks li {
+  min-width: 0;
+  margin-bottom: 0.45rem;
+  line-height: 1.35;
+  break-inside: avoid;
+}
+
+.sectionLinks a {
+  color: var(--text-muted);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  text-decoration-color: var(--border-color);
+  text-underline-offset: 0.18em;
+}
+
+.sectionLinks a:hover {
+  color: var(--heading-color);
+  text-decoration-color: var(--link-color);
+}
+
+.sectionLinks .subsectionLink {
+  padding-left: 1rem;
+}
+
+.sectionLinks .subsectionLink a {
+  font-size: 0.76rem;
+}
+
 .blogPostContent {
   display: block;
   width: min(100%, 70ch);
@@ -454,6 +514,7 @@
 }
 
 .blogPostContent h2 {
+  scroll-margin-top: 1.5rem;
   margin: 2.75rem 0 0.75rem;
   color: var(--heading-color);
   font-family:
@@ -469,7 +530,34 @@
   text-wrap: balance;
 }
 
+.blogPostContent table {
+  width: 100%;
+  margin: 1.75rem 0;
+  border-collapse: collapse;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.blogPostContent th,
+.blogPostContent td {
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.blogPostContent thead th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
 .blogPostContent h3 {
+  scroll-margin-top: 1.5rem;
   margin: 2rem 0 0.5rem;
   color: var(--heading-color);
   font-family:
@@ -621,6 +709,10 @@
   .articlePagination,
   .related > div {
     grid-template-columns: 1fr;
+  }
+
+  .sectionLinks ol {
+    columns: 1;
   }
 
   .newerPost {

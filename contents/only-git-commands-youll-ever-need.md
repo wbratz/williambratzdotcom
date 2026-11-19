@@ -9,6 +9,7 @@ banner: "../blogContent/git-commands/git-everyday-workflow.svg"
 imageAlt: A diagram showing changes moving from the working tree through staging and local commits into a shared remote repository.
 topics:
   - Developer Tools
+sectionLinks: true
 featured: false
 ---
 

@@ -10,6 +10,7 @@ imageAlt: A diagram showing a client receiving bounded authority from an authori
 topics:
   - Security
   - Architecture
+sectionLinks: true
 featured: false
 ---
 
