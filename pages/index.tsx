@@ -1,11 +1,7 @@
-import Head from "next/head";
-import Link from "next/link";
 import React from "react";
 import ContactCallout from "../src/components/ContactCallout";
 import Layout from "../src/components/Layout";
-import styles from "../styles/Homepage.module.css";
-
-const SITE_URL = "https://www.williambratz.com";
+import styles from "../styles/Context.module.css";
 
 type HomeProps = {
   featuredPosts: PostSummary[];
@@ -19,122 +15,384 @@ type PostSummary = {
 };
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
+const Next = () => <span aria-hidden="true">→</span>;
+
+const formatDate = (date: string) =>
+  new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(`${date}T00:00:00Z`));
 
 export default function Home({ featuredPosts }: HomeProps) {
   return (
     <Layout>
-      <Head>
-        <title>William Bratz | AI Engineering &amp; Distributed Systems</title>
-        <meta
-          name="description"
-          content="Senior software engineer William Bratz builds production LLM agents, MCP infrastructure, AI developer tools, distributed systems, and durable organizational knowledge."
-        />
-        <link rel="canonical" href={SITE_URL} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={SITE_URL} />
-        <meta
-          property="og:title"
-          content="William Bratz | AI Engineering & Distributed Systems"
-        />
-        <meta
-          property="og:description"
-          content="Production AI systems, MCP infrastructure, distributed systems, and knowledge that compounds."
-        />
-        <meta name="twitter:card" content="summary" />
-      </Head>
-
-      <div className={styles.home}>
+      <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="home-title">
-          <p className={styles.eyebrow}>
-            Senior Software Engineer · Tri-Cities, Tennessee
-          </p>
+          <p className={styles.kicker}>In the new world of AI agents,</p>
           <h1 id="home-title">
-            I build AI systems that hold up in production.
+            <span className={styles.accent}>context</span> is everything.
           </h1>
-          <p className={styles.lede}>
-            I&apos;m William “Billy” Bratz. I build LLM agents, MCP
-            infrastructure, and source-grounded knowledge systems for teams
-            running complex software.
+          <p className={styles.promise}>
+            I make sure agents get the right context at the right time, turning
+            OK into <span className={styles.accent}>amazing</span>.
+          </p>
+          <p className={styles.intro}>
+            I&apos;m William “Billy” Bratz, a senior software engineer focused
+            on context engineering: what production agents are handed when they
+            answer, and what coding agents know when they write code.
           </p>
           <div className={styles.actions}>
-            <Link href="/blog" legacyBehavior>
-              <a className={styles.primaryAction}>Read my work</a>
-            </Link>
-            <Link href="/resume" legacyBehavior>
-              <a className={styles.secondaryAction}>View résumé</a>
-            </Link>
+            <a className={styles.primaryAction} href="#proof">
+              See the proof
+            </a>
+            <a
+              className={styles.secondaryAction}
+              href="/blog/proving-the-vaults-value"
+            >
+              Proving the Vault&apos;s value
+            </a>
+            <a className={styles.secondaryAction} href="/resume">
+              View résumé
+            </a>
+          </div>
+        </section>
+
+        <section
+          id="proof"
+          className={styles.proof}
+          aria-labelledby="proof-title"
+        >
+          <h2 id="proof-title" className={styles.label}>
+            Measured, not claimed
+          </h2>
+          <div className={styles.statGrid}>
+            <div className={styles.stat}>
+              <p className={styles.statValue}>−65%</p>
+              <p className={styles.statText}>
+                Retrieval latency for a{" "}
+                <span className={styles.highlight}>live agent</span>, with 100%
+                identical answers.
+              </p>
+            </div>
+            <div className={styles.stat}>
+              <p className={styles.statValue}>47% less</p>
+              <p className={styles.statText}>
+                Cost per accepted PR when{" "}
+                <span className={styles.highlight}>coding agents</span> get
+                domain context: $7.79 down to $4.12.
+              </p>
+            </div>
+            <div className={styles.stat}>
+              <p className={styles.statValue}>9 → 0</p>
+              <p className={styles.statText}>
+                Blocker and major bugs in{" "}
+                <span className={styles.highlight}>coding agent</span> PRs,
+                without vs with domain context.
+              </p>
+            </div>
+            <div className={styles.stat}>
+              <p className={styles.statValue}>0 → 6 of 8</p>
+              <p className={styles.statText}>
+                <span className={styles.highlight}>Coding agent</span>{" "}
+                implementations done to our coding standards. Each rule pops up
+                the moment the agent starts editing a file it applies to.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="problem-title">
+          <p className={styles.label}>The problem</p>
+          <h2 id="problem-title">Most agent failures are context failures.</h2>
+          <p className={styles.sectionLede}>
+            The model could have done it. It got the context too late, got too
+            much of it, got the wrong piece, or never got the one fact that
+            mattered. Each one has a better fix than a bigger model.
+          </p>
+          <div className={styles.cardGrid}>
+            <article className={styles.card}>
+              <p className={styles.cardTag}>Too slow</p>
+              <p className={styles.cardProblem}>
+                Context arrives after the user stopped waiting.
+              </p>
+              <h3>Have it ready before it&apos;s asked for.</h3>
+              <p className={styles.cardBody}>
+                I predict the context an agent will need and load it ahead of
+                time, with priority lanes so background loading can&apos;t crowd
+                out a live conversation.
+              </p>
+              <p className={styles.cardProof}>
+                → −65% retrieval latency, identical answers
+              </p>
+            </article>
+            <article className={styles.card}>
+              <p className={styles.cardTag}>Too much</p>
+              <p className={styles.cardProblem}>
+                Bloat buries the signal and burns money.
+              </p>
+              <h3>Trace every token to its source.</h3>
+              <p className={styles.cardBody}>
+                I find out what the model actually receives before cutting
+                anything, so the savings come from real waste instead of
+                guesses.
+              </p>
+              <p className={styles.cardProof}>
+                → Over 99% of a runaway request&apos;s context traced to one
+                cause
+              </p>
+            </article>
+            <article className={styles.card}>
+              <p className={styles.cardTag}>Wrong</p>
+              <p className={styles.cardProblem}>
+                The agent sends the question to the wrong tool.
+              </p>
+              <h3>Never send a question to the wrong tool.</h3>
+              <p className={styles.cardBody}>
+                The wrong tool means a confident, wrong answer. I make routing
+                measurable, so any change to a tool, a prompt, or the model can
+                be scored on whether every question still lands in the right
+                place, before a customer finds out.
+              </p>
+              <p className={styles.cardProof}>
+                → Routing made measurable across every tool
+              </p>
+            </article>
+            <article className={styles.card}>
+              <p className={styles.cardTag}>Missing</p>
+              <p className={styles.cardProblem}>
+                The one rule or past decision that would have changed the
+                answer.
+              </p>
+              <h3>Deliver knowledge at the moment it applies.</h3>
+              <p className={styles.cardBody}>
+                A memory layer that files every rule where it&apos;s needed and
+                hands it to the agent the instant it touches the code that rule
+                covers.
+              </p>
+              <p className={styles.cardProof}>
+                → Right rule read before the first edit in 95% of runs
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.split}`}
+          aria-labelledby="production-title"
+        >
+          <div>
+            <p className={styles.label}>Production agents</p>
+            <h2 id="production-title">
+              The right context, at the right moment, at the right cost.
+            </h2>
+            <p className={styles.sectionLede}>
+              A customer-facing agent has a few seconds and a token budget per
+              turn. I&apos;m focused on the layer between the model and the
+              systems it calls: how fast context arrives, how much of it the
+              model carries, and how tools tell the model what they do.
+            </p>
+            <div className={styles.links}>
+              <a href="/production-agents">
+                Context for production agents <Next />
+              </a>
+            </div>
+          </div>
+          <ul className={styles.list}>
+            <li>
+              <p className={styles.listTitle}>Faster retrieval, same answers</p>
+              <p className={styles.listBody}>
+                65% faster at the median, with 100% identical output.
+              </p>
+            </li>
+            <li>
+              <p className={styles.listTitle}>Context bloat, taken apart</p>
+              <p className={styles.listBody}>
+                A runaway token bill turned out to be over 99% inherited
+                conversation history, already there before any tool ran.
+              </p>
+            </li>
+            <li>
+              <p className={styles.listTitle}>Measure before you cut</p>
+              <p className={styles.listBody}>
+                Forwarding full tool schemas looked expensive. Measured: 0% more
+                input tokens.
+              </p>
+            </li>
+            <li>
+              <p className={styles.listTitle}>Tools the model can read</p>
+              <p className={styles.listBody}>
+                Output schemas on every tool, plus example questions that test
+                whether an agent picks the right one.
+              </p>
+            </li>
+          </ul>
+        </section>
+
+        <section
+          className={`${styles.section} ${styles.split}`}
+          aria-labelledby="coding-title"
+        >
+          <div>
+            <p className={styles.label}>Coding agents</p>
+            <h2 id="coding-title">
+              Give a coding agent your team&apos;s context, and it writes your
+              team&apos;s code.
+            </h2>
+            <p className={styles.sectionLede}>
+              Claude Code can program. It doesn&apos;t know why your system is
+              shaped the way it is, which decisions are settled, or which
+              mistakes already hurt you. I built The Vault to tell it, and
+              proved the difference with blind tests on real tickets.
+            </p>
+            <ul className={styles.bulletList}>
+              <li>
+                Agents with the Vault push back on tickets that ask for
+                something that already exists. Without it, none did.
+              </li>
+              <li>
+                An ontology layer files each rule where it applies. Agents read
+                the right rule before their first edit 95% of the time, vs 76%
+                without it.
+              </li>
+            </ul>
+            <div className={styles.links}>
+              <a href="/coding-agents">
+                Context for coding agents <Next />
+              </a>
+              <a href="/blog/proving-the-vaults-value">
+                Proving the Vault&apos;s value <Next />
+              </a>
+            </div>
+          </div>
+          <div className={styles.panel}>
+            <p className={styles.panelLabel}>With the Vault vs without</p>
+            <div className={styles.statGrid}>
+              <div className={styles.stat}>
+                <p className={styles.statValue}>+45%</p>
+                <p className={styles.statText}>accepted changes</p>
+              </div>
+              <div className={styles.stat}>
+                <p className={styles.statValue}>Zero</p>
+                <p className={styles.statText}>blocker or major bugs</p>
+              </div>
+              <div className={styles.stat}>
+                <p className={styles.statValue}>−47%</p>
+                <p className={styles.statText}>cost per accepted change</p>
+              </div>
+              <div className={styles.stat}>
+                <p className={styles.statValue}>−29%</p>
+                <p className={styles.statText}>time per ticket</p>
+              </div>
+            </div>
+            <p className={styles.note}>
+              Same model, same real tickets, blind judges.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="dogfooding-title">
+          <p className={styles.label}>Dogfooding</p>
+          <h2 id="dogfooding-title">
+            I use AI to make AI better, and I check its work.
+          </h2>
+          <div className={styles.cardGrid}>
+            <article className={`${styles.card} ${styles.cardPlain}`}>
+              <h3>Agents review agent code</h3>
+              <p className={styles.cardBody}>
+                Every change I push gets two fresh AI reviewers, never a fork of
+                my own session, because a fork already agrees with me.
+              </p>
+            </article>
+            <article className={`${styles.card} ${styles.cardPlain}`}>
+              <h3>Blind judges, real review standards</h3>
+              <p className={styles.cardBody}>
+                My A/B tests grade agent PRs with blind model judges, scorecards
+                built from 1,277 real human review comments, and two ranking
+                passes in different orders.
+              </p>
+            </article>
+            <article className={`${styles.card} ${styles.cardPlain}`}>
+              <h3>The model proposes, code decides</h3>
+              <p className={styles.cardBody}>
+                Models extract and judge. Plain code writes the files, checks
+                every citation, and overrules an “approved” verdict when the
+                build is red.
+              </p>
+            </article>
+            <article className={`${styles.card} ${styles.cardPlain}`}>
+              <h3>When inefficiencies arise, test and correct</h3>
+              <p className={styles.cardBody}>
+                A blind test flagged a workflow step that doubled cost without
+                improving results. Cutting it halved the cost.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section className={styles.section} aria-labelledby="writing-title">
+          <p className={styles.label}>Writing</p>
+          <h2 id="writing-title">
+            Ideas about context, with the evidence behind them.
+          </h2>
+          <div className={styles.writingList}>
+            {featuredPosts.map((post) => (
+              <article key={post.slug}>
+                <time dateTime={post.date}>{formatDate(post.date)}</time>
+                <div>
+                  <h3>
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                  </h3>
+                  <p>{post.description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className={styles.links}>
+            <a href="/blog">
+              Browse all writing <Next />
+            </a>
           </div>
         </section>
 
         <section
           id="projects"
           className={styles.section}
-          aria-labelledby="work-title"
+          aria-labelledby="projects-title"
         >
-          <div className={styles.sectionHeading}>
-            <p>Selected work</p>
-            <h2 id="work-title">Systems, tools, and ideas made concrete.</h2>
-          </div>
-
+          <p className={styles.label}>Open source</p>
+          <h2 id="projects-title">Context tools you can run.</h2>
           <div className={styles.projectGrid}>
-            <article className={`${styles.project} ${styles.featuredProject}`}>
-              <div className={styles.featuredCopy}>
-                <div>
-                  <p className={styles.projectType}>Open-source workflow</p>
-                  <h3>The Vault</h3>
-                  <p>
-                    A persistent, LLM-maintained wiki that connects product
-                    decisions, engineering implementations, raw evidence, and
-                    the context agents need to make better decisions.
-                  </p>
-                </div>
-                <div className={styles.projectLinks}>
-                  <Link href="/projects/vault" legacyBehavior>
-                    <a>Explore the system</a>
-                  </Link>
-                  <Link href="/blog/bridging-the-gap" legacyBehavior>
-                    <a>Read the field guide</a>
-                  </Link>
-                  <a
-                    href="https://github.com/wbratz/vault-scaffold"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Scaffold your own <Arrow />
-                  </a>
-                </div>
-              </div>
-              <figure className={styles.vaultDiagram}>
-                <a href="/blogContent/bridging-the-gap/vault-mental-model.svg">
-                  <picture>
-                    <source
-                      media="(max-width: 720px)"
-                      srcSet="/blogContent/bridging-the-gap/vault-mental-model-mobile.svg"
-                      width="640"
-                      height="690"
-                    />
-                    <img
-                      src="/blogContent/bridging-the-gap/vault-mental-model.svg"
-                      width="1200"
-                      height="680"
-                      alt="Vault architecture: raw evidence feeds a linked wiki used by product, engineering, AI agents, and automation"
-                      loading="lazy"
-                    />
-                  </picture>
-                </a>
-                <figcaption>From source evidence to shared context</figcaption>
-              </figure>
-            </article>
-
-            <article className={styles.project}>
-              <p className={styles.projectType}>Agent developer tools</p>
-              <h3>Billy&apos;s AI Skills</h3>
-              <p>
-                Cross-client Recursive Language Model plugins for Claude Code
-                and OpenAI Codex, with bounded fanout, cost controls, and a
-                credential-free public demo.
+            <article className={styles.card}>
+              <h3>The Vault</h3>
+              <p className={styles.cardBody}>
+                Persistent context for people and coding agents. Sources stay
+                untouched, a nightly compile turns them into linked pages, and
+                each agent session loads the smallest map that fits its task.
               </p>
-              <div className={styles.projectLinks}>
+              <div className={styles.cardLinks}>
+                <a href="/projects/vault">
+                  How it works <Next />
+                </a>
+                <a
+                  href="https://github.com/wbratz/vault-scaffold"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Scaffold your own <Arrow />
+                </a>
+              </div>
+            </article>
+            <article className={styles.card}>
+              <h3>Billy&apos;s AI Skills</h3>
+              <p className={styles.cardBody}>
+                Recursive Language Model plugins for Claude Code and Codex. An
+                agent reasons over sources far bigger than its context window by
+                sending focused questions over chunks, with budgets and dry
+                runs.
+              </p>
+              <div className={styles.cardLinks}>
                 <a
                   href="https://github.com/wbratz/billys-ai-skills"
                   target="_blank"
@@ -142,107 +400,52 @@ export default function Home({ featuredPosts }: HomeProps) {
                 >
                   Run the demo <Arrow />
                 </a>
-                <Link href="/ai-engineering" legacyBehavior>
-                  <a>See the AI engineering work</a>
-                </Link>
               </div>
             </article>
-
-            <article className={styles.project}>
-              <p className={styles.projectType}>Applied AI product</p>
+            <article className={styles.card}>
               <h3>Hugo</h3>
-              <p>
-                A self-hosted Slack reading assistant that ranks technical RSS
-                articles with Claude, summarizes links and threads, and delivers
-                a focused daily digest.
+              <p className={styles.cardBody}>
+                Context curation for people. A Slack assistant that ranks
+                technical RSS with Claude and posts a short daily digest instead
+                of a firehose.
               </p>
-              <a
-                href="https://github.com/wbratz/hugo-slack-bot"
-                target="_blank"
-                rel="noreferrer"
-              >
-                View the source <Arrow />
-              </a>
+              <div className={styles.cardLinks}>
+                <a
+                  href="https://github.com/wbratz/hugo-slack-bot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  View the source <Arrow />
+                </a>
+              </div>
             </article>
           </div>
-        </section>
-
-        <section className={styles.section} aria-labelledby="writing-title">
-          <div className={styles.sectionHeading}>
-            <p>Selected writing</p>
-            <h2 id="writing-title">
-              Notes from building, operating, and thinking.
-            </h2>
-          </div>
-          <div className={styles.writingList}>
-            {featuredPosts.map((post) => (
-              <article key={post.slug}>
-                <time dateTime={post.date}>
-                  {new Intl.DateTimeFormat("en-US", {
-                    month: "short",
-                    day: "numeric",
-                    year: "numeric",
-                    timeZone: "UTC",
-                  }).format(new Date(`${post.date}T00:00:00Z`))}
-                </time>
-                <div>
-                  <h3>
-                    <Link href={`/blog/${post.slug}`} legacyBehavior>
-                      <a>{post.title}</a>
-                    </Link>
-                  </h3>
-                  <p>{post.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <Link href="/blog" legacyBehavior>
-            <a className={styles.allWriting}>
-              Browse all writing <span aria-hidden="true">→</span>
+          <p className={styles.also}>
+            Also:{" "}
+            <a
+              href="https://neverendingstorypointer.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Neverending Story Pointer
             </a>
-          </Link>
-        </section>
-
-        <section
-          id="about"
-          className={`${styles.section} ${styles.about}`}
-          aria-labelledby="about-title"
-        >
-          <div className={styles.sectionHeading}>
-            <p>About</p>
-            <h2 id="about-title">
-              Production is where the real system introduces itself.
-            </h2>
-          </div>
-          <div className={styles.aboutCopy}>
-            <p>
-              I&apos;ve spent 11 years building distributed systems across
-              identity, underwriting, analytics, and conversational AI. I care
-              about evidence, explicit decisions, operable systems, and the
-              hard-won theory teams develop while making software work in the
-              world.
-            </p>
-            <p>
-              Today I&apos;m focused on production agent systems and on
-              preserving the connection between why a product decision was made
-              and how it was implemented. That is the idea behind The Vault and
-              much of what I write about here.
-            </p>
-          </div>
-          <Link href="/about" legacyBehavior>
-            <a className={styles.aboutLink}>
-              More about me <span aria-hidden="true">→</span>
+            , free planning poker, and{" "}
+            <a
+              href="https://howuniqueisaguid.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              How Unique Is a GUID?
             </a>
-          </Link>
-          <Link href="/ai-engineering" legacyBehavior>
-            <a className={styles.aboutLink}>
-              Explore my AI engineering work <span aria-hidden="true">→</span>
-            </a>
-          </Link>
+            , an interactive probability explainer.
+          </p>
         </section>
 
         <div className={styles.contact}>
-          <ContactCallout />
+          <ContactCallout
+            title="Building agents that need better context?"
+            body="I'm open to remote senior and staff roles in context engineering, agent platforms, and MCP infrastructure, and always up for comparing notes."
+          />
         </div>
       </div>
     </Layout>

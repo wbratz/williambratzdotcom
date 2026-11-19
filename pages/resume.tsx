@@ -114,13 +114,13 @@ export default function Resume() {
                   restoring zero-network unit-test guarantees.
                 </li>
                 <li>
-                  Resolved an MCP HTTP 421 outage using APM evidence, then added
-                  a dependency-host guard, pinned lockfile, monitors, and an
-                  audit of sibling services.
+                  Resolved an MCP HTTP 421 outage using APM evidence, then
+                  locked dependency builds, pinned the framework version, and
+                  added monitors.
                 </li>
                 <li>
-                  Eliminated order-of-magnitude retry amplification and
-                  validated the change under live production traffic.
+                  Eliminated compounding retry amplification and validated the
+                  change under live production traffic.
                 </li>
                 <li>
                   Shipped three customer-context MCP tools, including the
@@ -239,17 +239,19 @@ export default function Resume() {
                 </ExternalLink>
               </h3>
               <p>
-                Nine essays on production engineering and AI systems, including
-                “Production Reveals the System,” “From Chatbots to Persistent
-                Organizational Memory,” and “Engineering in the Age of Agents.”
+                Ten essays on context engineering, production AI, and
+                engineering practice, including “Proving the Vault&apos;s
+                Value,” “When the Map Starts Learning,” and “Programming as
+                Theory Building.”
               </p>
             </div>
             <div>
               <h3>vaultkit</h3>
               <p>
-                A personal, LLM-maintained knowledge engine: roughly 6,400 lines
-                of Python, more than 320 tests, three scheduled maintenance
-                cadences, and a scaffold adopted by four teams. The reusable{" "}
+                A personal, LLM-maintained knowledge engine: roughly 13,000
+                lines of Python, more than 900 tests, nightly and weekly
+                maintenance cadences, and a scaffold adopted by four teams. The
+                reusable{" "}
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   vault-scaffold workflow
                 </ExternalLink>{" "}
