@@ -514,7 +514,6 @@
 }
 
 .blogPostContent h2 {
-  scroll-margin-top: 1.5rem;
   margin: 2.75rem 0 0.75rem;
   color: var(--heading-color);
   font-family:
@@ -557,7 +556,6 @@
 }
 
 .blogPostContent h3 {
-  scroll-margin-top: 1.5rem;
   margin: 2rem 0 0.5rem;
   color: var(--heading-color);
   font-family:

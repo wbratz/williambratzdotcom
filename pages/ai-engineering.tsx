@@ -34,32 +34,26 @@ export default function AiEngineering() {
       <article className={styles.page}>
         <header className={styles.hero}>
           <p className={styles.eyebrow}>
-            Senior Software Engineer · Production AI
+            Senior Software Engineer · Context engineering
           </p>
-          <h1>AI engineering that survives contact with production.</h1>
+          <h1>AI engineering, built around context.</h1>
           <p className={styles.lede}>
-            I build the systems around capable models: tools, orchestration,
-            context, evaluation, observability, and the distributed
-            infrastructure that makes an agent dependable. My work spans
-            customer-facing conversational AI, high-volume MCP platforms, and
-            open-source systems for long-context reasoning and durable
-            organizational knowledge.
+            I build the systems around capable models: the tools they call, the
+            context they&apos;re handed, and the tests that prove it worked.
+            Most of my work is context engineering, for production agents that
+            answer customers and for coding agents that write code.
           </p>
           <div className={styles.actions}>
-            <Link href="/resume" legacyBehavior>
-              <a className={styles.primaryAction}>View résumé</a>
+            <Link href="/production-agents" legacyBehavior>
+              <a className={styles.primaryAction}>
+                Context for production agents
+              </a>
             </Link>
-            <Link href="/projects" legacyBehavior>
-              <a className={styles.secondaryAction}>Explore projects</a>
+            <Link href="/coding-agents" legacyBehavior>
+              <a className={styles.secondaryAction}>
+                Context for coding agents
+              </a>
             </Link>
-            <a
-              className={styles.textAction}
-              href="https://github.com/wbratz"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub <Arrow />
-            </a>
           </div>
         </header>
 
@@ -67,44 +61,40 @@ export default function AiEngineering() {
           <div className={styles.sectionHeading}>
             <p>Capabilities</p>
             <h2 id="capabilities">
-              The model is one component. The product is the whole system.
+              The model is one component. Context decides the result.
             </h2>
           </div>
           <div className={styles.capabilityGrid}>
             <article>
               <span>01</span>
-              <h3>LLM agents and orchestration</h3>
+              <h3>Context for production agents</h3>
               <p>
-                Tool-calling agents, structured outputs, multi-step workflows,
-                model experiments, and operating contracts that keep autonomy
-                inside explicit boundaries.
+                Faster retrieval, context loaded before it&apos;s needed, lean
+                prompts, and tool routing you can measure.
               </p>
             </article>
             <article>
               <span>02</span>
-              <h3>MCP infrastructure</h3>
+              <h3>Context for coding agents</h3>
               <p>
-                MCP servers, clients, gateways, federation, and production
-                integrations connecting conversational systems to real services
-                at meaningful scale.
+                Domain knowledge filed where it applies and delivered at the
+                moment of the edit, proven with blind A/B tests.
               </p>
             </article>
             <article>
               <span>03</span>
-              <h3>Context and knowledge systems</h3>
+              <h3>MCP infrastructure</h3>
               <p>
-                Source-grounded knowledge, recursive long-context analysis, and
-                durable links between product intent, engineering decisions,
-                implementations, and evidence.
+                MCP servers, gateways, and tool contracts that tell the model
+                exactly what each tool returns.
               </p>
             </article>
             <article>
               <span>04</span>
-              <h3>Reliability and evaluation</h3>
+              <h3>Evaluation and reliability</h3>
               <p>
-                Observability, load testing, failure isolation, cost controls,
-                evaluations, deployment safety, and feedback loops built for
-                production behavior rather than demo behavior.
+                Blind replays, backtested alerts, and observability. Measure
+                first, then change.
               </p>
             </article>
           </div>
@@ -120,20 +110,21 @@ export default function AiEngineering() {
               <p className={styles.cardType}>Knowledge infrastructure</p>
               <h3>The Vault</h3>
               <p>
-                A persistent, source-grounded knowledge system that gives people
-                and agents focused context while preserving the evidence and
-                decisions behind it.
+                Persistent context for people and coding agents. In blind tests
+                on real tickets, it raised accepted changes 45% and cut cost per
+                accepted change 47%.
               </p>
               <ul>
-                <li>
-                  product decisions connected to engineering implementation
-                </li>
-                <li>immutable evidence and regenerable synthesis</li>
-                <li>automated ingest, query, and health workflows</li>
+                <li>rules delivered at the moment of the edit</li>
+                <li>knowledge filed where it applies</li>
+                <li>untouched sources and nightly synthesis</li>
               </ul>
               <div className={styles.cardLinks}>
                 <Link href="/projects/vault" legacyBehavior>
-                  <a>Explore the architecture</a>
+                  <a>How it works</a>
+                </Link>
+                <Link href="/blog/proving-the-vaults-value" legacyBehavior>
+                  <a>Proving its value</a>
                 </Link>
                 <a
                   href="https://github.com/wbratz/vault-scaffold"
@@ -211,8 +202,9 @@ export default function AiEngineering() {
             </p>
             <p>
               That background shapes how I approach agents: explicit contracts,
-              measurable boundaries, evidence from production, and graceful
-              failure. I am based in Tri-Cities, Tennessee and work remotely.
+              measurable results, evidence from production, and graceful
+              failure. I&apos;m based in Tri-Cities, Tennessee, and work
+              remotely.
             </p>
           </div>
           <Link href="/resume" legacyBehavior>
@@ -224,8 +216,8 @@ export default function AiEngineering() {
 
         <div className={styles.contact}>
           <ContactCallout
-            title="Building an AI product that has to work outside the demo?"
-            body="I am interested in remote senior software engineering roles focused on production AI, agent platforms, MCP infrastructure, and distributed systems."
+            title="Building agents that need better context?"
+            body="I'm open to remote senior and staff roles in context engineering, agent platforms, and MCP infrastructure."
           />
         </div>
       </article>

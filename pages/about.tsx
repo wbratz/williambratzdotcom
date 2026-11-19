@@ -73,9 +73,9 @@ export default function About() {
             <p className={styles.lede}>
               I&apos;m William “Billy” Bratz. For 11 years, I&apos;ve built
               distributed systems across identity, underwriting, analytics, and
-              conversational AI. Today my focus is production LLM agents, MCP
-              infrastructure, and the context those systems need to make sound
-              decisions.
+              conversational AI. Today I focus on context engineering: getting
+              AI agents the right context at the right time, in production and
+              in the codebase.
             </p>
           </div>
           <img
@@ -90,24 +90,24 @@ export default function About() {
         <section className={styles.section} aria-labelledby="work-now">
           <div className={styles.sectionHeading}>
             <p>What I work on now</p>
-            <h2 id="work-now">
-              Making capable AI systems dependable in production.
-            </h2>
+            <h2 id="work-now">Giving agents the context to get it right.</h2>
           </div>
           <div className={styles.prose}>
             <p>
               The interesting part of AI engineering begins after the demo
-              works. Production introduces real users, imperfect data, latency
-              budgets, failure modes, shifting models, and consequences. I work
-              on the tool, context, evaluation, observability, and reliability
-              layers that help agent systems operate inside those constraints.
+              works. Real users, imperfect data, latency budgets, and token
+              costs all arrive at once, and most failures trace back to context:
+              it came too late, there was too much of it, it was the wrong
+              piece, or the one fact that mattered was missing. That&apos;s the
+              layer I work on.
             </p>
             <p>
               I&apos;m especially interested in the boundary between product
               intent and engineering implementation. When the reason behind a
               decision disappears, both people and agents are forced to
-              reconstruct it. Better context makes that reasoning durable,
-              reviewable, and useful the next time a decision reaches code.
+              reconstruct it. Better context keeps that reasoning durable,
+              reviewable, and ready for the next person or agent who touches the
+              code.
             </p>
           </div>
         </section>
@@ -171,36 +171,34 @@ export default function About() {
               </div>
             </article>
             <article className={styles.feature}>
-              <p className={styles.cardType}>AI engineering</p>
-              <h3>Agents, tools, and production systems</h3>
+              <p className={styles.cardType}>Context engineering</p>
+              <h3>Production and coding agents</h3>
               <p>
-                A focused overview of my work across production LLM agents, MCP
-                infrastructure, long-context developer tools, durable context,
-                evaluation, and distributed systems.
+                How I make production agents faster, leaner, and better routed,
+                and how domain context makes coding agents write code that fits.
               </p>
               <div className={styles.cardLinks}>
-                <Link href="/ai-engineering" legacyBehavior>
-                  <a>Explore the AI work</a>
+                <Link href="/production-agents" legacyBehavior>
+                  <a>Production agents</a>
                 </Link>
-                <ExternalLink href="https://github.com/wbratz/billys-ai-skills">
-                  Run the public demo
-                </ExternalLink>
+                <Link href="/coding-agents" legacyBehavior>
+                  <a>Coding agents</a>
+                </Link>
               </div>
             </article>
             <article className={styles.feature}>
               <p className={styles.cardType}>Writing</p>
               <h3>Notes from the work</h3>
               <p>
-                I write about production AI, distributed systems, engineering
-                judgment, and the organizational knowledge that source code
-                alone cannot preserve.
+                I write about context engineering, production AI, and the
+                knowledge that source code alone can&apos;t preserve.
               </p>
               <div className={styles.cardLinks}>
                 <Link href="/blog" legacyBehavior>
                   <a>Browse the essays</a>
                 </Link>
-                <Link href="/blog/bridging-the-gap" legacyBehavior>
-                  <a>Read the Vault field guide</a>
+                <Link href="/blog/proving-the-vaults-value" legacyBehavior>
+                  <a>Proving the Vault&apos;s value</a>
                 </Link>
               </div>
             </article>
@@ -254,8 +252,8 @@ export default function About() {
 
         <div className={styles.contact}>
           <ContactCallout
-            title="Working on a hard system or a better way to preserve what your team knows?"
-            body="I am always interested in thoughtful conversations about production AI, MCP, distributed systems, and durable engineering context."
+            title="Building agents that need better context?"
+            body="I'm always up for comparing notes on context engineering, MCP, and knowledge systems that keep up with the code."
           />
         </div>
       </article>
