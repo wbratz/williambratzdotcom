@@ -47,7 +47,7 @@ export default function CodingAgents() {
           <p className={styles.eyebrow}>Context engineering · Coding agents</p>
           <h1>
             Give a coding agent your team&apos;s context, and it writes your
-            team&apos;s code.
+            team&apos;s code
           </h1>
           <p className={styles.lede}>
             Claude Code knows how to program. It doesn&apos;t know why your
@@ -60,7 +60,7 @@ export default function CodingAgents() {
 
         <section className={styles.section} aria-labelledby="vault-title">
           <p className={styles.label}>The Vault</p>
-          <h2 id="vault-title">A memory my agents and I keep together.</h2>
+          <h2 id="vault-title">A memory my agents and I keep together</h2>
           <div className={styles.stepGrid}>
             <article className={styles.card}>
               <h3>1 · Collect</h3>
@@ -105,7 +105,7 @@ export default function CodingAgents() {
         <section className={styles.section} aria-labelledby="proof-title">
           <p className={styles.label}>The proof</p>
           <h2 id="proof-title">
-            Same tickets, same models, context on and off.
+            Same tickets, same models, context on and off
           </h2>
           <p className={styles.sectionLede}>
             Each run started from the commit before the original work, with a
@@ -171,7 +171,7 @@ export default function CodingAgents() {
         <section className={styles.section} aria-labelledby="ontology-title">
           <p className={styles.label}>The ontology pipeline</p>
           <h2 id="ontology-title">
-            File knowledge where it&apos;s needed, not where it was learned.
+            File knowledge where it&apos;s needed, not where it was learned
           </h2>
           <p className={styles.sectionLede}>
             Knowledge tends to be filed where it was learned, so a rule learned
@@ -228,7 +228,7 @@ export default function CodingAgents() {
         >
           <div>
             <p className={styles.label}>Rules at the edit</p>
-            <h2 id="edit-title">Deliver the rule at the moment it applies.</h2>
+            <h2 id="edit-title">Deliver the rule at the moment it applies</h2>
             <p className={styles.sectionLede}>
               A written rule only helps if the agent has it at the right moment.
               Each rule now arrives the moment the agent edits a file it covers,
@@ -253,7 +253,7 @@ export default function CodingAgents() {
 
         <section className={styles.section} aria-labelledby="dogfood-title">
           <p className={styles.label}>Dogfooding</p>
-          <h2 id="dogfood-title">I measure my own tooling the same way.</h2>
+          <h2 id="dogfood-title">I measure my own tooling the same way</h2>
           <div className={styles.projectGrid}>
             <article className={`${styles.card} ${styles.cardPlain}`}>
               <h3>What did the agent see?</h3>

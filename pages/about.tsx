@@ -69,7 +69,7 @@ export default function About() {
             <p className={styles.eyebrow}>
               Senior Software Engineer · Tri-Cities, Tennessee
             </p>
-            <h1>I build systems, then preserve what they teach us.</h1>
+            <h1>I build systems, then preserve what they teach us</h1>
             <p className={styles.lede}>
               I&apos;m William “Billy” Bratz. For 11 years, I&apos;ve built
               distributed systems across identity, underwriting, analytics, and
@@ -90,7 +90,7 @@ export default function About() {
         <section className={styles.section} aria-labelledby="work-now">
           <div className={styles.sectionHeading}>
             <p>What I work on now</p>
-            <h2 id="work-now">Giving agents the context to get it right.</h2>
+            <h2 id="work-now">Giving agents the context to get it right</h2>
           </div>
           <div className={styles.prose}>
             <p>
@@ -115,7 +115,7 @@ export default function About() {
         <section className={styles.section} aria-labelledby="principles">
           <div className={styles.sectionHeading}>
             <p>How I work</p>
-            <h2 id="principles">A few principles that keep showing up.</h2>
+            <h2 id="principles">A few principles that keep showing up</h2>
           </div>
           <div className={styles.principles}>
             <article>
@@ -149,7 +149,7 @@ export default function About() {
           <div className={styles.sectionHeading}>
             <p>Work made public</p>
             <h2 id="public-work">
-              Ideas become more useful when other people can test them.
+              Ideas become more useful when other people can test them
             </h2>
           </div>
           <div className={styles.publicGrid}>
@@ -212,13 +212,13 @@ export default function About() {
           <div className={styles.sectionHeading}>
             <p>Independent products</p>
             <h2 id="independent-products">
-              Small tools can still make an idea tangible.
+              Small tools can still make an idea tangible
             </h2>
           </div>
           <div className={styles.community}>
             <div>
               <p className={styles.cardType}>Free to use</p>
-              <h3>Useful experiments, released into the world.</h3>
+              <h3>Useful experiments, released into the world</h3>
             </div>
             <div className={styles.productList}>
               <article>

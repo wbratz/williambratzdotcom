@@ -15,9 +15,8 @@
   margin: 0;
   color: var(--link-color);
   font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .blogIndexHeader h1 {
@@ -60,7 +59,7 @@
 
 .topicFilters button:hover,
 .topicFilters .activeTopic {
-  color: #17120a;
+  color: var(--surface-bg);
   background: var(--link-color);
   border-color: var(--link-color);
 }
@@ -106,7 +105,7 @@
     "Segoe UI",
     sans-serif;
   font-size: clamp(1.35rem, 2.5vw, 2rem);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.035em;
   line-height: 1.15;
 }
@@ -175,7 +174,7 @@
 .readMore {
   color: var(--link-color);
   font-size: 0.86rem;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   text-decoration-color: var(--border-color);
   text-underline-offset: 0.2em;
@@ -223,7 +222,7 @@
 .blogPostTitle h1 {
   margin: 0 0 1.25rem;
   font-size: clamp(2.25rem, 5vw, 3.75rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.08;
   letter-spacing: -0.035em;
   text-wrap: balance;
@@ -250,9 +249,8 @@
   margin: 0 0 0.35rem;
   color: var(--link-color);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .series h2 {
@@ -303,9 +301,8 @@
   margin: 0 0 0.75rem;
   color: var(--link-color);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .sectionLinks ol {
@@ -407,7 +404,7 @@
 
 .blogPostContent strong {
   color: var(--heading-color);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .blogPostContent ul,
@@ -507,7 +504,7 @@
     "Segoe UI",
     sans-serif;
   font-size: clamp(1.75rem, 3vw, 2.25rem);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.025em;
   text-wrap: balance;
@@ -605,9 +602,8 @@
   margin-bottom: 0.45rem;
   color: var(--link-color);
   font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .articlePagination strong {
@@ -630,9 +626,8 @@
   margin: 0 0 0.5rem;
   color: var(--link-color);
   font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .related > h2 {
@@ -659,9 +654,8 @@
   margin: 0 0 0.75rem;
   color: var(--link-color);
   font-size: 0.67rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .related h3 {

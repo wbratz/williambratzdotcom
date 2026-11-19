@@ -42,16 +42,15 @@
   margin: 0 0 0.6rem;
   color: var(--link-color);
   font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .hero h1 {
   margin: 0;
   color: var(--heading-color);
   font-size: clamp(2.45rem, 6vw, 4.5rem);
-  font-weight: 750;
+  font-weight: 600;
   letter-spacing: -0.055em;
   line-height: 0.98;
 }
@@ -71,11 +70,11 @@
   align-items: center;
   gap: 0.55rem;
   padding: 0.7rem 0.95rem;
-  color: #16120a !important;
+  color: var(--surface-bg) !important;
   background: var(--link-color);
   border-radius: 9px;
   font-size: 0.86rem;
-  font-weight: 750;
+  font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
   transition:
@@ -122,9 +121,8 @@
   margin: 0 0 1.75rem;
   color: var(--heading-color);
   font-size: 0.82rem;
-  font-weight: 750;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 .section > h2::after {
@@ -240,7 +238,7 @@
 .skills dt {
   color: var(--heading-color);
   font-size: 0.87rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .skills dd {
