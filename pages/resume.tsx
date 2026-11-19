@@ -39,11 +39,10 @@ export default function Resume() {
             </p>
             <h1>William “Billy” Bratz</h1>
             <p className={styles.intro}>
-              Senior software engineer with 11 years building distributed
-              systems and, since late 2025, production LLM agent systems. I
-              founded the MCP server and orchestrator that became my
-              organization&apos;s LLM platform, and I turn difficult operational
-              lessons into durable systems, standards, and writing.
+              Senior software engineer focused on context engineering for AI
+              agents, with 11 years building distributed systems. I make
+              production agents faster, leaner, and more accurate, and I give
+              coding agents the domain context to write code that fits.
             </p>
           </div>
 
@@ -90,50 +89,44 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Operate an MCP platform serving more than 10 million weekly
-                  tool calls, connecting conversational AI to production
-                  systems.
+                  Cut retrieval latency for live agents by 65% with identical
+                  answers, making knowledge search fast enough for real-time
+                  voice conversations.
                 </li>
                 <li>
-                  Root-caused a multi-service outage in minutes across a
-                  five-hop request chain, halting a harmful redeploy and
-                  directing the recovery.
+                  Built priority-aware context preloading, so agents have what
+                  they need before they ask without background work slowing live
+                  conversations.
                 </li>
                 <li>
-                  Demonstrated that an incident remained active after apparent
-                  recovery because of timeout asymmetry, changing how the team
-                  validates service health.
+                  Made agent tool routing measurable, so changes to tools,
+                  prompts, or models can be scored before they reach customers.
                 </li>
                 <li>
-                  Designed and shipped a same-day in-cluster route that
-                  delivered a double-digit p95 latency reduction while
-                  preserving the public path as a safe fallback.
+                  Traced runaway token usage to its real source and measured
+                  before cutting, keeping cost work focused on real waste.
                 </li>
                 <li>
-                  Found and corrected a CI isolation defect across 383 tests,
-                  restoring zero-network unit-test guarantees.
+                  Recovered failed agent tool calls automatically with argument
+                  repair that acts only when the fix is provable.
                 </li>
                 <li>
-                  Resolved an MCP HTTP 421 outage using APM evidence, then
-                  locked dependency builds, pinned the framework version, and
-                  added monitors.
+                  Halved the error rate of a document-processing service by
+                  adding a second provider behind a fast hedge, with rollback in
+                  about a minute.
                 </li>
                 <li>
-                  Eliminated compounding retry amplification and validated the
-                  change under live production traffic.
+                  Found failures that raised no errors, and rebuilt latency
+                  alerting by backtesting it against real incidents.
                 </li>
                 <li>
-                  Shipped three customer-context MCP tools, including the
-                  platform&apos;s first MCP-to-MCP workflow, within
-                  service-level objectives.
+                  Diagnosed incidents across service boundaries, tracing root
+                  causes beyond the team&apos;s own services and heading off
+                  unnecessary redeploys.
                 </li>
                 <li>
-                  Used production log analysis to isolate and correct a
-                  timestamp race, then verified the fix under load.
-                </li>
-                <li>
-                  Designed a split test for a model migration covering a
-                  significant share of assistant traffic.
+                  Ran a controlled model-migration experiment and caught a flaw
+                  that would have invalidated its results.
                 </li>
               </ul>
             </div>
@@ -145,55 +138,35 @@ export default function Resume() {
               </p>
               <ul>
                 <li>
-                  Founded an MCP server and orchestrator in December 2025. I
-                  wrote roughly 6,650 lines in six days and supported it with a
-                  445-line operator guide. It became the foundation of the
-                  organization&apos;s LLM platform.
+                  Founded the team&apos;s first MCP server and agent
+                  orchestrator, the foundation for its later agent work.
                 </li>
                 <li>
-                  Built an autonomous delivery pipeline that completed 17 runs
-                  over 10.6 hours and produced 20 reviewable commits.
+                  Started the company&apos;s first Claude Code plugin
+                  marketplace and introduced techniques for reasoning over
+                  sources larger than a model&apos;s context window.
                 </li>
                 <li>
-                  Created an internal marketplace of nine agent plugins and
-                  introduced recursive language-model techniques for work beyond
-                  a model&apos;s normal context window.
+                  Built an autonomous delivery pipeline that turns tickets into
+                  reviewable commits.
                 </li>
                 <li>
-                  Designed the operating contract for a custom Claude Slack
-                  integration used in production investigation and engineering
-                  workflows.
+                  Architected a fraud-analysis service from spike to production,
+                  with decision records, architecture diagrams, and runbooks
+                  designed for sixfold growth.
                 </li>
                 <li>
-                  Architected a fraud-analysis service with 13 ADRs, C4
-                  diagrams, and five runbooks to support a sixfold growth
-                  target.
+                  Led the team&apos;s first move to secretless workload identity
+                  and wrote the playbook for the services that followed.
                 </li>
                 <li>
-                  Led a workload-identity migration spanning five shared
-                  packages and more than five services; wrote the 1,000-line
-                  implementation playbook used by other teams.
+                  Cut a customer-advocate document task by more than 80%, and
+                  delivered an OCR proof of concept in three days.
                 </li>
+                <li>Reduced a service&apos;s memory use by more than 80%.</li>
                 <li>
-                  Reduced advocate insurance work from more than 20 minutes to
-                  under four, and delivered an OCR proof of concept in three
-                  days with an error rate below 2%.
-                </li>
-                <li>
-                  Cut one service&apos;s memory ceiling from over 1.5 GB to
-                  under 243 MB, reducing total memory utilization from 60–80% to
-                  below 10%.
-                </li>
-                <li>
-                  Contributed across services to a top company rearchitecture
-                  supporting co-buyers, while mentoring engineers on domain
-                  workflows and dependencies.
-                </li>
-                <li>
-                  Authored 15 architecture decisions and multiple engineering
-                  standards and root-cause analyses. Opened 143 pull requests
-                  and reviewed 177 across 20 repositories in 28 weeks; 58% of
-                  the work was self-scoped.
+                  Set standards others build on through architecture decision
+                  records, coding standards, and root-cause analyses.
                 </li>
               </ul>
             </div>
@@ -248,14 +221,14 @@ export default function Resume() {
             <div>
               <h3>vaultkit</h3>
               <p>
-                A personal, LLM-maintained knowledge engine: roughly 13,000
-                lines of Python, more than 900 tests, nightly and weekly
-                maintenance cadences, and a scaffold adopted by four teams. The
+                An LLM-maintained knowledge engine that gives coding agents
+                domain context. In blind tests on real tickets, it raised
+                accepted changes 45% and cut cost per accepted change 47%. The
                 reusable{" "}
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   vault-scaffold workflow
                 </ExternalLink>{" "}
-                is available on GitHub.
+                is on GitHub and in use by other teams.
               </p>
             </div>
             <div>
@@ -265,10 +238,9 @@ export default function Resume() {
                 </ExternalLink>
               </h3>
               <p>
-                Cross-client Recursive Language Model plugins for Claude Code
-                and OpenAI Codex, with bounded fanout, dry-run planning, local
-                model support, automated tests, and a credential-free public
-                demonstration.
+                Plugins that let Claude Code and OpenAI Codex reason over
+                sources far larger than their context window, with budgets, dry
+                runs, and a public demo.
               </p>
             </div>
             <div>
