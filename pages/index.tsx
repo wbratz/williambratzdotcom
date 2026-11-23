@@ -410,9 +410,8 @@ export default function Home({ featuredPosts }: HomeProps) {
               <p className={styles.cardBody}>
                 Persistent context for people and coding agents. Sources stay
                 untouched, a nightly compile turns them into linked pages, and
-                each agent session loads the smallest map that fits its task. In
-                blind Opus runs it raised accepted changes 45% and cut cost per
-                accepted change 47%.
+                each agent session loads the smallest map that fits its task. A
+                rule reaches the agent when it edits the file the rule governs.
               </p>
               <div className={styles.cardLinks}>
                 <a href="/projects/vault">

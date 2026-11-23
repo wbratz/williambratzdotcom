@@ -61,36 +61,12 @@ export default function CodingAgents() {
         <section className={styles.section} aria-labelledby="vault-title">
           <p className={styles.label}>The Vault</p>
           <h2 id="vault-title">A memory my agents and I keep together</h2>
-          <div className={styles.stepGrid}>
-            <article className={styles.card}>
-              <h3>1 · Collect</h3>
-              <p className={styles.cardBody}>
-                Pull requests, design decisions, work requests, meeting notes,
-                and agent sessions land as source files that are never edited.
-              </p>
-            </article>
-            <article className={styles.card}>
-              <h3>2 · Compile nightly</h3>
-              <p className={styles.cardBody}>
-                A model turns them into linked pages. Plain code writes the
-                files and checks that every citation resolves.
-              </p>
-            </article>
-            <article className={styles.card}>
-              <h3>3 · Load the smallest map</h3>
-              <p className={styles.cardBody}>
-                A session starts from a short index and opens deeper pages only
-                when the task needs them.
-              </p>
-            </article>
-            <article className={styles.card}>
-              <h3>4 · Rules at the edit</h3>
-              <p className={styles.cardBody}>
-                When an agent edits a file that a team rule covers, the rule is
-                handed to it right then.
-              </p>
-            </article>
-          </div>
+          <p className={styles.sectionLede}>
+            Sources stay untouched. A nightly compile turns them into cited
+            pages. A session loads a short map and opens deeper pages only when
+            the task needs them. The architecture, safeguards, and how to build
+            one live on the Vault page.
+          </p>
           <div className={styles.statRow}>
             <p>
               <strong>97% leaner</strong> startup context: agents get a map, not
@@ -99,6 +75,11 @@ export default function CodingAgents() {
             <p>
               <strong>13k lines</strong> of Python, <strong>900+</strong> tests
             </p>
+          </div>
+          <div className={styles.links}>
+            <a href="/projects/vault">
+              How the Vault works <Next />
+            </a>
           </div>
         </section>
 
@@ -240,6 +221,11 @@ export default function CodingAgents() {
               Each rule now arrives the moment the agent edits a file it covers,
               and agents correct course mid-edit.
             </p>
+            <div className={styles.links}>
+              <a href="/blog/rules-at-the-edit">
+                How rules at the edit work <Next />
+              </a>
+            </div>
           </div>
           <div className={styles.panel}>
             <div className={styles.statGrid}>
