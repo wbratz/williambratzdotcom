@@ -486,7 +486,7 @@ export default function Home({ featuredPosts }: HomeProps) {
         <div className={styles.contact}>
           <ContactCallout
             title="Building agents that need better context?"
-            body="I'm open to remote senior and staff roles in context engineering, agent platforms, and MCP infrastructure, and always up for comparing notes."
+            body="Ask me a question, compare notes, or invite me to talk it through with your team."
           />
         </div>
       </div>

@@ -257,7 +257,7 @@ export default function About() {
         <div className={styles.contact}>
           <ContactCallout
             title="Building agents that need better context?"
-            body="I'm always up for comparing notes on context engineering, MCP, and knowledge systems that keep up with the code."
+            body="Ask me about context engineering, MCP, and knowledge systems that keep up with the code, or invite me to talk with your team."
           />
         </div>
       </article>

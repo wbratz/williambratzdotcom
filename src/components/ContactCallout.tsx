@@ -7,16 +7,16 @@ type ContactCalloutProps = {
 
 export default function ContactCallout({
   title = "Interested in production AI, MCP, or engineering knowledge systems?",
-  body = "I enjoy comparing notes with people working through the same hard problems.",
+  body = "I enjoy comparing notes with people working through the same hard problems. Ask a question, or invite me to talk it through with your team.",
 }: ContactCalloutProps) {
   return (
     <section className={styles.callout} aria-labelledby="contact-title">
-      <p className={styles.eyebrow}>Let&apos;s compare notes</p>
+      <p className={styles.eyebrow}>Ask me a question</p>
       <h2 id="contact-title">{title}</h2>
       <p className={styles.body}>{body}</p>
       <div className={styles.links}>
         <a href="mailto:WilliamBratz615@gmail.com">
-          Send me an email <span aria-hidden="true">→</span>
+          Email me a question <span aria-hidden="true">→</span>
         </a>
         <a
           href="https://www.linkedin.com/in/williambratz"

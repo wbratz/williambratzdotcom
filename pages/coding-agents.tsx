@@ -287,7 +287,7 @@ export default function CodingAgents() {
         <div className={styles.contact}>
           <ContactCallout
             title="Want your coding agents to write your team's code?"
-            body="I'm always up for comparing notes on context for coding agents and knowledge systems that keep up."
+            body="Ask me a question about context for coding agents, or invite me to talk it through with your team."
           />
         </div>
       </div>
