@@ -13,7 +13,9 @@ sectionLinks: true
 featured: true
 ---
 
-The Vault began as my implementation of [Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): preserve original sources, maintain a linked wiki, and let useful synthesis survive the chat that produced it. That gave agents a memory they could inspect.
+A rule I had written down sat in the Vault, filed under the project where I learned it. A different service later needed that rule, and its agent sessions never reached the page. The wiki was healthy and the page was cited and correct. Nothing connected it to the service that needed it.
+
+That gap is why the Vault stopped being only a wiki. It began as my implementation of [Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): preserve original sources, maintain a linked wiki, and let useful synthesis survive the chat that produced it. That gave agents a memory they could inspect. It did not tell them which page applied to the work in front of them.
 
 The system now does more than maintain pages. An agent needs to know which context applies to *this* task and *this* repository, receive it at the moment it can use it, and reveal whether it changed the outcome. [Blind tests on real software changes](/blog/proving-the-vaults-value) showed that access to the Vault can improve coding work. The next questions concern how to make that context more precise and how to measure its effect.
 
