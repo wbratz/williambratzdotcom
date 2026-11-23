@@ -26,6 +26,10 @@ Dark mode is the default, but both themes must remain usable.
   "story".
 - Use curly apostrophes in titles. `npm run check:metadata` compares `title`
   with `og:title` and fails on straight ones.
+- Do not say or imply that the author is looking for work, and do not say he
+  is not. The site's job is to be a useful voice on context engineering and to
+  make readers want to ask a question or invite him to talk with their team.
+  Calls to action invite questions and conversation.
 - Do not add a list of forbidden terms to this repository. A list of what to
   hide tells readers where to look. Keep it outside the repo.
 

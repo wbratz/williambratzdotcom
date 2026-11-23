@@ -217,7 +217,7 @@ export default function AiEngineering() {
         <div className={styles.contact}>
           <ContactCallout
             title="Building agents that need better context?"
-            body="I'm open to remote senior and staff roles in context engineering, agent platforms, and MCP infrastructure."
+            body="Ask me a question about context engineering, agent platforms, or MCP infrastructure, or invite me to talk it through with your team."
           />
         </div>
       </article>

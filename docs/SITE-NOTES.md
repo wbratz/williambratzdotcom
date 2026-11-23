@@ -41,6 +41,17 @@ When an open item is done, delete it from the list and mention it in the log.
 
 ## Log
 
+### 2026-11-23: positioning, no employment language
+
+- Removed "open to remote senior and staff roles" from the home page and the AI
+  engineering page. The site neither says the author is looking for work nor
+  says he is not. Contact blocks now invite a question or an invitation to talk
+  with a team. The shared callout reads "Ask me a question" and the email link
+  reads "Email me a question".
+- The resume page and its PDF stay as a record of experience. If the site should
+  lean further from a job-search feel, the next step is to move the resume link
+  out of the main navigation.
+
 ### 2026-11-23: rules at the edit, stale facts, one canonical Vault page
 
 Branch `rules-at-the-edit`, from a full review of the live site.
