@@ -66,8 +66,8 @@ export default function Home({ featuredPosts }: HomeProps) {
               Context engineering for production and coding agents
             </p>
             <h1 id="home-title">
-              Your best agent is still{" "}
-              <span className={styles.accent}>new here.</span>
+              Your agents should know{" "}
+              <span className={styles.accent}>what your team knows.</span>
             </h1>
             <p className={styles.promise}>
               I give agents the decisions, constraints, and evidence your team
