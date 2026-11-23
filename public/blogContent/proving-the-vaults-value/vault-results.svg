@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
   <title id="title">Proving the Vault's value</title>
-  <desc id="description">Blind tests on real tickets compare a coding agent with and without the Vault. With the Vault, accepted changes rise from 11 to 16, blocker and major bugs fall from 9 to 0, and cost per accepted change falls from $7.79 to $4.12.</desc>
+  <desc id="description">Blind Opus runs on real engineering changes compare a coding agent with and without the Vault. With the Vault, accepted changes rise from 11 to 16, blocker and major bugs fall from 9 to 0, and cost per accepted change falls from $7.79 to $4.12.</desc>
   <defs>
     <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#111820"/>
@@ -12,7 +12,7 @@
   <circle cx="1070" cy="92" r="180" fill="#eab65c" opacity=".06"/>
 
   <g font-family="Inter, Arial, sans-serif">
-    <text x="72" y="92" fill="#eab65c" font-size="22" font-weight="700" letter-spacing="2">BLIND A/B TEST · REAL TICKETS</text>
+    <text x="72" y="92" fill="#eab65c" font-size="22" font-weight="700" letter-spacing="2">BLIND OPUS RUNS · REAL ENGINEERING CHANGES</text>
     <text x="72" y="150" fill="#f1f4f8" font-size="52" font-weight="800" letter-spacing="-1.5">Same agent. Context on and off.</text>
 
     <g transform="translate(72 230)">

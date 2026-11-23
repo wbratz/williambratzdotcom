@@ -147,8 +147,8 @@ export default function Resume() {
                   sources larger than a model&apos;s context window.
                 </li>
                 <li>
-                  Built an autonomous delivery pipeline that turns tickets into
-                  reviewable commits.
+                  Built an autonomous delivery pipeline that turns work requests
+                  into reviewable commits.
                 </li>
                 <li>
                   Architected a fraud-analysis service from spike to production,
@@ -222,9 +222,9 @@ export default function Resume() {
               <h3>vaultkit</h3>
               <p>
                 An LLM-maintained knowledge engine that gives coding agents
-                domain context. In blind tests on real tickets, it raised
-                accepted changes 45% and cut cost per accepted change 47%. The
-                reusable{" "}
+                domain context. In blind Opus runs on real engineering changes,
+                it raised accepted changes 45% and cut cost per accepted change
+                47%. The reusable{" "}
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   vault-scaffold workflow
                 </ExternalLink>{" "}

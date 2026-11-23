@@ -21,7 +21,7 @@
   <text x="60" y="118" class="head">Without focused context</text>
   <g>
     <rect x="60" y="145" width="185" height="78" rx="14" class="box"/>
-    <text x="152" y="191" text-anchor="middle" class="body">Prompt ticket</text>
+    <text x="152" y="191" text-anchor="middle" class="body">Request change</text>
     <rect x="315" y="145" width="185" height="78" rx="14" class="box"/>
     <text x="407" y="181" text-anchor="middle" class="body">Implement</text>
     <text x="407" y="204" text-anchor="middle" class="small">wrong assumption</text>

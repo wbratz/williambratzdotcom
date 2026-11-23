@@ -35,7 +35,7 @@
       <text x="120" y="327">Product decisions</text>
       <text x="120" y="385">Code and pull requests</text>
       <text x="120" y="443">Incidents and conversations</text>
-      <text x="120" y="501">Specs, tickets, and ADRs</text>
+      <text x="120" y="501">Specs, requests, and ADRs</text>
     </g>
 
     <rect x="460" y="188" width="280" height="360" rx="20" fill="#202b35" stroke="#eab65c" stroke-width="2"/>

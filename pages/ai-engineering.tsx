@@ -111,8 +111,8 @@ export default function AiEngineering() {
               <h3>The Vault</h3>
               <p>
                 Persistent context for people and coding agents. In blind tests
-                on real tickets, it raised accepted changes 45% and cut cost per
-                accepted change 47%.
+                on real engineering changes, the Opus runs raised accepted
+                changes 45% and cut cost per accepted change 47%.
               </p>
               <ul>
                 <li>rules delivered at the moment of the edit</li>
