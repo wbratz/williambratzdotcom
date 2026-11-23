@@ -185,7 +185,7 @@ export default function ProductionAgents() {
         <div className={styles.contact}>
           <ContactCallout
             title="Is your agent slow, bloated, or picking the wrong tools?"
-            body="I'm always up for comparing notes on context engineering for production agents."
+            body="Ask me a question about it, or invite me to talk it through with your team."
           />
         </div>
       </div>
