@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The Vault context loop</title>
+  <desc id="desc">The Vault preserves source evidence, maintains a knowledge model, serves scoped context during work, and grades outcomes so the model and delivery can improve.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111820"/>
+      <stop offset="1" stop-color="#1b2731"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .kicker{font:700 20px Inter,Arial,sans-serif;letter-spacing:2px;fill:#eab65c}
+      .headline{font:800 48px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .cardtitle{font:700 27px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 19px Inter,Arial,sans-serif;fill:#c3cbd6}
+      .small{font:600 17px Inter,Arial,sans-serif;fill:#eab65c}
+      .line{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <circle cx="1090" cy="40" r="190" fill="#eab65c" opacity=".05"/>
+  <text x="64" y="75" class="kicker">THE VAULT · CONTEXT SYSTEM</text>
+  <text x="64" y="137" class="headline">Context in motion</text>
+  <text x="64" y="172" class="body">Build it from evidence. Serve it at the right moment. Grade the result.</text>
+
+  <g>
+    <rect x="64" y="232" width="245" height="268" rx="18" fill="#212e39" stroke="#3a4753" stroke-width="2"/>
+    <text x="90" y="279" class="cardtitle">Raw evidence</text>
+    <text x="90" y="323" class="body">Original sources</text>
+    <text x="90" y="358" class="body">Speaker and date</text>
+    <text x="90" y="393" class="body">Inspectable passage</text>
+    <text x="90" y="466" class="small">PRESERVE</text>
+  </g>
+  <path class="line" d="M310 365 H356"/>
+  <g>
+    <rect x="357" y="232" width="260" height="268" rx="18" fill="#212e39" stroke="#3a4753" stroke-width="2"/>
+    <text x="383" y="279" class="cardtitle">Knowledge model</text>
+    <text x="383" y="323" class="body">Cited wiki pages</text>
+    <text x="383" y="358" class="body">Concepts and claims</text>
+    <text x="383" y="393" class="body">Meaning and scope</text>
+    <text x="383" y="466" class="small">COMPILE + MODEL</text>
+  </g>
+  <path class="line" d="M618 365 H664"/>
+  <g>
+    <rect x="665" y="232" width="246" height="268" rx="18" fill="#2b3340" stroke="#eab65c" stroke-width="2"/>
+    <text x="691" y="279" class="cardtitle">Context serving</text>
+    <text x="691" y="323" class="body">Small startup map</text>
+    <text x="691" y="358" class="body">Relevant evidence</text>
+    <text x="691" y="393" class="body">Rules at the edit</text>
+    <text x="691" y="466" class="small">DELIVER</text>
+  </g>
+  <path class="line" d="M912 365 H958"/>
+  <g>
+    <rect x="959" y="232" width="177" height="268" rx="18" fill="#212e39" stroke="#3a4753" stroke-width="2"/>
+    <text x="985" y="279" class="cardtitle">Outcome</text>
+    <text x="985" y="323" class="body">Answer or code</text>
+    <text x="985" y="358" class="body">Review</text>
+    <text x="985" y="393" class="body">Grade</text>
+    <text x="985" y="466" class="small">LEARN</text>
+  </g>
+  <text x="64" y="567" class="body">Use misses and corrections to improve what the Vault knows and when agents see it.</text>
+</svg>
