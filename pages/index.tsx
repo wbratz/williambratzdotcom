@@ -66,12 +66,12 @@ export default function Home({ featuredPosts }: HomeProps) {
               Context engineering for production and coding agents
             </p>
             <h1 id="home-title">
-              Give your agents the context{" "}
-              <span className={styles.accent}>they can&apos;t guess.</span>
+              Stop teaching your agents{" "}
+              <span className={styles.accent}>the same thing twice.</span>
             </h1>
             <p className={styles.promise}>
-              I give agents the decisions, constraints, and evidence your team
-              has already earned, at the moment the work needs them.
+              I build context systems that remember what you learn, bring it to
+              agents when it matters, and test whether it helps.
             </p>
             <p className={styles.intro}>
               I&apos;m William “Billy” Bratz, a senior software engineer focused
