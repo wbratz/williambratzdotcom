@@ -2,7 +2,7 @@
 title: "When the Map Starts Learning: Building a Shared Memory for Humans and AI"
 slug: bridging-the-gap
 date: 2026-07-27
-updated: 2026-07-27
+updated: 2026-11-23
 description: What happens when documentation stops being a destination and becomes living context for product, engineering, and AI.
 photo: "./blogContent/bridging-the-gap/learning-map-system.svg"
 banner: "../blogContent/bridging-the-gap/learning-map-system.svg"
@@ -113,7 +113,7 @@ The Vault began as my implementation of the LLM Wiki pattern for real engineerin
 
 It is not a folder where I save whatever looks interesting. It is a pipeline for turning the exhaust of product and engineering into durable, inspectable context.
 
-Today it tracks more than a thousand raw source artifacts and compiles them into hundreds of active knowledge pages. It has archived hundreds of substantial AI-assisted engineering conversations. It mirrors product stories, pull requests, ADRs, design decisions, standards, patterns, package knowledge, and current work across repositories.
+When I wrote this in July, it tracked more than a thousand raw source artifacts and compiled them into hundreds of active knowledge pages. It had archived hundreds of substantial AI-assisted engineering conversations. It mirrored product stories, pull requests, ADRs, design decisions, standards, patterns, package knowledge, and current work across repositories.
 
 The files matter. The system around them matters more.
 
@@ -152,13 +152,13 @@ The goal is the **right context, at the right resolution, at the moment a decisi
 
 ### A Memory Loop, Not a Document Dump
 
-Three automated cadences keep the system moving.
+Two automated cadences keep the system moving.
 
-A daily ingest gathers new evidence: merged PRs, ADRs, Jira stories, watched documents, and meaningful AI conversations. It refreshes compact summaries of what is active now.
+A nightly run gathers new evidence and compiles it. The ingest half collects merged PRs, ADRs, Jira stories, watched documents, and meaningful AI conversations, and refreshes compact summaries of what is active now. The compile half turns pending evidence into useful knowledge. It updates story pages, extracts durable lessons from conversations, builds PR rollups, identifies architectural decisions buried in implementation work, routes new material, and checks citations.
 
-A weekly compile turns pending evidence into useful knowledge. It updates story pages, extracts durable lessons from conversations, builds PR rollups, identifies architectural decisions buried in implementation work, routes new material, and checks citations.
+A weekly lint looks for decay: broken references, stale claims, contradictions, orphaned pages, and gaps between Raw evidence and the Wiki’s current story.
 
-A monthly lint looks for decay: broken references, stale claims, contradictions, orphaned pages, and gaps between Raw evidence and the Wiki’s current story.
+*Revised November 2026. When I first wrote this, ingest ran daily, compile weekly, and lint monthly. Compile moved to nightly because material captured on a Monday stayed unsynthesized until Sunday, and synthesis is what makes it findable. Lint moved to weekly because the synthesis steps create orphans and drift every week, and a monthly check was too slow to catch them.*
 
 ![The Vault continuously ingests new evidence, compiles linked knowledge, serves shared context, produces better work, and checks itself for decay.](/blogContent/bridging-the-gap/vault-maintenance-loop.svg)
 

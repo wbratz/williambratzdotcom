@@ -110,9 +110,9 @@ export default function AiEngineering() {
               <p className={styles.cardType}>Knowledge infrastructure</p>
               <h3>The Vault</h3>
               <p>
-                Persistent context for people and coding agents. In blind tests
-                on real engineering changes, the Opus runs raised accepted
-                changes 45% and cut cost per accepted change 47%.
+                Persistent context for people and coding agents. Sources stay
+                untouched, and a rule reaches the agent when it edits the file
+                the rule governs.
               </p>
               <ul>
                 <li>rules delivered at the moment of the edit</li>

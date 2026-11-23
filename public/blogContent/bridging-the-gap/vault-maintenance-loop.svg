@@ -22,12 +22,12 @@
   <text x="172" y="344" text-anchor="middle" class="body">conversations · documents</text>
 
   <rect x="355" y="100" width="205" height="120" rx="18" class="box"/>
-  <text x="457" y="143" text-anchor="middle" class="head">Daily ingest</text>
+  <text x="457" y="143" text-anchor="middle" class="head">Nightly ingest</text>
   <text x="457" y="175" text-anchor="middle" class="body">capture and normalize</text>
   <text x="457" y="199" text-anchor="middle" class="body">refresh the current map</text>
 
   <rect x="640" y="100" width="205" height="120" rx="18" class="box"/>
-  <text x="742" y="143" text-anchor="middle" class="head">Weekly compile</text>
+  <text x="742" y="143" text-anchor="middle" class="head">Nightly compile</text>
   <text x="742" y="175" text-anchor="middle" class="body">connect and synthesize</text>
   <text x="742" y="199" text-anchor="middle" class="body">route durable knowledge</text>
 
@@ -42,7 +42,7 @@
   <text x="742" y="529" text-anchor="middle" class="body">investigation · correction</text>
 
   <rect x="355" y="430" width="205" height="120" rx="18" class="box"/>
-  <text x="457" y="473" text-anchor="middle" class="head">Monthly lint</text>
+  <text x="457" y="473" text-anchor="middle" class="head">Weekly lint</text>
   <text x="457" y="505" text-anchor="middle" class="body">stale claims · broken links</text>
   <text x="457" y="529" text-anchor="middle" class="body">contradictions · gaps</text>
 

@@ -381,3 +381,16 @@
     text-align: left;
   }
 }
+
+.workflow h3 a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--vault-accent, #eab65c);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+.workflow h3 a:hover,
+.workflow h3 a:focus-visible {
+  color: var(--vault-accent, #eab65c);
+}

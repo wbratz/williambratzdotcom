@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Rules at the edit</title>
+  <desc id="desc">An agent edits a config file. A hook matches the file path to a rule. The rule arrives before the file is written, once per session.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111820"/>
+      <stop offset="1" stop-color="#1b2731"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#eab65c"/>
+    </marker>
+    <style>
+      .kicker{font:700 20px Inter,Arial,sans-serif;letter-spacing:2px;fill:#eab65c}
+      .headline{font:800 48px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .cardtitle{font:700 27px Inter,Arial,sans-serif;fill:#f1f4f8}
+      .body{font:500 19px Inter,Arial,sans-serif;fill:#c3cbd6}
+      .mono{font:500 18px ui-monospace,Menlo,Consolas,monospace;fill:#f1f4f8}
+      .small{font:600 17px Inter,Arial,sans-serif;fill:#eab65c}
+      .line{fill:none;stroke:#eab65c;stroke-width:3;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="630" rx="28" fill="url(#bg)"/>
+  <circle cx="1090" cy="40" r="190" fill="#eab65c" opacity=".05"/>
+  <text x="64" y="75" class="kicker">THE VAULT · RULES AT THE EDIT</text>
+  <text x="64" y="137" class="headline">The file knows the rule</text>
+  <text x="64" y="172" class="body">The agent never has to know to ask.</text>
+
+  <g>
+    <rect x="64" y="232" width="320" height="268" rx="18" fill="#212e39" stroke="#3a4753" stroke-width="2"/>
+    <text x="90" y="279" class="cardtitle">The agent writes</text>
+    <text x="90" y="323" class="mono">config/prod.json</text>
+    <text x="90" y="358" class="body">to set a timeout</text>
+    <text x="90" y="466" class="small">THE EDIT</text>
+  </g>
+  <path class="line" d="M386 365 H438"/>
+  <g>
+    <rect x="440" y="232" width="320" height="268" rx="18" fill="#212e39" stroke="#3a4753" stroke-width="2"/>
+    <text x="466" y="279" class="cardtitle">A hook matches</text>
+    <text x="466" y="323" class="body">path pattern</text>
+    <text x="466" y="358" class="mono">config/.*\.json$</text>
+    <text x="466" y="393" class="body">finds one rule</text>
+    <text x="466" y="466" class="small">THE MATCH</text>
+  </g>
+  <path class="line" d="M762 365 H814"/>
+  <g>
+    <rect x="816" y="232" width="320" height="268" rx="18" fill="#2b3340" stroke="#eab65c" stroke-width="2"/>
+    <text x="842" y="279" class="cardtitle">The rule arrives</text>
+    <text x="842" y="323" class="body">Prod values live in</text>
+    <text x="842" y="358" class="body">the config service.</text>
+    <text x="842" y="393" class="body">Shown once a session.</text>
+    <text x="842" y="466" class="small">BEFORE THE WRITE</text>
+  </g>
+  <text x="64" y="568" class="body">Mechanical rules go to a linter. Rules that need judgment go in front of the edit.</text>
+</svg>

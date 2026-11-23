@@ -59,6 +59,37 @@ const adoption = [
   },
 ];
 
+const goDeeper = [
+  {
+    number: "01",
+    title: "Why I built it",
+    href: "/blog/bridging-the-gap",
+    description:
+      "The three-part story from Naur's theory of a program to a shared memory for people and agents.",
+  },
+  {
+    number: "02",
+    title: "Does it work?",
+    href: "/blog/proving-the-vaults-value",
+    description:
+      "The blind study: real changes, two models, context on and off, with the method and the caveats.",
+  },
+  {
+    number: "03",
+    title: "Rules at the edit",
+    href: "/blog/rules-at-the-edit",
+    description:
+      "Why an agent can't search for a rule it doesn't know exists, and the hook that delivers it when the file is written.",
+  },
+  {
+    number: "04",
+    title: "Where it is going",
+    href: "/blog/vault-context-system",
+    description:
+      "From an LLM-maintained wiki to a context system that serves, grades, and revises what agents see.",
+  },
+];
+
 const safeguards = [
   {
     title: "Raw evidence is immutable",
@@ -387,6 +418,32 @@ export default function VaultProject() {
                 <div>
                   <h3>{step.title}</h3>
                   <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
+        <section className={styles.workflow} aria-labelledby="deeper-title">
+          <div className={styles.sectionHeading}>
+            <p className={styles.sectionLabel}>Go deeper</p>
+            <h2 id="deeper-title">
+              One page for the system, four for the detail
+            </h2>
+            <p>
+              This page is the overview. Each essay answers one question and
+              links back here.
+            </p>
+          </div>
+          <ol>
+            {goDeeper.map((item) => (
+              <li key={item.number}>
+                <span>{item.number}</span>
+                <div>
+                  <h3>
+                    <Link href={item.href}>{item.title}</Link>
+                  </h3>
+                  <p>{item.description}</p>
                 </div>
               </li>
             ))}
