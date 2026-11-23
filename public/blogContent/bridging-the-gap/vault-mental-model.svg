@@ -27,7 +27,7 @@
   <g class="body">
     <text x="92" y="250">Product specs</text>
     <text x="92" y="298">Slack decisions</text>
-    <text x="92" y="346">Tickets and ADRs</text>
+    <text x="92" y="346">Requests and ADRs</text>
     <text x="92" y="394">Pull requests</text>
     <text x="92" y="442">Incidents</text>
     <text x="92" y="490">Agent sessions</text>

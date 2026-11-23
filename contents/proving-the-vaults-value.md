@@ -2,10 +2,10 @@
 title: "Proving the Vault’s Value: Domain Context Makes Coding Agents Better"
 slug: proving-the-vaults-value
 date: 2026-11-19
-description: Blind tests on real tickets show what happens when a coding agent gets your team’s context. More accepted changes, zero serious bugs, and half the cost.
+description: In a blind coding study, Opus with the Vault produced more accepted changes, no blocker or major bugs, and lower cost per accepted change.
 photo: "./blogContent/proving-the-vaults-value/vault-results.svg"
 banner: "../blogContent/proving-the-vaults-value/vault-results.svg"
-imageAlt: A bar chart comparing a coding agent with and without the Vault. With the Vault, accepted changes rise from 11 to 16, blocker and major bugs fall from 9 to 0, and cost per accepted change falls from $7.79 to $4.12.
+imageAlt: A bar chart comparing Opus coding-agent runs with and without the Vault. With the Vault, accepted changes rise from 11 to 16, blocker and major bugs fall from 9 to 0, and cost per accepted change falls from $7.79 to $4.12.
 topics:
   - AI Systems
   - Knowledge Systems
@@ -13,18 +13,20 @@ sectionLinks: true
 featured: true
 ---
 
-Does giving a coding agent your team's context produce better code? I tested it blind, on real tickets, with [the Vault](/projects/vault) switched on and off. It does.
+Does giving a coding agent your team's context produce better code? I replayed real engineering changes with [the Vault](/projects/vault) switched on and off, then graded the results blind. The strongest improvement was in the Opus runs:
 
-- **+45%** accepted changes
+- **+45%** accepted changes (11 to 16 of 24 runs)
 - **Zero** blocker or major bugs, down from nine
 - **47% lower** cost per accepted change
-- **29% less** time per ticket
+- **29% less** time per change
+
+Sonnet improved from seven to eight accepted changes in 24 runs, and its cost per accepted change fell from $4.70 to $3.31. It still had blocker and major bugs. The result supports a benefit in this study, especially for Opus; it is not a guarantee for every model or engineering task.
 
 ## How I tested it
 
-Every run started from the commit before the original work, with the ticket as it read that day and a snapshot of the Vault from that date, answer removed.
+Every run started from the commit before the original work, with the work request as it read that day and a snapshot of the Vault from that date, answer removed.
 
-- **Real tickets:** bugs, ambiguous asks, coding-standards traps, and requests for things that already existed.
+- **Real engineering changes:** bugs, ambiguous asks, coding-standards traps, and requests for things that already existed.
 - **Two models,** with and without the Vault, 24 runs per setup.
 - **Blind judges** scored every change against an answer key and 1,277 real review comments, alongside automated checks and two independent rankings.
 
@@ -41,9 +43,9 @@ Every run started from the commit before the original work, with the ticket as i
 
 The biggest gain was fit: changes that look like the team wrote them. With the Vault, agents followed existing precedent, reused what was already there, and avoided mistakes the team had already learned from.
 
-## Agents that push back on bad tickets
+## Agents that push back on unnecessary work
 
-Some tickets asked for something that already existed. Without the Vault, every run built a duplicate. With it, agents spotted the existing solution and said so, some in under three minutes for about a dollar.
+Some work requests asked for something that already existed. Without the Vault, every run built a duplicate. With it, agents spotted the existing solution and said so, some in under three minutes for about a dollar.
 
 ## Standards, delivered on time
 
@@ -60,7 +62,7 @@ The same test shows which workflow steps pay off. One heavier step doubled cost 
 
 The whole study cost under $500 in model time.
 
-Two runs per ticket per setup. Judges never saw which setup produced a change. Full method on request.
+Two runs per work request per setup. Judges never saw which setup produced a change. Full method on request.
 
 ## Try it
 

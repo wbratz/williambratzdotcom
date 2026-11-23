@@ -26,7 +26,7 @@ It was supposed to be the easy one.
 
 The first post, [Programming as Theory Building](/blog/programming-as-theory-building), argued that the real program is not the code or the documentation. It is the theory a team holds about what the system does, why it exists, and how its pieces fit together.
 
-The second, [The Map Is Not the Theory](/blog/the-map-is-not-the-theory), argued that our diagrams, READMEs, ADRs, tickets, and wikis are only maps of that understanding. Useful maps, absolutely, but still incomplete, already aging, and incapable of walking the territory for us.
+The second, [The Map Is Not the Theory](/blog/the-map-is-not-the-theory), argued that our diagrams, READMEs, ADRs, work requests, and wikis are only maps of that understanding. Useful maps, absolutely, but still incomplete, already aging, and incapable of walking the territory for us.
 
 Part three was going to be a practical list: pair more, write down decisions, keep diagrams small, review your docs, repeat.
 
@@ -61,7 +61,7 @@ That is still good advice. AI does not eliminate theory building, and it does no
 
 But this old model has a structural limit: it depends on people doing the bookkeeping.
 
-Someone has to turn the meeting into notes, the notes into decisions, the decisions into tickets, the tickets into implementation context, and the implementation back into updated documentation. Someone has to notice that a PR invalidated an ADR, or that a Slack thread answered a question the next engineer will spend three hours rediscovering.
+Someone has to turn the meeting into notes, the notes into decisions, the decisions into implementation context, and the implementation back into updated documentation. Someone has to notice that a PR invalidated an ADR, or that a Slack thread answered a question the next engineer will spend three hours rediscovering.
 
 Usually, that someone is busy.
 
@@ -109,7 +109,7 @@ That is the experiment behind The Vault.
 
 ## The Vault
 
-The Vault is my implementation of the LLM Wiki pattern for real engineering work. It is a persistent, git-backed knowledge system built from plain Markdown and a Python automation engine.
+The Vault began as my implementation of the LLM Wiki pattern for real engineering work. It is a persistent, git-backed knowledge system built from plain Markdown and a Python automation engine. [I now describe its broader job as a context system](/blog/vault-context-system): modeling what applies, serving it during work, and checking whether it helped.
 
 It is not a folder where I save whatever looks interesting. It is a pipeline for turning the exhaust of product and engineering into durable, inspectable context.
 
@@ -179,11 +179,11 @@ Product decisions happen everywhere:
 - In a planning document.
 - Halfway through a Slack thread.
 - During a customer call.
-- In a ticket comment.
+- In a work request comment.
 - In a meeting where someone says, “Yes, but only for this case.”
 - In the moment a developer discovers that the requested behavior conflicts with the existing system.
 
-By the time implementation begins, those decisions have often been flattened into a ticket. The acceptance criteria describe the destination, but the discarded alternatives, customer pressure, constraints, and meaning of the work are missing.
+By the time implementation begins, those decisions have often been flattened into a work request. The acceptance criteria describe the destination, but the discarded alternatives, customer pressure, constraints, and meaning of the work are missing.
 
 Then engineering creates another trail: design notes, code, PR discussion, tests, rollout decisions, and operational lessons.
 
@@ -207,7 +207,7 @@ It also gives product a way to interrogate implementation without starting from 
 - Which open stories depend on the same assumption?
 - Where does current behavior diverge from the PRD?
 
-For engineering, those same links restore the “why” at the moment it matters. The developer and their AI agent do not receive a ticket floating alone in space. They can begin with the product intent, relevant decisions, system boundaries, prior implementations, known pitfalls, and current repository state already connected.
+For engineering, those same links restore the “why” at the moment it matters. The developer and their AI agent do not receive a request stripped of its history. They can begin with the product intent, relevant decisions, system boundaries, prior implementations, known pitfalls, and current repository state already connected.
 
 The handoff becomes a feedback loop.
 
@@ -254,7 +254,7 @@ That is the bridge.
 
 There is a familiar loop in AI-assisted development:
 
-1. Prompt the model to implement the ticket.
+1. Prompt the model to implement the requested change.
 2. Discover it misunderstood the architecture.
 3. Add a README.
 4. Discover it missed a product constraint.

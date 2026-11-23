@@ -32,6 +32,33 @@ const workflow = [
   },
 ];
 
+const adoption = [
+  {
+    number: "01",
+    title: "Choose one question worth answering",
+    description:
+      "Pick a domain and one recurring question, such as why a service uses a particular retry policy. Write down what a good answer must include before collecting files.",
+  },
+  {
+    number: "02",
+    title: "Preserve a small source set",
+    description:
+      "Start with a few relevant decisions, discussions, pull requests, and code references. Record origin and date. Keep the source copies intact, and decide what the agent may read or publish.",
+  },
+  {
+    number: "03",
+    title: "Give the agent an operating contract",
+    description:
+      "Define the folders, page types, citation format, edit authority, and a short index. Require the agent to open source passages before making claims and to flag contradictions instead of smoothing them over.",
+  },
+  {
+    number: "04",
+    title: "Compile, serve, and test",
+    description:
+      "Turn sources into focused, cited pages. Load only the small map at session start, then follow deeper links for the chosen question. Check the answer against the original evidence and record what the agent missed.",
+  },
+];
+
 const safeguards = [
   {
     title: "Raw evidence is immutable",
@@ -61,7 +88,7 @@ export default function VaultProject() {
     "@type": "SoftwareSourceCode",
     name: "The Vault",
     description:
-      "A persistent, source-grounded knowledge system for product teams, engineers, and AI agents.",
+      "A source-grounded context system for product teams, engineers, and AI agents.",
     author: {
       "@type": "Person",
       name: "William Bratz",
@@ -78,7 +105,7 @@ export default function VaultProject() {
         <title>The Vault | William Bratz</title>
         <meta
           name="description"
-          content="The architecture, operating model, safeguards, and adoption path behind The Vault, a persistent knowledge system for people and AI agents."
+          content="The architecture, operating model, safeguards, and adoption path behind The Vault, a source-grounded context system for people and AI agents."
         />
         <link rel="canonical" href={`${SITE_URL}/projects/vault`} />
         <meta property="og:type" content="article" />
@@ -86,7 +113,7 @@ export default function VaultProject() {
         <meta property="og:title" content="The Vault | William Bratz" />
         <meta
           property="og:description"
-          content="A persistent, source-grounded knowledge system for product teams, engineers, and AI agents."
+          content="A source-grounded context system for product teams, engineers, and AI agents."
         />
         <meta name="twitter:card" content="summary_large_image" />
         <script
@@ -105,9 +132,10 @@ export default function VaultProject() {
           <p className={styles.eyebrow}>Persistent context for humans and AI</p>
           <h1>The Vault</h1>
           <p className={styles.lede}>
-            The Vault is a source-grounded knowledge system that connects
-            product intent, engineering decisions, implementation evidence, and
-            the AI sessions used to do the work.
+            The Vault is a source-grounded context system that connects product
+            intent, engineering decisions, implementation evidence, and the AI
+            sessions used to do the work. It serves the relevant pieces when
+            people or agents need them and tests whether they helped.
           </p>
           <div className={styles.actions}>
             <a
@@ -119,7 +147,12 @@ export default function VaultProject() {
               Scaffold your own <span aria-hidden="true">↗</span>
             </a>
             <Link href="/blog/bridging-the-gap" legacyBehavior>
-              <a className={styles.secondaryAction}>Read the full essay</a>
+              <a className={styles.secondaryAction}>Why I built it</a>
+            </Link>
+            <Link href="/blog/vault-context-system" legacyBehavior>
+              <a className={styles.secondaryAction}>
+                How it became a context system
+              </a>
             </Link>
           </div>
           <dl className={styles.summary}>
@@ -335,15 +368,61 @@ export default function VaultProject() {
           </div>
         </section>
 
+        <section className={styles.workflow} aria-labelledby="adoption-title">
+          <div className={styles.sectionHeading}>
+            <p className={styles.sectionLabel}>Adoption path</p>
+            <h2 id="adoption-title">
+              Build the first Vault around a real question
+            </h2>
+            <p>
+              A useful first version proves that an agent can answer one
+              question with the right sources and limits. Expand the domain
+              after that path works.
+            </p>
+          </div>
+          <ol>
+            {adoption.map((step) => (
+              <li key={step.number}>
+                <span>{step.number}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+
         <section className={styles.start} aria-labelledby="start-title">
           <p className={styles.sectionLabel}>Try the pattern</p>
           <h2 id="start-title">Start with one domain and one real workflow</h2>
           <p>
             The public scaffold interviews you about your domain, creates a
-            generic Raw and Wiki structure, writes the operating contract, seeds
-            the first pages, and installs ingest, query, and lint instructions
-            for your agent.
+            starter Raw and Wiki structure, writes the operating contract, seeds
+            the first index, and installs ingest, query, decision-capture,
+            file-back, and lint instructions for your agent. Start in Claude
+            Code with “set up a vault for my project.” The scaffold gives you
+            the first working structure; use the steps above to bring real
+            evidence into it and test a real answer.
           </p>
+          <div className={styles.builderBrief}>
+            <h3>Brief for your coding agent</h3>
+            <p>
+              Point an agent at this page and give it a domain. Ask it to
+              produce a small, inspectable system before automating collection
+              or adding a graph service.
+            </p>
+            <pre>
+              <code>{`Build a local Vault for [domain] and the question [question].
+Keep source records intact with origin and date. Write a short
+schema that defines edit authority, citation rules, and privacy.
+Create a small index and cited pages. Make the agent follow the
+index to relevant pages and verify important claims in sources.
+Run the question, show the evidence for the answer, record misses,
+and propose the next improvement. Do not turn a proposal into a
+decision or treat a matching quote as proof of a conclusion.`}</code>
+            </pre>
+          </div>
           <div className={styles.actions}>
             <a
               className={styles.primaryAction}

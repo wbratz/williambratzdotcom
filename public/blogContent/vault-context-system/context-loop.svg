@@ -59,5 +59,7 @@
     <text x="985" y="393" class="body">Grade</text>
     <text x="985" y="466" class="small">LEARN</text>
   </g>
-  <text x="64" y="567" class="body">Use misses and corrections to improve what the Vault knows and when agents see it.</text>
+  <path class="line" d="M1047 501 V540 H487 V505"/>
+  <text x="752" y="530" class="small">REVIEW + CORRECTION</text>
+  <text x="64" y="595" class="body">Use misses and corrections to improve what the Vault knows and when agents see it.</text>
 </svg>

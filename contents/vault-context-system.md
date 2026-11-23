@@ -10,7 +10,7 @@ topics:
   - AI Systems
   - Knowledge Systems
 sectionLinks: true
-featured: false
+featured: true
 ---
 
 The Vault began as my implementation of [Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): preserve original sources, maintain a linked wiki, and let useful synthesis survive the chat that produced it. That gave agents a memory they could inspect.
@@ -80,6 +80,10 @@ I also tested whether these distinctions help an LLM answer questions. In an ini
 
 Imagine asking, “Did we decide to use this term, or did someone merely suggest it?” A useful answer needs more than the nearest page. It needs the concept's identity and definition, the claim's speaker and status, the specific source passage, the scope of any decision, and a check for later corrections.
 
+Here is a fictional example. A design note recommends reading production timeouts from a configuration service. A later work request proposes applying that idea to the payments client. A reviewer approves the payments change, and the code is updated. A wiki page linking those records might tempt an agent to answer, “All production timeouts must use the configuration service.” The evidence supports a narrower answer: **the payments client uses it because that change was approved and implemented; the original note alone does not establish a rule for every client.** The agent should inspect the approval, the current code, and any later decision before applying the pattern elsewhere.
+
+The useful connections are specific: *recommends* links the note to an idea, *proposes* links the work request to a change, *approves* links the reviewer to its scope, and *implements* links that decision to code. The example is illustrative, not a report of an actual Vault decision. It shows why a page link and a matching quote cannot carry the whole answer.
+
 The intended read path is: start with the small map for the current domain; use known labels and scope to find the right concept or rule; follow typed relationships to nearby claims and pages; read the relevant Raw evidence; then answer or act with a conclusion the source actually supports. If the evidence stops at a recommendation, the answer should stop there too. If a rule applies only to another repository, it should not be served as a universal standard.
 
 This could help with several real jobs:
@@ -93,7 +97,7 @@ Each use case needs its own evaluation. Search probes can show whether the right
 
 ## Does the Vault become the knowledge graph?
 
-I have not settled the long-term graph architecture. The local pilot already derives a small graph view from reviewed concept and claim records. One path is to keep the Markdown Vault as the canonical model and continue deriving graph views from it. Another is to add a dedicated graph service for questions that need richer traversal or validation. That would create another representation to keep synchronized.
+For the current pilot, reviewed Markdown records are the canonical working format and a small graph view is derived from them. The open decision is whether to keep that arrangement as the Vault grows or add a dedicated graph service for questions that need richer traversal or validation. A service would create another representation to keep synchronized.
 
 I want the choice to follow a question we cannot answer well with the files and indexes we already have. A graph database would not fix a mislabeled proposal or an unsupported claim. A second source has already exercised the local pilot's reviewed revision path. The next work is to run more real questions through the loop and test whether the resulting answers preserve meaning, support, and scope. If that reveals a need for graph queries or formal constraints, I will have a concrete reason to add them.
 

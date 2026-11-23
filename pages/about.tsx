@@ -139,7 +139,8 @@ export default function About() {
               <h3>Context should compound</h3>
               <p>
                 Decisions, incidents, and implementations should make the next
-                piece of work easier, not disappear into another chat or ticket.
+                piece of work easier instead of disappearing when a conversation
+                or change ends.
               </p>
             </article>
           </div>
@@ -157,13 +158,16 @@ export default function About() {
               <p className={styles.cardType}>Open source</p>
               <h3>The Vault</h3>
               <p>
-                A persistent LLM-maintained wiki that connects source evidence,
-                product decisions, engineering implementations, and agent
-                context.
+                A source-grounded context system that grew from an
+                LLM-maintained wiki. It connects evidence, decisions, and
+                implementation so people and agents can find what applies.
               </p>
               <div className={styles.cardLinks}>
                 <Link href="/projects/vault" legacyBehavior>
                   <a>Explore the project</a>
+                </Link>
+                <Link href="/blog/vault-context-system" legacyBehavior>
+                  <a>Read the current direction</a>
                 </Link>
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   Scaffold your own

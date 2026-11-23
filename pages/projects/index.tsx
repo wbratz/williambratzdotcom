@@ -45,9 +45,10 @@ export default function Projects() {
               <p className={styles.projectType}>Knowledge infrastructure</p>
               <h2>The Vault</h2>
               <p>
-                A persistent, source-grounded wiki that turns product and
-                engineering evidence into focused context for people and AI
-                agents.
+                A source-grounded context system that turns product and
+                engineering evidence into applicable context for people and AI
+                agents. It began as an LLM-maintained wiki and now tests how
+                context reaches the work.
               </p>
               <ul>
                 <li>Immutable evidence and regenerable synthesis</li>
@@ -56,6 +57,9 @@ export default function Projects() {
               </ul>
               <div className={styles.actions}>
                 <Link href="/projects/vault">Explore The Vault</Link>
+                <Link href="/blog/vault-context-system">
+                  Read its direction
+                </Link>
                 <a
                   href="https://github.com/wbratz/vault-scaffold"
                   target="_blank"

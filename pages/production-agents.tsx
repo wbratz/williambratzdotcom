@@ -128,19 +128,16 @@ export default function ProductionAgents() {
           <p className={styles.label}>3 · Right</p>
           <h2 id="right-title">Help the agent make the right call</h2>
           <p className={styles.sectionLede}>
-            An agent chooses tools from what the tools say about themselves.
-            Most bad tool calls trace back to a tool that described itself
-            badly.
+            An agent chooses tools from what the tools say about themselves. A
+            vague tool description can send a question down the wrong path.
           </p>
           <div className={styles.cardGrid}>
             <article className={`${styles.card} ${styles.cardPlain}`}>
-              <h3>Never send a question to the wrong tool</h3>
+              <h3>Test which tool the agent chooses</h3>
               <p className={styles.cardBody}>
-                The wrong tool means a confident, wrong answer. Every tool
-                states exactly what it returns, and routing is measurable: any
-                change to a tool, a prompt, or the model can be scored on
-                whether questions still land in the right place, before a
-                customer finds out.
+                A wrong tool can lead to a plausible, wrong answer. Each tool
+                describes what it returns, and example questions test whether
+                changes to a tool, prompt, or model still route correctly.
               </p>
             </article>
             <article className={`${styles.card} ${styles.cardPlain}`}>
@@ -175,7 +172,7 @@ export default function ProductionAgents() {
             <p className={styles.statValue}>47% less</p>
             <p className={styles.statText}>
               Cost per accepted change when coding agents got the right context.
-              Same model, same tickets.
+              Same model, same engineering changes in the Opus study.
             </p>
             <div className={styles.links}>
               <a href="/coding-agents">

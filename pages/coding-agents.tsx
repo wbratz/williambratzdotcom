@@ -53,8 +53,8 @@ export default function CodingAgents() {
             Claude Code knows how to program. It doesn&apos;t know why your
             system is shaped the way it is, which decisions are settled, or
             which mistakes already hurt you. I built a knowledge layer that
-            tells it, and proved the difference with blind tests on real
-            tickets.
+            tells it, and proved the difference with blind tests on real work
+            requests.
           </p>
         </header>
 
@@ -65,8 +65,8 @@ export default function CodingAgents() {
             <article className={styles.card}>
               <h3>1 · Collect</h3>
               <p className={styles.cardBody}>
-                Pull requests, design decisions, tickets, meeting notes, and
-                agent sessions land as source files that are never edited.
+                Pull requests, design decisions, work requests, meeting notes,
+                and agent sessions land as source files that are never edited.
               </p>
             </article>
             <article className={styles.card}>
@@ -105,7 +105,7 @@ export default function CodingAgents() {
         <section className={styles.section} aria-labelledby="proof-title">
           <p className={styles.label}>The proof</p>
           <h2 id="proof-title">
-            Same tickets, same models, context on and off
+            Same engineering changes, same models, context on and off
           </h2>
           <p className={styles.sectionLede}>
             Each run started from the commit before the original work, with a
@@ -149,7 +149,7 @@ export default function CodingAgents() {
             <article className={`${styles.card} ${styles.cardPlain}`}>
               <p className={styles.cardFigure}>0 of 8 → 9 of 16</p>
               <p className={styles.cardBody}>
-                Runs that pushed back on a ticket asking for a tool that already
+                Runs that pushed back on a request for a tool that already
                 existed.
               </p>
             </article>
@@ -216,9 +216,15 @@ export default function CodingAgents() {
             <p>
               Agents read the right rule before their first edit, with the
               pipeline vs without, on rules filed far from the code they govern.
-              Steps 5 and 6, a formal ontology and a knowledge graph, are
-              skipped by design: the reader is a model reading prose.
+              This rule-routing experiment used the first four stages. A later
+              Vault pilot models concepts and evidence-linked claims; whether
+              richer graph infrastructure is needed remains an open question.
             </p>
+          </div>
+          <div className={styles.links}>
+            <a href="/blog/vault-context-system">
+              How the Vault is evolving <Next />
+            </a>
           </div>
         </section>
 

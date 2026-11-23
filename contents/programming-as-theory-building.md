@@ -15,7 +15,7 @@ seriesOrder: 1
 featured: true
 ---
 
-A new engineer joins a team and receives the usual collection of links: an onboarding guide, architecture diagrams, API documentation, and a list of repositories. They read everything. They can describe the major components. Then they take their first real ticket and discover that they still do not understand the system.
+A new engineer joins a team and receives the usual collection of links: an onboarding guide, architecture diagrams, API documentation, and a list of repositories. They read everything. They can describe the major components. Then they take on their first real change and discover that they still do not understand the system.
 
 This is often treated as a documentation failure. Sometimes it is. But even excellent documentation cannot transfer the full understanding held by the people who built and operate the software.
 
@@ -67,7 +67,7 @@ A reviewer suggests a locally elegant refactor. Someone familiar with the system
 
 ### Architecture discussions
 
-Two people argue over designs while working from different histories of the system. One optimizes for the problem described in the current ticket. The other is protecting against an operational failure that happened before the first engineer joined.
+Two people argue over designs while working from different histories of the system. One optimizes for the current request. The other is protecting against an operational failure that happened before the first engineer joined.
 
 ### Knowledge silos
 

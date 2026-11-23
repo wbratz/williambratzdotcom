@@ -43,8 +43,8 @@ const problems = [
   {
     name: "Wrong",
     problem: "The agent sends the question to the wrong tool",
-    fix: "Never send a question to the wrong tool",
-    body: "The wrong tool means a confident, wrong answer. I make routing measurable, so any change to a tool, a prompt, or the model can be scored on whether every question still lands in the right place, before a customer finds out.",
+    fix: "Route questions to the right tool",
+    body: "A wrong tool can produce a plausible, wrong answer. I make routing measurable, so changes to a tool, prompt, or model can be checked against example questions before a customer finds the mistake.",
     receipt: "routing measurable across every tool",
   },
   {
@@ -62,13 +62,16 @@ export default function Home({ featuredPosts }: HomeProps) {
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="home-title">
           <div>
-            <p className={styles.kicker}>In the new world of AI agents,</p>
+            <p className={styles.kicker}>
+              Context engineering for production and coding agents
+            </p>
             <h1 id="home-title">
-              <span className={styles.accent}>context</span> is everything
+              Stop teaching your agents{" "}
+              <span className={styles.accent}>the same thing twice.</span>
             </h1>
             <p className={styles.promise}>
-              I make sure agents get the right context at the right time,
-              turning OK into <span className={styles.accent}>amazing</span>
+              I build context systems that remember what you learn, bring it to
+              agents when it matters, and test whether it helps.
             </p>
             <p className={styles.intro}>
               I&apos;m William “Billy” Bratz, a senior software engineer focused
@@ -92,7 +95,7 @@ export default function Home({ featuredPosts }: HomeProps) {
             <div
               className={styles.traceWindow}
               role="img"
-              aria-label="Illustrative coding agent session. The ticket asks for an 8 second timeout in prod. The agent starts editing config/prod.json, the Vault hands it the rule that prod values live in the config service, the agent reverts that edit, reads the setting from the config service instead, and the tests pass. The change is accepted with no blocker or major bugs."
+              aria-label="Illustrative coding agent session. The work request asks for an 8 second timeout in prod. The agent starts editing config/prod.json, the Vault hands it the rule that prod values live in the config service, the agent reverts that edit, reads the setting from the config service instead, and the tests pass. The change is accepted with no blocker or major bugs."
             >
               <div className={styles.traceBar} aria-hidden="true">
                 <span>claude code · session</span>
@@ -100,7 +103,7 @@ export default function Home({ featuredPosts }: HomeProps) {
               </div>
               <div className={styles.traceBody} aria-hidden="true">
                 <p className={styles.traceLine}>
-                  <span>ticket</span>
+                  <span>request</span>
                   <span>Use an 8s timeout for the payments client in prod</span>
                 </p>
                 <p className={styles.traceLine}>
@@ -161,16 +164,16 @@ export default function Home({ featuredPosts }: HomeProps) {
             <div className={styles.stat}>
               <p className={styles.statValue}>47% less</p>
               <p className={styles.statText}>
-                Cost per accepted PR when{" "}
-                <span className={styles.highlight}>coding agents</span> get
+                Cost per accepted change in the{" "}
+                <span className={styles.highlight}>Opus study runs</span> with
                 domain context: $7.79 down to $4.12.
               </p>
             </div>
             <div className={styles.stat}>
               <p className={styles.statValue}>9 → 0</p>
               <p className={styles.statText}>
-                Blocker and major bugs in{" "}
-                <span className={styles.highlight}>coding agent</span> PRs,
+                Blocker and major bugs in the{" "}
+                <span className={styles.highlight}>Opus study runs</span>,
                 without vs with domain context.
               </p>
             </div>
@@ -187,11 +190,13 @@ export default function Home({ featuredPosts }: HomeProps) {
 
         <section className={styles.section} aria-labelledby="problem-title">
           <p className={styles.label}>The problem</p>
-          <h2 id="problem-title">Most agent failures are context failures</h2>
+          <h2 id="problem-title">
+            Four ways agents lose the context they need
+          </h2>
           <p className={styles.sectionLede}>
-            The model could have done it. It got the context too late, got too
-            much of it, got the wrong piece, or never got the one fact that
-            mattered. Each one has a better fix than a bigger model.
+            A capable model can still struggle when context arrives too late,
+            arrives in excess, points to the wrong tool, or omits a decisive
+            fact. Each failure suggests a different engineering fix.
           </p>
           <ul className={styles.problemList}>
             {problems.map((item) => (
@@ -276,11 +281,11 @@ export default function Home({ featuredPosts }: HomeProps) {
               Claude Code can program. It doesn&apos;t know why your system is
               shaped the way it is, which decisions are settled, or which
               mistakes already hurt you. I built The Vault to tell it, and
-              proved the difference with blind tests on real tickets.
+              tested the difference with blind replays of real engineering work.
             </p>
             <ul className={styles.bulletList}>
               <li>
-                Agents with the Vault push back on tickets that ask for
+                Agents with the Vault push back on work requests that ask for
                 something that already exists. Without it, none did.
               </li>
               <li>
@@ -299,7 +304,9 @@ export default function Home({ featuredPosts }: HomeProps) {
             </div>
           </div>
           <div className={styles.panel}>
-            <p className={styles.panelLabel}>With the Vault vs without</p>
+            <p className={styles.panelLabel}>
+              Opus runs: with the Vault vs without
+            </p>
             <div className={styles.statGrid}>
               <div className={styles.stat}>
                 <p className={styles.statValue}>+45%</p>
@@ -315,11 +322,11 @@ export default function Home({ featuredPosts }: HomeProps) {
               </div>
               <div className={styles.stat}>
                 <p className={styles.statValue}>−29%</p>
-                <p className={styles.statText}>time per ticket</p>
+                <p className={styles.statText}>time per change</p>
               </div>
             </div>
             <p className={styles.note}>
-              Same model, same real tickets, blind judges.
+              Same model, same real work requests, blind judges.
             </p>
           </div>
         </section>
@@ -404,7 +411,7 @@ export default function Home({ featuredPosts }: HomeProps) {
                 Persistent context for people and coding agents. Sources stay
                 untouched, a nightly compile turns them into linked pages, and
                 each agent session loads the smallest map that fits its task. In
-                blind tests it raised accepted changes 45% and cut cost per
+                blind Opus runs it raised accepted changes 45% and cut cost per
                 accepted change 47%.
               </p>
               <div className={styles.cardLinks}>
