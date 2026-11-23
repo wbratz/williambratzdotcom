@@ -17,6 +17,30 @@ Dark mode is the default, but both themes must remain usable.
 - Preserve the personality of older essays unless editorial work is requested.
 - Never expose private company details, internal names, credentials, or
   proprietary Vault content.
+- This repository is public, and commit messages are public too. Describe the
+  value of the work without naming an employer, internal tool, repository,
+  service, ticket, or pull request. Do not publish results that are not
+  already on the site.
+- Say "work request" for an assignment and "change" for what an agent
+  produces. Do not use words that point at a tracker, such as "ticket" or
+  "story".
+- Use curly apostrophes in titles. `npm run check:metadata` compares `title`
+  with `og:title` and fails on straight ones.
+- Do not add a list of forbidden terms to this repository. A list of what to
+  hide tells readers where to look. Keep it outside the repo.
+
+## Shared notes across machines
+
+Sessions on more than one computer work on this site. Keep their reasoning in
+step:
+
+- Write commit messages with a short "what" and a "why", so a later session
+  can recover the reasoning from `git log`.
+- Read `docs/SITE-NOTES.md` before editorial work. It lists open work and logs
+  each decision. Add a log entry when you finish a piece of work, and remove an
+  item from the open list when it is done.
+- Keep private reasoning out of this repository. Anything about what must stay
+  hidden belongs in a private place.
 
 ## Architecture
 
