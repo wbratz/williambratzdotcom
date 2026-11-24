@@ -1,0 +1,1093 @@
+.experience {
+  --scene-bg: #04080f;
+  --scene-panel: #0d192b;
+  --scene-line: #244168;
+  --scene-text: #e8f2ff;
+  --scene-muted: #a8b9d0;
+  width: 100%;
+  color: var(--scene-text);
+  background: var(--scene-bg);
+  font-family: Inter, Arial, sans-serif;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 25%);
+  min-height: calc(100svh - 4.5rem);
+}
+
+.scenePanel {
+  position: relative;
+  min-width: 0;
+  min-height: 690px;
+  height: calc(100svh - 4.5rem);
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 48% 43%,
+    #0e2347 0%,
+    #071024 56%,
+    #04080f 100%
+  );
+}
+
+.scenePanel::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    rgb(4 8 15 / 48%),
+    transparent 28%,
+    transparent 78%,
+    rgb(4 8 15 / 48%)
+  );
+}
+
+.sceneMount,
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.canvas {
+  cursor: grab;
+  touch-action: none;
+}
+
+.canvas:active {
+  cursor: grabbing;
+}
+
+.sceneHeading {
+  position: absolute;
+  z-index: 3;
+  top: clamp(1.5rem, 3vw, 3rem);
+  left: clamp(1.5rem, 3vw, 3rem);
+  max-width: min(34rem, calc(100% - 3rem));
+  pointer-events: none;
+}
+
+.sceneHeading > p {
+  margin: 0 0 0.65rem;
+  color: #f0bd68;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.sceneHeading h1 {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(2rem, 3.3vw, 3.8rem);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.sceneHeading > span {
+  display: block;
+  max-width: 45ch;
+  margin-top: 0.9rem;
+  color: #b6c7de;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  line-height: 1.55;
+}
+
+.labels {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+}
+
+.sceneLabel {
+  position: absolute;
+  width: 128px;
+  padding: 0.45rem 0.2rem;
+  color: #dcecff;
+  background: rgb(8 21 40 / 67%);
+  border: 1px solid rgb(89 142 194 / 30%);
+  border-radius: 0.35rem;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: auto;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.sceneLabel span {
+  display: block;
+  color: #9db3ce;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.sceneLabel strong {
+  display: block;
+  margin-top: 0.14rem;
+  color: #edf6ff;
+  font-size: 0.78rem;
+  letter-spacing: -0.02em;
+}
+
+.sceneLabel small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #abc3db;
+  font-size: 0.6rem;
+  line-height: 1.2;
+}
+
+.sceneLabel:hover,
+.sceneLabelActive {
+  background: rgb(19 48 79 / 94%);
+  border-color: #f0bd68;
+}
+
+.flowKey {
+  position: absolute;
+  z-index: 3;
+  top: 2.4rem;
+  right: 1.8rem;
+  display: grid;
+  gap: 0.5rem;
+  max-width: 15rem;
+  padding: 0.75rem 0.85rem;
+  color: #c2d9ef;
+  background: rgb(8 21 40 / 80%);
+  border: 1px solid rgb(89 142 194 / 30%);
+  border-radius: 0.45rem;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  backdrop-filter: blur(8px);
+}
+
+.flowKey span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.flowKey i {
+  display: inline-block;
+  width: 1.25rem;
+  flex: 0 0 1.25rem;
+  border-top: 2px solid;
+}
+
+.forwardLine {
+  color: #8ad8ff;
+}
+
+.returnLine {
+  color: #ff8f70;
+  border-top-style: dashed !important;
+}
+
+.focusCaption {
+  position: absolute;
+  z-index: 3;
+  bottom: 4.2rem;
+  left: clamp(1.5rem, 3vw, 3rem);
+  padding: 0.48rem 0.7rem;
+  color: #e9f3ff;
+  background: rgb(9 28 52 / 85%);
+  border-left: 3px solid #f0bd68;
+  border-radius: 0.2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.sceneLegend,
+.sceneHint {
+  position: absolute;
+  z-index: 3;
+  bottom: 1.45rem;
+  margin: 0;
+  color: #a9bed6;
+  font-size: 0.7rem;
+}
+
+.sceneLegend {
+  left: clamp(1.5rem, 3vw, 3rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.sceneLegend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.sceneLegend i {
+  display: inline-block;
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 50%;
+}
+
+.builtDot {
+  background: #69bfff;
+}
+
+.pilotDot {
+  background: #f0bd68;
+}
+
+.measuredDot {
+  background: #69d9b0;
+}
+
+.outputDot {
+  background: #e4d2ff;
+}
+
+.progressDot {
+  background: #b6a1ff;
+}
+
+.sceneHint {
+  right: 1.5rem;
+  text-align: right;
+}
+
+.fallback {
+  position: absolute;
+  z-index: 2;
+  top: 52%;
+  left: 50%;
+  width: min(25rem, calc(100% - 3rem));
+  padding: 1rem;
+  color: var(--scene-text);
+  background: #11233d;
+  border: 1px solid var(--scene-line);
+  border-radius: 0.6rem;
+  line-height: 1.5;
+  transform: translate(-50%, -50%);
+}
+
+.infoPanel {
+  height: calc(100svh - 4.5rem);
+  min-height: 690px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--scene-panel);
+  border-left: 1px solid var(--scene-line);
+}
+
+.infoTop,
+.infoBody,
+.panelFooter {
+  padding-right: clamp(1.4rem, 2.2vw, 2rem);
+  padding-left: clamp(1.4rem, 2.2vw, 2rem);
+}
+
+.infoTop {
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--scene-line);
+}
+
+.infoKicker {
+  margin: 0 0 0.65rem;
+  color: #f0bd68;
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.infoTop h2 {
+  margin: 0;
+  font-size: clamp(1.25rem, 1.5vw, 1.6rem);
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.infoTop > p:not(.infoKicker) {
+  margin: 0.8rem 0 0;
+  color: var(--scene-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.progress {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 1.3rem;
+}
+
+.tourControls {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 1.15rem;
+}
+
+.tourControls button {
+  flex: 1;
+  padding: 0.55rem 0.5rem;
+  color: #c9e4fb;
+  background: #172f4c;
+  border: 1px solid #3a638a;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.tourControls button:hover,
+.tourControls button[aria-pressed="true"] {
+  color: #0c2037;
+  background: #f0bd68;
+  border-color: #f0bd68;
+}
+
+.progress button {
+  height: 0.35rem;
+  flex: 1;
+  padding: 0;
+  background: #2a4468;
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+.progress button:hover,
+.progress .progressActive {
+  background: #f0bd68;
+}
+
+.infoBody {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.stageMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #8ca9c9;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.status {
+  padding: 0.25rem 0.45rem;
+  border: 1px solid currentColor;
+  border-radius: 0.25rem;
+  letter-spacing: 0.06em;
+}
+
+.built {
+  color: #69bfff;
+}
+
+.pilot {
+  color: #f0bd68;
+}
+
+.measured {
+  color: #69d9b0;
+}
+
+.output {
+  color: #e4d2ff;
+}
+
+.in-progress {
+  color: #b6a1ff;
+}
+
+.infoBody h3 {
+  margin: 1rem 0 0;
+  font-size: clamp(1.7rem, 2vw, 2.15rem);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.stageSummary {
+  margin: 1rem 0 0;
+  color: #d1dfef;
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: 1.03rem;
+  line-height: 1.6;
+}
+
+.detailList {
+  margin-top: 1.35rem;
+}
+
+.example,
+.answerPreview {
+  margin-top: 1.25rem;
+  padding: 0.9rem 1rem;
+  background: #142b47;
+  border: 1px solid #365a7c;
+  border-radius: 0.45rem;
+}
+
+.answerPreview {
+  border-color: #806fa5;
+  background: #1c2542;
+}
+
+.example span,
+.answerPreview span {
+  color: #f0bd68;
+  font-size: 0.66rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.example p {
+  margin: 0.5rem 0 0;
+  color: #e6f1ff;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.answerPreview .exampleQuestion {
+  margin: 0.7rem 0 0;
+  color: #c9d8ed;
+  font-size: 0.8rem;
+}
+
+.answerPreview blockquote {
+  margin: 0.65rem 0 0;
+  padding: 0.7rem 0.8rem;
+  color: #f0eaff;
+  background: #2b3558;
+  border-left: 3px solid #d8bfff;
+  border-radius: 0.25rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.example small,
+.answerPreview small {
+  display: block;
+  margin-top: 0.55rem;
+  color: #9cb7d2;
+  font-size: 0.66rem;
+}
+
+.detailList p {
+  position: relative;
+  margin: 0 0 0.75rem;
+  padding-left: 1rem;
+  color: var(--scene-muted);
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+.detailList p::before {
+  position: absolute;
+  top: 0.57rem;
+  left: 0;
+  width: 0.32rem;
+  height: 0.32rem;
+  background: #f0bd68;
+  content: "";
+  transform: rotate(45deg);
+}
+
+.handoff,
+.boundary,
+.pipeline {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--scene-line);
+}
+
+.handoff span,
+.boundary span,
+.pipeline h4 {
+  margin: 0;
+  color: #f0bd68;
+  font-size: 0.65rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.handoff p,
+.boundary p {
+  margin: 0.45rem 0 0;
+  color: var(--scene-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.pipeline ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pipeline li {
+  padding: 0.4rem 0.5rem;
+  color: #c3d9ed;
+  background: #142943;
+  border: 1px solid #29476b;
+  border-radius: 0.35rem;
+  font-size: 0.72rem;
+}
+
+.panelFooter {
+  position: sticky;
+  bottom: 0;
+  margin-top: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: rgb(11 23 39 / 96%);
+  border-top: 1px solid var(--scene-line);
+  backdrop-filter: blur(12px);
+}
+
+.stageNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+}
+
+.stageNav button {
+  min-width: 6rem;
+  padding: 0.58rem 0.75rem;
+  color: #132035;
+  background: #f0bd68;
+  border: 0;
+  border-radius: 0.35rem;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.stageNav button:disabled {
+  color: #7d94ae;
+  background: #20364f;
+  cursor: not-allowed;
+}
+
+.stageNav span {
+  color: #a8b9d0;
+  font-size: 0.75rem;
+}
+
+.panelFooter > a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: #bbd9f4;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  text-decoration-color: #426991;
+  text-underline-offset: 0.2em;
+}
+
+.mobileStages {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .labels {
+    display: none;
+  }
+
+  .sceneHint {
+    display: none;
+  }
+
+  .flowKey {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .scenePanel::after {
+    background: linear-gradient(
+      180deg,
+      #071426 0%,
+      #071426 31%,
+      rgb(7 20 38 / 88%) 37%,
+      transparent 50%,
+      transparent 78%,
+      #071426 100%
+    );
+  }
+
+  .tourControls button:first-child {
+    display: none;
+  }
+
+  .shell {
+    display: block;
+  }
+
+  .scenePanel {
+    height: min(60svh, 530px);
+    min-height: 390px;
+  }
+
+  .sceneHeading h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+  }
+
+  .sceneLegend {
+    bottom: 1rem;
+    gap: 0.55rem;
+  }
+
+  .focusCaption {
+    bottom: 5rem;
+    left: 1.25rem;
+    max-width: calc(100% - 2.5rem);
+    font-size: 0.62rem;
+  }
+
+  .mobileStages {
+    display: flex;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding: 0.8rem 1rem;
+    background: #0b1c32;
+    border-top: 1px solid var(--scene-line);
+  }
+
+  .mobileStages button {
+    flex: 0 0 auto;
+    padding: 0.5rem 0.75rem;
+    color: #b6cce4;
+    background: #162d4c;
+    border: 1px solid #335477;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+  }
+
+  .mobileStages .mobileStageActive {
+    color: #132035;
+    background: #f0bd68;
+    border-color: #f0bd68;
+  }
+
+  .infoPanel {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    border-top: 1px solid var(--scene-line);
+    border-left: 0;
+  }
+
+  .panelFooter {
+    position: static;
+  }
+
+  .infoTop,
+  .infoBody,
+  .panelFooter {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sceneLabel {
+    transition: none;
+  }
+}
+
+/* The map owns the viewport; navigation and explanation float above it. */
+.shell {
+  position: relative;
+  display: block;
+  height: calc(100svh - 4.5rem);
+  min-height: 620px;
+  overflow: hidden;
+}
+
+.scenePanel {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  min-height: 0;
+}
+
+.scenePanel::after {
+  background: linear-gradient(
+    180deg,
+    rgb(4 8 15 / 32%),
+    transparent 33%,
+    rgb(4 8 15 / 26%)
+  );
+}
+
+.infoPanel {
+  position: absolute;
+  z-index: 5;
+  top: 1.2rem;
+  right: 1.2rem;
+  bottom: 4.55rem;
+  width: 384px;
+  height: auto;
+  min-height: 0;
+  background: rgb(8 14 28 / 84%);
+  border: 1px solid rgb(120 160 230 / 18%);
+  border-radius: 12px;
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+  backdrop-filter: blur(10px);
+}
+
+.infoTop {
+  padding: 1rem 1.25rem 0.9rem;
+}
+.infoTop h2 {
+  font-size: 1.1rem;
+}
+.infoBody {
+  padding: 1rem 1.25rem 1.25rem;
+  animation: panel-enter 450ms ease both;
+}
+.panelFooter {
+  padding: 0.85rem 1.25rem;
+}
+.infoBody h3 {
+  font-size: 1.78rem;
+}
+.stageSummary {
+  margin-top: 0.7rem;
+  font-size: 0.92rem;
+  line-height: 1.48;
+}
+.detailList {
+  margin-top: 1rem;
+}
+.detailList p {
+  margin-bottom: 0.65rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.detailList p::before {
+  top: 0.45rem;
+}
+.answerPreview {
+  margin-top: 0.9rem;
+  padding: 0.75rem;
+}
+.answerPreview blockquote {
+  font-size: 0.76rem;
+}
+.engineerDetails {
+  margin-top: 0.6rem;
+  border-top: 1px solid var(--scene-line);
+  padding-top: 0.7rem;
+}
+.engineerDetails summary {
+  color: #a6cfff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.engineerDetails .handoff,
+.engineerDetails .boundary,
+.engineerDetails .pipeline {
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+}
+.chipChain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.9rem;
+  font:
+    0.67rem/1.2 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+}
+.chipChain span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.chipChain b {
+  color: #f0bd68;
+  font-weight: 400;
+}
+.chipChain i {
+  padding: 0.34rem 0.42rem;
+  color: #c9e4ff;
+  background: rgb(35 81 126 / 30%);
+  border: 1px solid rgb(94 162 220 / 30%);
+  border-radius: 4px;
+  font-style: normal;
+}
+.stageNav button:last-child {
+  color: #071629;
+  background: #f0a654;
+  box-shadow: 0 0 18px rgb(240 166 84 / 30%);
+}
+.stageNav button:disabled {
+  box-shadow: none;
+}
+.mobileStages {
+  position: absolute;
+  z-index: 6;
+  right: 1.2rem;
+  bottom: 0.7rem;
+  left: 1.2rem;
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  padding: 0.4rem;
+  background: rgb(8 14 28 / 86%);
+  border: 1px solid rgb(120 160 230 / 18%);
+  border-radius: 8px;
+  scrollbar-width: thin;
+  backdrop-filter: blur(10px);
+}
+.mobileStages button {
+  flex: 1 0 auto;
+  padding: 0.55rem 0.42rem;
+  color: #b6cce4;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.7rem;
+}
+.mobileStages button span {
+  color: #f0bd68;
+  font-family: ui-monospace, monospace;
+  margin-right: 0.2rem;
+}
+.mobileStages .mobileStageActive {
+  color: #09172b;
+  background: #f0bd68;
+  border-color: #f0bd68;
+  font-weight: 750;
+}
+.mobileStages .mobileStageActive span {
+  color: #09172b;
+}
+.labels {
+  display: block;
+}
+.sceneLabel {
+  width: 130px;
+  padding: 0.15rem 0.2rem;
+  background: transparent;
+  border: 0;
+  backdrop-filter: none;
+  text-shadow:
+    0 0 12px #418bd3,
+    0 2px 8px #030816;
+}
+.sceneLabel:hover,
+.sceneLabelActive {
+  background: transparent;
+  border: 0;
+}
+.sceneLabel span {
+  color: #f0bd68;
+  font:
+    700 0.67rem/1.2 ui-monospace,
+    monospace;
+}
+.sceneLabel strong {
+  font-size: 17px;
+}
+.sceneLabel small {
+  color: #c4d8ee;
+  font-size: 0.68rem;
+}
+.focusCaption {
+  bottom: 7.2rem;
+}
+.sceneLegend {
+  bottom: 5.1rem;
+  max-width: calc(100% - 450px);
+}
+.sceneHint {
+  top: 11.5rem;
+  bottom: auto;
+  left: clamp(1.5rem, 3vw, 3rem);
+  right: auto;
+  max-width: 30rem;
+  text-align: left;
+}
+.sceneHint kbd {
+  padding: 0.05rem 0.25rem;
+  color: #ddefff;
+  background: rgb(45 83 125 / 55%);
+  border: 1px solid rgb(135 183 232 / 35%);
+  border-radius: 3px;
+  font: inherit;
+}
+.flowKey {
+  top: auto;
+  right: auto;
+  bottom: 9.7rem;
+  left: clamp(1.5rem, 3vw, 3rem);
+}
+.sceneHeadingFocus h1,
+.sceneHeadingFocus > span {
+  display: none;
+}
+.stageNav button:last-child:disabled {
+  color: #7d94ae;
+  background: #20364f;
+  box-shadow: none;
+}
+@keyframes panel-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .shell {
+    height: calc(100svh - 4.5rem);
+    min-height: 560px;
+  }
+  .scenePanel {
+    height: 100%;
+    min-height: 0;
+  }
+  .scenePanel::after {
+    background: linear-gradient(
+      180deg,
+      rgb(4 8 15 / 60%),
+      transparent 32%,
+      transparent 54%,
+      rgb(4 8 15 / 42%)
+    );
+  }
+  .sceneHeading {
+    top: 0.9rem;
+    left: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+  .sceneHeading h1 {
+    font-size: 1.8rem;
+  }
+  .sceneHeading > span {
+    max-width: 34ch;
+    margin-top: 0.35rem;
+    font-size: 0.75rem;
+  }
+  .sceneLabel {
+    width: 90px;
+  }
+  .sceneLabel strong {
+    font-size: 0.83rem;
+  }
+  .labels:not(.labelsOverview) .sceneLabel:not(.sceneLabelActive) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .labelsOverview .sceneLabel {
+    width: 68px;
+  }
+  .labelsOverview .sceneLabel strong {
+    font-size: 0.62rem;
+  }
+  .labelsOverview .sceneLabel small {
+    display: none;
+  }
+  .sceneHeadingFocus h1,
+  .sceneHeadingFocus > span {
+    display: none;
+  }
+  .infoPanel {
+    top: auto;
+    right: 0.5rem;
+    bottom: 3.9rem;
+    left: 0.5rem;
+    width: auto;
+    height: 38svh;
+    min-height: 0;
+    border: 1px solid rgb(120 160 230 / 24%);
+    border-radius: 12px;
+    overflow-y: auto;
+  }
+  .infoTop {
+    padding: 0.75rem 1rem;
+  }
+  .infoTop h2 {
+    display: none;
+  }
+  .infoKicker {
+    margin-bottom: 0.2rem;
+  }
+  .tourControls {
+    margin-top: 0.45rem;
+  }
+  .tourControls button:first-child {
+    display: inline-block;
+  }
+  .tourControls button {
+    padding: 0.4rem;
+  }
+  .infoBody {
+    padding: 0.85rem 1rem;
+  }
+  .infoBody h3 {
+    margin-top: 0.6rem;
+    font-size: 1.32rem;
+  }
+  .stageSummary {
+    font-size: 0.84rem;
+  }
+  .panelFooter {
+    padding: 0.65rem 1rem;
+  }
+  .mobileStages {
+    right: 0.5rem;
+    bottom: 0.35rem;
+    left: 0.5rem;
+  }
+  .mobileStages button {
+    flex: 0 0 auto;
+  }
+  .sceneHint,
+  .sceneLegend,
+  .flowKey,
+  .focusCaption {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infoBody {
+    animation: none;
+  }
+}

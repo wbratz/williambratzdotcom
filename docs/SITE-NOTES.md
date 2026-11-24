@@ -41,6 +41,11 @@ When an open item is done, delete it from the list and mention it in the log.
 
 ## Log
 
+### 2026-11-24: the Vault path as one system
+
+- The ten-stage interactive map now shows evidence moving forward to an answer and observed misses returning to the wiki and ontology work. Distinct stations, citations back to source material, and stage-specific explanations make the handoffs easier to follow.
+- The diagram uses illustrative material and keeps the ontology work labeled as a pilot. A compact panel holds the main point; implementation boundaries sit behind “For engineers.”
+
 ### 2026-11-24: Ask Billy
 
 - Added a public question-and-answer page and read-only MCP search over published site pages. Answers link to relevant pages. The assistant has no access to local notes or unpublished work.

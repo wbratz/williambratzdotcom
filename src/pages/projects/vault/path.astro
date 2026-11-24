@@ -1,0 +1,21 @@
+---
+import VaultPath from "../../../components/VaultPathExperience";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="The Vault Path | Interactive System Map | William Bratz"
+  description="Explore how the Vault turns source evidence into a cited wiki, semantic context, retrieval, agent work, and feedback."
+  canonical="https://www.williambratz.com/projects/vault/path"
+  type="article"
+  image="/social/vault-social.png"
+  imageAlt="The Vault connects source evidence, a knowledge model, retrieval, context serving, and evaluation."
+>
+  <VaultPath client:load />
+</BaseLayout>
+
+<style is:global>
+  astro-dev-toolbar {
+    display: none;
+  }
+</style>

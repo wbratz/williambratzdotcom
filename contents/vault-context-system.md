@@ -35,6 +35,8 @@ The LLM Wiki pattern explains how a knowledge base can keep itself current. The 
 
 The loop matters because a perfect wiki page can still be useless if the agent never sees it. A well-timed rule can still be wrong if its meaning or scope is unclear. A successful retrieval hit tells us little about whether the final answer or code was good.
 
+You can [explore the Vault path as an interactive system map](/projects/vault/path) to see how the stages connect and which parts are built, in pilot, or still open.
+
 ## Data, information, and knowledge are different jobs
 
 The distinction that made this work click for me comes from Talisman. In her [public explanation of data, information, and knowledge](https://jessicatalisman.substack.com/p/why-ai-isnt-autonomous-yet-ea2), data are observations or measurements. Information gives data structure and context. Knowledge interprets information through models, relationships, and rules so that someone can draw a meaningful conclusion. Her [“Knowledge is not Data” introduction](https://jessicatalisman.substack.com/p/knowledge-is-not-data) makes the problem concrete: even an accurate value may be unusable if its definition, steward, purpose, or time frame is missing.
