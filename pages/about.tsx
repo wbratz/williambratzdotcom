@@ -71,8 +71,8 @@ export default function About() {
             </p>
             <h1>I build systems, then preserve what they teach us</h1>
             <p className={styles.lede}>
-              I&apos;m William “Billy” Bratz. For 11 years, I&apos;ve built
-              distributed systems across identity, underwriting, analytics, and
+              I&apos;m Billy Bratz. For 11 years, I&apos;ve built distributed
+              systems across identity, underwriting, analytics, and
               conversational AI. Today I focus on context engineering: getting
               AI agents the right context at the right time, in production and
               in the codebase.

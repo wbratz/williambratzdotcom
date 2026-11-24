@@ -74,12 +74,15 @@ export default function Home({ featuredPosts }: HomeProps) {
               agents when it matters, and test whether it helps.
             </p>
             <p className={styles.intro}>
-              I&apos;m William “Billy” Bratz, a senior software engineer focused
-              on context engineering: what production agents are handed when
-              they answer, and what coding agents know when they write code.
+              I&apos;m Billy Bratz, a senior software engineer focused on
+              context engineering: what production agents are handed when they
+              answer, and what coding agents know when they write code.
             </p>
             <div className={styles.actions}>
-              <a className={styles.primaryAction} href="#proof">
+              <a className={styles.primaryAction} href="/ask">
+                Ask about my work
+              </a>
+              <a className={styles.secondaryAction} href="#proof">
                 See the proof
               </a>
               <a

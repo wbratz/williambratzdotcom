@@ -41,6 +41,11 @@ When an open item is done, delete it from the list and mention it in the log.
 
 ## Log
 
+### 2026-11-24: Ask Billy
+
+- Added a public question-and-answer page and read-only MCP search over published site pages. Answers link to relevant pages. The assistant has no access to local notes or unpublished work.
+- Visitor-facing introduction and navigation now use Billy, the name he goes by.
+
 ### 2026-11-23: positioning, no employment language
 
 - Removed "open to remote senior and staff roles" from the home page and the AI

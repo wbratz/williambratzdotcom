@@ -19,6 +19,16 @@
   "kv_namespaces": [
     { "binding": "SESSION", "id": "61cbdafdae2e48379256a0d3d9964410" },
   ],
+  "ai_search": [
+    { "binding": "PUBLIC_SEARCH", "instance_name": "billy-public" },
+  ],
+  "ratelimits": [
+    {
+      "name": "ASK_LIMIT",
+      "namespace_id": "42017",
+      "simple": { "limit": 30, "period": 60 },
+    },
+  ],
   "preview_urls": false,
   "assets": { "directory": "./out", "binding": "ASSETS" },
   "secrets": {
