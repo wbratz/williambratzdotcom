@@ -180,10 +180,8 @@ export default function VaultProject() {
             <Link href="/blog/bridging-the-gap" legacyBehavior>
               <a className={styles.secondaryAction}>Why I built it</a>
             </Link>
-            <Link href="/blog/vault-context-system" legacyBehavior>
-              <a className={styles.secondaryAction}>
-                How it became a context system
-              </a>
+            <Link href="/projects/vault/path" legacyBehavior>
+              <a className={styles.secondaryAction}>Explore the system map</a>
             </Link>
           </div>
           <dl className={styles.summary}>
@@ -216,6 +214,11 @@ export default function VaultProject() {
               The Vault preserves the links between those fragments. It gives
               people a way to follow a decision into what shipped, and gives an
               AI agent a focused starting theory before it changes code.
+            </p>
+            <p>
+              <Link href="/blog/vault-context-system">
+                Read how the Vault grew beyond the LLM Wiki pattern.
+              </Link>
             </p>
           </div>
         </section>
