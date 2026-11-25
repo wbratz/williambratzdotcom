@@ -53,9 +53,9 @@ const adoption = [
   },
   {
     number: "04",
-    title: "Compile, serve, and test",
+    title: "Ask a real question and review the answer",
     description:
-      "Turn sources into focused, cited pages. Load only the small map at session start, then follow deeper links for the chosen question. Check the answer against the original evidence and record what the agent missed.",
+      "Turn approved sources into focused, cited pages, then ask the question you chose. Use the scaffold’s review-answer skill to check what the original sources support and where the answer applies. Correct what led to a miss, then ask again.",
   },
 ];
 
@@ -458,12 +458,13 @@ export default function VaultProject() {
           <h2 id="start-title">Start with one domain and one real workflow</h2>
           <p>
             The public scaffold interviews you about your domain, creates a
-            starter Raw and Wiki structure, writes the operating contract, seeds
-            the first index, and installs ingest, query, decision-capture,
-            file-back, and lint instructions for your agent. Start in Claude
-            Code with “set up a vault for my project.” The scaffold gives you
-            the first working structure; use the steps above to bring real
-            evidence into it and test a real answer.
+            starter Raw and Wiki structure, writes the operating contract, and
+            installs skills for ingest, query, lint, decision capture, filing
+            back reusable findings, and answer review. Start in Claude Code with
+            “set up a vault for my project.” Open <code>ADOPTION.md</code> for
+            the first-domain walkthrough. Ingest one approved source, ask a
+            question you expect to ask again, and use <code>review-answer</code>{" "}
+            to check the answer against Raw.
           </p>
           <div className={styles.builderBrief}>
             <h3>Brief for your coding agent</h3>
