@@ -2,6 +2,7 @@
 title: "Rules at the Edit: You Can’t Search for a Rule You Don’t Know Exists"
 slug: rules-at-the-edit
 date: 2026-11-23
+updated: 2026-11-25
 description: Retrieval assumes the agent knows to ask. The costliest misses are rules it has no reason to look up. Delivering a rule when the agent writes the file it governs took one set of runs from 0 of 8 following the rule to 6 of 8.
 photo: "./blogContent/rules-at-the-edit/rules-at-the-edit.svg"
 banner: "../blogContent/rules-at-the-edit/rules-at-the-edit.svg"
@@ -103,6 +104,16 @@ Here is what that number doesn't say. I wrote these two triggers after seeing th
 I fixed it by treating any shell command that writes a file as an edit: a redirect, a copy, an in-place edit, a script that opens a file for writing. It checks every path-like word in the command against the rules. It over-matches on purpose, since a false alarm costs one paragraph once per session. The lesson is to trigger on the write and not on the tool that does it.
 
 **The harder problem I haven't measured.** A rule delivered at the moment of authority carries more weight than the same rule buried in a search result. That's the point, and it's also the risk. A stale or wrong rule, delivered at the edit, gets obeyed with confidence. I haven't tested what an agent does when the code in front of it contradicts the rule it was just handed. The best I have so far is practice: the pages the rules come from cite their sources, and my own hook's message tells the agent to check its edit against the rule and not just follow it. I'd want that tested before I trusted this on rules that age quickly.
+
+## What to check after a miss
+
+Start by looking for the rule and reading its source. Then check the session record for what the agent actually received before it made the decision. The same bad edit can point to three different fixes.
+
+1. **The Vault had no applicable rule.** Add guidance once the evidence supports it. Say which files or decisions it governs and where the rule comes from.
+2. **The rule existed but arrived late or never arrived.** Move it to the decision it governs. A file-specific rule can arrive before the write. “Check whether this already exists” belongs before the agent settles on what to build. Check what the agent received in a fresh session, including the write path it actually used.
+3. **The agent saw the rule in time but misunderstood it.** Review the wording and source together. Make the scope explicit and give examples on either side of that boundary. If the rule conflicts with current evidence, resolve that conflict before delivering it again.
+
+Replay the same task after the fix. Check when the agent received the rule and whether the final change followed it. If the rule arrived on time and the result was still wrong, inspect how the agent interpreted the rule before changing the trigger again.
 
 ## Where it doesn't fit
 

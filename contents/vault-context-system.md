@@ -2,6 +2,7 @@
 title: "The Vault: From LLM Wiki to Context System"
 slug: vault-context-system
 date: 2026-11-23
+updated: 2026-11-25
 description: "How the Vault grew from an LLM-maintained wiki into a system that builds, serves, and evaluates source-grounded context for agents."
 photo: "./blogContent/vault-context-system/context-loop.svg"
 banner: "../blogContent/vault-context-system/context-loop.svg"
@@ -84,9 +85,16 @@ I also tested whether these distinctions help an LLM answer questions. In an ini
 
 Imagine asking, “Did we decide to use this term, or did someone merely suggest it?” A useful answer needs more than the nearest page. It needs the concept's identity and definition, the claim's speaker and status, the specific source passage, the scope of any decision, and a check for later corrections.
 
-Here is a fictional example. A design note recommends reading production timeouts from a configuration service. A later work request proposes applying that idea to the payments client. A reviewer approves the payments change, and the code is updated. A wiki page linking those records might tempt an agent to answer, “All production timeouts must use the configuration service.” The evidence supports a narrower answer: **the payments client uses it because that change was approved and implemented; the original note alone does not establish a rule for every client.** The agent should inspect the approval, the current code, and any later decision before applying the pattern elsewhere.
+### A claim changes under review
 
-The useful connections are specific: *recommends* links the note to an idea, *proposes* links the work request to a change, *approves* links the reviewer to its scope, and *implements* links that decision to code. The example is illustrative, not a report of an actual Vault decision. It shows why a page link and a matching quote cannot carry the whole answer.
+Imagine a seed packet that says, “Start tomato seeds indoors six weeks before transplanting.” The Vault creates a claim with the ID `tomato-start-timing` and attaches that passage. Here is what a reviewer changes:
+
+- **Draft.** The seed packet says starting tomato seeds indoors six weeks before transplanting guarantees germination.
+- **Reviewed wording.** The seed packet recommends starting these tomato seeds indoors six weeks before transplanting.
+
+The quote check passes for both versions. The passage gives a schedule. A guarantee about germination would require evidence the packet never supplies. The reviewer records that reason and applies the narrower wording under the same claim ID, so links to the claim still work and the next reader sees the correction.
+
+If the gardener later chooses that schedule, a separate decision record can say it applies to this spring’s tomato starts and link back to the recommendation. If someone asks how many seeds germinated, the answer needs observations from the garden. The packet, the gardener’s decision, and the observed result each answer a different question.
 
 The intended read path is: start with the small map for the current domain; use known labels and scope to find the right concept or rule; follow typed relationships to nearby claims and pages; read the relevant Raw evidence; then answer or act with a conclusion the source actually supports. If the evidence stops at a recommendation, the answer should stop there too. If a rule applies only to another repository, it should not be served as a universal standard.
 
