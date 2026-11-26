@@ -2,8 +2,8 @@
 title: "Rules at the Edit: You Can’t Search for a Rule You Don’t Know Exists"
 slug: rules-at-the-edit
 date: 2026-11-23
-updated: 2026-11-25
-description: Retrieval assumes the agent knows to ask. The costliest misses are rules it has no reason to look up. Delivering a rule when the agent writes the file it governs took one set of runs from 0 of 8 following the rule to 6 of 8.
+updated: 2026-11-26
+description: I kept correcting my AI coding agent on rules I'd already saved in the Vault. I replayed two tasks to see what changed when the agent received the rule just before editing the file.
 photo: "./blogContent/rules-at-the-edit/rules-at-the-edit.svg"
 banner: "../blogContent/rules-at-the-edit/rules-at-the-edit.svg"
 imageAlt: A diagram of three steps. An agent edits a config file, a hook matches the file path to a rule, and the rule arrives before the file is written.
@@ -14,35 +14,33 @@ sectionLinks: true
 featured: true
 ---
 
-I asked an agent to give a service a production timeout. It opened the production config file and typed the number in.
+I kept correcting my AI coding agent on things I'd already written down in [the Vault](/projects/vault), the knowledge base I built for my agents to use across sessions. When an agent starts work, it gets a short guide to the Vault. It can then look up a team decision and read the source behind it. After one of those corrections, I went back through the session to see what the agent had read.
 
-On this team, that's wrong. Production values live in a config service, and a rule says so. The rule was written down, cited, and filed under the right topic in my knowledge base. The agent never saw it, and nothing in its behavior suggested it knew there was anything to see.
+I'd asked it to give a service a production timeout. It opened `config/prod.json` and put the number there. I knew from the diff what needed fixing. On this team, production values live in a config service, and the application reads them at runtime. The Vault page explained that. The session showed the agent had never opened it.
 
-That second part is the one I keep coming back to.
+That left me with a question I could test. With a file called `prod.json` in front of it, what would prompt the agent to check where production settings belonged?
 
 ## The knowledge was there
 
-I replayed two work requests like this, one about a production setting and one about how a tool's description should be written. I ran them against two models, with and without the knowledge base, 24 runs in all. None of the runs got either one right. Every run on the setting put the value in the production file. On the tool description, five runs wrote instructions into it ("call this when…") instead of saying what the tool returns.
+I replayed the timeout request and a second task about how to write a tool's description. I used two models, each with and without access to the Vault, for 24 runs in all. None of the runs got its task right. Every run on the timeout put the value in the production file. On the tool description, five runs wrote instructions into it ("call this when…") instead of saying what the tool returns.
 
 The runs that had the knowledge base did no better, because almost none opened the page. In one setup, one run in eight opened one of the three pages that held the rule.
 
-So the rule existed and the agent had access to it. The only thing missing was a reason to look.
+The rule was available in every run that had the knowledge base. Opening the production file still gave the agent no clue that a team rule applied to it.
 
-## An agent can't search for what it doesn't know exists
+## Why search started too late
 
-Most work on retrieval is about finding the right page for a question. That work matters, and I've done a lot of it. But a search starts from a question, and these runs had no question. The agent read "set the production timeout," saw an obvious file, and felt fine. Nothing made it uncertain.
+A search box can answer a question once someone asks it. Here the useful question would have been, "Where does this team put production settings?" The agent had already found a file that looked like an answer.
 
-That's the failure. A model's search is driven by its own sense of what it doesn't know, and a rule you've never met doesn't register as a gap. Confidence and completeness feel the same from the inside.
+I'd seen the same sequence on a deployment. An agent searched for the deployment rule after the deploy failed. It found the page then. At that point I could improve the search result, but it was the failure that had finally supplied the question.
 
-I had seen the human version before. In an earlier session an agent found a deployment rule only after its deploy had failed. The page was one search away the whole time. The search came after the mistake, when the question finally existed.
+## What the file path gives you
 
-Better ranking can't fix that. The page wasn't found late because it ranked badly. It was found late because nobody asked until something broke.
+"Set a timeout" could mean a default, a test setting or a production value. By the time the agent asks its editing tool to write `config/prod.json`, the tool call names a file a person can match to a rule.
 
-## The thing being changed knows which rules apply
+I put that match on the rule page. When the tool names the file, the hook can hand the agent one useful sentence: put the value in the config service and read it at runtime. The patch is still a proposal. The agent has time to put the number in the right place.
 
-If the agent can't know what to ask, something else has to know what to tell it. What reliably knows is the thing being changed. Whether a rule applies to a given change is mostly decided by the file, not by the words in the work request. "Set a timeout" says nothing about config services. The file it's about to touch does.
-
-This is the delivery half of something I'd already found on the filing side. A rule learned on one project tends to be filed under that project, so it never reaches the others it applies to. I fixed that by filing each rule where it applies. The same idea holds for when the rule arrives: it should show up where it applies, at the moment it applies. Both are keyed to the thing being changed.
+I'd already been filing rules under the places they apply, so a rule learned in one project can reach another. The hook uses that same question at a smaller scale: what does this particular file need the agent to know before it changes?
 
 ## Where a rule can arrive
 
@@ -101,19 +99,21 @@ Here is what that number doesn't say. I wrote these two triggers after seeing th
 
 **The first version watched the wrong thing.** It watched the edit tools. In a later test, one model built an entire new service by writing files through shell commands, dozens of them per run. The hook never fired for that model, and its runs missed the rule. The other model used the edit tools and got it. The knowledge base and the trigger were identical, and the outcomes were opposite, because of how the file got written.
 
-I fixed it by treating any shell command that writes a file as an edit: a redirect, a copy, an in-place edit, a script that opens a file for writing. It checks every path-like word in the command against the rules. It over-matches on purpose, since a false alarm costs one paragraph once per session. The lesson is to trigger on the write and not on the tool that does it.
+My first shell check went too far. A command could read the production config and save its output in a scratch file. The hook saw a command that writes and a path that matches the rule. It delivered the reminder during the read and marked it as shown. A later write to the production config could then go through in silence.
+
+The hook now checks which file receives the write. A real write can use up the once-per-session reminder. If the hook can only tell that a script might write the file, it can show a warning and leave that reminder available. I checked the sequence directly: read the file, write it later in the same session, and verify that the rule still arrives before the write. In a replay of 60 days of commands, all 45 matches from the new hook were actual writes. I haven't measured how many applicable writes it may still miss.
 
 **The harder problem I haven't measured.** A rule delivered at the moment of authority carries more weight than the same rule buried in a search result. That's the point, and it's also the risk. A stale or wrong rule, delivered at the edit, gets obeyed with confidence. I haven't tested what an agent does when the code in front of it contradicts the rule it was just handed. The best I have so far is practice: the pages the rules come from cite their sources, and my own hook's message tells the agent to check its edit against the rule and not just follow it. I'd want that tested before I trusted this on rules that age quickly.
 
 ## What to check after a miss
 
-Start by looking for the rule and reading its source. Then check the session record for what the agent actually received before it made the decision. The same bad edit can point to three different fixes.
+Start with the bad diff. For the timeout, I want to know what the agent had in front of it before it put a value in the production file. Look for the rule, read its source, and find the tool call that made the edit. The session record can point to three different fixes.
 
 1. **The Vault had no applicable rule.** Add guidance once the evidence supports it. Say which files or decisions it governs and where the rule comes from.
 2. **The rule existed but arrived late or never arrived.** Move it to the decision it governs. A file-specific rule can arrive before the write. “Check whether this already exists” belongs before the agent settles on what to build. Check what the agent received in a fresh session, including the write path it actually used.
 3. **The agent saw the rule in time but misunderstood it.** Review the wording and source together. Make the scope explicit and give examples on either side of that boundary. If the rule conflicts with current evidence, resolve that conflict before delivering it again.
 
-Replay the same task after the fix. Check when the agent received the rule and whether the final change followed it. If the rule arrived on time and the result was still wrong, inspect how the agent interpreted the rule before changing the trigger again.
+Replay the task after the fix and check two things. The session record should show the rule arriving before the write. The resulting diff should show where the timeout actually went. If the first check passes and the second fails, look at how the agent read the rule before adjusting the hook.
 
 ## Where it doesn't fit
 
@@ -124,7 +124,7 @@ Replay the same task after the fix. Check when the agent received the rule and w
 
 ## The hook
 
-This is the whole thing. It handles the edit tools. If your agent also writes through the shell, you need the shell handling described above.
+This is the direct-edit version. It uses the file path supplied by the editing tool. For shell commands, add a check for the file that actually receives the write.
 
 ```js
 #!/usr/bin/env node
@@ -202,4 +202,4 @@ If you'd rather an agent set it up, give it this:
 
 > Add an edit-time rule hook to this repository. Find one rule in our docs that applies to a specific kind of file. Write it as a short page with a `<!-- rule path="..." section="..." -->` marker. Install a Claude Code PreToolUse hook on Write, Edit and MultiEdit that injects the marked section once per session when the file path matches. Fail open on any error. Then replay a past change where the rule was broken, with and without the hook, and report how many runs followed the rule.
 
-The Vault is the system I built around this: the cited pages the rules come from, and the filing that gets each one to where it applies. [How it works](/projects/vault) and [the blind study](/blog/proving-the-vaults-value) cover the rest.
+For a broader look at how agents perform with and without the Vault, see [the blind study](/blog/proving-the-vaults-value).
