@@ -46,15 +46,15 @@ export default function CodingAgents() {
         <header className={styles.pageHero}>
           <p className={styles.eyebrow}>Context engineering · Coding agents</p>
           <h1>
-            Give a coding agent your team&apos;s context, and it writes your
-            team&apos;s code
+            Give a coding agent your team&apos;s context, then test whether it
+            helps
           </h1>
           <p className={styles.lede}>
             Claude Code knows how to program. It doesn&apos;t know why your
             system is shaped the way it is, which decisions are settled, or
             which mistakes already hurt you. I built a knowledge layer that
-            tells it, and proved the difference with blind tests on real work
-            requests.
+            tells it, and tested the difference with blind replays of 12 real
+            work requests. The direction is encouraging. The sample is small.
           </p>
         </header>
 
@@ -84,15 +84,17 @@ export default function CodingAgents() {
         </section>
 
         <section className={styles.section} aria-labelledby="proof-title">
-          <p className={styles.label}>The proof</p>
+          <p className={styles.label}>The test</p>
           <h2 id="proof-title">
             Same engineering changes, same models, context on and off
           </h2>
           <p className={styles.sectionLede}>
             Each run started from the commit before the original work, with a
             snapshot of the Vault from that day and the answer removed. Blind
-            judges scored every change against an answer key and 1,277 real
-            review comments.
+            judges scored every change against an answer key and a reviewer
+            profile built from 1,277 real team review comments. Each of the 12
+            work requests ran twice per setup, so these are small numbers:
+            encouraging, not proven.
           </p>
           <div
             className={styles.tableWrap}
@@ -130,15 +132,18 @@ export default function CodingAgents() {
             <article className={`${styles.card} ${styles.cardPlain}`}>
               <p className={styles.cardFigure}>0 of 8 → 9 of 16</p>
               <p className={styles.cardBody}>
-                Runs that pushed back on a request for a tool that already
-                existed.
+                Runs that got it right when the work request asked for the wrong
+                thing: 0 of 8 without the Vault, 9 of 16 across the four setups
+                with it. Two work requests, two runs each per setup, a small
+                sample.
               </p>
             </article>
             <article className={`${styles.card} ${styles.cardPlain}`}>
               <p className={styles.cardFigure}>3.4 → 4.0</p>
               <p className={styles.cardBody}>
-                Fit with the codebase, the score that moved most (out of 5,
-                Opus).
+                Mean &ldquo;fit with the codebase&rdquo; score from the blind
+                scorecard (1 to 5), Opus without vs with the Vault, 24 runs
+                each.
               </p>
             </article>
           </div>
@@ -192,14 +197,17 @@ export default function CodingAgents() {
           </div>
           <div className={styles.figureRow}>
             <p className={styles.bigFigure}>
-              95% <span>vs 76%</span>
+              20 of 21 <span>vs 16 of 21</span>
             </p>
             <p>
-              Agents read the right rule before their first edit, with the
-              pipeline vs without, on rules filed far from the code they govern.
-              This rule-routing experiment used the first four stages. A later
-              Vault pilot models concepts and evidence-linked claims; whether
-              richer graph infrastructure is needed remains an open question.
+              Runs where the agent read the relevant rule before its first edit,
+              with the pipeline vs without, on rules filed far from the code
+              they govern. Seven synthetic tasks, three runs each, stopped at
+              the first file change. It measures whether the rule was read, not
+              the quality of the code, and the sample is small. This
+              rule-routing experiment used the first four stages. A later Vault
+              pilot models concepts and evidence-linked claims; whether richer
+              graph infrastructure is needed remains an open question.
             </p>
           </div>
           <div className={styles.links}>
@@ -218,8 +226,10 @@ export default function CodingAgents() {
             <h2 id="edit-title">Deliver the rule at the moment it applies</h2>
             <p className={styles.sectionLede}>
               A written rule only helps if the agent has it at the right moment.
-              Each rule now arrives the moment the agent edits a file it covers,
-              and agents correct course mid-edit.
+              In a replay of two hand-picked work requests, handing the agent
+              the rule when it wrote the file changed the result. In two months
+              of daily use the trigger fired 13 times and only about once on a
+              real write, so it is being fixed.
             </p>
             <div className={styles.links}>
               <a href="/blog/rules-at-the-edit">
@@ -232,7 +242,7 @@ export default function CodingAgents() {
               <div className={styles.stat}>
                 <p className={styles.statValue}>0 → 6</p>
                 <p className={styles.statText}>
-                  of 8 implementations done to standard
+                  of 8 runs done to standard, two hand-picked work requests
                 </p>
               </div>
               <div className={styles.stat}>

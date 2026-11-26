@@ -77,8 +77,8 @@ export default function AiEngineering() {
               <span>02</span>
               <h3>Context for coding agents</h3>
               <p>
-                Domain knowledge filed where it applies and delivered at the
-                moment of the edit, proven with blind A/B tests.
+                Domain knowledge filed where it applies, aimed at the moment of
+                the edit, and tested with blind replays.
               </p>
             </article>
             <article>
@@ -111,11 +111,12 @@ export default function AiEngineering() {
               <h3>The Vault</h3>
               <p>
                 Persistent context for people and coding agents. Sources stay
-                untouched, and a rule reaches the agent when it edits the file
-                the rule governs.
+                untouched, and rules are filed where they apply. Delivering each
+                rule at the edit worked in a small replay and is being fixed for
+                daily use.
               </p>
               <ul>
-                <li>rules delivered at the moment of the edit</li>
+                <li>rules aimed at the moment of the edit</li>
                 <li>knowledge filed where it applies</li>
                 <li>untouched sources and nightly synthesis</li>
               </ul>
@@ -124,7 +125,7 @@ export default function AiEngineering() {
                   <a>How it works</a>
                 </Link>
                 <Link href="/blog/proving-the-vaults-value" legacyBehavior>
-                  <a>Proving its value</a>
+                  <a>Testing its value</a>
                 </Link>
                 <a
                   href="https://github.com/wbratz/vault-scaffold"

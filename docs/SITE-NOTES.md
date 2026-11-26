@@ -15,11 +15,12 @@ When an open item is done, delete it from the list and mention it in the log.
 
 ## Open work
 
-- **Sample sizes and dates on every statistic.** Show how many runs or cases sit
-  behind each number, next to the number, on the home page, `/coding-agents`,
-  and in the essays. The accepted-change difference (11 vs 16 of 24 runs) is
-  small at that size, so keep its caveat prominent and lead with the cost and
-  serious-bug results where the evidence is stronger.
+- **Measured nightly token count for "The Vault in Daily Use".** Replace the
+  122M to 7M projection once enough nights have run.
+- **Regenerate the résumé PDF.** The résumé page now reports the study as raw
+  counts from a small sample, but `WilliamBratz-resume.pdf` still says
+  "raised accepted changes 45% and cut cost per accepted change 47%" and uses
+  the old essay title. Settle the résumé wording first, then reprint the PDF.
 - **Publish the full blind-study method.** The study essay still says the method
   is available on request. Describe the setup generically: how a run starts from
   the commit before the work, how the answer is removed, how judges are blinded.
@@ -40,6 +41,41 @@ When an open item is done, delete it from the list and mention it in the log.
   contradicts a rule it was just handed. The essay says this is unmeasured.
 
 ## Log
+
+### 2026-11-25: the study essay, corrected, and a daily-use follow-up
+
+- The study essay is now "Testing the Vault’s Value" (same slug and date). It
+  reports raw counts and the design, says the sample is too small to tell from
+  noise, and drops the percentage headline. The standards section now says the
+  0 of 8 to 6 of 8 result came from two hand-picked work requests re-run after
+  the triggers were written, and that in daily use the edit-time hook rarely
+  fired on a real write. A dated note at the top says what changed and why. The
+  banner chart now shows 24 runs per setup and calls the sample small.
+- New essay, "The Vault in Daily Use": two months of sessions, when the Vault
+  helped, when it failed, what it costs, and what is being changed. It and the
+  study form the "Measuring the Vault" series.
+- The same correction across the site. The home page, `/coding-agents`,
+  `/production-agents`, the AI engineering page, the about page, the résumé,
+  and "From LLM Wiki to Context System" now give the study as raw counts
+  (11 to 16 of 24 accepted for Opus, 7 to 8 for Sonnet, from 12 work requests)
+  with a small-sample caveat, and no longer say rules reliably arrive at the
+  edit. Links to the study use its new title. The study chart shows both models.
+- "Rules at the Edit" has a dated note: a false alarm does not cost one
+  paragraph, it uses up the once-per-session delivery. It joins the series as
+  part 2, between the study and the daily-use essay.
+- The ontology result is now 20 of 21 vs 16 of 21 runs (seven synthetic tasks,
+  three runs each) instead of 95% vs 76%, and says it measures reading the
+  rule, not code quality. The fit score and the wrong-ask counts on
+  `/coding-agents` now say what they measure. `/projects/vault` lists the
+  daily-use essay under "Go deeper".
+- "The Vault in Daily Use" now reports what the fixes did, each marked as
+  measured on recorded data, projected, or not yet seen in live sessions. It
+  says plainly that the first diagnosis of the missed contradiction was wrong.
+  The study essay and "Rules at the Edit" now say the hook was changed and has
+  not yet run in live sessions.
+- The trimmed-index replay result is in: 21 of 21 runs read the right rule in
+  both setups, a ceiling result that rules out a big loss of reach and nothing
+  finer. No `PENDING` markers remain.
 
 ### 2026-11-24: the Vault path as one system
 

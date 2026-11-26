@@ -169,10 +169,11 @@ export default function ProductionAgents() {
             </p>
           </div>
           <div className={styles.panel}>
-            <p className={styles.statValue}>47% less</p>
+            <p className={styles.statValue}>$7.79 → $4.12</p>
             <p className={styles.statText}>
-              Cost per accepted change when coding agents got the right context.
-              Same model, same engineering changes in the Opus study.
+              Cost per accepted change when coding agents got the right context,
+              in the Opus runs of a small blind study: 12 work requests, 24 runs
+              per setup. Encouraging, not proven.
             </p>
             <div className={styles.links}>
               <a href="/coding-agents">

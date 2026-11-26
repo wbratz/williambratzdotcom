@@ -10,6 +10,8 @@ imageAlt: A diagram of three steps. An agent edits a config file, a hook matches
 topics:
   - AI Systems
   - Knowledge Systems
+series: Measuring the Vault
+seriesOrder: 2
 sectionLinks: true
 featured: true
 ---
@@ -102,6 +104,8 @@ Here is what that number doesn't say. I wrote these two triggers after seeing th
 **The first version watched the wrong thing.** It watched the edit tools. In a later test, one model built an entire new service by writing files through shell commands, dozens of them per run. The hook never fired for that model, and its runs missed the rule. The other model used the edit tools and got it. The knowledge base and the trigger were identical, and the outcomes were opposite, because of how the file got written.
 
 I fixed it by treating any shell command that writes a file as an edit: a redirect, a copy, an in-place edit, a script that opens a file for writing. It checks every path-like word in the command against the rules. It over-matches on purpose, since a false alarm costs one paragraph once per session. The lesson is to trigger on the write and not on the tool that does it.
+
+*Update, November 25, 2026: the false-alarm part was wrong. In two months of daily use the hook fired 13 times, all from shell commands, and only about 1 of those was a real write to the right file. The rest were read-only commands, or commands that only mentioned a matching path. Because each rule shows once per session, a false fire doesn't cost one paragraph. It uses up the delivery, so the rule may not show up when the real edit comes. I've since changed the hook to fire only on real writes. It checks out against recorded commands, but I haven't seen it in live sessions yet. [The Vault in Daily Use](/blog/vault-in-daily-use) has the details.*
 
 **The harder problem I haven't measured.** A rule delivered at the moment of authority carries more weight than the same rule buried in a search result. That's the point, and it's also the risk. A stale or wrong rule, delivered at the edit, gets obeyed with confidence. I haven't tested what an agent does when the code in front of it contradicts the rule it was just handed. The best I have so far is practice: the pages the rules come from cite their sources, and my own hook's message tells the agent to check its edit against the rule and not just follow it. I'd want that tested before I trusted this on rules that age quickly.
 

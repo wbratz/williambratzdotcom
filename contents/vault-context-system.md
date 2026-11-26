@@ -18,7 +18,7 @@ A rule I had written down sat in the Vault, filed under the project where I lear
 
 That gap is why the Vault stopped being only a wiki. It began as my implementation of [Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f): preserve original sources, maintain a linked wiki, and let useful synthesis survive the chat that produced it. That gave agents a memory they could inspect. It did not tell them which page applied to the work in front of them.
 
-The system now does more than maintain pages. An agent needs to know which context applies to *this* task and *this* repository, receive it at the moment it can use it, and reveal whether it changed the outcome. [Blind tests on real software changes](/blog/proving-the-vaults-value) showed that access to the Vault can improve coding work. The next questions concern how to make that context more precise and how to measure its effect.
+The system now does more than maintain pages. An agent needs to know which context applies to *this* task and *this* repository, receive it at the moment it can use it, and reveal whether it changed the outcome. [Blind tests on real software changes](/blog/proving-the-vaults-value) pointed in an encouraging direction, on a sample too small to call proof. The next questions concern how to make that context more precise and how to measure its effect.
 
 **The Vault is a source-grounded domain context system for people and AI agents.** It captures work as evidence, maintains an intelligible model of what the evidence means, delivers the smallest useful context during a task, and checks the resulting answers and actions. The ontology pipeline is an evolution of that system's knowledge model.
 
@@ -71,7 +71,7 @@ That second connection matters most for the move from information to knowledge. 
 
 ## What I have actually built and measured
 
-The [coding agents page](/coding-agents) describes the Vault's source collection, nightly compilation, small startup map, and rules delivered at the edit they govern. It also reports a test of ontology-based rule routing: agents saw the right distant rule before their first edit more often with that routing in place. The [blind coding study](/blog/proving-the-vaults-value) graded resulting code, not merely retrieval. A separate session report connects delivered context to subsequent changes and later fixes.
+The [coding agents page](/coding-agents) describes the Vault's source collection, nightly compilation, small startup map, and rules aimed at the edit they govern. That delivery worked in a small replay but misfired in [daily use](/blog/vault-in-daily-use), and it is being fixed. It also reports a test of ontology-based rule routing: agents saw the right distant rule before their first edit more often with that routing in place. The [blind coding study](/blog/proving-the-vaults-value) graded resulting code, not merely retrieval. A separate session report connects delivered context to subsequent changes and later fixes.
 
 My local Vault is also testing the meaning of a claim once an agent reads it. This is a bounded pilot within the same context system, not a new product.
 

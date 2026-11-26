@@ -79,7 +79,7 @@ const goDeeper = [
     title: "Rules at the edit",
     href: "/blog/rules-at-the-edit",
     description:
-      "Why an agent can't search for a rule it doesn't know exists, and the hook that delivers it when the file is written.",
+      "Why an agent can't search for a rule it doesn't know exists, and the hook meant to deliver it when the file is written.",
   },
   {
     number: "04",
@@ -87,6 +87,13 @@ const goDeeper = [
     href: "/blog/vault-context-system",
     description:
       "From an LLM-maintained wiki to a context system that serves, grades, and revises what agents see.",
+  },
+  {
+    number: "05",
+    title: "What daily use showed",
+    href: "/blog/vault-in-daily-use",
+    description:
+      "Two months of real sessions: when the Vault helped, when it failed, what it costs, and what is being fixed.",
   },
 ];
 
@@ -431,7 +438,7 @@ export default function VaultProject() {
           <div className={styles.sectionHeading}>
             <p className={styles.sectionLabel}>Go deeper</p>
             <h2 id="deeper-title">
-              One page for the system, four for the detail
+              One page for the system, five for the detail
             </h2>
             <p>
               This page is the overview. Each essay answers one question and

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">The Vault in daily use</title>
+  <desc id="description">Three counts from two months of one engineer's coding-agent sessions. 105 of 109 sessions searched, opened, or cited the Vault. 90 of 109 cited a page inline. About 1 of 13 edit-time rule fires was a real write to the right file.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#111820"/>
+      <stop offset="1" stop-color="#18232c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" rx="28" fill="url(#background)"/>
+  <circle cx="1070" cy="92" r="180" fill="#eab65c" opacity=".06"/>
+
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="72" y="92" fill="#eab65c" font-size="22" font-weight="700" letter-spacing="2">TWO MONTHS OF REAL SESSIONS · ONE ENGINEER</text>
+    <text x="72" y="150" fill="#f1f4f8" font-size="52" font-weight="800" letter-spacing="-1.5">Used in nearly every session.</text>
+
+    <g transform="translate(72 230)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Sessions that searched, opened, or cited the Vault</text>
+      <rect x="0" y="22" width="800" height="34" rx="8" fill="#2b3440"/>
+      <rect x="0" y="22" width="771" height="34" rx="8" fill="#eab65c"/>
+      <text x="820" y="47" fill="#f1f4f8" font-size="22" font-weight="800">105 of 109</text>
+    </g>
+
+    <g transform="translate(72 352)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Sessions that cited a page inline</text>
+      <rect x="0" y="22" width="800" height="34" rx="8" fill="#2b3440"/>
+      <rect x="0" y="22" width="661" height="34" rx="8" fill="#eab65c"/>
+      <text x="820" y="47" fill="#f1f4f8" font-size="22" font-weight="800">90 of 109</text>
+    </g>
+
+    <g transform="translate(72 474)">
+      <text x="0" y="0" fill="#c3cbd6" font-size="22" font-weight="600">Edit-time rule fires on a real write of the right file</text>
+      <rect x="0" y="22" width="800" height="34" rx="8" fill="#2b3440"/>
+      <rect x="0" y="22" width="62" height="34" rx="8" fill="#eab65c"/>
+      <text x="820" y="47" fill="#f1f4f8" font-size="22" font-weight="800">about 1 of 13</text>
+    </g>
+
+    <text x="72" y="590" fill="#9ba6b4" font-size="18" font-weight="600">Complete logs cover 33 days. Older sessions are archived long sessions only.</text>
+  </g>
+</svg>
