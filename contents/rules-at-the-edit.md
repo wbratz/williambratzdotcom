@@ -2,8 +2,8 @@
 title: "Rules at the Edit: You Can’t Search for a Rule You Don’t Know Exists"
 slug: rules-at-the-edit
 date: 2026-11-23
-updated: 2026-11-25
-description: Retrieval assumes the agent knows to ask. The costliest misses are rules it has no reason to look up. Delivering a rule when the agent writes the file it governs took one set of runs from 0 of 8 following the rule to 6 of 8.
+updated: 2026-11-26
+description: I kept correcting my AI coding agent on rules I'd already saved in the Vault. I replayed two tasks to see what changed when the agent received the rule just before editing the file.
 photo: "./blogContent/rules-at-the-edit/rules-at-the-edit.svg"
 banner: "../blogContent/rules-at-the-edit/rules-at-the-edit.svg"
 imageAlt: A diagram of three steps. An agent edits a config file, a hook matches the file path to a rule, and the rule arrives before the file is written.
@@ -14,15 +14,15 @@ sectionLinks: true
 featured: true
 ---
 
-I asked an agent to give a service a production timeout. It opened the production config file and typed the number in. The proposed change was easy to read: a new value in the file named for the environment I had asked about.
+I kept correcting my AI coding agent on things I'd already written down in [the Vault](/projects/vault), the knowledge base I built for my agents to use across sessions. When an agent starts work, it gets a short guide to the Vault. It can then look up a team decision and read the source behind it. After one of those corrections, I went back through the session to see what the agent had read.
 
-On this team, production values come from a config service. The change needed to put the timeout there and read it at runtime. I'd written that down in my knowledge base, with a source. When I went back through the session, the agent had never opened the rule.
+I'd asked it to give a service a production timeout. It opened `config/prod.json` and put the number there. I knew from the diff what needed fixing. On this team, production values live in a config service, and the application reads them at runtime. The Vault page explained that. The session showed the agent had never opened it.
 
-I could see the mistake in the diff because I knew where production settings belonged. The agent had the work request and a plausible file. It was already typing.
+That left me with a question I could test. With a file called `prod.json` in front of it, what would prompt the agent to check where production settings belonged?
 
 ## The knowledge was there
 
-I replayed two work requests like this, one about a production setting and one about how a tool's description should be written. I ran them against two models, with and without the knowledge base, 24 runs in all. None of the runs got either one right. Every run on the setting put the value in the production file. On the tool description, five runs wrote instructions into it ("call this when…") instead of saying what the tool returns.
+I replayed the timeout request and a second task about how to write a tool's description. I used two models, each with and without access to the Vault, for 24 runs in all. None of the runs got its task right. Every run on the timeout put the value in the production file. On the tool description, five runs wrote instructions into it ("call this when…") instead of saying what the tool returns.
 
 The runs that had the knowledge base did no better, because almost none opened the page. In one setup, one run in eight opened one of the three pages that held the rule.
 
@@ -202,4 +202,4 @@ If you'd rather an agent set it up, give it this:
 
 > Add an edit-time rule hook to this repository. Find one rule in our docs that applies to a specific kind of file. Write it as a short page with a `<!-- rule path="..." section="..." -->` marker. Install a Claude Code PreToolUse hook on Write, Edit and MultiEdit that injects the marked section once per session when the file path matches. Fail open on any error. Then replay a past change where the rule was broken, with and without the hook, and report how many runs followed the rule.
 
-The Vault is the system I built around this: the cited pages the rules come from, and the filing that gets each one to where it applies. [How it works](/projects/vault) and [the blind study](/blog/proving-the-vaults-value) cover the rest.
+For a broader look at how agents perform with and without the Vault, see [the blind study](/blog/proving-the-vaults-value).
