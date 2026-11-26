@@ -213,7 +213,7 @@ export default function Resume() {
               </h3>
               <p>
                 Ten essays on context engineering, production AI, and
-                engineering practice, including “Proving the Vault&apos;s
+                engineering practice, including “Testing the Vault&apos;s
                 Value,” “When the Map Starts Learning,” and “Programming as
                 Theory Building.”
               </p>
@@ -222,9 +222,9 @@ export default function Resume() {
               <h3>vaultkit</h3>
               <p>
                 An LLM-maintained knowledge engine that gives coding agents
-                domain context. In blind Opus runs on real engineering changes,
-                it raised accepted changes 45% and cut cost per accepted change
-                47%. The reusable{" "}
+                domain context. I replayed 12 real work requests blind with and
+                without it, and accepted Opus changes went from 11 to 16 of 24,
+                a small sample. The reusable{" "}
                 <ExternalLink href="https://github.com/wbratz/vault-scaffold">
                   vault-scaffold workflow
                 </ExternalLink>{" "}

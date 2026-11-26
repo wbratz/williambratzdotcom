@@ -202,7 +202,7 @@ export default function About() {
                   <a>Browse the essays</a>
                 </Link>
                 <Link href="/blog/proving-the-vaults-value" legacyBehavior>
-                  <a>Proving the Vault&apos;s value</a>
+                  <a>Testing the Vault&apos;s value</a>
                 </Link>
               </div>
             </article>

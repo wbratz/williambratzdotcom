@@ -51,8 +51,8 @@ const problems = [
     name: "Missing",
     problem: "The one rule or past decision that would have changed the answer",
     fix: "Deliver knowledge at the moment it applies",
-    body: "A memory layer that files every rule where it’s needed and hands it to the agent the instant it touches the code that rule covers.",
-    receipt: "right rule read first · 95% of runs",
+    body: "A memory layer that files every rule where it’s needed and aims to hand it to the agent when it edits the code that rule covers.",
+    receipt: "right rule read first · 20 of 21 runs",
   },
 ];
 
@@ -83,13 +83,13 @@ export default function Home({ featuredPosts }: HomeProps) {
                 Ask about my work
               </a>
               <a className={styles.secondaryAction} href="#proof">
-                See the proof
+                See the numbers
               </a>
               <a
                 className={styles.secondaryAction}
                 href="/blog/proving-the-vaults-value"
               >
-                Proving the Vault&apos;s value
+                Testing the Vault&apos;s value
               </a>
             </div>
           </div>
@@ -141,8 +141,9 @@ export default function Home({ featuredPosts }: HomeProps) {
               </div>
             </div>
             <figcaption>
-              The rule reaches the agent the moment it opens the file it
-              governs, and it corrects course before anything ships.
+              Illustrative: how a rule is meant to reach the agent at the edit.
+              In daily use the trigger mostly fired on the wrong commands, and a
+              fix is in progress.
             </figcaption>
           </figure>
         </section>
@@ -165,27 +166,28 @@ export default function Home({ featuredPosts }: HomeProps) {
               </p>
             </div>
             <div className={styles.stat}>
-              <p className={styles.statValue}>47% less</p>
+              <p className={styles.statValue}>$7.79 → $4.12</p>
               <p className={styles.statText}>
                 Cost per accepted change in the{" "}
-                <span className={styles.highlight}>Opus study runs</span> with
-                domain context: $7.79 down to $4.12.
+                <span className={styles.highlight}>Opus study runs</span>,
+                without vs with domain context. 24 runs per setup, a small
+                sample.
               </p>
             </div>
             <div className={styles.stat}>
               <p className={styles.statValue}>9 → 0</p>
               <p className={styles.statText}>
-                Blocker and major bugs in the{" "}
-                <span className={styles.highlight}>Opus study runs</span>,
-                without vs with domain context.
+                Blocker and major bugs in the same{" "}
+                <span className={styles.highlight}>Opus study runs</span>. Same
+                small sample, same caveat.
               </p>
             </div>
             <div className={styles.stat}>
               <p className={styles.statValue}>0 → 6 of 8</p>
               <p className={styles.statText}>
-                <span className={styles.highlight}>Coding agent</span>{" "}
-                implementations done to our coding standards. Each rule pops up
-                the moment the agent starts editing a file it applies to.
+                <span className={styles.highlight}>Coding agent</span> runs that
+                followed a coding standard on two hand-picked work requests,
+                once the rule arrived at the edit.
               </p>
             </div>
           </div>
@@ -277,24 +279,28 @@ export default function Home({ featuredPosts }: HomeProps) {
           <div>
             <p className={styles.label}>Coding agents</p>
             <h2 id="coding-title">
-              Give a coding agent your team&apos;s context, and it writes your
-              team&apos;s code
+              Give a coding agent your team&apos;s context, then test whether it
+              helps
             </h2>
             <p className={styles.sectionLede}>
               Claude Code can program. It doesn&apos;t know why your system is
               shaped the way it is, which decisions are settled, or which
               mistakes already hurt you. I built The Vault to tell it, and
-              tested the difference with blind replays of real engineering work.
+              tested the difference with blind replays of 12 real work requests.
+              The direction is encouraging. The sample is small.
             </p>
             <ul className={styles.bulletList}>
               <li>
-                Agents with the Vault push back on work requests that ask for
-                something that already exists. Without it, none did.
+                On a work request for something that already existed, runs with
+                the Vault found it and said so. Runs without it built a
+                duplicate. That&apos;s one work request, run twice per setup.
               </li>
               <li>
-                An ontology layer files each rule where it applies. Agents read
-                the right rule before their first edit 95% of the time, vs 76%
-                without it.
+                An ontology layer files each rule where it applies. On seven
+                synthetic tasks, three runs each, agents read the relevant rule
+                before their first edit in 20 of 21 runs with it, vs 16 of 21
+                without. A small sample, and it measures reading the rule, not
+                the code.
               </li>
             </ul>
             <div className={styles.links}>
@@ -302,34 +308,36 @@ export default function Home({ featuredPosts }: HomeProps) {
                 Context for coding agents <Next />
               </a>
               <a href="/blog/proving-the-vaults-value">
-                Proving the Vault&apos;s value <Next />
+                Testing the Vault&apos;s value <Next />
               </a>
             </div>
           </div>
           <div className={styles.panel}>
             <p className={styles.panelLabel}>
-              Opus runs: with the Vault vs without
+              Opus runs: without the Vault → with it
             </p>
             <div className={styles.statGrid}>
               <div className={styles.stat}>
-                <p className={styles.statValue}>+45%</p>
-                <p className={styles.statText}>accepted changes</p>
+                <p className={styles.statValue}>11 → 16</p>
+                <p className={styles.statText}>accepted changes, of 24</p>
               </div>
               <div className={styles.stat}>
-                <p className={styles.statValue}>Zero</p>
+                <p className={styles.statValue}>9 → 0</p>
                 <p className={styles.statText}>blocker or major bugs</p>
               </div>
               <div className={styles.stat}>
-                <p className={styles.statValue}>−47%</p>
+                <p className={styles.statValue}>$7.79 → $4.12</p>
                 <p className={styles.statText}>cost per accepted change</p>
               </div>
               <div className={styles.stat}>
-                <p className={styles.statValue}>−29%</p>
-                <p className={styles.statText}>time per change</p>
+                <p className={styles.statValue}>12.8 → 9.1</p>
+                <p className={styles.statText}>average minutes per change</p>
               </div>
             </div>
             <p className={styles.note}>
-              Same model, same real work requests, blind judges.
+              12 real work requests, two runs each per setup, blind judges.
+              Sonnet went from 7 to 8 accepted. A small sample: encouraging, not
+              proven.
             </p>
           </div>
         </section>
@@ -414,7 +422,8 @@ export default function Home({ featuredPosts }: HomeProps) {
                 Persistent context for people and coding agents. Sources stay
                 untouched, a nightly compile turns them into linked pages, and
                 each agent session loads the smallest map that fits its task. A
-                rule reaches the agent when it edits the file the rule governs.
+                rule is meant to reach the agent when it edits the file the rule
+                governs. That trigger is being fixed after daily use.
               </p>
               <div className={styles.cardLinks}>
                 <a href="/projects/vault">
